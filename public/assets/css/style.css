@@ -71,3 +71,44 @@ body {
     opacity: 1;
 }
 
+.blog_articles {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    height: 40vh;
+}
+
+.blog_articles div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border-radius: 1.5%;
+    color: white;
+}
+
+.blog_articles div p {
+    width: 80%;
+    font-size: 1.5em;
+}
+
+.article1 {
+    background-image: url("/assets/images/background3.jpg");
+}
+
+.article2 {
+    background-image: url("/assets/images/background5.jpg");
+}
+
+.article3 {
+    background-image: url("/assets/images/background4.jpeg");
+}
+
+.article1 .article2 .article3 {
+    background-size: cover;
+    width: 30%;
+}
+
+
