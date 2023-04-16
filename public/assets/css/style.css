@@ -1,3 +1,73 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #f76c6c;
 }
+
+.disc_category ul {
+    display: flex;
+    list-style: none;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.disc_category ul li {
+    width: 14vw;
+    height: 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disc_category ul li a {
+    text-decoration: none;
+    color: red;
+    top: 50%;
+    opacity: 0;
+    font-size: 2em;
+    font-family: Georgia;
+    font-weight: bold;
+}
+
+.disc_water {
+    background-image: url("/assets/images/disc_water.png");
+    background-size: cover;
+}
+
+.disc_air {
+    background-image: url("/assets/images/disc_air.png");
+    background-size: cover;
+}
+
+.disc_fire {
+    background-image: url("/assets/images/disc_fire.png");
+    background-size: cover;
+}
+
+.disc_earth {
+    background-image: url("/assets/images/disc_earth.png");
+    background-size: cover;
+}
+
+.disc_chimique {
+    background-image: url("/assets/images/disc_chimique.png");
+    background-size: cover;
+}
+
+.disc_meteorite {
+    background-image: url("/assets/images/disc_meteorite.png");
+    background-size: cover;
+}
+
+.disc_category ul li:hover {
+    opacity: 0.5;
+}
+
+.disc_category ul li:hover a {
+    opacity: 1;
+}
+
