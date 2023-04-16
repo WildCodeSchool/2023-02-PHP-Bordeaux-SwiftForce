@@ -120,4 +120,32 @@
     width: 30%;
 }
 
+.best_sellers h2 {
+    text-align: center;
+}
 
+.best_sellers ul {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+}
+
+.best_sellers ul li {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+}
+
+.best_sellers ul li img {
+    width: 100%;
+}
+
+.best_sellers ul li form button {
+    width: 100%;
+}
