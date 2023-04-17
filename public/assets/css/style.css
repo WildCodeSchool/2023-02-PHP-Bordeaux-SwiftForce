@@ -16,30 +16,47 @@
 }
 
 .disc_category ul {
-    margin: 5vh auto;
+    margin: 2vh auto;
     width: 90vw;
     padding: 0;
     display: flex;
-    list-style: none;
     justify-content: space-between;
+    list-style: none;
 }
 
 .disc_category ul li {
     width: 14vw;
     height: 14vw;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.disc_category ul li a {
+.disc_category a {
+    position: relative;
     text-decoration: none;
     color: black;
-    top: 50%;
+}
+
+.disc_category ul li p {
+    text-align: center;
+    margin: auto;
+    position: absolute;
     font-size: 2em;
-    font-family: Georgia;
+    font-family: var(--fontFamilyTitle);
     font-weight: bold;
-    display: none;
+}
+
+.disc_category ul li p {
+    opacity: 0;
+}
+
+.disc_category ul a:hover li {
+    opacity: 0.5
+}
+
+.disc_category ul a:hover p {
+    opacity: 1;
 }
 
 .disc_water {
@@ -72,19 +89,21 @@
     background-size: cover;
 }
 
-.disc_category ul li:hover {
-    opacity: 0.5;
+.blog {
+    width: 90vw;
+    margin: auto;
 }
 
-.disc_category ul li:hover a {
-    display: flex;
+.blog h2 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: var(--fontFamilyTitle);
 }
 
 .blog_articles {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    width: 90vw;
     height: auto;
 }
 
@@ -93,12 +112,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 24.5%;
     height: 30vw;
-    border-radius: 1.5%;
     color: white;
 }
-.blog_articles div h2 {
+
+.blog_articles div h3 {
     font-size: 1.5vw;
 }
 
@@ -120,16 +139,24 @@
     background-image: url("/assets/images/background4.jpeg");
 }
 
-.article1 .article2 .article3 {
+.article4 {
+    background-image: url("/assets/images/background3.jpg");
+}
+
+.article1 .article2 .article3 .article4 {
     background-size: cover;
-    width: 30%;
 }
 
 .best_sellers h2 {
-    text-align: center;
-    margin: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-family: var(--fontFamilyTitle);
 }
 
+.best_sellers {
+    width: 90vw;
+    margin: auto;
+}
 .best_sellers ul {
     padding: 0;
     margin: auto;
@@ -137,12 +164,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90vw;
     justify-content: space-between;
 }
 
 .best_sellers ul li {
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: center;
 }
@@ -175,7 +201,12 @@
 
 .card-bodyCustom h6{
     font-size: 0.7vw;
+    font-weight: bold;
+    font-family: var(--fontFamilyText);
 }
 
-.card-bodyCustom h5{
+.card-bodyCustom h5 {
     font-size: 1vw;
+    font-weight: bold;
+    font-family: var(--fontFamilyText);
+}
