@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Product</h1>
+    <div class="container">
+        {% for product in products %}
+            <div class="card" style="width: 18rem;">
+                <img src="/assets/images/{{ product.image }}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name_product }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ product.price }}</h6>
+                    <button type="button" class="btn btn-success">Ajout Panier</button>
+
+                </div>
+            </div>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </div>
+    {#<a href="/items/add">Ajouter</a>#}
+{% endblock %}
