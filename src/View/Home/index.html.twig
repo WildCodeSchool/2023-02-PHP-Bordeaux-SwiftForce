@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    <!---------------------------- automatic products carrousel ---------------------------->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -22,6 +23,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!---------------------------- category discs ---------------------------->
     <div class="disc_category">
         <ul>
             <li class="disc_water" ><a href=""><p>Eau</p></a></li>
@@ -32,6 +34,7 @@
             <li class="disc_meteorite"><a href=""><p>Météorite</p></a></li>
         </ul>
     </div>
+    <!---------------------------- exemples of blog articles ---------------------------->
     <div class="blog_articles">
         <div class="article1">
             <h2>Article 1</h2>
@@ -46,39 +49,49 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
         </div>
     </div>
+    <!---------------------------- best sellers  ---------------------------->
     <div class="best_sellers">
         <h2> ----- Nos Best Sellers -----</h2>
         <ul>
-            <li><img src="/assets/images/kit.jpeg" alt="">
-                <h3>Kit de survie</h3>
-                <p>39.90€</p>
-                <form action="">
-                    <button>Ajouter au panier</button>
-                </form>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/kit.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Kit de survie 12 pièces</h5>
+                <h6 class="card-subtitle mb-2 text-muted">39.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
             </li>
-            <li><img src="/assets/images/masque.jpeg" alt="">
-                <h3>Masque à gaz</h3>
-                <p>59.90€</p>
-                <form action="">
-                    <button>Ajouter au panier</button>
-                </form>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/masque.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Masque à gaz</h5>
+                <h6 class="card-subtitle mb-2 text-muted">59.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
             </li>
-            <li><img src="/assets/images/tente.jpeg" alt="">
-                <h3>Tente</h3>
-                <p>130€</p>
-                <form action="">
-                    <button>Ajouter au panier</button>
-                </form>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/tente.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Tente 2 personnes</h5>
+                <h6 class="card-subtitle mb-2 text-muted">130€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
             </li>
-            <li><img src="/assets/images/jumelles.jpeg" alt="">
-                <h3>Jumelles</h3>
-                <p>44.90€</p>
-                <form action="">
-                    <button>Ajouter au panier</button>
-                </form>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Jumelles 10x42</h5>
+                <h6 class="card-subtitle mb-2 text-muted">44.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
             </li>
         </ul>
     </div>
+    <!---------------------------- marketing logos ---------------------------->
     <div class="logo">
         <ul>
             <li>1er logo</li>
