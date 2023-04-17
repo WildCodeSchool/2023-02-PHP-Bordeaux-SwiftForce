@@ -96,10 +96,13 @@
     border-radius: 1.5%;
     color: white;
 }
+.blog_articles div h2 {
+    font-size: 1.5vw;
+}
 
 .blog_articles div p {
     width: 80%;
-    font-size: 1.5rem;
+    font-size: 1vw;
     margin-top: 2%;
 }
 
@@ -157,17 +160,22 @@
     justify-content: end;
 }
 
+.card-bodyCustom button {
+    width: 100%;
+}
+
+
 .best_sellers ul li:hover {
     border-style: solid;
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
 }
 
-h6 {
+.card-bodyCustom h6{
     font-size: 0.7vw;
 }
 
-h5 {
+.card-bodyCustom h5{
     font-size: 1vw;
 }
 
