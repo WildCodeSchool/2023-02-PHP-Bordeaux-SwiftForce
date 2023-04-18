@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+/*********************** carrousel ***********************/
+
 .carousel-inner {
     height: 60vh;
 }
@@ -15,79 +17,52 @@
     height: auto;
 }
 
+/*********************** category disc ***********************/
+
 .disc_category ul {
-    margin: 2vh auto;
+    margin: 7vh auto 2vh auto;
     width: 90vw;
+    height: 12vw;
     padding: 0;
     display: flex;
     justify-content: space-between;
     list-style: none;
 }
 
-.disc_category ul li {
-    width: 14vw;
-    height: 14vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.disc_category a {
+.disc_category li {
     position: relative;
-    text-decoration: none;
-    color: black;
+    width: 12vw;
 }
 
-.disc_category ul li p {
-    text-align: center;
-    margin: auto;
+.disc_category img {
     position: absolute;
+    width: 12vw;
+    height: 12vw;
+}
+
+.disc_category p {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
     font-size: 2em;
     font-family: var(--fontFamilyTitle);
     font-weight: bold;
-}
-
-.disc_category ul li p {
+    color: black;
     opacity: 0;
 }
 
-.disc_category ul a:hover li {
-    opacity: 0.5
+.disc_category ul li:hover img {
+    opacity: 0.5;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.disc_category ul a:hover p {
+.disc_category ul li:hover p {
     opacity: 1;
 }
 
-.disc_water {
-    background-image: url("/assets/images/disc_water.png");
-    background-size: cover;
-}
-
-.disc_air {
-    background-image: url("/assets/images/disc_air.png");
-    background-size: cover;
-}
-
-.disc_fire {
-    background-image: url("/assets/images/disc_fire.png");
-    background-size: cover;
-}
-
-.disc_earth {
-    background-image: url("/assets/images/disc_earth.png");
-    background-size: cover;
-}
-
-.disc_chimique {
-    background-image: url("/assets/images/disc_chimique.png");
-    background-size: cover;
-}
-
-.disc_meteorite {
-    background-image: url("/assets/images/disc_meteorite.png");
-    background-size: cover;
-}
+/*********************** blog articles ***********************/
 
 .blog {
     width: 90vw;
@@ -95,7 +70,7 @@
 }
 
 .blog h2 {
-    margin-top: 2vh;
+    margin-top: 4vh;
     margin-bottom: 2vh;
     font-family: var(--fontFamilyTitle);
 }
@@ -147,9 +122,11 @@
     background-size: cover;
 }
 
+/*********************** best sellers ***********************/
+
 .best_sellers h2 {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
     font-family: var(--fontFamilyTitle);
 }
 
