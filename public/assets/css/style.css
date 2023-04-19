@@ -1,3 +1,10 @@
 @import "modules/variables.css";
 @import "modules/product.css";
+@import "modules/index.css";
+@import "modules/logoBanner.css";
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
