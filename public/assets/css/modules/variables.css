@@ -3,7 +3,7 @@
     --primaryColorHover:#2B662E ;
     --secondaryColor: #224C40;
     --background: white;
-    --textColor: black;
+    --textColor: #2e2e2e;
     --fontFamilyTitle: 'Bebas Neue', cursive;
     --fontFamilyText: 'Didact Gothic', sans-serif;
     --fontFamalyCategory : 'Oswald', sans-serif;
@@ -20,4 +20,10 @@
 
 .btn:hover {
     --bs-btn-hover-bg: var(--primaryColorHover);
+}
+
+a:-webkit-any-link {
+    color: #224C40;
+    cursor: pointer;
+    text-decoration: underline;
 }

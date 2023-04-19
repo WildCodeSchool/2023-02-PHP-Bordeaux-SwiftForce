@@ -1,6 +1,177 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+    <!---------------------------- automatic products carrousel ---------------------------->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/images/hache.jpeg" class="d-block w-100" alt="Image d'une hâche">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/images/boussole-radio.jpeg" class="d-block w-100" alt="Image d'une boussole">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/images/premiers-soins.jpeg" class="d-block w-100" alt="Image de premiers soins">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!---------------------------- category discs ---------------------------->
+    <div class="disc_category">
+        <ul>
+            <li><a href="" class="disc_water">
+                    <img src="/assets/images/disc_water.png" alt="">
+                    <p>Eau</p>
+                </a></li>
+            <li><a href="" class="disc_air">
+                    <img src="/assets/images/disc_air.png" alt="">
+                    <p>Air</p>
+                </a></li>
+            <li><a href="" class="disc_fire">
+                    <img src="/assets/images/disc_fire.png" alt="">
+                    <p>Feu</p>
+                </a></li>
+            <li><a href="" class="disc_earth">
+                    <img src="/assets/images/disc_earth.png" alt="">
+                    <p>Terre</p>
+                </a></li>
+            <li><a href="" class="disc_chimique">
+                    <img src="/assets/images/disc_chimique.png" alt="">
+                    <p>Chimique</p>
+                </a></li>
+            <li><a href="" class="disc_meteorite">
+                    <img src="/assets/images/disc_meteorite.png" alt="">
+                    <p>Météorite</p>
+                </a></li>
+        </ul>
+    </div>
+    <!---------------------------- exemples of blog articles ---------------------------->
+    <div class="blog">
+        <h2>Tout pour se renseigner sur la survie</h2>
+        <div class="blog_articles_pc">
+            <div class="article1">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+            </div>
+            <div class="article2">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+            </div>
+            <div class="article3">
+                <h3>Article 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+            </div>
+            <div class="article4">
+                <h3>Article 4</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+            </div>
+        </div>
+        <div class="blog_articles_phone">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class=" w-100 article1">
+                            <h3>Article 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class=" w-100 article2">
+                            <h3>Article 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class=" w-100 article3">
+                            <h3>Article 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class=" w-100 article4">
+                            <h3>Article 4</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas molestie augue vitae accumsan. Etiam auctor fermentum euismod. Vestibulum sed sapien posuere, pretium eros vitae, maximus mauris.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!---------------------------- best sellers  ---------------------------->
+    <div class="best_sellers">
+        <h2>Nos indispensables de la survie</h2>
+        <ul>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/kit.jpeg" class="card-img-top" alt="" title="kit">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Kit de survie 12 pièces</h5>
+                <h6 class="card-subtitle mb-2 text-muted">39.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/masque.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Masque à gaz</h5>
+                <h6 class="card-subtitle mb-2 text-muted">59.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/kit.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Kit de survie 10 pièces</h5>
+                <h6 class="card-subtitle mb-2 text-muted">29.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardCustom">
+            <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
+            <div class="card-bodyCustom">
+                <h5 class="card-title">Jumelles 10x42</h5>
+                <h6 class="card-subtitle mb-2 text-muted">44.90€</h6>
+                <button type="button" class="btn btn-success">Ajout Panier</button>
+            </div>
+                </div>
+            </li>
+            <li>
+                <div class="cardCustom">
+                    <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
+                    <div class="card-bodyCustom">
+                        <h5 class="card-title">Jumelles 10x42</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">44.90€</h6>
+                        <button type="button" class="btn btn-success">Ajout Panier</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

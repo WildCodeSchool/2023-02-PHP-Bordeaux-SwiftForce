@@ -1,0 +1,41 @@
+.WS-product-filter {
+    display: flex;
+}
+
+.btn {
+    width: 150px;
+}
+
+.dropdown-menu {
+    min-width: 150px;
+    font-family: var(--fontFamilyText);
+}
+
+.WS-product-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 1rem 5rem;
+}
+
+.WS-product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.card-title,
+.card-subtitle {
+    color: var(--textColor)
+}
+
+.WS-product-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    height: 50px;
+}

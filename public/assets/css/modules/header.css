@@ -1,0 +1,18 @@
+
+.navbar{
+    background: rgb(180, 176, 176);
+}
+
+.btn2{
+--bs-btn-bg: white;
+--bs-btn-border-color: white;
+--bs-btn-disabled-bg: var(--primaryColor);
+--bs-btn-disabled-border-color: var(--primaryColor);
+--bs-btn-border-radius: 0;
+--bs-btn-font-family: var(--fontFamilyText);
+color: var(--primaryColor);
+}
+
+li{
+    list-style: none;
+}

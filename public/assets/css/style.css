@@ -1,7 +1,12 @@
 @import "modules/variables.css";
-
+@import "modules/header.css";
+@import "modules/product.css";
+@import "modules/index.css";
+@import "modules/logoBanner.css";
 @import "modules/footer.css";
 
-body {
-    color: #f76c6c;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
