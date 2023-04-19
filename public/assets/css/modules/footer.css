@@ -51,7 +51,7 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-    .col {
+    .footer-legal {
         padding-top: 10%;
     }
     .legal-notice {
