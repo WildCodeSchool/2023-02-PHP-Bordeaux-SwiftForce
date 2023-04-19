@@ -1,7 +1,7 @@
 body {
     position: relative;
 }
-.row{
+.WS-footer-row{
     background-image: url("../../images/footer.jpeg");
     width: 100%;
     max-height: 550px;
@@ -11,14 +11,14 @@ body {
     position: relative;
     margin: 0;
 }
-.row .method-paiement{
+.WS-footer-row .method-paiement{
     justify-content: flex-end;
     padding-right: 10%;
 }
 .method-paiement i{
     padding : 3px;
 }
-.row .logo-opquast{
+.WS-footer-row .logo-opquast{
     padding-left: 5%;
 }
 .col {
@@ -48,7 +48,7 @@ body {
     color : black;
     font-weight: bold;
 }
-.row h5{
+.WS-footer-row h5{
     font-weight: bold;
     color : black;
 }
@@ -57,7 +57,7 @@ body {
     .col {
         padding-top: 10%;
     }
-    ul {
+    .legal-notice {
         flex-direction: column;
     }
     .method-paiement i{
