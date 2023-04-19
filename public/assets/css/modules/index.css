@@ -267,4 +267,8 @@
     .card-bodyCustom h5 {
         font-size: 2vh;
     }
+
+    .invisibleCustom {
+        display: none;
+    }
 }
