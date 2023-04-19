@@ -1,0 +1,70 @@
+.row{
+    background-image: url("../../images/footer.jpeg");
+    width: 100%;
+    max-height: 550px;
+    background-repeat: no-repeat;
+    filter: brightness(80%);
+    bottom: 0;
+    margin: 0;
+}
+.row .method-paiement{
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+.method-paiement i{
+    padding : 3px;
+}
+.row .logo-opquast{
+    padding-left: 5%;
+}
+.col {
+    padding-top: 80px;
+}
+
+.certificated{
+    bottom : 10px;
+    margin-left: 50%;
+}
+.logo-opquast{
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: flex-start;
+}
+.logo-cb {
+    width : 100px;
+    height: 30px;
+    display: flex;
+}
+.method-paiement {
+    display: flex;
+    flex-direction: row;
+}
+.certificated {
+    color : black;
+    font-weight: bold;
+}
+.row h5{
+    font-weight: bold;
+    color : black;
+}
+
+@media only screen and (max-width: 480px) {
+    .col {
+        padding-top: 10%;
+    }
+    ul {
+        flex-direction: column;
+    }
+    .method-paiement i{
+        padding : 1px;
+    }
+    .certificated{
+        margin-left: 30%;
+    }
+    .logo-opquast {
+        width: 80px;
+        height: 80px;
+    }
+}
+
