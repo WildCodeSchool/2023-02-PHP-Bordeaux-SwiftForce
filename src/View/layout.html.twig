@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Didact+Gothic&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <!-- script font awesone (icone) -->
     <script src="https://kit.fontawesome.com/dd5f3c1c1b.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="/2023-02-PHP-Bordeaux-SwiftForce/public/assets/css/style.css">
     <title>{% block title %}{% endblock %}</title>
 
@@ -24,7 +24,9 @@
 </head>
 
 <body>
-{% block content %}{% endblock %}
+{% block content %}
+{% endblock %}
+{% include '_includes/footer.html.twig' %}
 {% block javascript %}{% endblock %}
 </body>
 </html>
