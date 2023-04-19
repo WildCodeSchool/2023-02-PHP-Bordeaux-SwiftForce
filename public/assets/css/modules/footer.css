@@ -1,29 +1,34 @@
-.row{
+body {
+    position: relative;
+}
+.WS-footer-row{
     background-image: url("../../images/footer.jpeg");
     width: 100%;
     max-height: 550px;
     background-repeat: no-repeat;
     filter: brightness(80%);
     bottom: 0;
+    position: relative;
     margin: 0;
 }
-.row .method-paiement{
+.WS-footer-row .method-paiement{
     justify-content: flex-end;
     padding-right: 10%;
 }
 .method-paiement i{
     padding : 3px;
 }
-.row .logo-opquast{
+.WS-footer-row .logo-opquast{
     padding-left: 5%;
 }
-.col {
+.footer-legal {
     padding-top: 80px;
 }
 
 .certificated{
-    bottom : 10px;
-    margin-left: 50%;
+    color : black;
+    font-weight: bold;
+    text-align: center;
 }
 .logo-opquast{
     width: 110px;
@@ -40,31 +45,27 @@
     display: flex;
     flex-direction: row;
 }
-.certificated {
-    color : black;
-    font-weight: bold;
-}
-.row h5{
+.WS-footer-row h5{
     font-weight: bold;
     color : black;
 }
 
 @media only screen and (max-width: 480px) {
-    .col {
+    .footer-legal {
         padding-top: 10%;
     }
-    ul {
+    .legal-notice {
         flex-direction: column;
     }
     .method-paiement i{
         padding : 1px;
     }
-    .certificated{
-        margin-left: 30%;
-    }
     .logo-opquast {
         width: 80px;
         height: 80px;
+    }
+    .invisible{
+        display: none;
     }
 }
 
