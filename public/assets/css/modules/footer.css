@@ -21,13 +21,14 @@ body {
 .WS-footer-row .logo-opquast{
     padding-left: 5%;
 }
-.col {
+.footer-legal {
     padding-top: 80px;
 }
 
 .certificated{
-    bottom : 10px;
-    margin-left: 50%;
+    color : black;
+    font-weight: bold;
+    text-align: center;
 }
 .logo-opquast{
     width: 110px;
@@ -44,10 +45,6 @@ body {
     display: flex;
     flex-direction: row;
 }
-.certificated {
-    color : black;
-    font-weight: bold;
-}
 .WS-footer-row h5{
     font-weight: bold;
     color : black;
@@ -62,9 +59,6 @@ body {
     }
     .method-paiement i{
         padding : 1px;
-    }
-    .certificated{
-        margin-left: 30%;
     }
     .logo-opquast {
         width: 80px;
