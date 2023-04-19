@@ -1,5 +1,8 @@
 @import "modules/variables.css";
+@import "modules/index.css";
 
-body {
-    color: #f76c6c;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
