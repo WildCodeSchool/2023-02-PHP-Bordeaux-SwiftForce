@@ -1,15 +1,36 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+
     <h1>Product</h1>
-    <div class="container">
+    <img class="w-100" src="/assets/images/hache.jpeg" alt="img">
+    <div class="WS-product-filter">
+        <a class="dropdown-toggle btn btn-success m-3 " href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Categorie
+        </a>
+        <ul class="dropdown-menu rounded-0">
+            <li><a class="dropdown-item" href="#">S'habiller</a></li>
+            <li><a class="dropdown-item" href="#">S'alimenter</a></li>
+            <li><a class="dropdown-item" href="#">S'abriter</a></li>
+            <li><a class="dropdown-item" href="#">Se défendre</a></li>
+            <li><a class="dropdown-item" href="#">S'orienter</a></li>
+            <li><a class="dropdown-item" href="#">Kit de survie</a></li>
+        </ul>
+
+        <button type="button" class="btn btn-success m-3">Prix</button>
+        <form method="get">
+            <button class="btn btn-success m-3">Trier</button>
+        </form>
+    </div>
+    <div class="WS-product-container">
         {% for product in products %}
-            <div class="card" style="width: 18rem;">
-                <img src="/assets/images/{{ product.image }}" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name_product }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ product.price }}</h6>
-                    <button type="button" class="btn btn-success">Ajout Panier</button>
+            <div class="WS-product-card m-3">
+                <img src="/assets/images/{{ product.image }}"  alt="">
+                <div class="WS-product-card-body">
+                    <h5 class="card-title my-2">{{ product.name_product }}</h5>
+                    <h6 class="card-subtitle text-muted my-2">{{ product.price }}</h6>
+                    <button type="button" class="btn btn-success w-100">Ajout Panier</button>
 
                 </div>
             </div>
@@ -17,5 +38,4 @@
             <li>Nothing to display</li>
         {% endfor %}
     </div>
-    {#<a href="/items/add">Ajouter</a>#}
 {% endblock %}
