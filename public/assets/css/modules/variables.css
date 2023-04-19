@@ -21,3 +21,9 @@
 .btn:hover {
     --bs-btn-hover-bg: var(--primaryColorHover);
 }
+
+a:-webkit-any-link {
+    color: #224C40;
+    cursor: pointer;
+    text-decoration: underline;
+}
