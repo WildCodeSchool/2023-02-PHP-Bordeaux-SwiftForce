@@ -24,8 +24,13 @@
 </head>
 
 <body>
-{% block content %}{% endblock %}
+{% block content %}
+{% endblock %}
+{% include '_includes/footer.html.twig' %}
 {% block javascript %}{% endblock %}
+{% block logoBanner %}
+    {% include '_includes/logoBanner.html.twig.html' %}
+{% endblock %}
 </body>
 </html>
 
