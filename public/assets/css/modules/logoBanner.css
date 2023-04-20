@@ -1,5 +1,6 @@
 .logoBanner {
     display: flex;
+    margin-top: 2vh;
     background-color: var(--primaryColor);
     justify-content: space-around;
     width: 100%;
