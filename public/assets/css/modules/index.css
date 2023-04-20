@@ -129,19 +129,19 @@
 }
 
 .article1 {
-    background-image: url("/assets/images/background3.jpg");
+    background-image: url("/assets/images/article-op-codryceps.jpeg");
 }
 
 .article2 {
-    background-image: url("/assets/images/background5.jpg");
+    background-image: url("/assets/images/article-op-asteroide.jpeg");
 }
 
 .article3 {
-    background-image: url("/assets/images/background4.jpeg");
+    background-image: url("/assets/images/article-op-fear-camp.jpeg");
 }
 
 .article4 {
-    background-image: url("/assets/images/background3.jpg");
+    background-image: url("/assets/images/article-op-hache.jpeg");
 }
 
 .article1, .article2, .article3, .article4 {
