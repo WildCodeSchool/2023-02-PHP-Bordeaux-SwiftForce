@@ -22,7 +22,6 @@ class ProductController extends AbstractController
             $products = $productManager->sortByPrice();
 
             return $this->twig->render('Product/index.html.twig', ['products' => $products]);
-
         }
     }
 }
