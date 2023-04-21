@@ -1,12 +1,18 @@
 /*********************** carrousel ***********************/
-*{
-    /*overflow-y: hidden;*/
-}
 
-.carousel-item img {
-    height: 60vh;
+.mini {
+    display: none;
 }
+/*********************** carrousel - media query ***********************/
 
+@media screen and (max-width:480px) {
+    .biig {
+        display: none;
+    }
+    .mini {
+        display: flex;
+    }
+}
 /*********************** category disc ***********************/
 
 .disc_category {
@@ -55,7 +61,7 @@
     opacity: 1;
 }
 
-/*********************** blog articles - media query ***********************/
+/*********************** disc category - media query ***********************/
 
 @media screen and (max-width:480px) {
     .disc_category ul {
@@ -119,22 +125,23 @@
     width: 80%;
     font-size: 1vw;
     margin-top: 2%;
+    text-align: center;
 }
 
 .article1 {
-    background-image: url("/assets/images/background3.jpg");
+    background-image: url("/assets/images/article-op-codryceps.jpeg");
 }
 
 .article2 {
-    background-image: url("/assets/images/background5.jpg");
+    background-image: url("/assets/images/article-op-asteroide.jpeg");
 }
 
 .article3 {
-    background-image: url("/assets/images/background4.jpeg");
+    background-image: url("/assets/images/article-op-fear-camp.jpeg");
 }
 
 .article4 {
-    background-image: url("/assets/images/background3.jpg");
+    background-image: url("/assets/images/article-op-hache.jpeg");
 }
 
 .article1, .article2, .article3, .article4 {
@@ -163,6 +170,10 @@
 
     .blog_articles_phone {
         display: flex;
+    }
+
+    .blog_articles_phone div p {
+        text-align: center;
     }
 
     .article1, .article2, .article3, .article4 {
@@ -202,9 +213,10 @@
 }
 
 .best_sellers ul li {
-    width: 20%;
+    width: 19.5%;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 .cardCustom {
@@ -233,7 +245,7 @@
 }
 
 .card-bodyCustom h6{
-    font-size: 0.7vw;
+    font-size: 1vw;
     font-weight: bold;
     font-family: var(--fontFamilyText);
 }
@@ -242,6 +254,10 @@
     font-size: 1vw;
     font-weight: bold;
     font-family: var(--fontFamilyText);
+}
+
+.card-title {
+    height: 2vw;
 }
 
 /*********************** best sellers - media query ***********************/
@@ -261,7 +277,7 @@
     }
 
     .card-bodyCustom h6 {
-        font-size: 1.4vh;
+        font-size: 2vh;
     }
 
     .card-bodyCustom h5 {
@@ -270,5 +286,9 @@
 
     .invisibleCustom {
         display: none;
+    }
+
+    .card-title {
+        height: 4vh;
     }
 }
