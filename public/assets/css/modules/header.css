@@ -16,3 +16,14 @@ color: var(--primaryColor);
 li{
     list-style: none;
 }
+
+.btn-primary {
+    --bs-link-color: var(--primaryColor);
+    --bs-link-hover-color: var(--primaryColorHover);
+}
+
+.WS-header{
+    color:var(--primaryColor);
+    --bs-link-color: var(--primaryColor);
+    --bs-link-hover-color: var(--primaryColorHover);
+}
