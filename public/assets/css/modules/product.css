@@ -51,3 +51,21 @@ width: 90vw;
 .card-title {
     height: 50px;
 }
+@media screen and (max-width: 480px) {
+
+    .WS-product-container {
+        justify-content: center;
+    }
+
+    .WS-product-card {
+        width: 40vw;
+    }
+
+    .WS-product-card h5 {
+        font-size: 1rem;
+    }
+
+    .WS-product-filter {
+        margin: 0.5rem;
+    }
+}
