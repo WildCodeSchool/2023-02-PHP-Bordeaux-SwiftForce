@@ -13,7 +13,6 @@
         display: flex;
     }
 }
-
 /*********************** category disc ***********************/
 
 .disc_category {
@@ -62,7 +61,7 @@
     opacity: 1;
 }
 
-/*********************** blog articles - media query ***********************/
+/*********************** disc category - media query ***********************/
 
 @media screen and (max-width:480px) {
     .disc_category ul {
@@ -126,6 +125,7 @@
     width: 80%;
     font-size: 1vw;
     margin-top: 2%;
+    text-align: center;
 }
 
 .article1 {
@@ -170,6 +170,10 @@
 
     .blog_articles_phone {
         display: flex;
+    }
+
+    .blog_articles_phone div p {
+        text-align: center;
     }
 
     .article1, .article2, .article3, .article4 {
@@ -241,7 +245,7 @@
 }
 
 .card-bodyCustom h6{
-    font-size: 0.7vw;
+    font-size: 1vw;
     font-weight: bold;
     font-family: var(--fontFamilyText);
 }
@@ -250,6 +254,10 @@
     font-size: 1vw;
     font-weight: bold;
     font-family: var(--fontFamilyText);
+}
+
+.card-title {
+    height: 2vw;
 }
 
 /*********************** best sellers - media query ***********************/
@@ -269,7 +277,7 @@
     }
 
     .card-bodyCustom h6 {
-        font-size: 1.4vh;
+        font-size: 2vh;
     }
 
     .card-bodyCustom h5 {
@@ -278,5 +286,9 @@
 
     .invisibleCustom {
         display: none;
+    }
+
+    .card-title {
+        height: 4vh;
     }
 }
