@@ -13,5 +13,6 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'product' => ['productController', 'index'],
+    'product' => ['productController', 'index',],
+    'product/sort' => ['ProductController', 'sortPrice',]
 ];
