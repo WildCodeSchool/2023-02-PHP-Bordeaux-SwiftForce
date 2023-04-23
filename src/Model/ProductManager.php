@@ -8,10 +8,12 @@ class ProductManager extends AbstractManager
 {
     public const TABLE = 'WS_product';
 
-    public function sortByPrice(): bool|array
+    public function sortByPrice(string $price)
     {
-        $sql = "SELECT * FROM " . self::TABLE . " ORDER BY price ASC";
-        $stmt = $this->pdo->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "SELECT * FROM WS_product ORDER BY " . $price;
+        $stm = $this->pdo->prepare($sql);
+       /* $stm->bindValue('price', $price,/PDO::PARAM_STR);*/
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }

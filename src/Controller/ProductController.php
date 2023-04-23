@@ -14,14 +14,15 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
-    public function sortPrice()
+    public function sortPrice(string $price): string
     {
+        $productManager = new ProductManager();
+        $products = $productManager->sortByPrice($price);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $productManager = new ProductManager();
-            $products = $productManager->sortByPrice();
-
-            return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+        if ($_SERVER['REQUEST_METHOD'] === 'get') {
+            $price = $_GET['price'];
+            header('Location:/product/sort?price=' . $price);
         }
+        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 }
