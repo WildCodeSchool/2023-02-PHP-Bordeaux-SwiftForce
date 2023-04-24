@@ -15,5 +15,6 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'product' => ['ProductController', 'index',],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
-    'basket' => ['BasketController', 'index']
+    'basket' => ['BasketController', 'index'],
+    'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']]
 ];

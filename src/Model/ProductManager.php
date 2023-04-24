@@ -16,4 +16,13 @@ class ProductManager extends AbstractManager
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function sortBySubCategory(string $subCat): bool|array
+    {
+        $sql = "SELECT * FROM WS_product JOIN WS_sub_category ON WS_product .sub_category_id = WS_sub_category.id
+            WHERE name_sub_category like '$subCat'";
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
