@@ -10,13 +10,14 @@
             Categorie
         </a>
         <ul class="dropdown-menu rounded-0">
-            <form action="/product/sort" method="get">
-            <li><a class="dropdown-item" href="#">S'habiller</a></li>
-            <li><a class="dropdown-item" href="#">S'alimenter</a></li>
-            <li><a class="dropdown-item" href="#">S'abriter</a></li>
-            <li><a class="dropdown-item" href="#">Se défendre</a></li>
-            <li><a class="dropdown-item" href="#">S'orienter</a></li>
-            <li><a class="dropdown-item" href="#">Kit de survie</a></li>
+            <form action="/product/sortSub" method="get">
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=get_dressed" >S'habiller</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_eat">S'alimenter</a></li>
+            <li>
+                <a class="dropdown-item" href="/product/sortSub?subCat=take_shelter">S'abriter</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_defend">Se défendre</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=orientation">S'orienter</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=survival_kit">Kit de survie</a></li>
             </form>
         </ul>
         <form action="/product/sort" method="get">

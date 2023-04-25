@@ -25,4 +25,17 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
+
+    public function sortSubCategory(string $subCat): string
+    {
+        $productManager = new ProductManager();
+        $products = $productManager->sortBySubCategory($subCat);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'get') {
+            $subCat = $_GET['name_sub_category'];
+            header('Location:/product/sort?=' . $subCat);
+        }
+
+        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+    }
 }
