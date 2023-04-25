@@ -6,4 +6,6 @@ use PDO;
 
 class BasketManager extends AbstractManager
 {
+
 }
+

@@ -15,5 +15,10 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'product' => ['productController', 'index',],
     'product/sort' => ['ProductController', 'sortPrice',],
-    'basket' => ['basketController', 'index']
+    'product/add' => ['ProductController', 'add',['id']],
+    'basket' => ['basketController', 'index'],
+    'basket/edit' => ['basketController', 'edit', ['data']],
+    'basket/delete' => ['basketController', 'delete', ['name']],
+
+    // data est un tableau pour récupérer le nom du produit et la quantité
 ];

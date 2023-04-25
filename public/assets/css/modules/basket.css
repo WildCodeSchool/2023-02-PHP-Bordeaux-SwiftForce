@@ -33,7 +33,7 @@
 
 .WS-basket-card-box {
     grid-area: other;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
 }
@@ -72,7 +72,6 @@
 }
 
 .WS-basket-payment i {
-
     padding: 10px;
 }
 
@@ -88,6 +87,19 @@
 
 .WS-font-size {
     font-size: 0.9rem;
+}
+
+.WS-basket-delete-update {
+    display: flex;
+    width: 20vw;
+}
+
+.WS-basket-delete-update-content {
+    display: flex;
+}
+
+.WS-basket-delete-update div img {
+    height: 3vh;
 }
 
 @media screen and (max-width: 480px) {

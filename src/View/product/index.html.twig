@@ -30,8 +30,9 @@
                 <div class="WS-product-card-body">
                     <h5 class="card-title my-0 my-md-2">{{ product.name_product }}</h5>
                     <h6 class="card-subtitle text-muted my-0 my-md-2">{{ product.price }}</h6>
-                    <button type="button" class="btn btn-success w-100">Ajout Panier</button>
-
+                    <form action="" method="get">
+                        <a href="product/add?id={{ product.id }}"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
+                    </form>
                 </div>
             </div>
         {% else %}
