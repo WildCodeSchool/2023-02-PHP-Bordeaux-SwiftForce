@@ -27,3 +27,12 @@ li{
     --bs-link-color: var(--primaryColor);
     --bs-link-hover-color: var(--primaryColorHover);
 }
+
+.WS-off-canvas{
+    --bs-offcanvas-width: 284px;
+    --bs-link-hover-color:  var(--primaryColorHover);
+    bottom: initial;
+    height: auto;
+}
+
+
