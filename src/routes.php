@@ -13,7 +13,7 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'product' => ['productController', 'index',],
-    'product/sort' => ['ProductController', 'sortPrice',],
-    'basket' => ['basketController', 'index']
+    'product' => ['ProductController', 'index',],
+    'product/sort' => ['ProductController', 'sortPrice',['price']],
+    'basket' => ['BasketController', 'index']
 ];
