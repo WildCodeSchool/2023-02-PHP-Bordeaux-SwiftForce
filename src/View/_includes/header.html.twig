@@ -1,32 +1,31 @@
 <div class="bg-light">
     <div class="row mx-0">
-            <!--incon and image zone-->
-        <div class="col-4 col-md-4 py-2">
-            <button class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars fa-lg"></i></button>
 
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <!--incon and image zone-->
+        <div class="col-4 col-md-4 py-2 position-relative">
+            <i class="fa-solid fa-bars fa-lg fa-2xl" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+
+            <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png" height = '60' px>Catégories</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-
                     <ul>
-                        <li><a href="/product" class="text-decoration-none WS-header ">  Produit</a></li>
-                        <li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  S'habiller</a></li>
-                        <li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  S'alimenter</a></li>
-                        <li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  S'abriter</a></li>
-                        <li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  Se défendre</a></li>
-                        <li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  S'orienter</a></li>
-                        <li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="page.php" class="text-decoration-none WS-header">  Kit de Suvie</a></li>
+                        <p><li><a href="/product" class="text-decoration-none WS-header ">  Produit</a></li></p>
+                        <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="" class="text-decoration-none WS-header">  S'habiller</a></li></p>
+                        <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
+                        <p><li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'abriter</a></li></p>
+                        <p><li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  Se défendre</a></li></p>
+                        <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'orienter</a></li></p>
+                        <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  Kit de Suvie</a></li></p>
                     </ul>
                 </div>
             </div>
             <!--<a class="ms-2" href="#"><i class="fa-solid fa-bars fa-lg"></i></a>-->
             <a href="/" class="ms-2"><img src="/assets/images/test2.png" height = '60' px></a>
-
-
         </div>
+
         <!--Form zone-->
         <div class="col-4 col-md-6 py-3 h-100 my-auto">
             <form class="d-flex" role="search">
@@ -34,11 +33,35 @@
             <button class="btn btn-outline-success d-none d-sm-block text-white" type="submit">Search</button>
             </form>
         </div>
+
         <!--icons zone-->
         <div class="col-4 col-md-2 py-3">
             <div class="d-flex justify-content-end">
-                <a href="" class="test"><i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header"></i></a>
-                <a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header"></i></a>
+                <!--<a href="" class="test"><i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header"></i></a>-->
+                <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!--include twig form masterUser/user-->
+                        
+
+                    </div>
+                </div>
+                <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
+                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas CART</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!--include twig function -->
+                        {% include "_includes/_cartBasket.html.twig" %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

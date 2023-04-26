@@ -33,7 +33,7 @@
 
 .WS-basket-card-box {
     grid-area: other;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-around;
 }
@@ -97,6 +97,7 @@
 .WS-basket-delete-update-content img {
     height: 3vh;
 }
+
 
 @media screen and (max-width: 480px) {
     .WS-basket-container {

@@ -4,29 +4,35 @@
 
     <img class="w-100" src="/assets/images/hache.jpeg" alt="img">
     <div class="WS-product-filter">
-        <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button" data-bs-toggle="dropdown"
+        <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button"
+           data-bs-toggle="dropdown"
            aria-expanded="false">
             Categorie
         </a>
         <ul class="dropdown-menu rounded-0">
-            <li><a class="dropdown-item" href="#">S'habiller</a></li>
-               <li><a class="dropdown-item" href="#">S'alimenter</a></li>
-            <li><a class="dropdown-item" href="#">S'abriter</a></li>
-            <li><a class="dropdown-item" href="#">Se défendre</a></li>
-            <li><a class="dropdown-item" href="#">S'orienter</a></li>
-            <li><a class="dropdown-item" href="#">Kit de survie</a></li>
+            <form action="/product/sortSub" method="get">
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=get_dressed" >S'habiller</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_eat">S'alimenter</a></li>
+            <li>
+                <a class="dropdown-item" href="/product/sortSub?subCat=take_shelter">S'abriter</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_defend">Se défendre</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=orientation">S'orienter</a></li>
+            <li><a class="dropdown-item" href="/product/sortSub?subCat=survival_kit">Kit de survie</a></li>
+            </form>
         </ul>
-
-        <button type="button" class="btn btn-success m-3">Prix</button>
-
         <form action="/product/sort" method="get">
-            <button class="btn btn-success m-3">Trier</button>
+            <input type="hidden" name="price" value="name_product">
+            <button class="btn btn-success m-3">Trier par nom</button>
+        </form>
+        <form action="/product/sort" method="get">
+            <input type="hidden" name="price" value="price">
+            <button class="btn btn-success m-3">Trier par prix</button>
         </form>
     </div>
     <div class="WS-product-container">
         {% for product in products %}
             <div class="WS-product-card">
-                <img src="/assets/images/{{ product.image }}"  alt="">
+                <img src="/assets/images/{{ product.image }}" alt="">
                 <div class="WS-product-card-body">
                     <h5 class="card-title my-0 my-md-2">{{ product.name_product }}</h5>
                     <h6 class="card-subtitle text-muted my-0 my-md-2">{{ product.price }}</h6>

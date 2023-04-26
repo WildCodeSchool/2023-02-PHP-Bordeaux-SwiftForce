@@ -8,4 +8,3 @@ class BasketManager extends AbstractManager
 {
 
 }
-
