@@ -55,5 +55,4 @@ class UserController extends AbstractController
         $userManager->delete($id);
         header('Location: /users');
     }
-
 }
