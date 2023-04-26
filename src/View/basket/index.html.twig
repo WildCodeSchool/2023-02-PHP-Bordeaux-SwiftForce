@@ -3,36 +3,32 @@
 {% block content %}
     <div class="WS-basket-container mt-5">
         <!-- panier-->
-
         <div class="WS-basket-card-caddie ">
             <h4 class="text-center mb-3">Votre panier</h4>
-            <div class="WS-basket-card bg-white ms-md-3">
+            {% for cart in carts %}
+                <div class="WS-basket-card bg-white ms-md-3">
                 <div class="WS-basket-center">
-                    <img class="WS-basket-img"src="/assets/images/product01.png" alt="">
+                    <img class="WS-basket-img"src="/assets/images/{{ cart.image }}" alt="">
                 </div>
                 <div class="WS-basket-card-body">
-                    <h5 class="card-title mt-3">Kit de survie</h5>
+                    <h5 class="card-title mt-3">{{ cart.name }}</h5>
                     <p>description</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.</p>
                 </div>
                 <div class="WS-basket-price">
-                    <h6 class="card-subtitle text-muted mt-3">30 €</h6>
-                    {% for cart in carts %}
-                    <h1>{{ cart.productName }}</h1>
-                    {% endfor %}
-                </div>
-                <div class="WS-basket-delete-update">
-                    <div class="WS-basket-delete-update-content">
-                        <a href="/basket/delete?name={{ productName }}"><img src="/assets/images/trash_logo.png" alt=""></a>
-                        <form action="" method="get">
-                            <input type="number" name="quantity" value="">
-                            <a href="/basket/edit?data['name']={{ productName }}&data['quantity']=<{{ productQuantity }}>">
-                                <button name="quantityChange">Changer la quantité</button>
-                            </a>
-                        </form>
-                    </div>
+                    <h6 class="card-subtitle text-muted mt-3">{{ cart.price }}</h6>
                 </div>
             </div>
+                <div class="WS-basket-delete-update-content">
+                    <a href="/basket/delete?id={{ cart.id }}"><img src="/assets/images/trash_logo.png" alt=""></a>
+                    <form action="" method="get">
+                        <input type="number" name="quantity" value="">
+                        <a href="/basket/edit?data['id']={{ cart.id }}&data['quantity']=<{{ "1" }}>">
+                            <button name="quantityChange">Changer la quantité</button>
+                        </a>
+                    </form>
+                </div>
+            {% endfor %}
         </div>
         <div>
             <!-- autre achat-->

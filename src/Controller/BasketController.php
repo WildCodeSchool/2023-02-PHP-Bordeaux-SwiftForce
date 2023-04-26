@@ -6,7 +6,7 @@ class BasketController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('basket/index2.html.twig', []);
+        return $this->twig->render('basket/index.html.twig', []);
     }
 
     //////////////// fonction de suppression d'un article du panier ////////////////
@@ -17,18 +17,20 @@ class BasketController extends AbstractController
             // a voir si on utilise la même méthode quand on est déjà dans le panier
 
             //Si le panier existe
-            if (createCart() && !isLocked()) {
+            if (createCart()) {
                 //Nous allons passer par un panier temporaire
                 $tmp = array();
                 $tmp['productName'] = array();
                 $tmp['productQuantity'] = array();
                 $tmp['productPrice'] = array();
+                $tmp['productImage'] = array();
                 $tmp['locker'] = $_SESSION['cart']['locker'];
 
                 for ($i = 0; $i < count($_SESSION['cart']['productName']); $i++) {
                     if ($_SESSION['panier']['productName'][$i] !== $name) {
                         array_push($tmp['productName'], $_SESSION['cart']['productName'][$i]);
                         array_push($tmp['productQuantity'], $_SESSION['cart']['productQuantity'][$i]);
+                        array_push($tmp['productPrice'], $_SESSION['cart']['productPrice'][$i]);
                         array_push($tmp['productPrice'], $_SESSION['cart']['productPrice'][$i]);
                     }
                 }
@@ -51,9 +53,10 @@ class BasketController extends AbstractController
             $productQuantity = $_GET['data']['quantity'];
 
             //Si le panier existe
-            if (createCart() && !isLocked()) {
+            if (createCart()) {
                 //Si la quantité est positive on modifie sinon on supprime l'article
                 if ($productQuantity > 0) {
+
                     //Recherche du produit dans le panier
                     $productPosition = array_search($productName, $_SESSION['cart']['productName']);
 

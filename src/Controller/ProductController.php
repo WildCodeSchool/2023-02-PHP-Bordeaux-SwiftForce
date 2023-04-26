@@ -24,16 +24,7 @@ class ProductController extends AbstractController
         }
     }
 
-/*//////////////// fonction de verrou  ////////////////
-    public function isLocked()
-    {
-        if (isset($_SESSION['cart']) && $_SESSION['cart']['locker']) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
+/*
 //début de la fonction addItem :
 Si le panier existe et n'est pas verrouillé
         if (createCart() && !isLocked()) {
@@ -51,26 +42,34 @@ Si le panier existe et n'est pas verrouillé
             $productName = $product['name_product'];
             $productQuantity = 1;
             $productPrice = $product['price'];
+            $productImage = $product['image'];
+            $productID = $id;
+            $key = "product_" . $id;
 
-            if (!isset($_SESSION['cart'])) {
-                $_SESSION['cart'] = array();
-                $_SESSION['cart']['productName'] = array();
-                $_SESSION['cart']['productQuantity'] = array();
-                $_SESSION['cart']['productPrice'] = array();
-                $_SESSION['cart']['locker'] = false;
-            }
-                    //return true;
-        }
-            $productPosition = array_search($productName, $_SESSION['cart']['productName']);
-
-        if ($productPosition !== false) {
-                $_SESSION['cart']['productQuantity'][$productPosition] += $productQuantity;
-        } else {
+            if (isset($_SESSION['cart'])) {
+                if (array_key_exists($key, $_SESSION['cart'])) {
+                    $_SESSION['cart']['product_' . $id]['quantity'] += $productQuantity;
+                } else {
+                    //Sinon on ajoute le produit
+                    $_SESSION['cart']['product_' . $id] = [
+                        'name' => $productName,
+                        'quantity' => $productQuantity,
+                        'price' => $productPrice,
+                        'image' => $productImage,
+                        'id' => $productID
+                    ];
+                }
+            } else {
                 //Sinon on ajoute le produit
-                array_push($_SESSION['cart']['productName'], $productName);
-                array_push($_SESSION['cart']['productQuantity'], $productQuantity);
-                array_push($_SESSION['cart']['productPrice'], $productPrice);
-        }
+                $_SESSION['cart']['product_' . $id] = [
+                    'name' => $productName,
+                    'quantity' => $productQuantity,
+                    'price' => $productPrice,
+                    'image' => $productImage,
+                    'id' => $productID
+                ];
+            }
             header('Location:/product');
+        }
     }
 }
