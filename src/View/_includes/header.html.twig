@@ -16,39 +16,13 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul>
-                        <p>
-                        <li><a href="/product" class="text-decoration-none WS-header "> Produit</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-user-astronaut WS-header "></i><a href=""
-                                                                                    class="text-decoration-none WS-header">
-                                S'habiller</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href=""
-                                                                                    class="text-decoration-none WS-header">
-                                S'alimenter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href=""
-                                                                                      class="text-decoration-none WS-header">
-                                S'abriter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href=""
-                                                                                         class="text-decoration-none WS-header">
-                                Se défendre</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href=""
-                                                                                     class="text-decoration-none WS-header">
-                                S'orienter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href=""
-                                                                                       class="text-decoration-none WS-header">
-                                Kit de Suvie</a></li>
-                        </p>
+                        <p><li><a href="/product" class="text-decoration-none WS-header ">  Produit</a></li></p>
+                        <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">  S'habiller</a></li></p>
+                        <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
+                        <p><li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'abriter</a></li></p>
+                        <p><li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  Se défendre</a></li></p>
+                        <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  S'orienter</a></li></p>
+                        <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="" class="text-decoration-none WS-header">  Kit de Suvie</a></li></p>
                     </ul>
                 </div>
             </div>
@@ -85,13 +59,13 @@
                         <a href="/users" class="text-decoration-none text-reset">liste des utilisateurs</a>
                         <br>
                         <a href="/users/add" class="text-decoration-none text-reset">ajout d'utilisateur</a>
-
                         <br>
                         <a href="/profile" class="text-decoration-none text-reset">Profil</a>
                         <br>
                         <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
                     </div>
                 </div>
+
                 {% else %}
                     <div>
                         <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
@@ -110,12 +84,10 @@
                     </div>
                 </div>
                 {% endif %}
-                <!--<a href=""><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
-                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2"
-                   type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
-                   aria-controls="offcanvasRight-user"></i>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user"
-                     aria-labelledby="offcanvasRightLabel">
+                <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
+                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
+
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas CART</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
@@ -123,7 +95,7 @@
                     </div>
                     <div class="offcanvas-body">
                         <!--include twig function -->
-                      {#  {% include "_includes/_cartBasket.html.twig" %}#}
+
 
                     </div>
                 </div>

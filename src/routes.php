@@ -14,9 +14,12 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'product' => ['ProductController', 'index',],
+    'product/add' => ['ProductController', 'add',['id']],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
-    'basket' => ['BasketController', 'index'],
     'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
+    'basket' => ['BasketController', 'index'],
+    'basket/edit' => ['BasketController', 'edit', ['id','quantity']],
+    'basket/delete' => ['BasketController', 'delete', ['id']],
     'users' => ['UserController', 'index'],
     'users/show' => ['UserController', 'show', ['id']],
     'users/add' => ['UserController', 'add'],
@@ -24,5 +27,6 @@ return [
     'users/delete' => ['UserController', 'delete',['id']],
     'login' => ['LoginController', 'login'],
     'profile' => ['ProfileController', 'view'],
-    'logout' => ['loginController', 'logout']
+    'logout' => ['loginController', 'logout'],
+
 ];

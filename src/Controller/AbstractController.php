@@ -15,7 +15,6 @@ abstract class AbstractController
     protected Environment $twig;
     protected array | false $user;
 
-
     public function __construct()
     {
         $loader = new FilesystemLoader(APP_VIEW_PATH);
@@ -27,9 +26,15 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+
         $userManager = new UserManager();
         $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
 
         $this->twig->addGlobal('user', $this->user);
+
+        if (isset($_SESSION['cart'])) {
+            $this->twig->addGlobal('carts', $_SESSION['cart']);
+        }
+
     }
 }
