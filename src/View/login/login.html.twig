@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Add - Users{% endblock %}
+{% block content %}
+    <div class="col-6 text-center w-100">
+        <h1>login</h1>
+
+        <form method="post" >
+            <div>
+                <label for="email">Email :</label><br>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="WS_password">Password :</label><br>
+                <input type="password" name="WS_password" id="WS_password">
+            </div>
+            <div>
+                <button class="m-3">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
