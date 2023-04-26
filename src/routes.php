@@ -16,5 +16,13 @@ return [
     'product' => ['ProductController', 'index',],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
     'basket' => ['BasketController', 'index'],
-    'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']]
+    'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
+    'users' => ['UserController', 'index'],
+    'users/show' => ['UserController', 'show', ['id']],
+    'users/add' => ['UserController', 'add'],
+    'users/edit' => ['UserController', 'edit',['id']],
+    'users/delete' => ['UserController', 'delete',['id']],
+    'login' => ['LoginController', 'login'],
+    'profile' => ['ProfileController', 'view'],
+    'logout' => ['loginController', 'logout']
 ];
