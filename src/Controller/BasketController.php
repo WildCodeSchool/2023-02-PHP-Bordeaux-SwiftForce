@@ -10,65 +10,32 @@ class BasketController extends AbstractController
     }
 
     //////////////// fonction de suppression d'un article du panier ////////////////
-    public function deleteItem($name)
+    public function delete($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $name = $_GET['productName'];
-            // a voir si on utilise la même méthode quand on est déjà dans le panier
-
-            //Si le panier existe
-            if (createCart()) {
-                //Nous allons passer par un panier temporaire
-                $tmp = array();
-                $tmp['productName'] = array();
-                $tmp['productQuantity'] = array();
-                $tmp['productPrice'] = array();
-                $tmp['productImage'] = array();
-                $tmp['locker'] = $_SESSION['cart']['locker'];
-
-                for ($i = 0; $i < count($_SESSION['cart']['productName']); $i++) {
-                    if ($_SESSION['panier']['productName'][$i] !== $name) {
-                        array_push($tmp['productName'], $_SESSION['cart']['productName'][$i]);
-                        array_push($tmp['productQuantity'], $_SESSION['cart']['productQuantity'][$i]);
-                        array_push($tmp['productPrice'], $_SESSION['cart']['productPrice'][$i]);
-                        array_push($tmp['productPrice'], $_SESSION['cart']['productPrice'][$i]);
-                    }
-                }
-                //On remplace le panier en session par notre panier temporaire à jour
-                $_SESSION['cart'] = $tmp;
-                //On efface notre panier temporaire
-                unset($tmp);
-            } else {
-                echo "Un problème est survenu veuillez contacter l'administrateur du site.";
-            }
+            $id = $_GET['id'];
+            $key = 'product_' . $id;
+            unset($_SESSION['cart'][$key]);
         }
         header('Location:/basket');
     }
 
     //////////////// fonction de modification d'un panier ////////////////
-    public function modifyItemQuantity($productName, $productQuantity)
+    public function edit($id, $quantity)
     {
         if (($_SERVER['REQUEST_METHOD'] === 'GET') && (isset($_GET['quantityChange']))) {
-            $productName = $_GET['data']['name'];
-            $productQuantity = $_GET['data']['quantity'];
-
-            //Si le panier existe
-            if (createCart()) {
-                //Si la quantité est positive on modifie sinon on supprime l'article
-                if ($productQuantity > 0) {
-
-                    //Recherche du produit dans le panier
-                    $productPosition = array_search($productName, $_SESSION['cart']['productName']);
-
-                    if ($productPosition !== false) {
-                        $_SESSION['cart']['productQuantity'][$productPosition] = $productQuantity;
-                    } else {
-                        deleteItem($productName);
-                    }
-                } else {
-                        echo "Un problème est survenu veuillez contacter l'administrateur du site.";
-                }
+            echo 'test';
+            $id = $_GET['id'];
+            $quantity = $_GET['quantity'];
+            $key = 'product_' . $id;
+            //Si la quantité est positive on modifie sinon on supprime l'article
+            if ($quantity > 0) {
+                $_SESSION['cart'][$key]['quantity'] = $quantity;
+            } else {
+                delete($id);
             }
+        } else {
+            echo "Un problème est survenu veuillez contacter l'administrateur du site.";
         }
         header('Location:/basket');
     }

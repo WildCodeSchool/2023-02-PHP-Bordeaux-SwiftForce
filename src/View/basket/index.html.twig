@@ -16,14 +16,15 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.</p>
                 </div>
                 <div class="WS-basket-price">
-                    <h6 class="card-subtitle text-muted mt-3">{{ cart.price }}</h6>
+                    <h6 class="card-subtitle text-muted mt-3">{{ cart.price }} {{ cart.quantity }}</h6>
                 </div>
             </div>
                 <div class="WS-basket-delete-update-content">
                     <a href="/basket/delete?id={{ cart.id }}"><img src="/assets/images/trash_logo.png" alt=""></a>
                     <form action="" method="get">
+                        <input name="id" type="hidden" value="{{ cart.id }}">
                         <input type="number" name="quantity" value="">
-                        <a href="/basket/edit?data['id']={{ cart.id }}&data['quantity']=<{{ "1" }}>">
+                        <a href="/basket/edit">
                             <button name="quantityChange">Changer la quantité</button>
                         </a>
                     </form>

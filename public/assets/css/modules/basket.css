@@ -89,16 +89,12 @@
     font-size: 0.9rem;
 }
 
-.WS-basket-delete-update {
-    display: flex;
-    width: 20vw;
-}
-
 .WS-basket-delete-update-content {
     display: flex;
+    width: 60vw;
 }
 
-.WS-basket-delete-update div img {
+.WS-basket-delete-update-content img {
     height: 3vh;
 }
 
