@@ -25,7 +25,7 @@
     </div>
     <div class="WS-product-container">
         {% for product in products %}
-            <div class="WS-product-card m-3">
+            <div class="WS-product-card m-3"><a href="product/show?id={{ product.id }}">View</a>
                 <img src="/assets/images/{{ product.image }}"  alt="">
                 <div class="WS-product-card-body">
                     <h5 class="card-title my-2">{{ product.name_product }}</h5>
