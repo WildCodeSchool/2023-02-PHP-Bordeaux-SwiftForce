@@ -16,7 +16,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.</p>
                 </div>
                 <div class="WS-basket-price">
-                    <h6 class="card-subtitle text-muted mt-3">{{ cart.price }}</h6>
+                    <h6 class="card-subtitle text-muted mt-3">{{ cart.price }} {{ cart.total }}</h6>
                 </div>
             </div>
                 <div class="WS-basket-delete-update-content">
@@ -24,7 +24,7 @@
                     <form action="basket/edit" method="get">
                         <input name="id" type="hidden" value="{{ cart.id }}">
                         <input type="number" name="quantity" value="{{ cart.quantity }}">
-                            <button name="quantityChange">Changer la quantité</button>
+                        <button name="quantityChange">Changer la quantité</button>
                     </form>
                 </div>
             {% endfor %}

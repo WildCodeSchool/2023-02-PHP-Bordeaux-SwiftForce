@@ -37,6 +37,7 @@ class BasketController extends AbstractController
             //Si la quantité est positive on modifie sinon on supprime l'article
             if ($quantity > 0) {
                 $_SESSION['cart'][$key]['quantity'] = $quantity;
+                $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'] ;
             } else {
                 unset($_SESSION['cart'][$key]);
             }

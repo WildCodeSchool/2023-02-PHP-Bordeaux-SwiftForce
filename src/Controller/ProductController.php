@@ -56,7 +56,8 @@ Si le panier existe et n'est pas verrouillé
                         'quantity' => $productQuantity,
                         'price' => $productPrice,
                         'image' => $productImage,
-                        'id' => $productID
+                        'id' => $productID,
+                        'total' => $productQuantity * $productPrice
                     ];
                 }
             } else {
@@ -66,7 +67,8 @@ Si le panier existe et n'est pas verrouillé
                     'quantity' => $productQuantity,
                     'price' => $productPrice,
                     'image' => $productImage,
-                    'id' => $productID
+                    'id' => $productID,
+                    'total' => $productQuantity * $productPrice
                 ];
             }
             header('Location:/product');
