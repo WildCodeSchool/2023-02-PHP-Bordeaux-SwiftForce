@@ -72,7 +72,6 @@
 }
 
 .WS-basket-payment i {
-
     padding: 10px;
 }
 
@@ -89,6 +88,16 @@
 .WS-font-size {
     font-size: 0.9rem;
 }
+
+.WS-basket-delete-update-content {
+    display: flex;
+    width: 60vw;
+}
+
+.WS-basket-delete-update-content img {
+    height: 3vh;
+}
+
 
 @media screen and (max-width: 480px) {
     .WS-basket-container {
