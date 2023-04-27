@@ -77,7 +77,7 @@ class ProductController extends AbstractController
             $price = $_GET['price'];
             header('Location:/product/sort?price=' . $price);
         }
-        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
 
     public function sortSubCategory(string $subCat): string
@@ -103,9 +103,8 @@ class ProductController extends AbstractController
             $subCat = $_GET['name_sub_category'];
             header('Location:/product/sort?=' . $subCat);
         }
-        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
-
 
     //////////////// fonction de création du panier et d'ajout ////////////////
 
