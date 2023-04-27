@@ -19,6 +19,7 @@ return [
     'product/product/add' => ['ProductController', 'add',['id']],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
     'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
+    'product/sortCat' => ['ProductController', 'sortCategory',['cat']],
     'basket' => ['BasketController', 'index'],
     'basket/edit' => ['BasketController', 'edit', ['id','quantity']],
     'basket/delete' => ['BasketController', 'delete', ['id']],
