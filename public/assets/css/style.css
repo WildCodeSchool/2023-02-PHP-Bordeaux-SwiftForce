@@ -6,6 +6,9 @@
 @import "modules/logoBanner.css";
 @import "modules/footer.css";
 @import "modules/basket.css";
+@import "modules/User-index.css";
+@import "modules/miniCart.css";
+
 
 *{
     box-sizing: border-box;
