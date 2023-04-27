@@ -1,7 +1,6 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
     <img class="w-100" src="/assets/images/{{ subcat }}.jpg" alt="img">
     <div class="WS-product-filter">
         <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button"
@@ -11,23 +10,25 @@
         </a>
         <ul class="dropdown-menu rounded-0">
             <form action="/product/sortSub" method="get">
-            <li><a class="dropdown-item" href="/product/sortSub?subCat=get_dressed" >S'habiller</a></li>
-            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_eat">S'alimenter</a></li>
-            <li>
-                <a class="dropdown-item" href="/product/sortSub?subCat=take_shelter">S'abriter</a></li>
-            <li><a class="dropdown-item" href="/product/sortSub?subCat=to_defend">Se défendre</a></li>
-            <li><a class="dropdown-item" href="/product/sortSub?subCat=orientation">S'orienter</a></li>
-            <li><a class="dropdown-item" href="/product/sortSub?subCat=survival_kit">Kit de survie</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=get_dressed" >S'habiller</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=to_eat">S'alimenter</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=take_shelter">S'abriter</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=to_defend">Se défendre</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=orientation">S'orienter</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/product/sortSub?subCat=survival_kit">Kit de survie</a></li>
             </form>
         </ul>
-        <form action="/product/sort" method="get">
-            <input type="hidden" name="price" value="name_product">
-            <button class="btn btn-success m-3">Trier par nom</button>
+        <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Trier par prix
+        </a>
+        <ul class="dropdown-menu rounded-0">
+        <form action="/product/sortPrice" method="get">
+            <li><a class="dropdown-item text-decoration-none" href="/product/sort?price=ASC" >Du - au + cher</a></li>
+            <li><a class="dropdown-item text-decoration-none" href="/product/sort?price=DESC" >Du + au - cher</a></li>
         </form>
-        <form action="/product/sort" method="get">
-            <input type="hidden" name="price" value="price">
-            <button class="btn btn-success m-3">Trier par prix</button>
-        </form>
+        </ul>
     </div>
     <div class="WS-product-container">
         {% for product in products %}

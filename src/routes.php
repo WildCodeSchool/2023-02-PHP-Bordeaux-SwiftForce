@@ -22,3 +22,6 @@ return [
     'basket/edit' => ['BasketController', 'edit', ['id','quantity']],
     'basket/delete' => ['BasketController', 'delete', ['id']],
 ];
+
+/*            if (!key_exists('filter', $_SESSION)) {
+                $_SESSION['filter'] = [];*/
