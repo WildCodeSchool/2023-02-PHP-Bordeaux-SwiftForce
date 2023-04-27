@@ -15,6 +15,7 @@
                 </div>
                 <div class="offcanvas-body WS-off-canvas">
                     <ul>
+
                         <p><li><a href="/product" class="text-decoration-none WS-header ">  Produit</a></li></p>
                         <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">  S'habiller</a></li></p>
                         <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_eat" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
@@ -22,17 +23,39 @@
                         <p><li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header">  Se défendre</a></li></p>
                         <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="/product/sortSub?subCat=orientation" class="text-decoration-none WS-header">  S'orienter</a></li></p>
                         <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header">  Kit de Suvie</a></li></p>
+
                     </ul>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="150,">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-offset="150,">
                         Catégories
                     </button>
                     <ul class="dropdown-menu">
-                        <p><li><i class="fa-solid fa-water px-2"></i><a href="" class="text-decoration-none WS-header"> Eau</a></li></p>
-                        <p><li><i class="fa-solid fa-wind px-2"></i><a href="" class="text-decoration-none WS-header"> Air</a></li></p>
-                        <p><li><i class="fa-solid fa-fire px-2"></i></i><a href="" class="text-decoration-none WS-header"> Feu</a></li></p>
-                        <p><li><i class="fa-solid fa-earth-americas px-2"></i><a href="" class="text-decoration-none WS-header"> Terre</a></li></p>
-                        <p><li><i class="fa-solid fa-flask-vial px-2"></i><a href="" class="text-decoration-none WS-header"> Chimique</a></li></p>
-                        <p><li><i class="fa-solid fa-meteor px-2"></i><a href="" class="text-decoration-none WS-header"> Météorite</a></li></p>
+                        <p>
+                        <li><i class="fa-solid fa-water px-2"></i><a href="" class="text-decoration-none WS-header">
+                                Eau</a></li>
+                        </p>
+                        <p>
+                        <li><i class="fa-solid fa-wind px-2"></i><a href="" class="text-decoration-none WS-header">
+                                Air</a></li>
+                        </p>
+                        <p>
+                        <li><i class="fa-solid fa-fire px-2"></i></i><a href="" class="text-decoration-none WS-header">
+                                Feu</a></li>
+                        </p>
+                        <p>
+                        <li><i class="fa-solid fa-earth-americas px-2"></i><a href=""
+                                                                              class="text-decoration-none WS-header">
+                                Terre</a></li>
+                        </p>
+                        <p>
+                        <li><i class="fa-solid fa-flask-vial px-2"></i><a href=""
+                                                                          class="text-decoration-none WS-header">
+                                Chimique</a></li>
+                        </p>
+                        <p>
+                        <li><i class="fa-solid fa-meteor px-2"></i><a href="" class="text-decoration-none WS-header">
+                                Météorite</a></li>
+                        </p>
                     </ul>
                 </div>
             </div>
@@ -53,70 +76,37 @@
             <div class="d-flex justify-content-end">
                 <!--<a href="" class="test"><i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header"></i></a>-->
                 {% if user.role == 'admin' %}
-                <div>
-                    <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
-                       data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-                    <p class="text-center">{{ user.user_name }}</p>
-                </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                     aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div>
+                        <a href="/profile">
+                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                               type="button">
+                            </i>
+                        </a>
+                        <p class="text-center">{{ user.user_name }}</p>
                     </div>
-                    <div class="offcanvas-body">
-                        <!--include twig form masterUser/user-->
-                        <a href="/users" class="text-decoration-none text-reset">liste des utilisateurs</a>
-                        <br>
-                        <a href="/users/add" class="text-decoration-none text-reset">ajout d'utilisateur</a>
-                        <br>
-                        <a href="/profile" class="text-decoration-none text-reset">Profil</a>
-                        <br>
-                        <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
+                {% elseif user.role == 'user' %}
+                    <div>
+                        <a href="/profile">
+                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2">
+                            </i>
+                        </a>
+                        <p class="text-center">{{ user.user_name }}</p>
                     </div>
-                </div>
-
-                    {%  elseif user.role == 'user' %}
-                        <div>
-                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
-                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-                            <p class="text-center">{{ user.user_name }}</p>
-                        </div>
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                             aria-labelledby="offcanvasRightLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <!--include twig form masterUser/user-->
-                                <a href="/profile" class="text-decoration-none text-reset">Profil</a>
-                                <br>
-                                <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
-                            </div>
-                        </div>
-
                 {% else %}
                     <div>
-                        <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
-                           data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-                        <p class="text-center">Pas connecter</p>
+                        <a href="/login">
+                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                               type="button">
+                            </i>
+                        </a>
+                        <p class="text-center"></p>
                     </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                     aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <a href="/login" class="text-decoration-none text-reset">login</a>
-                        {{ dump(user) }}
-                    </div>
-                </div>
                 {% endif %}
                 <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
+
                 <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
                 <div class="offcanvas offcanvas-end WS-off-canvas2" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
+
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">Votre Panier</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

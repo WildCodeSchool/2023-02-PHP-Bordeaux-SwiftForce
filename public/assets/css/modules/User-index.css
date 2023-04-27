@@ -1,0 +1,29 @@
+.WS-user-container{
+    display: flex;
+    justify-content: center;
+    font-family: var(--fontFamilyText);
+}
+table,
+td {
+    border: 1px solid #333;
+    text-align: left;
+}
+td {
+    padding: 0 1rem ;
+}
+
+.WS-user-cont{
+    width: 500px;
+
+}
+
+.WS-user-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fontFamilyText);
+}
+.WS-login-container{
+    display: flex;
+    justify-content: space-around;
+}
