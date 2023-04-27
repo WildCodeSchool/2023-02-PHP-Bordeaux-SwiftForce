@@ -1,13 +1,17 @@
 <div class="bg-light">
     <div class="row mx-0">
 
-            <!--incon and image zone-->
+        <!--incon and image zone-->
         <div class="col-4 col-md-4 py-2 position-relative">
-            <i class="fa-solid fa-bars fa-lg fa-2xl" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+            <i class="fa-solid fa-bars fa-lg fa-2xl" class="btn btn-primary btn2" type="button"
+               data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+               aria-controls="offcanvasWithBothOptions"></i>
 
-            <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1"
+                 id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png" height = '60' px>Catégories</h5>
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png"
+                                                                                        height='60' px>Catégories</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body WS-off-canvas">
@@ -35,14 +39,14 @@
                 </div>
             </div>
             <!--<a class="ms-2" href="#"><i class="fa-solid fa-bars fa-lg"></i></a>-->
-            <a href="/" class="ms-2"><img src="/assets/images/test2.png" height = '60' px></a>
+            <a href="/" class="ms-2"><img src="/assets/images/test2.png" height='60' px></a>
         </div>
 
         <!--Form zone-->
         <div class="col-4 col-md-6 py-3 h-100 my-auto">
             <form class="d-flex" role="search">
-            <input class="form-control me-2 rounded-0" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success d-none d-sm-block text-white" type="submit">Search</button>
+                <input class="form-control me-2 rounded-0" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success d-none d-sm-block text-white" type="submit">Search</button>
             </form>
         </div>
 
@@ -50,28 +54,82 @@
         <div class="col-4 col-md-2 py-3">
             <div class="d-flex justify-content-end">
                 <!--<a href="" class="test"><i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header"></i></a>-->
-                <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                {% if user.role == 'admin' %}
+                <div>
+                    <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
+                       data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                    <p class="text-center">{{ user.user_name }}</p>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <!--include twig form masterUser/user-->
-
-
+                        <a href="/users" class="text-decoration-none text-reset">liste des utilisateurs</a>
+                        <br>
+                        <a href="/users/add" class="text-decoration-none text-reset">ajout d'utilisateur</a>
+                        <br>
+                        <a href="/profile" class="text-decoration-none text-reset">Profil</a>
+                        <br>
+                        <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
                     </div>
                 </div>
+
+                    {%  elseif user.role == 'user' %}
+                        <div>
+                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
+                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                            <p class="text-center">{{ user.user_name }}</p>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                             aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <!--include twig form masterUser/user-->
+                                <a href="/profile" class="text-decoration-none text-reset">Profil</a>
+                                <br>
+                                <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
+                            </div>
+                        </div>
+
+                {% else %}
+                    <div>
+                        <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
+                           data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                        <p class="text-center">Pas connecter</p>
+                    </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                     aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <a href="/login" class="text-decoration-none text-reset">login</a>
+                        {{ dump(user) }}
+                    </div>
+                </div>
+                {% endif %}
                 <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
                 <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
+
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas CART</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
 
                         <!--include twig function -->
+
+
                     </div>
                 </div>
             </div>

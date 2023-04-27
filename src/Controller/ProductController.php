@@ -106,6 +106,9 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
 
+
+    //////////////// fonction de création du panier et d'ajout ////////////////
+
     public function add($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
