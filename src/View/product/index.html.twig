@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <img class="w-100" src="/assets/images/hache.jpeg" alt="img">
+    <img class="w-100" src="/assets/images/{{ subcat }}.jpg" alt="img">
     <div class="WS-product-filter">
         <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button"
            data-bs-toggle="dropdown"
@@ -31,8 +31,8 @@
     </div>
     <div class="WS-product-container">
         {% for product in products %}
-            <div class="WS-product-card">
-                <img src="/assets/images/{{ product.image }}" alt="">
+            <div class="WS-product-card m-3"><a href="product/show?id={{ product.id }}">View</a>
+                <img src="/assets/images/{{ product.image }}"  alt="">
                 <div class="WS-product-card-body">
                     <h5 class="card-title my-0 my-md-2">{{ product.name_product }}</h5>
                     <h6 class="card-subtitle text-muted my-0 my-md-2">{{ product.price }}</h6>
