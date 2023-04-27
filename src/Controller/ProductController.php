@@ -35,7 +35,7 @@ class ProductController extends AbstractController
             header('Location:/product/sort?=' . $subCat);
         }
 
-        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'subcat' => $subCat]);
     }
 
 /*
