@@ -11,6 +11,7 @@ flex-direction: column;
 
 .WS-cart{
     text-align: end;
+    width: 190px;
 }
 
 .WS-cart-montant{
@@ -18,11 +19,15 @@ flex-direction: column;
 }
 
 .test{
-    background: red;
     display: flex;
     flex-direction: row;
     font-size: 10px;
 }
 .test2{
     width: 120px;
+}
+
+.testtt{
+    
+    background: red;
 }
