@@ -103,7 +103,7 @@
     .WS-basket-container {
         display: grid;
         grid:
-        "caddie" 600px
+        "caddie" 1fr
         "payment" 500px
         "other" 400px
         / 100vw;
