@@ -118,17 +118,14 @@
                 {% endif %}
                 <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
                 <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
-
+                <div class="offcanvas offcanvas-end WS-off-canvas" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas CART</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Votre Panier</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-
+                    <div class="offcanvas-body WS-mini-cart">
                         <!--include twig function -->
-
+                        {% include "_includes/_miniCart.html.twig" %}
 
                     </div>
                 </div>
