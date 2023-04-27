@@ -68,7 +68,7 @@
         <div class="col-4 col-md-2 py-3">
             <div class="d-flex justify-content-end">
                 <!--<a href="" class="test"><i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header"></i></a>-->
-                {% if user %}
+                {% if user.role == 'admin' %}
                 <div>
                     <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
@@ -92,6 +92,27 @@
                         <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
                     </div>
                 </div>
+                    {%  elseif user.role == 'user' %}
+                        <div>
+                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
+                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                            <p class="text-center">{{ user.user_name }}</p>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                             aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas USER</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <!--include twig form masterUser/user-->
+                                <a href="/profile" class="text-decoration-none text-reset">Profil</a>
+                                <br>
+                                <a href="/logout" class="text-decoration-none text-reset">Se deconnecter</a>
+                            </div>
+                        </div>
+
+
                 {% else %}
                     <div>
                         <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button"
