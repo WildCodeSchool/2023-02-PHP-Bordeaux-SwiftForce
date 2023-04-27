@@ -46,6 +46,14 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }*/
 
+    public function show(int $id): string
+    {
+        $productManager = new ProductManager();
+        $product = $productManager->selectOneById($id);
+
+        return $this->twig->render('product/show.html.twig', ['product' => $product]);
+    }
+
     public function sortPrice(string $price): string
     {
         if (isset($_SESSION['filter']['name_sub_category'])) {
@@ -71,6 +79,7 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
+
     public function sortSubCategory(string $subCat): string
     {
         if (isset($_SESSION['filter']['price'])) {
@@ -97,7 +106,6 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
 
-    //////////////// fonction de création du panier et d'ajout ////////////////
     public function add($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
