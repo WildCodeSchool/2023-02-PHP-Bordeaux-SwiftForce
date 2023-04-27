@@ -6,7 +6,7 @@ class BasketController extends AbstractController
 {
     public function index(): string
     {
-    $total = 0;
+        $total = 0;
         foreach ($_SESSION['cart'] as $cart) {
             $total += $cart['quantity'] * $cart['price'];
         }

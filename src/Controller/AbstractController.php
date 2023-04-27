@@ -35,6 +35,5 @@ abstract class AbstractController
         if (isset($_SESSION['cart'])) {
             $this->twig->addGlobal('carts', $_SESSION['cart']);
         }
-
     }
 }
