@@ -1,7 +1,7 @@
 {% extends 'Layout.html.twig' %}
 
 {% block content %}
-    <div class="row">
+    <div class="row ">
         <div class="col-md-6 offset-md-3">
             <h1>Modifier un compte</h1>
             <p>Veuillez remplir le formulaire pour modification</p>
@@ -25,6 +25,12 @@
                     <label for="birthday" class="form-label">birthday</label>
                     <input class="form-control" type="date" id="birthday" name="birthday" value="{{ user.birthday }}">
                 </div>
+                    {% if user.role == 'admin' %}
+                <div class="mb-3">
+                    <label for="role" class="form-label">role</label>
+                    <input class="form-control" type="text" id="role" name="role" value="{{ user.role }}">
+                </div>
+                {% endif %}
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success ">
                         Modifier le compte

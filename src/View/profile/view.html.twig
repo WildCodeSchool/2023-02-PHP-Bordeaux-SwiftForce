@@ -1,8 +1,32 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    <div class="WS-login-container">
+        <div class="WS-user-flex">
+            <h1>Bonjour {{ user.user_name }}</h1>
 
-    <h1>Bonjour {{ user.user_name }}</h1>
 
+            <p>votre date de naissance : {{ user.birthday }}</p>
 
+            <p> votre E-mail : {{ user.email }}</p>
+        </div>
+        <div>
+            <div class="my-3">
+                <a href="users/edit?id={{ user.id }}"
+                   class="btn btn-sucess text-decoration-none text-white">Mofifier</a>
+            </div>
+            <div class="my-3">
+                <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
+            </div>
+            {% if user.role == 'admin' %}
+                <div class="my-3">
+                    <a href="/users" class="btn btn-sucess text-decoration-none text-white">liste des utilisateurs</a>
+                </div>
+                <div class="my-3">
+                    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">ajout d'utilisateur</a>
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

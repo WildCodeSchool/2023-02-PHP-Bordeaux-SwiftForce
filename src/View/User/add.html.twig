@@ -1,8 +1,8 @@
 {% extends 'Layout.html.twig' %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+    <div class="row WS-user-container">
+        <div class="WS-user-cont">
             <h1>Enregistrer un compte</h1>
             <p>Veuillez remplir le formulaire pour vous inscrire</p>
             <form method="post">
@@ -22,6 +22,13 @@
                     <label for="birthday" class="form-label">birthday</label>
                     <input class="form-control" type="date" id="birthday" name="birthday">
                 </div>
+
+                {% if user.role == 'admin' %}
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <input class="form-control" type="text" id="role" name="role">
+                    </div>
+                {% endif %}
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">
                         Create compte
