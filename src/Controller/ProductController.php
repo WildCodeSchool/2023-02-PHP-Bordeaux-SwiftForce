@@ -14,38 +14,101 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
-    public function sortPrice(string $price): string
+    /*public function sortGlobal(string $catName, string $subCatName, string $price)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $catName = $_GET['name_category'];
+            $subCatName = $_GET['name_sub_category'];
+            $price = $_GET['price'];
+
+            if (!array_key_exists('name_sub_category', $_SESSION['filter'])) {
+                $_SESSION['filter']['name_sub_category'] = 'default';
+            }
+            if (!array_key_exists('name_category', $_SESSION['filter'])) {
+                $_SESSION['filter']['name_category'] = 'default';
+            }
+            if (!array_key_exists('price', $_SESSION['filter'])) {
+                $_SESSION['filter']['price'] = 'default';
+            }
+            if (isset($_GET['name_sub_category'])) {
+                $_SESSION['filter']['name_sub_category'] = $_GET['name_sub_category'];
+            } elseif (isset($_GET['name_category'])) {
+                $_SESSION['filter']['name_category'] = $_GET['name_category'];
+            } elseif (isset($_GET['price'])) {
+                $_SESSION['filter']['price'] = $_GET['price'];
+            }
+        }
+        $subCatName = $_SESSION['filter']['name_sub_category'];
+        $catName = $_SESSION['filter']['name_category'];
+        $price = $_SESSION['filter']['price'];
+        $productManager = new ProductManager();
+        $products = $productManager->sortGlobal($subCatName, $catName, $price);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+    }*/
+
+    public function show(int $id): string
     {
         $productManager = new ProductManager();
-        $products = $productManager->sortByPrice($price);
+        $product = $productManager->selectOneById($id);
 
+        return $this->twig->render('product/show.html.twig', ['product' => $product]);
+    }
+
+    public function sortPrice(string $price): string
+    {
+        if (isset($_SESSION['filter']['name_sub_category'])) {
+            $subCat = $_SESSION['filter']['name_sub_category'];
+        } else {
+            $subCat = "default";
+        }
+        $productManager = new ProductManager();
+        $products = $productManager->sortGlobal($subCat, $price);
+
+        if (!key_exists('filter', $_SESSION)) {
+            $_SESSION['filter']['price'] = "default";
+        } else {
+            $_SESSION['filter']['price'] = $price;
+        }
+        if (!key_exists('filter', $_SESSION)) {
+            $_SESSION['filter']['name_sub_category'] = "default";
+        }
+        $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $price = $_GET['price'];
             header('Location:/product/sort?price=' . $price);
         }
-        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
+
     public function sortSubCategory(string $subCat): string
     {
+        if (isset($_SESSION['filter']['price'])) {
+            $price = $_SESSION['filter']['price'];
+        } else {
+            $price = "default";
+        }
         $productManager = new ProductManager();
-        $products = $productManager->sortBySubCategory($subCat);
+        $products = $productManager->sortGlobal($subCat, $price);
 
+        if (!key_exists('filter', $_SESSION)) {
+            $_SESSION['filter']['name_sub_category'] = "default";
+        } else {
+            $_SESSION['filter']['name_sub_category'] = $subCat;
+        }
+        if (!key_exists('price', $_SESSION['filter'])) {
+            $_SESSION['filter']['price'] = "default";
+        }
+        $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $subCat = $_GET['name_sub_category'];
             header('Location:/product/sort?=' . $subCat);
         }
-
-        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
-
-/*
-//début de la fonction addItem :
-Si le panier existe et n'est pas verrouillé
-        if (createCart() && !isLocked()) {
-            //Si le produit existe déjà on ajoute seulement la quantité*/
 
 
     //////////////// fonction de création du panier et d'ajout ////////////////
+
     public function add($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
