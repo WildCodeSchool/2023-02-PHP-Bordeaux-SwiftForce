@@ -11,6 +11,9 @@ body {
     position: relative;
     margin: 0;
 }
+.WS-footer-row a{
+    text-decoration: none;
+}
 .WS-footer-row .method-paiement{
     justify-content: flex-end;
     padding-right: 10%;

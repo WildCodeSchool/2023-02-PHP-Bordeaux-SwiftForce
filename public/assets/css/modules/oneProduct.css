@@ -1,0 +1,41 @@
+.links-product-page {
+    font-size : 60px;
+    margin-left: 20px;
+}
+.one-product {
+    display : flex;
+    flex-direction: row;
+    padding-top: 50px;
+}
+.one-product h2{
+    font-size: 60px;
+}
+.one-product img{
+    height : 600px;
+    width : 500px;
+    margin-left: 20px;
+}
+.one-product button{
+    width : 300px;
+    height : 50px;
+    margin-left:50px;
+}
+.product-characteristic{
+    margin-left: 100px;
+}
+.price {
+    font-weight: bold;
+    font-size: 50px;
+}
+.added-to-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.customers-comments h2{
+    margin-left: 20px;
+    font-size: 60px;
+}
+.comments{
+    width:100%;
+}

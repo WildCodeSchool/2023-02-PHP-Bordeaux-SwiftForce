@@ -14,6 +14,13 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
+    public function show(int $id): string
+    {
+        $productManager = new ProductManager();
+        $product = $productManager->selectOneById($id);
+
+        return $this->twig->render('product/show.html.twig', ['product' => $product]);
+    }
     public function sortPrice(string $price): string
     {
         $productManager = new ProductManager();
@@ -25,6 +32,7 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
+
     public function sortSubCategory(string $subCat): string
     {
         $productManager = new ProductManager();
@@ -38,14 +46,14 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'subcat' => $subCat]);
     }
 
-/*
-//début de la fonction addItem :
-Si le panier existe et n'est pas verrouillé
-        if (createCart() && !isLocked()) {
-            //Si le produit existe déjà on ajoute seulement la quantité*/
+        /*
+        //début de la fonction addItem :
+        Si le panier existe et n'est pas verrouillé
+                if (createCart() && !isLocked()) {
+                    //Si le produit existe déjà on ajoute seulement la quantité*/
 
 
-    //////////////// fonction de création du panier et d'ajout ////////////////
+        //////////////// fonction de création du panier et d'ajout ////////////////
     public function add($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
