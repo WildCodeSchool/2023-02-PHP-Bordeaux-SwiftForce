@@ -2,19 +2,15 @@
 {% block content %}
     <h1 class="links-product-page"><a href="#">Accueil</a> > <a href="#">Équipements</a> > <a href="#">Kits</a></h1>
     <div class="one-product">
-        <img src="/assets/images/jumelles.jpeg" alt="product-image">
+        {{ dump(product) }}
+        <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
-            <h2>Kit de survie</h2>
+            <h2>{{ product.name_product }}</h2>
             <section class="added-to-cart">
-                <p class="price">55.90€</p>
+                <p class="price">{{ product.price }}</p>
                 <button>Ajouter au panier</button>
             </section>
-            <p class="product-description">kldifhdkgbjsbwkjgkrjlkgjezlgjlkjdslkjglk,skl,klvklkljlkesskjkdsqfheuhvkjkjdndkjhgehsgshges<br>
-                fkdwgjklvlkdwklgnsklwnblkrnslkbnlkrnksnwslkbnlknfjksfjkljlfjesljgofjsegkljdldgnlsoiegjojzqgfh<br>
-                ksvjegnekvksjiojeoshgoghqiozhgrtzeoiqoisoitzqiojfoijjgjepireighsjihjp(tpokpokophkpohkpojphnjt<br>
-                kldifhdkgbjsbwkjgkrjlkgjezlgjlkjdslkjglk,skl,klvklkljlkesskjkdsqfheuhvkjkjdndkjhgehsgshges<br>
-                fkdwgjklvlkdwklgnsklwnblkrnslkbnlkrnksnwslkbnlknfjksfjkljlfjesljgofjsegkljdldgnlsoiegjojzqgfh<br>
-                ksvjegnekvksjiojeoshgoghqiozhgrtzeoiqoisoitzqiojfoijjgjepireighsjihjp(tpokpokophkpohkpojphnjt</p>
+            <p class="product-description">{{ product.description }}</p>
         </section>
     </div>
     <!---------------------------- customers notice  ---------------------------->
