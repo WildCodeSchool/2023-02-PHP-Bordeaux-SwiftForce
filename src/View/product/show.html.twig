@@ -9,17 +9,18 @@
                 <p class="price">{{ product.price }}€</p>
             </section>
             <p class="product-description">{{ product.description }}</p>
-            <button class="btn btn-success w-60">Ajouter au panier</button>
+            <button class="btn btn-success">Ajouter au panier</button>
         </section>
     </div>
-    <! -- - - - - - -- - - - --  TEST CAROUSSEL COMMENTS -- - - - - -- - - -->
+
+    <! -- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
 <div class="customers-comments">
     <h2>Découvrez pourquoi nos clients nous adorent </h2>
 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="card-wrapper container-sm d-flex  justify-content-around">
-                <div class="card  " style="width: 18rem;">
+            <div class="card-wrapper container-sm d-sm-block d-md-flex  justify-content-around">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Super!</h5>
                         <div class="star-comment">
@@ -30,7 +31,6 @@
                         <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                             </div>
                         <p class="text-customer-comments">"Je suis vraiment impressionné par le service client de ce site. J'ai contacté leur équipe plusieurs fois pour des questions et ils ont toujours été rapides et efficaces dans leur réponse. C'est une entreprise vraiment professionnelle!"</p>
-
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="card-wrapper container-sm d-flex   justify-content-around">
+            <div class="card-wrapper container-sm d-sm-block d-md-flex   justify-content-around">
                 <div class="card  " style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Génial</h5>
@@ -75,7 +75,8 @@
                         </div>
                         <p class="text-customer-comments">"J'ai récemment acheté un produit sur ce site et j'ai été étonné de la rapidité avec laquelle il a été livré. Le produit était exactement comme décrit et je suis très satisfait de mon achat."</p>
                     </div>
-                </div><div class="card" style="width: 18rem;">
+                </div>
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Merci Véro</h5>
                         <div class="star-comment">
@@ -98,58 +99,15 @@
                             <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                             <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                         </div>
-                        <p class="text-customer-comments">""Je suis un grand fan de ce site e-commerce. Leur gamme de produits est très variée et toujours à jour avec les dernières tendances. De plus, leur site est très facile à naviguer et leur processus de commande est très simple."</p>
+                        <p class="text-customer-comments">"Je suis un grand fan de ce site e-commerce. Leur gamme de produits est très variée et toujours à jour avec les dernières tendances. De plus, leur site est très facile à naviguer et leur processus de commande est très simple."</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <div class="card-wrapper container-sm d-flex  justify-content-around">
-                <div class="card " style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Merci</h5>
-                        <div class="star-comment">
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                        </div>
-                        <p class="text-customer-comments">""Je suis très satisfait du site web de cette entreprise. Il est facile à naviguer et très bien organisé, ce qui rend la recherche de produits ou d'informations très simple."</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Super idée</h5>
-                        <div class="star-comment">
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                        </div>
-                        <p class="text-customer-comments">""Je suis très impressionné par la qualité du contenu proposé sur le site web de cette entreprise. Les articles et les vidéos sont très instructifs et m'ont beaucoup aidé dans mes recherches."</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Le shop pour survivre</h5>
-                        <div class="star-comment">
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                            <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
-                        </div>
-                        <p class="text-customer-comments">""Je suis très heureux des prestations fournies par ce site web. J'ai récemment acheté un produit en ligne et le processus de commande était très simple et rapide. De plus, la livraison était à temps et le produit était exactement comme décrit sur le site."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -157,8 +115,10 @@
     </div>
 </div>
 </div>
-    <!---------------------------- best sellers  ---------------------------->
-    <div class="best_sellers">
+</div>
+</div>
+    <!---------------------------- best sellers  ----------------------------!>
+    <div class="suggestion_product">
         <h2>-Produits susceptibles de vous plaire-</h2>
         <ul>
             <li>
@@ -202,7 +162,7 @@
                 </div>
             </li>
             <li>
-                <div class="cardCustom">
+                <div class="cardCustom invisibleCustom">
                     <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
                     <div class="card-bodyCustom">
                         <h5 class="card-title">Jumelles 10x42</h5>
