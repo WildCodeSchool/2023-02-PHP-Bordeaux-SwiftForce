@@ -16,6 +16,7 @@ return [
     'product' => ['productController', 'index'],
     'product/show' => ['ProductController', 'show', ['id']],
     'product/add' => ['ProductController', 'add',['id']],
+    'product/product/add' => ['ProductController', 'add',['id']],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
     'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
     'basket' => ['BasketController', 'index'],

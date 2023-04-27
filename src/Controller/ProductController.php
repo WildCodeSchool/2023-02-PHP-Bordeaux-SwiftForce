@@ -14,7 +14,8 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
-    /*public function sortGlobal(string $catName, string $subCatName, string $price)
+    /* fonction pour appliquer les filtres en même temps à développer
+     public function sortGlobal(string $catName, string $subCatName, string $price)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $catName = $_GET['name_category'];
@@ -120,6 +121,7 @@ class ProductController extends AbstractController
             $productPrice = $product['price'];
             $productImage = $product['image'];
             $productID = $id;
+            $productDescription = $product['description'];
             $key = "product_" . $id;
 
             if (isset($_SESSION['cart'])) {
@@ -133,6 +135,7 @@ class ProductController extends AbstractController
                         'price' => $productPrice,
                         'image' => $productImage,
                         'id' => $productID,
+                        'description' => $productDescription,
                         'total' => $productQuantity * $productPrice
                     ];
                 }
@@ -144,10 +147,11 @@ class ProductController extends AbstractController
                     'price' => $productPrice,
                     'image' => $productImage,
                     'id' => $productID,
+                    'description' => $productDescription,
                     'total' => $productQuantity * $productPrice
                 ];
             }
-            header('Location:/product');
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 }
