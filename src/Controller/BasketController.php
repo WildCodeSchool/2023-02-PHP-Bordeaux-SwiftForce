@@ -24,7 +24,7 @@ class BasketController extends AbstractController
         }
         $key = 'product_' . $id;
         unset($_SESSION['cart'][$key]);
-        header('Location:/basket');
+        header('Location:' . $_SERVER['HTTP_REFERER']);
     }
 
     //////////////// fonction de modification d'un panier ////////////////
