@@ -14,7 +14,8 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
-    /*public function sortGlobal(string $catName, string $subCatName, string $price)
+    /* fonction pour appliquer les filtres en même temps à développer
+     public function sortGlobal(string $catName, string $subCatName, string $price)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $catName = $_GET['name_category'];
@@ -57,21 +58,20 @@ class ProductController extends AbstractController
     public function sortPrice(string $price): string
     {
         if (isset($_SESSION['filter']['name_sub_category'])) {
-            $subCat = $_SESSION['filter']['name_sub_category'];
+            if (strpos($_SERVER['HTTP_REFERER'], 'sortCat')) {
+                $name = explode("?", $_SERVER['HTTP_REFERER']);
+                $name = $name[1];
+                $_SESSION['filter']['name'] = $name;
+                $subCat = "default";
+            } else {
+                $subCat = $_SESSION['filter']['name_sub_category'];
+                $_SESSION['filter']['name'] = $subCat;
+            }
         } else {
             $subCat = "default";
         }
         $productManager = new ProductManager();
         $products = $productManager->sortGlobal($subCat, $price);
-
-        if (!key_exists('filter', $_SESSION)) {
-            $_SESSION['filter']['price'] = "default";
-        } else {
-            $_SESSION['filter']['price'] = $price;
-        }
-        if (!key_exists('filter', $_SESSION)) {
-            $_SESSION['filter']['name_sub_category'] = "default";
-        }
         $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $price = $_GET['price'];
@@ -89,6 +89,7 @@ class ProductController extends AbstractController
         }
         $productManager = new ProductManager();
         $products = $productManager->sortGlobal($subCat, $price);
+        $_SESSION['filter']['name'] = $subCat;
 
         if (!key_exists('filter', $_SESSION)) {
             $_SESSION['filter']['name_sub_category'] = "default";
@@ -106,6 +107,25 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
 
+    public function sortCategory(string $cat): string
+    {
+        if (strpos($_SERVER['REQUEST_URI'], 'sortCat?cat=')) {
+            $name = explode("=", $_SERVER['REQUEST_URI']);
+            $name = $name[1];
+            $_SESSION['filter']['name'] = $name;
+        }
+        $productManager = new ProductManager();
+        $products = $productManager->getAll();
+        $filter = $_SESSION['filter'];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'get') {
+            $cat = $_GET['cat'];
+            $_SESSION['filter']['name'] = $cat;
+            header('Location:/product/sortCat?cat=' . $cat);
+        }
+        return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
+    }
+
     //////////////// fonction de création du panier et d'ajout ////////////////
 
     public function add($id)
@@ -120,6 +140,7 @@ class ProductController extends AbstractController
             $productPrice = $product['price'];
             $productImage = $product['image'];
             $productID = $id;
+            $productDescription = $product['description'];
             $key = "product_" . $id;
 
             if (isset($_SESSION['cart'])) {
@@ -133,6 +154,7 @@ class ProductController extends AbstractController
                         'price' => $productPrice,
                         'image' => $productImage,
                         'id' => $productID,
+                        'description' => $productDescription,
                         'total' => $productQuantity * $productPrice
                     ];
                 }
@@ -144,10 +166,11 @@ class ProductController extends AbstractController
                     'price' => $productPrice,
                     'image' => $productImage,
                     'id' => $productID,
+                    'description' => $productDescription,
                     'total' => $productQuantity * $productPrice
                 ];
             }
-            header('Location:/product');
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }
 }
