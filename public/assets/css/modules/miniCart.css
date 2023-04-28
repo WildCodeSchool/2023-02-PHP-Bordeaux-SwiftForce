@@ -1,0 +1,33 @@
+.WS-mini-cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.WS-mini-image{
+display: flex;
+flex-direction: column;
+    
+}
+
+.WS-cart{
+    text-align: end;
+    width: 190px;
+}
+
+.WS-cart-montant{
+    font-size: small;
+}
+
+.test{
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+}
+.test2{
+    width: 120px;
+}
+
+.testtt{
+    
+    background: red;
+}

@@ -13,11 +13,26 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'product' => ['ProductController', 'index',],
+    'product' => ['productController', 'index'],
+    'product/show' => ['ProductController', 'show', ['id']],
     'product/add' => ['ProductController', 'add',['id']],
+    'product/product/add' => ['ProductController', 'add',['id']],
     'product/sort' => ['ProductController', 'sortPrice',['price']],
     'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
+    'product/sortCat' => ['ProductController', 'sortCategory',['cat']],
     'basket' => ['BasketController', 'index'],
     'basket/edit' => ['BasketController', 'edit', ['id','quantity']],
     'basket/delete' => ['BasketController', 'delete', ['id']],
+    'users' => ['UserController', 'index'],
+    'users/show' => ['UserController', 'show', ['id']],
+    'users/add' => ['UserController', 'add'],
+    'users/edit' => ['UserController', 'edit',['id']],
+    'users/delete' => ['UserController', 'delete',['id']],
+    'login' => ['LoginController', 'login'],
+    'profile' => ['ProfileController', 'view'],
+    'logout' => ['loginController', 'logout'],
+
 ];
+
+/*            if (!key_exists('filter', $_SESSION)) {
+                $_SESSION['filter'] = [];*/

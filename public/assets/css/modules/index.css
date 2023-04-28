@@ -1,15 +1,15 @@
 /*********************** carrousel ***********************/
 
-.miniii{
+.WS-mini{
     display: none;
 }
 /*********************** carrousel - media query ***********************/
 
 @media screen and (max-width:480px) {
-    .biig {
+    .WS-big {
         display: none;
     }
-    .miniii {
+    .WS-mini {
         display: unset;
     }
 }
@@ -17,7 +17,7 @@
 
 
 .disc_category ul {
-    margin: 7vh auto 2vh auto;
+    margin: 2vh auto 3vh auto;
     width: 90vw;
     height: 12vw;
     padding: 0;
@@ -28,18 +28,42 @@
 
 .disc_category li {
     position: relative;
-    width: 12vw;
+    width: 15vw;
 }
 
 .disc_category img {
     position: absolute;
-    width: 12vw;
-    height: 12vw;
+    width: 15vw;
+    height: 15vw;
+    margin: 0;
+    --color: var(--primaryColor); /* the color of the border */
+    --border: 10px;   /* the thickness of the border */
+    --offset: 30px;   /* control the movement of the border */
+    --gap: 5px;       /* the gap on hover */
+
+    border-radius: 50%;
+    cursor: pointer;
+    padding: calc(var(--border) + var(--gap));
+    border: var(--offset) solid #0000;
+    --_m: radial-gradient(50% 50%, #000 calc(100% - var(--offset)),#0000 calc(100% - var(--border)));
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    --_g: #0000 calc(99% - var(--border)), var(--color) calc(100% - var(--border)) 99%,#0000;
+    --_s: var(--offset);
+    --_r: 100% 100% at;
+    background:
+        radial-gradient(var(--_r) 0    0   ,var(--_g)) calc(100% + var(--_s)) calc(100% + var(--_s)),
+        radial-gradient(var(--_r) 100% 0   ,var(--_g)) calc(0%   - var(--_s)) calc(100% + var(--_s)),
+        radial-gradient(var(--_r) 0    100%,var(--_g)) calc(100% + var(--_s)) calc(0%   - var(--_s)),
+        radial-gradient(var(--_r) 100% 100%,var(--_g)) calc(0%   - var(--_s)) calc(0%   - var(--_s));
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    transition: .4s;
 }
 
 .disc_category p {
     position: absolute;
-    top: 40%;
+    top: 50%;
     width: 100%;
     text-align: center;
     font-size: 2em;
@@ -51,18 +75,21 @@
 
 .disc_category ul li:hover img {
     opacity: 0.5;
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --_s: 0px
 }
 
 .disc_category ul li:hover p {
     opacity: 1;
 }
 
+.disc_category_mini {
+    display: none;
+}
+
 /*********************** disc category - media query ***********************/
 
 @media screen and (max-width:480px) {
-    .disc_category_mini{
+    .disc_category_mini {
         width: 95vw;
         margin: auto;
         display: flex;

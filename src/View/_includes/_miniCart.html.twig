@@ -1,0 +1,31 @@
+<h3>Vos articles</h3>
+                <!--<div class="WS-mini-image test">
+                    <img class="test2"src="/assets/images/{{ cart.image }}" alt="">
+                </div>
+                <div class="WS-cart">
+                    <h5 class="WS-cart-montant">{{ cart.name }}</h5>
+                    <h5 class="WS-cart-montant">{{ cart.price }}</h5> 
+                    <h5 class="WS-cart-montant">{{ cart.total }}</h5>
+                </div>-->
+ {% for cart in carts %}
+    <div class="WS-mini-image test">
+        <div>
+            <img class="test2"src="/assets/images/{{ cart.image }}" alt="">
+        </div>    
+        <div class="WS-cart">
+            <h5 class="WS-cart-montant">{{ cart.name }}</h5>
+            <h5 class="WS-cart-montant">{{ cart.price }} €</h5> 
+    <div class="WS-basket-delete-update-content">
+        <a href="/basket/delete?id={{ cart.id }}"><img src="/assets/images/trash_logo.png" alt=""></a>
+            <form action="basket/edit" method="get">
+                <input name="id" type="hidden" value="{{ cart.id }}">
+                        <!--<input type="number" name="quantity" value="{{ cart.quantity }}">-->
+            </form>
+    </div>
+        </div>
+    </div>
+{% endfor %}
+            <h5 class="WS-cart-montant"> Montant total {{ total }} €</h5>
+<div class="bakayaro">
+    <a href="/basket" class="btn btn-sucess text-white text-decoration-none w-100 ">Votre Panier</a>
+</div>

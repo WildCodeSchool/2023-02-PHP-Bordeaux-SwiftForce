@@ -8,6 +8,37 @@ class ProductManager extends AbstractManager
 {
     public const TABLE = 'WS_product';
 
+    public function getAll(): bool|array
+    {
+        $sql = "SELECT * FROM WS_product";
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function sortGlobal(string $catName, string $price): bool|array
+    {
+        if ($catName === "default") {
+            if ($price === "default") {
+                $sql = "SELECT * FROM WS_product";
+            } else {
+                $sql = "SELECT * FROM WS_product ORDER BY price " . $price ;
+            }
+        } else {
+            if ($price === "default") {
+                $sql = "SELECT * FROM WS_product JOIN WS_sub_category
+    ON WS_product.sub_category_id = WS_sub_category.id
+         WHERE name_sub_category like '$catName'";
+            } else {
+                $sql = "SELECT * FROM WS_product JOIN WS_sub_category
+    ON WS_product.sub_category_id = WS_sub_category.id
+         WHERE name_sub_category like '$catName' ORDER BY price " . $price ;
+            }
+        }
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function sortByPrice(string $price): bool|array
     {
         $sql = "SELECT * FROM WS_product ORDER BY " . $price;

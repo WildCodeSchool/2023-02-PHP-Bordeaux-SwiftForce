@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="WS-user-container">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2" class="fs-1">UTILISATEURS</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Nom</td>
+                <td>Email :</td>
+                <td>Date anniversaire</td>
+                <td>Supprimer</td>
+                <td>Role</td>
+            </tr>
+            {% for user in users %}
+
+                <tr>
+                    <td>{{ user.user_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.birthday }}</td>
+                    <td><a href="users/delete?id={{ user.id }}" class="text-decoration-none text-reset">Delete</a></td>
+                    <td>{{ user.role }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
