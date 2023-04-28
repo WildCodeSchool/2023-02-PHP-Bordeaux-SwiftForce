@@ -33,7 +33,8 @@ abstract class AbstractController
         $this->twig->addGlobal('user', $this->user);
 
         if (isset($_SESSION['cart'])) {
-            $this->twig->addGlobal('carts', $_SESSION['cart']);
+            $cartInvert = array_reverse($_SESSION['cart']);
+            $this->twig->addGlobal('carts', $cartInvert);
         }
     }
 }

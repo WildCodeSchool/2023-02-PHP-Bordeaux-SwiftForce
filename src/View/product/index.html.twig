@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    {{ dump(filter) }}
     <img class="w-100" src="/assets/images/{{ filter.name }}.jpg" alt="img">
     <div class="WS-product-filter">
         <a class="dropdown-toggle btn btn-success m-3 ms-0 text-decoration-none text-white" href="#" role="button"
@@ -35,8 +36,8 @@
             <div class="WS-product-card m-3"><a href="product/show?id={{ product.id }}">View</a>
                 <img src="/assets/images/{{ product.image }}"  alt="">
                 <div class="WS-product-card-body">
-                    <h5 class="card-title my-0 my-md-2">{{ product.name_product }}</h5>
-                    <h6 class="card-subtitle text-muted my-0 my-md-2">{{ product.price }}</h6>
+                    <h6 class="card-title my-0 my-md-2">{{ product.name_product }}</h6>
+                    <h6 class="card-subtitle text-muted my-0 my-md-2">{{ product.price }} €</h6>
                     <form action="" method="get">
                         <a href="product/add?id={{ product.id }}"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
                     </form>
