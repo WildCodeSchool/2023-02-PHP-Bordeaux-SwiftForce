@@ -2,42 +2,26 @@
     display: flex;
     flex-direction: column;
 }
-
 .WS-mini-image{
-display: flex;
-flex-direction: column;
-    
+    display: flex;
+    flex-direction: column;
 }
-
 .WS-cart{
     text-align: end;
-<<<<<<< HEAD
-=======
     width: 190px;
->>>>>>> develop
 }
-
 .WS-cart-montant{
+    text-align: end;
     font-size: small;
 }
-
 .test{
-<<<<<<< HEAD
-    background: red;
-=======
->>>>>>> develop
     display: flex;
     flex-direction: row;
     font-size: 10px;
 }
 .test2{
     width: 120px;
-<<<<<<< HEAD
-=======
 }
-
-.testtt{
-    
-    background: red;
->>>>>>> develop
+.WS-basket-delete-update-content img{
+    height: 5vh;
 }

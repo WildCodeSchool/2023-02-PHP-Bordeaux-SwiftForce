@@ -10,6 +10,7 @@ body {
     bottom: 0;
     position: relative;
     margin: 0;
+    opacity: 80%;
 }
 .WS-footer-row a{
     text-decoration: none;
