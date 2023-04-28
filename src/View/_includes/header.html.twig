@@ -10,46 +10,20 @@
             <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1"
                  id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png"
-                                                                                        height='60' px>Catégories</h5>
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png" height='60' px>Catégories</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body WS-off-canvas">
                     <ul>
-                        <p>
-                        <li><a href="/product" class="text-decoration-none WS-header "> Produit</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-user-astronaut WS-header "></i><a
-                                href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">
-                                S'habiller</a></li>
-                        </p>
 
-                        <p>
-                        <li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a
-                                href="/product/sortSub?subCat=to_eat" class="text-decoration-none WS-header">
-                                S'alimenter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-campground fa-lg WS-header "></i><a
-                                href="/product/sortSub?subCat=take_shelter" class="text-decoration-none WS-header">
-                                S'abriter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a
-                                href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header"> Se
-                                défendre</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-regular fa-compass fa-lg WS-header "></i><a
-                                href="/product/sortSub?subCat=orientation" class="text-decoration-none WS-header">
-                                S'orienter</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a
-                                href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header"> Kit
-                                de Suvie</a></li>
-                        </p>
+                        <p><li><a href="/product" class="text-decoration-none WS-header ">  Produit</a></li></p>
+                        <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">  S'habiller</a></li></p>
+                        <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_eat" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
+                        <p><li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="/product/sortSub?subCat=take_shelter" class="text-decoration-none WS-header">  S'abriter</a></li></p>
+                        <p><li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header">  Se défendre</a></li></p>
+                        <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="/product/sortSub?subCat=orientation" class="text-decoration-none WS-header">  S'orienter</a></li></p>
+                        <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header">  Kit de Suvie</a></li></p>
+
                     </ul>
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false" data-bs-offset="150,">
@@ -129,19 +103,16 @@
                     </div>
                 {% endif %}
                 <!--<a href="/basket"><i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" ></i></a>-->
-                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2"
-                   type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
-                   aria-controls="offcanvasRight-user"></i>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-user"
-                     aria-labelledby="offcanvasRightLabel">
 
+                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
+                <div class="offcanvas offcanvas-end WS-off-canvas2" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
 
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">Votre Panier</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body WS-mini-cart">
-                        <!--include twig function -->
+                        <!--include twig-->
                         {% include "_includes/_miniCart.html.twig" %}
 
                     </div>
