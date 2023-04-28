@@ -30,16 +30,20 @@ class BasketController extends AbstractController
     //////////////// fonction de modification d'un panier ////////////////
     public function edit($id, $quantity)
     {
-        if (($_SERVER['REQUEST_METHOD'] === 'GET') && (isset($_GET['quantityChange']))) {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
             $quantity = $_GET['quantity'];
             $key = 'product_' . $id;
-            //Si la quantité est positive on modifie sinon on supprime l'article
-            if ($quantity > 0) {
-                $_SESSION['cart'][$key]['quantity'] = $quantity;
+            if (isset($_GET['quantityChange+'])) {
+                $_SESSION['cart'][$key]['quantity'] = ++$quantity;
                 $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
-            } else {
-                unset($_SESSION['cart'][$key]);
+            } elseif (isset($_GET['quantityChange-'])) {
+                if ($_SESSION['cart'][$key]['quantity'] > 1) {
+                    $_SESSION['cart'][$key]['quantity'] = --$quantity;
+                    $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
+                } else {
+                    unset($_SESSION['cart'][$key]);
+                }
             }
         } else {
             echo "Un problème est survenu veuillez contacter l'administrateur du site.";
