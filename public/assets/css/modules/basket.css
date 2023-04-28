@@ -4,12 +4,7 @@
     display: grid;
     grid:
 "caddie payment" 1fr
-<<<<<<< HEAD
-"other payment" 400px
-/ 2fr 450px;
-=======
 / 700PX  1fr ;
->>>>>>> develop
     gap: 1rem;
     font-family: var(--fontFamilyText);
 }
