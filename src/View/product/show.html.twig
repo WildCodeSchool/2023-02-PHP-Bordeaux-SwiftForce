@@ -1,19 +1,18 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <h1 class="links-product-page"><a href="#">Accueil</a> / <a href="#">Équipements</a> / <a href="#">Kits</a></h1>
+    <h1 class="links-product-page"><a  class="debug "href="#">Accueil</a> / <a class="debug" href="#">Équipements</a> / <a class="debug" href="#">Kits</a></h1>
     <div class="one-product">
         <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
             <h2>{{ product.name_product }}</h2>
             <section class="added-to-cart">
                 <p class="price">{{ product.price }}€</p>
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
             </section>
             <p class="product-description">{{ product.description }}</p>
-            <button class="btn btn-success">Ajouter au panier</button>
+            <form action="" method="get">
+                <a href="product/add?id={{ product.id }}"><button type="button" class="btn btn-success" name="cart">Ajout Panier</button></a>
+            </form>
         </section>
     </div>
 

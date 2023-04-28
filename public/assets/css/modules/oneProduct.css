@@ -1,13 +1,11 @@
 .links-product-page {
-    font-size : 60px;
+    font-size : 20px;
     margin-left: 80px;
     font-family: var(--fontFamilyTitle);
 }
 
-@media screen and (max-width:480px) {
-    .links-product-page{
-        font-size: 30px;
-    }
+.debug{
+    color:var(--primaryColor)
 }
 
 /************* Product description **************/
@@ -19,17 +17,16 @@
 }
 .one-product h2{
     font-size: 50px;
+    font-family: var(--fontFamilyTitle);
 }
 .one-product img{
     height : 400px;
     width : 400px;
-    box-shadow: 10px 5px 5px #224c40;
-    border-radius: 10px;
 }
 .one-product button{
     width : 200px;
     height : 50px;
-    margin-left:150px;
+    /*margin-left:150px;*/
 }
 .product-characteristic{
     margin-left: 100px;
@@ -37,10 +34,12 @@
 .product-description{
     width: 40vw;
     text-align: justify;
+    font-family: var(--fontFamilyText);
 }
 .price {
     font-weight: bold;
     font-size: 40px;
+    font-family: var(--fontFamilyText);
 }
 .added-to-cart{
     display: flex;
@@ -81,9 +80,9 @@
 }
 /************* Slide comments **************/
 .customers-comments h2{
-    font-size: 60px;
-    font-family: var(--fontFamilyTitle);
+    font-size: 50px;
     margin-left: 80px;
+    font-family: var(--fontFamilyTitle);
 }
 .comments{
     width:100%;

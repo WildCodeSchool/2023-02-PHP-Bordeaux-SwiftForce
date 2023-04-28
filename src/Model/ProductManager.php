@@ -8,8 +8,7 @@ class ProductManager extends AbstractManager
 {
     public const TABLE = 'WS_product';
 
-<<<<<<< HEAD
-=======
+
     public function getAll(): bool|array
     {
         $sql = "SELECT * FROM WS_product";
@@ -17,7 +16,7 @@ class ProductManager extends AbstractManager
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
->>>>>>> develop
+
     public function sortGlobal(string $catName, string $price): bool|array
     {
         if ($catName === "default") {
