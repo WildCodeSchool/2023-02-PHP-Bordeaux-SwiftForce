@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <h1 class="links-product-page"><a  class="debug "href="#">Accueil</a> / <a class="debug" href="#">Équipements</a> / <a class="debug" href="#">Kits</a></h1>
+    <h1 class="links-product-page"><a  class="debug "href="#">Accueil</a> / <a class="debug" href="#">{{ filter.name_sub_category }}</a></h1>
     <div class="one-product">
         <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
