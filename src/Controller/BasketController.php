@@ -6,11 +6,16 @@ class BasketController extends AbstractController
 {
     public function index(): string
     {
-        $total = 0;
-        foreach ($_SESSION['cart'] as $cart) {
-            $total += $cart['quantity'] * $cart['price'];
+        if (isset($_SESSION['cart'])) {
+            $total = 0;
+            foreach ($_SESSION['cart'] as $cart) {
+                $total += $cart['quantity'] * $cart['price'];
+            }
+            $totalLivraison = $total + 40;
+        } else {
+            $total = 0;
+            $totalLivraison = $total + 40;
         }
-        $totalLivraison = $total + 40;
         return $this->twig->render('basket/index.html.twig', ['total' => $total, 'totalLivraison' => $totalLivraison]);
     }
 
