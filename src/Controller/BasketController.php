@@ -39,6 +39,14 @@ class BasketController extends AbstractController
             $id = $_GET['id'];
             $quantity = $_GET['quantity'];
             $key = 'product_' . $id;
+<<<<<<< HEAD
+            //Si la quantité est positive on modifie sinon on supprime l'article
+            if ($quantity > 0) {
+                $_SESSION['cart'][$key]['quantity'] = $quantity;
+                $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
+            } else {
+                unset($_SESSION['cart'][$key]);
+=======
             if (isset($_GET['quantityChange+'])) {
                 $_SESSION['cart'][$key]['quantity'] = ++$quantity;
                 $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
@@ -49,6 +57,7 @@ class BasketController extends AbstractController
                 } else {
                     unset($_SESSION['cart'][$key]);
                 }
+>>>>>>> develop
             }
         } else {
             echo "Un problème est survenu veuillez contacter l'administrateur du site.";
