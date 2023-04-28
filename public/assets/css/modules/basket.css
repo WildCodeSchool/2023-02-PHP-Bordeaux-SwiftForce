@@ -1,10 +1,22 @@
 .WS-basket-container {
+    width: 80vw;
+    margin: auto;
     display: grid;
     grid:
 "caddie payment" 1fr
+<<<<<<< HEAD
 "other payment" 400px
 / 2fr 450px;
+=======
+/ 700PX  1fr ;
+>>>>>>> develop
     gap: 1rem;
+    font-family: var(--fontFamilyText);
+}
+
+.WS-basket-container h4{
+    font-family: var(--fontFamilyTitle);
+    letter-spacing: 1.5px;
 }
 
 .WS-basket-card-caddie {
@@ -16,26 +28,63 @@
     grid:
 "img title price" 200px / 200Px 1fr 150px;
     gap: 1rem;
+    border-bottom-style: solid;
+    border-color: var(--bs-border-color-translucent);
+    border-width: var(--bs-border-width);
+    margin-bottom: 1vh;
 }
 
 .WS-basket-img {
     grid-area: img;
-    width: 200px;
+    height: 150px;
+}
+
+.fontBold {
+    font-weight: bold;
 }
 
 .WS-basket-card-body {
     grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 4vh;
 }
 
 .WS-basket-price {
     grid-area: price;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 4vh;
+    padding-right: 1vh;
+}
+.WS-basket-price h6 {
+    font-weight: bold;
+}
+
+.quantityChangeItem {
+    display: flex;
+}
+
+.quantityItem {
+    width: 3vw;
+    border-style: none;
+    text-align: center;
+}
+
+.quantityChange {
+    background-color: var(--primaryColor);
+    color: white;
+    margin: 1vh;
+    width: 2vw;
 }
 
 .WS-basket-card-box {
-    grid-area: other;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .WS-basket-card-plus,
@@ -43,7 +92,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 200px;
+    width: 20%;
     padding: 1rem;
     background-color: white;
 }
@@ -83,21 +132,20 @@
 .WS-basket-center {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .WS-font-size {
     font-size: 0.9rem;
 }
 
-.WS-basket-delete-update-content {
-    display: flex;
-    width: 60vw;
-}
-
-.WS-basket-delete-update-content img {
+.deleteItem {
     height: 3vh;
 }
 
+.otherIdeas {
+    width: 80vw;
+}
 
 @media screen and (max-width: 480px) {
     .WS-basket-container {
