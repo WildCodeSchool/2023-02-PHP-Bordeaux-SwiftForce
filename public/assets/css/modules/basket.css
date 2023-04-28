@@ -1,7 +1,7 @@
 .WS-basket-container {
     display: grid;
     grid:
-"caddie payment" 300px
+"caddie payment" 1fr
 "other payment" 400px
 / 2fr 450px;
     gap: 1rem;
@@ -52,7 +52,7 @@
     grid-area: payment;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 .WS-basket-promo {
@@ -103,7 +103,7 @@
     .WS-basket-container {
         display: grid;
         grid:
-        "caddie" 600px
+        "caddie" 1fr
         "payment" 500px
         "other" 400px
         / 100vw;

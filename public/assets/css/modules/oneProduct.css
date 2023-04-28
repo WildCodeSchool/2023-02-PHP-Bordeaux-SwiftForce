@@ -1,0 +1,165 @@
+.links-product-page {
+    font-size : 60px;
+    margin-left: 80px;
+    font-family: var(--fontFamilyTitle);
+}
+
+@media screen and (max-width:480px) {
+    .links-product-page{
+        font-size: 30px;
+    }
+}
+
+/************* Product description **************/
+.one-product {
+    display : flex;
+    flex-direction: row;
+    padding-top: 50px;
+    margin-left: 100px;
+}
+.one-product h2{
+    font-size: 50px;
+}
+.one-product img{
+    height : 400px;
+    width : 400px;
+    box-shadow: 10px 5px 5px #224c40;
+    border-radius: 10px;
+}
+.one-product button{
+    width : 200px;
+    height : 50px;
+    margin-left:150px;
+}
+.product-characteristic{
+    margin-left: 100px;
+}
+.product-description{
+    width: 40vw;
+    text-align: justify;
+}
+.price {
+    font-weight: bold;
+    font-size: 40px;
+}
+.added-to-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width:480px) {
+    .one-product{
+        margin-left:0;
+        flex-direction: column;
+        padding-bottom: 60px;
+        padding-top: 20px;
+    }
+    .one-product button{
+        margin-left:20px;
+    }
+    .one-product img{
+        height:300px;
+        width:300px;
+        margin-left: 60px;
+        margin-bottom: 30px;
+    }
+    .product-description{
+        width:80vw;
+        margin-left: -50px;
+    }
+    .product-characteristic h2{
+        font-size: 30px;
+        margin-left:-50px;
+    }
+    .product-characteristic .price{
+        margin-left:-50px;
+    }
+    .added-to-cart p{
+        font-size: 30px;
+    }
+}
+/************* Slide comments **************/
+.customers-comments h2{
+    font-size: 60px;
+    font-family: var(--fontFamilyTitle);
+    margin-left: 80px;
+}
+.comments{
+    width:100%;
+}
+.text-customer-comments{
+    padding-top: 20px;
+}
+.customers-comments{
+    margin-top: 3vw;
+}
+#carouselExampleControls{
+    margin-top: 3vw;
+}
+@media screen and (max-width:480px) {
+    .customers-comments .card-title{
+        margin-bottom: 20px;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .customers-comments h2{
+        font-size: 25px;
+        text-align: left;
+        white-space: nowrap;
+        margin-left:20px;
+    }
+    .fa-sharp {
+        padding:1px;
+    }
+    .text-customer-comments{
+        font-size: 12px ;
+    }
+    .card{
+        margin-left: 60px;
+    }
+}
+/************* Cards suggestions **************/
+.suggestion_product {
+    width: 90vw;
+    margin: auto;
+    margin-top:50px;
+}
+.suggestion_product h2{
+    text-align: center;
+    font-family: var(--fontFamilyTitle);
+    margin-bottom: 50px;
+}
+.suggestion_product ul {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.suggestion_product ul li {
+    width: 19.5%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+@media screen and (max-width:480px) {
+    .suggestion_product {
+        width: 95vw;
+    }
+
+    .suggestion_product h2 {
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+    }
+
+    .suggestion_product ul li {
+        width: 50%;
+    }
+    .invisibleCustom {
+        display: none;
+    }
+}

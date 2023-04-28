@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Show - Users{% endblock %}
+{% block content %}
+    <div class="WS-user-flex">
+        <h1>Welcome {{ user.user_name }}</h1>
+        <p>This your profile page</p>
+        <p>Name : {{ user.user_name }}</p>
+        <p>Email : {{ user.email }}</p>
+        <p>Birthday : {{ user.birthday }}</p>
+    </div>
+{% endblock %}

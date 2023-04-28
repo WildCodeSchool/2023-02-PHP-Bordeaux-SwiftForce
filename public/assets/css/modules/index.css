@@ -1,15 +1,15 @@
 /*********************** carrousel ***********************/
 
-.miniii{
+.WS-mini{
     display: none;
 }
 /*********************** carrousel - media query ***********************/
 
 @media screen and (max-width:480px) {
-    .biig {
+    .WS-big {
         display: none;
     }
-    .miniii {
+    .WS-mini {
         display: unset;
     }
 }
@@ -59,10 +59,14 @@
     opacity: 1;
 }
 
+.disc_category_mini {
+    display: none;
+}
+
 /*********************** disc category - media query ***********************/
 
 @media screen and (max-width:480px) {
-    .disc_category_mini{
+    .disc_category_mini {
         width: 95vw;
         margin: auto;
         display: flex;
