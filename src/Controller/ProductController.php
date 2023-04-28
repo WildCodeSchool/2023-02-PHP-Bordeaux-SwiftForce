@@ -59,13 +59,14 @@ class ProductController extends AbstractController
     {
         if (isset($_SESSION['filter']['name_sub_category'])) {
             if (strpos($_SERVER['HTTP_REFERER'], 'sortCat')) {
-                $name = explode("?", $_SERVER['HTTP_REFERER']);
+                $name = explode("=", $_SERVER['HTTP_REFERER']);
                 $name = $name[1];
                 $_SESSION['filter']['name'] = $name;
                 $subCat = "default";
             } else {
-                $subCat = $_SESSION['filter']['name_sub_category'];
-                $_SESSION['filter']['name'] = $subCat;
+                if (!in_array('water'|'fire'|'chemical'|'exterior'|'wind'|'earth', $_SESSION['filter'])) {
+                    $subCat = $_SESSION['filter']['name_sub_category'];
+                }
             }
         } else {
             $subCat = "default";
