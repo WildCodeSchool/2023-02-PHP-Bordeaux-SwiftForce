@@ -18,7 +18,7 @@ class UserController extends AbstractController
         $userManager = new UserManager();
         $user = $userManager->selectOneById($id);
         return $this->twig->render('User/show.html.twig', [
-            'user' => $user
+            'user' => $user,
         ]);
     }
 
@@ -29,7 +29,6 @@ class UserController extends AbstractController
             $userManager->addUser($_POST);
 
             header('Location: /');
-
         }
         return $this->twig->render('User/add.html.twig');
     }

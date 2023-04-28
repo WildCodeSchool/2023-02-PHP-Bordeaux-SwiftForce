@@ -4,10 +4,8 @@
     font-family: var(--fontFamilyTitle);
 }
 
-@media screen and (max-width:480px) {
-    .links-product-page{
-        font-size: 30px;
-    }
+.debug{
+    color:var(--primaryColor)
 }
 
 /************* Product description **************/
@@ -28,7 +26,7 @@
 .one-product button{
     width : 200px;
     height : 50px;
-    margin-left:150px;
+    /*margin-left:150px;*/
 }
 .product-characteristic{
     margin-left: 100px;

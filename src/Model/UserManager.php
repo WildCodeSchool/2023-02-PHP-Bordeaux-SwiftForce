@@ -2,9 +2,7 @@
 
 namespace App\Model;
 
-
 use PDO;
-
 
 class UserManager extends AbstractManager
 {
@@ -49,6 +47,10 @@ class UserManager extends AbstractManager
         $stm->bindValue(':email', $user['email'], PDO::PARAM_STR);
         $stm->bindValue(':WS_password', $passwordHash, PDO::PARAM_STR);
         $stm->bindValue(':id', $user['id'], PDO::PARAM_INT);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4407afcef7d2ece2a96b31ca25eb901d69116683
 
         return $stm->execute();
     }

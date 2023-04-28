@@ -7,7 +7,6 @@ use PDO;
 class ProductManager extends AbstractManager
 {
     public const TABLE = 'WS_product';
-
     public function getAll(): bool|array
     {
         $sql = "SELECT * FROM WS_product";
@@ -15,6 +14,7 @@ class ProductManager extends AbstractManager
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public function sortGlobal(string $catName, string $price): bool|array
     {
         if ($catName === "default") {
