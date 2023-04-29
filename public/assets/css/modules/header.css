@@ -3,6 +3,11 @@
     background: rgb(180, 176, 176);
 }
 
+.offcanvas-title {
+    font-family: var(--fontFamilyTitle);
+    color: var(--primaryColor);
+}
+
 .btn2{
 --bs-btn-bg: white;
 --bs-btn-border-color: white;
