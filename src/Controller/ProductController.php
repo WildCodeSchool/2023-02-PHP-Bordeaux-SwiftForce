@@ -53,7 +53,27 @@ class ProductController extends AbstractController
         $product = $productManager->selectOneById($id);
         $filter = $_SESSION['filter'];
 
-        return $this->twig->render('product/show.html.twig', ['product' => $product, 'filter' => $filter]);
+        switch ($filter['name_sub_category']) {
+            case 'get_dressed':
+                $catNameFrench = "S'habiller";
+                break;
+            case 'to_eat':
+                $catNameFrench = 'Se nourrir';
+                break;
+            case 'take_shelter':
+                $catNameFrench = "S'abriter";
+                break;
+            case 'to_defend':
+                $catNameFrench = "Se défendre";
+                break;
+            case 'orientation':
+                $catNameFrench = "S'orienter";
+                break;
+            case 'survival_kit':
+                $catNameFrench = "Kits de survie";
+                break;
+        }
+        return $this->twig->render('product/show.html.twig', ['product' => $product, 'filter' => $filter, 'catNameFrench' => $catNameFrench]);
     }
 
     public function sortPrice(string $price): string

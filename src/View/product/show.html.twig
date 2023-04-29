@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <h1 class="links-product-page"><a  class="debug "href="#">Accueil</a> / <a class="debug" href="#">{{ filter.name_sub_category }}</a></h1>
+    <h1 class="links-product-page"><a  class="debug "href="/">Accueil</a> / <a class="debug" href="/product/sortSub?subCat={{ filter.name_sub_category }}">{{ catNameFrench }}</a> / <a class="debug" href="#">{{ product.name_product }}</a></h1>
     <div class="one-product">
         <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
@@ -11,7 +11,7 @@
             </section>
             <p class="product-description">{{ product.description }}</p>
             <form action="" method="get">
-                <a href="product/add?id={{ product.id }}"><button type="button" class="btn btn-success" name="cart">Ajout Panier</button></a>
+                <a href="product/add?id={{ product.id }}"><button type="button" class="btn btn-success" name="cart">Ajouter au Panier</button></a>
             </form>
         </section>
     </div>

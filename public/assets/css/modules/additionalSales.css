@@ -1,0 +1,34 @@
+.additionSales {
+    width: 80vw;
+    margin: auto;
+}
+
+.WS-basket-card-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.WS-basket-card-plus,
+.WS-basket-card-plus2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    padding: 1rem;
+    background-color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .WS-basket-card-body h4 {
+        text-align: center;
+    }
+
+    .WS-basket-card-plus {
+        display: 40vw;
+    }
+
+    .WS-basket-card-plus2 {
+        display: none;
+    }
+}

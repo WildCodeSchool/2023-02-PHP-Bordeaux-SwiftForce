@@ -37,54 +37,6 @@
             {% endif %}
         </div>
 
-        <div>
-            <!-- --------------------------------- other ideas ---------------------------------- -->
-            <h4 class="text-center mb-3">Vous pourriez aimer aussi</h4>
-
-            <div class="WS-basket-card-box">
-                <div class="WS-basket-card-plus">
-                    <img src="/assets/images/product01.png" alt="">
-                    <div class="WS-product-card-body">
-                        <h7 class="card-title my-0 my-md-2">Kit de premiers secours</h7>
-                        <h8 class="card-subtitle text-muted my-0 my-md-2">79.99 €</h8>
-                        <form action="" method="get">
-                            <a href="product/add?id=1"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                        </form>
-                    </div>
-                </div>
-                <div class="WS-basket-card-plus">
-                    <img src="/assets/images/product04.png" alt="">
-                    <div class="WS-product-card-body">
-                        <h7 class="card-title my-0 my-md-2">Bouteille d'eau filtrante</h7>
-                        <h8 class="card-subtitle text-muted my-0 my-md-2">39.99 €</h8>
-                        <form action="" method="get">
-                            <a href="product/add?id=4"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                        </form>
-                    </div>
-                </div>
-                <div class="WS-basket-card-plus2">
-                    <img src="/assets/images/product02.png" alt="">
-                    <div class="WS-product-card-body">
-                        <h7 class="card-title my-0 my-md-2">Lampe de poche solaire</h7>
-                        <h8 class="card-subtitle text-muted my-0 my-md-2">5.99 €</h8>
-                        <form action="" method="get">
-                            <a href="product/add?id=2"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                        </form>
-                    </div>
-                </div>
-                <div class="WS-basket-card-plus2">
-                    <img src="/assets/images/product03.png" alt="">
-                    <div class="WS-product-card-body">
-                        <h7 class="card-title my-0 my-md-2">Nourriture en conserve</h7>
-                        <h8 class="card-subtitle text-muted my-0 my-md-2">5.99 €</h8>
-                        <form action="" method="get">
-                            <a href="product/add?id=3"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- --------------------------------- payment recap --------------------------------- -->
 
         <div class="WS-basket-card-payment  p-3 bg-white">
@@ -128,4 +80,7 @@
             </section>
         </div>
     </div>
+
+    {% include "_includes/additionalSales.html.twig" %}
+
 {% endblock %}

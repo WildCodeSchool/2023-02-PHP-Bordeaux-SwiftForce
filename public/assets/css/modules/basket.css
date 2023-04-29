@@ -1,11 +1,8 @@
 .WS-basket-container {
     width: 80vw;
     margin: auto;
-    display: grid;
-    grid:
-"caddie payment" 1fr
-/ 700PX  1fr ;
-    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
     font-family: var(--fontFamilyText);
 }
 
@@ -15,14 +12,15 @@
 }
 
 .WS-basket-card-caddie {
-    grid-area: caddie;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 
 .WS-basket-card {
-    display: grid;
-    grid:
-"img title price" 200px / 200Px 1fr 150px;
-    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     border-bottom-style: solid;
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
@@ -76,25 +74,9 @@
     width: 2vw;
 }
 
-.WS-basket-card-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.WS-basket-card-plus,
-.WS-basket-card-plus2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20%;
-    padding: 1rem;
-    background-color: white;
-}
-
 .WS-basket-card-payment {
-    grid-area: payment;
     display: flex;
+    width: 35%;
     flex-direction: column;
     justify-content: start;
 }
@@ -138,10 +120,6 @@
     height: 3vh;
 }
 
-.otherIdeas {
-    width: 80vw;
-}
-
 @media screen and (max-width: 480px) {
     .WS-basket-card-body h4 {
         text-align: center;
@@ -165,15 +143,10 @@
         flex-direction: column;
         width: 50vw;
     }
-    .WS-basket-card-plus2 {
-        display: none;
-    }
     .quantityChange {
         width: 4vw;
     }
-    .WS-basket-card-plus {
-        display: 40vw;
-    }
+
 
 
 
