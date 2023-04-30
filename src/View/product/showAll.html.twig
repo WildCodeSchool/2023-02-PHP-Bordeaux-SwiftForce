@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="WS-user-container">
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2" class="fs-1">Produits</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Nom</td>
+                <td>price</td>
+                <td>Supprimer</td>
+                <td>Modifier le produit</td>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td><a href="/product/show?id={{ product.id }}"
+                           class="text-decoration-none text-reset">{{ product.name_product }}</a></td>
+                    <td>{{ product.price }} €</td>
+                    <td><a href="/product/delete?id={{ product.id }}" class="text-decoration-none text-reset">Delete</a>
+                    </td>
+                    <td><a href="/product/edit?id={{ product.id }}" class="text-decoration-none text-reset">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            <div class="my-3">
+                <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
+            </div>
+            <div class="my-3">
+                <a href="/users" class="btn btn-sucess text-decoration-none text-white">liste des utilisateurs</a>
+            </div>
+            <div class="my-3">
+                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">ajout d'utilisateur</a>
+            </div>
+            <div class="my-3">
+                <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">ajout produit</a>
+            </div>
+            <div class="my-3">
+                <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">liste des produits</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
