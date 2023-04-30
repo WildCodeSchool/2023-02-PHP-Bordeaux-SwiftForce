@@ -143,38 +143,73 @@
 }
 
 @media screen and (max-width: 480px) {
+    .WS-basket-card-body h4 {
+        text-align: center;
+    }
     .WS-basket-container {
-        display: grid;
-        grid:
-        "caddie" 1fr
-        "payment" 500px
-        "other" 400px
-        / 100vw;
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
     }
-
-    .WS-basket-card {
-        display: grid;
-        grid:
-        "img" 200Px
-        "title"200px
-        "price" 50px
-        / 300Px;
-        gap: 1rem;
-        width: 80vw;
-        padding: 1rem;
+    .WS-basket-center {
+        display: flex;
+        justify-content: start;
+        width: 30vw;
     }
-
-    .WS-basket-card-caddie {
-        width: 80vw;
-        margin: auto;
+    .WS-basket-container img {
+        width: 30vw;
+        height: 30vw;
     }
-
-    .WS-basket-card-payment {
-        width: 80vw;
-        margin: auto;
+    .cartPhone {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
     }
-
     .WS-basket-card-plus2 {
         display: none;
     }
+    .quantityChange {
+        width: 4vw;
+    }
+    .WS-basket-card-plus {
+        display: 40vw;
+    }
+
+
+
+
+        /*.WS-basket-container {
+            display: grid;
+            grid:
+            "caddie" 1fr
+            "payment" 500px
+            "other" 400px
+            / 100vw;
+        }
+
+        .WS-basket-card {
+            display: grid;
+            grid:
+            "img" 200Px
+            "title"200px
+            "price" 50px
+            / 300Px;
+            gap: 1rem;
+            width: 80vw;
+            padding: 1rem;
+        }
+
+        .WS-basket-card-caddie {
+            width: 80vw;
+            margin: auto;
+        }
+
+        .WS-basket-card-payment {
+            width: 80vw;
+            margin: auto;
+        }
+
+        .WS-basket-card-plus2 {
+            display: none;
+        }*/
 }

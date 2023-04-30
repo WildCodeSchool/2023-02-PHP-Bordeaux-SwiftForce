@@ -7,8 +7,6 @@ use PDO;
 class ProductManager extends AbstractManager
 {
     public const TABLE = 'WS_product';
-
-
     public function getAll(): bool|array
     {
         $sql = "SELECT * FROM WS_product";
@@ -28,11 +26,13 @@ class ProductManager extends AbstractManager
         } else {
             if ($price === "default") {
                 $sql = "SELECT * FROM WS_product JOIN WS_sub_category
+
     ON WS_product.sub_category_id_cat = WS_sub_category.id_cat
          WHERE name_sub_category like '$catName'";
             } else {
                 $sql = "SELECT * FROM WS_product JOIN WS_sub_category
     ON WS_product.sub_category_id_cat = WS_sub_category.id_cat
+
          WHERE name_sub_category like '$catName' ORDER BY price " . $price ;
             }
         }
@@ -52,7 +52,9 @@ class ProductManager extends AbstractManager
 
     public function sortBySubCategory(string $subCat): bool|array
     {
+
         $sql = "SELECT * FROM WS_product JOIN WS_sub_category ON WS_product .sub_category_id_cat = WS_sub_category.id_cat
+
             WHERE name_sub_category like '$subCat'";
         $stm = $this->pdo->prepare($sql);
         $stm->execute();

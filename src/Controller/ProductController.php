@@ -51,15 +51,15 @@ class ProductController extends AbstractController
     {
         $productManager = new ProductManager();
         $product = $productManager->selectOneById($id);
+        $filter = $_SESSION['filter'];
 
-        return $this->twig->render('product/show.html.twig', ['product' => $product]);
+        return $this->twig->render('product/show.html.twig', ['product' => $product, 'filter' => $filter]);
     }
 
     public function sortPrice(string $price): string
     {
         if (isset($_SESSION['filter']['name_sub_category'])) {
             $subCat = $_SESSION['filter']['name_sub_category'];
-
             if (strpos($_SERVER['HTTP_REFERER'], 'sortCat')) {
                 $name = explode("=", $_SERVER['HTTP_REFERER']);
                 $name = $name[1];
@@ -75,7 +75,6 @@ class ProductController extends AbstractController
         }
         $productManager = new ProductManager();
         $products = $productManager->sortGlobal($subCat, $price);
-
         $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $price = $_GET['price'];
@@ -86,6 +85,10 @@ class ProductController extends AbstractController
 
     public function sortSubCategory(string $subCat): string
     {
+        $name = explode("=", $_SERVER['REQUEST_URI']);
+        $name = $name[1];
+        $_SESSION['filter']['name'] = $name;
+
         if (isset($_SESSION['filter']['price'])) {
             $price = $_SESSION['filter']['price'];
         } else {
@@ -94,7 +97,7 @@ class ProductController extends AbstractController
         $productManager = new ProductManager();
         $products = $productManager->sortGlobal($subCat, $price);
 
-        $_SESSION['filter']['name'] = $subCat;
+        //$_SESSION['filter']['name'] = $subCat;
 
 
         if (!key_exists('filter', $_SESSION)) {
@@ -112,8 +115,6 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
-
-
     public function sortCategory(string $cat): string
     {
         if (strpos($_SERVER['REQUEST_URI'], 'sortCat?cat=')) {
@@ -132,7 +133,6 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
-
 
     //////////////// fonction de création du panier et d'ajout ////////////////
 
