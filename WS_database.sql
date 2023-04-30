@@ -58,7 +58,7 @@ INSERT INTO WS_sub_category(name_sub_category) VALUES ( 'orientation' );
 INSERT INTO WS_sub_category(name_sub_category) VALUES ( 'survival_kit' );
 
 
-INSERT INTO WS_product (sub_category_id,name_product, description, price) VALUES
+INSERT INTO WS_product (sub_category_id_cat,name_product, description, price) VALUES
                                                                               (6,'Kit de premiers secours', 'Ce kit de survie représente le compromis ultime entre un équipement complet et qualitatif. Vous retrouverez tout le matériel nécessaire à votre autonomie dans la nature, sauvage ou même hostile.', 79.99),
                                                                               (5,'Lampe de poche solaire', 'La lampe torche est dotée de trois LED blanches puissantes. Laissez tomber vos prises électriques, vos câbles ou encore vos piles, grâce aux deux manières écologiques de recharger la lampe.
 
