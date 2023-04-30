@@ -14,21 +14,20 @@
                     <img class="WS-basket-img"src="/assets/images/{{ cart.image }}" alt="">
                 </div>
                 <div class="WS-basket-card-body">
+                    <div class="WS-basket-card-body-mini">
                     <h5 class="card-title mt-3">{{ cart.name }}</h5>
-                    <h6 class="card-subtitle text-muted mt-3">Prix unitaire : {{ cart.price }} €</h6>
-                    <div>
+                    <h6 class="card-subtitle text-muted">Prix unitaire : {{ cart.price }} €</h6>
                     <form class="quantity" action="basket/edit" method="get">
-                        <h6 class="card-subtitle text-muted mt-3">Quantité : </h6>
                         <input name="id" type="hidden" value="{{ cart.id }}">
                         <button class="quantityChange" name="quantityChange-">-</button>
                         <input class="quantityItem" type="text" name="quantity" value="{{ cart.quantity }}">
                         <button class="quantityChange" name="quantityChange+">+</button>
                     </form>
                     </div>
-                </div>
                 <div class="WS-basket-price">
                     <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem" src="/assets/images/trash_logo.png" alt=""></a>
                     <h6 class="card-subtitle text-muted mt-3">Total : {{ cart.total }} €</h6>
+                </div>
                 </div>
             </div>
             {% endfor %}
@@ -71,8 +70,8 @@
                 <button type="submit" class="btn btn-primary w-100">Valider mon panier</button>
             </section>
             <section>
-                <h6 class="mt-5 text-center">Modes de paiement disponibles</h6>
-                <section class="WS-basket-payment mt-5  ">
+                <h6 class="text-center">Modes de paiement disponibles</h6>
+                <section class="WS-basket-payment mt-4  ">
                     <i class="fa-brands fa-cc-mastercard fa-2xl " style="color: #00364a;"></i>
                     <i class="fa-brands fa-cc-paypal fa-2xl " style="color: #00364a;"></i>
                     <i class="fa-brands fa-cc-visa fa-2xl " style="color: #00364a;"></i>

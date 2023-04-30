@@ -1,22 +1,32 @@
 .additionSales {
+    font-family: var(--fontFamilyText);
+}
+.additionSales h4 {
+    font-family: var(--fontFamilyTitle);
+    letter-spacing: 1.5px;
+}
+.additionSales {
     width: 80vw;
     margin: auto;
 }
-
+.additionSalesContent {
+    width: 62%;
+}
 .WS-basket-card-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .WS-basket-card-plus,
 .WS-basket-card-plus2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20%;
-    padding: 1rem;
+    width: 24%;
     background-color: white;
+}
+.card-subtitle {
+    margin-bottom: 1vh;
 }
 
 @media screen and (max-width: 480px) {
@@ -25,10 +35,27 @@
     }
 
     .WS-basket-card-plus {
-        display: 40vw;
+        width: 48%;
     }
 
     .WS-basket-card-plus2 {
         display: none;
+    }
+
+    .additionSales {
+        width: 85vw;
+    }
+
+    .additionSalesContent {
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .WS-basket-card-box h7 {
+        font-size: 0.9rem;
+    }
+
+    .WS-basket-card-box h8 {
+        font-size: 0.9rem;
     }
 }
