@@ -35,5 +35,6 @@ return [
     'login' => ['LoginController', 'login'],
     'profile' => ['ProfileController', 'view'],
     'logout' => ['loginController', 'logout'],
-
+    'contact' => ['HomeController', 'contact'],
+    'contact/envoi' => ['HomeController', 'contact']
 ];
