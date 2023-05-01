@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ProductManager;
+use PDO;
 
 class ProductController extends AbstractController
 {
@@ -202,31 +203,34 @@ class ProductController extends AbstractController
                 $errors[] = 'Voter fichier doit faire moins de 1M !';
             }
 
-            if (isset($name_product) && !empty($name_product)) {
-                $name_product = trim($name_product);
+            if (isset($_POST['name_product']) && !empty($_POST['name_product'])) {
+                $_POST['name_product'] = trim($_POST['name_product']);
+                $_POST['name_product'] = htmlspecialchars($_POST['name_product']);
             } else {
                 $errors [] = 'il manque le nom';
             }
-            if (isset($price) && !empty($price)) {
-                $price = trim($price);
+            if (isset($_POST['price']) && !empty($_POST['price'])) {
+                $_POST['price'] = trim($_POST['price']);
+                $_POST['price'] = htmlspecialchars($_POST['price']);
             } else {
                 $errors [] = 'il manque le prix';
             }
-            if (isset($description) && !empty($description)) {
-                $description = trim($description);
+            if (isset($_POST['description']) && !empty($_POST['description'])) {
+                $_POST['description'] = trim($_POST['description']);
+                $_POST['description'] = htmlspecialchars($_POST['description']);
             } else {
                 $errors [] = "il manque la description";
             }
             if (!empty($errors)) {
-                var_dump($errors);
+                return $this->twig->render('product/error.html.twig', ['errors' => $errors]);
             }
 
 
-            $productManager = new productManager();
-            $productManager->addProduct($_POST, $_FILES);
+                $productManager = new productManager();
+                $productManager->addProduct($_POST, $_FILES);
 
-            header('Location:/product');
-            return null;
+                header('Location:/product');
+                return null;
         }
 
         return $this->twig->render('product/addProduct.html.twig');
