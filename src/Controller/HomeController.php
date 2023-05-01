@@ -15,7 +15,6 @@ class HomeController extends AbstractController
     {
         $name = $email = $phone = $subject = "";
         $errors['name'] = $errors['email'] = "";
-
         function checkdata($data)
         {
             $data = trim($data);
@@ -43,7 +42,7 @@ class HomeController extends AbstractController
             $message = checkdata($_POST['txtMsg']);
             $subjectGlobal = "Mail au sujet de : " . $subject . " de " . $email;
             if ($name != "" & $email != "") {
-                mail('vduquenoy23@gmail.com', $subjectGlobal, $message);
+                //mail('vduquenoy23@gmail.com', $subjectGlobal, $message);
                 return $this->twig->render('Home/contact/envoi.html.twig', ['name' => $name, 'email' => $email, 'phone' => $phone, 'subject' => $subject]);
             }
         }

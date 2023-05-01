@@ -5,11 +5,13 @@
     justify-content: center;
 }
 .contactContainer p {
-    color: red;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 2%;
     font-size: 0.9rem;
+}
+.contactError{
+    color: red;
 }
 .contact-form{
     background: #fff;
@@ -24,8 +26,11 @@
 .contact-form .form-control{
     border-radius:1rem;
 }
-.contact-image{
-    text-align: center;
+.contact-image .contact-image-sent{
+}
+.contact-image-sent img {
+    width: 8%;
+    margin-top: -3%;
 }
 .contact-image img{
     background-color: white;
@@ -74,6 +79,22 @@
 .btnContact {
     width: 10%;
 }
+.rowSent{
+    padding-bottom: 5vh;
+    width: 70%;
+    margin: auto;
+}
+.message-sent{
+    text-align: center;
+    margin: auto;
+    padding: 2vh;
+}
+.message-sent p{
+    font-family: var(--fontFamilyText);
+}
+.message-sent h1{
+    font-family: var(--fontFamilyTitle);
+}
 
 @media screen and (max-width: 480px) {
     .contact-form{
@@ -95,8 +116,15 @@
         width: 15%;
         margin-top: -10%;
     }
+    .contact-image-sent img{
+        width: 15%;
+        margin-top: -10%;
+    }
     .contact-form{
         margin-top: 8%;
+    }
+    .rowSent{
+        width: 100%;
     }
 
     }

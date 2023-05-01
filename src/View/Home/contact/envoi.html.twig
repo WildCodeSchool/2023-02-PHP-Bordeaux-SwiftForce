@@ -1,13 +1,27 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
     <div class="contactContainer">
-        <div class="container contact-form">
-            <div class="contact-image">
-                <img src="/assets/images/letterlogo.png" alt="rocket_contact"/>
+        <div class="container contact-form container-sent">
+            <div class="contact-image-sent">
+                <img src="/assets/images/mailsent.png" alt="rocket_contact"/>
             </div>
-                <div class="row">
-                    <p>Merci pour votre message.</p>
-                    <p>{{ name }}</p>
+                <div class="row rowSent">
+                    <div class="form-group-contact">
+                        <div class="form-control message-sent">
+                            <h1>Merci</h1>
+                            <p class="titleFont">Votre message a bien été transmis à notre service client.</p>
+                            <p>Nous reviendrons vers vous dans les plus brefs délais.</p>
+                            <br/>
+                            <p class="font-weight-bold">Sujet : </p>
+                            <p>{{ subject }}</p>
+                            <br/>
+                            <p class="font-weight-bold">Message : </p>
+                            <p>{{ message }}</p>
+                            <br/>
+                            <p class="font-weight-bold">Email pour vous contacter : </p>
+                            <p>{{ email }}</p>
+                        </div>
+                    </div>
                 </div>
         </div>
     </div>
