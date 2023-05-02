@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Services\sendMail;
+
 class HomeController extends AbstractController
 {
     /**
@@ -40,9 +42,9 @@ class HomeController extends AbstractController
                 $subject = checkdata($_POST['txtSubject']);
             }
             $message = checkdata($_POST['txtMsg']);
-            $subjectGlobal = "Mail au sujet de : " . $subject . " de " . $email;
             if ($name != "" & $email != "") {
-                //mail('vduquenoy23@gmail.com', $subjectGlobal, $message);
+                $mail = new sendMail();
+                $mail->sendmail($email, $name, 'contact@thewildshop.com', "Service Clients", $subject, $message . $phone);
                 return $this->twig->render('Home/contact/envoi.html.twig', ['name' => $name, 'email' => $email, 'phone' => $phone, 'subject' => $subject]);
             }
         }
