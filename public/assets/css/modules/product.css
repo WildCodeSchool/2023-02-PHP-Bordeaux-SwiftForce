@@ -32,6 +32,9 @@ width: 90vw;
     padding: 1rem;
     background-color: white;
 }
+.WS-product-card a img{
+    width: 200px;
+}
 .WS-product-card:hover{
     border-style: solid;
     border-color: var(--bs-border-color-translucent);
