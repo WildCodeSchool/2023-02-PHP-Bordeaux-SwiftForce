@@ -1,24 +1,22 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <h1 class="links-product-page"><a  class="debug "href="#">Accueil</a> / <a class="debug" href="#">{{ filter.name_sub_category }}</a></h1>
+    <h1 class="links-product-page"><a  class="debug "href="/">Accueil</a> / <a class="debug" href="/product/sortSub?subCat={{ filter.name_sub_category }}">{{ catNameFrench }}</a> / <a class="debug" href="#">{{ product.name_product }}</a></h1>
     <div class="one-product">
         <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
-            <h2>{{ product.name_product }}</h2>
+            <h2 class="bigTitle">{{ product.name_product }}</h2>
             <section class="added-to-cart">
                 <p class="price">{{ product.price }}€</p>
-
             </section>
             <p class="product-description">{{ product.description }}</p>
             <form action="" method="get">
-                <a href="/product/add?id={{ product.id }}">
-                    <button type="button" class="btn btn-success" name="cart">Ajout Panier</button>
+                <a href="/product/add?id={{ product.id }}"><button type="button" class="btn btn-success" name="cart">Ajout Panier</button>
                 </a>
             </form>
         </section>
     </div>
 
-    <! -- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
+    <!-- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
     <div class="customers-comments">
         <h2>Découvrez pourquoi nos clients nous adorent </h2>
         <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -142,60 +140,8 @@
     </div>
     </div>
 
-    <!---------------------------- best sellers  ----------------------------!>
-    <div class="suggestion_product">
-        <h2>-Produits susceptibles de vous plaire-</h2>
-        <ul>
-            <li>
-                <div class="cardCustom">
-                    <img src="/assets/images/kit.jpeg" class="card-img-top" alt="" title="kit">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Kit de survie 12 pièces</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">39.90€</h6>
-                        <button type="button" class="btn btn-success">Ajout Panier</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-                    <img src="/assets/images/masque.jpeg" class="card-img-top" alt="">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Masque à gaz</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">59.90€</h6>
-                        <button type="button" class="btn btn-success">Ajout Panier</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-                    <img src="/assets/images/kit.jpeg" class="card-img-top" alt="">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Kit de survie 10 pièces</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">29.90€</h6>
-                        <button type="button" class="btn btn-success">Ajout Panier</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-                    <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Jumelles 10x42</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">44.90€</h6>
-                        <button type="button" class="btn btn-success">Ajout Panier</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom invisibleCustom">
-                    <img src="/assets/images/jumelles.jpeg" class="card-img-top" alt="">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Jumelles 10x42</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">44.90€</h6>
-                        <button type="button" class="btn btn-success">Ajout Panier</button>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <!-- -------------------------- best sellers  -------------------------- -->
+
+    {% include "_includes/additionalSalesLarge.html.twig" %}
+
 {% endblock %}

@@ -163,70 +163,7 @@
             </div>
         </div>
     </div>
-    <!---------------------------- best sellers  ---------------------------->
-    <div class="best_sellers">
-        <h2>Nos indispensables de la survie</h2>
-        <ul>
-            <li>
-                <div class="cardCustom">
-            <img src="/assets/images/product15.png" class="card-img-top" alt="" title="kit">
-            <div class="card-bodyCustom">
-                <h5 class="card-title">Kit de survie en plein air</h5>
-                <h6 class="card-subtitle mb-2 text-muted">49.90€</h6>
-                <form action="" method="get">
-                    <a href="product/add?id=15"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                </form>
-            </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-            <img src="/assets/images/product06.png" class="card-img-top" alt="">
-            <div class="card-bodyCustom">
-                <h5 class="card-title">Couverture de survie</h5>
-                <h6 class="card-subtitle mb-2 text-muted">9.99€</h6>
-                <form action="" method="get">
-                    <a href="product/add?id=6"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                </form>
-            </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-            <img src="/assets/images/product17.png" class="card-img-top" alt="">
-            <div class="card-bodyCustom">
-                <h5 class="card-title">Sifflet de survie</h5>
-                <h6 class="card-subtitle mb-2 text-muted">4 .99€</h6>
-                <form action="" method="get">
-                    <a href="product/add?id=17"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                </form>
-            </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom">
-            <img src="/assets/images/product05.png" class="card-img-top" alt="">
-            <div class="card-bodyCustom">
-                <h5 class="card-title">Radio portable à manivelle</h5>
-                <h6 class="card-subtitle mb-2 text-muted">49.99€</h6>
-                <form action="" method="get">
-                    <a href="product/add?id=5"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                </form>
-            </div>
-                </div>
-            </li>
-            <li>
-                <div class="cardCustom invisibleCustom">
-                    <img src="/assets/images/product12.png" class="card-img-top" alt="">
-                    <div class="card-bodyCustom">
-                        <h5 class="card-title">Lampe de poche tactique</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">62.99€</h6>
-                        <form action="" method="get">
-                            <a href="product/add?id=12"><button type="button" class="btn btn-success w-100" name="cart">Ajout Panier</button></a>
-                        </form>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+
+    {% include "_includes/additionalSalesLarge.html.twig" %}
+
 {% endblock %}
