@@ -9,3 +9,10 @@ textarea{
 {
     font-family: var(--fontFamilyTitle);
 }
+
+.modal{
+    display: none;
+    z-index: 1;
+}
+
+

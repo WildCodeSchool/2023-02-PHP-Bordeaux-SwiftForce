@@ -243,11 +243,14 @@ class ProductController extends AbstractController
 
         return $this->twig->render('product/showAll.html.twig', ['products' => $products]);
     }
-    public function delete($id)
+    public function delete(): void
     {
-        $userManager = new ProductManager();
-        $userManager->delete($id);
-        header('Location: /product/showAll');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $userManager = new ProductManager();
+            $userManager->delete($id);
+            header('Location: /product/showAll');
+        }
     }
 
     public function edit(int $id)
