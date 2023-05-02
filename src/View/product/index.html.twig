@@ -34,7 +34,7 @@
     </div>
     <div class="WS-product-container">
         {% for product in products %}
-            <div class="WS-product-card m-3"><a href="product/show?id={{ product.id }}">View</a>
+            <div class="WS-product-card m-3"><a href="product/show?id={{ product.id }}"><i class="fa-solid fa-eye fa-lg" style="color: #004f43;"></i></a>
                 <img src="/assets/images/{{ product.image }}"  alt="">
                 <div class="WS-product-card-body">
                     <h6 class="card-title my-0 my-md-2">{{ product.name_product }}</h6>
