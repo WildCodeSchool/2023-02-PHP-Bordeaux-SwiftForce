@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ProductManager;
+use PDO;
 
 class ProductController extends AbstractController
 {
@@ -98,7 +99,7 @@ class ProductController extends AbstractController
         $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $price = $_GET['price'];
-            header('Location:/product/sort?price=' . $price);
+            header('Location: /product/sort?price=' . $price);
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
@@ -131,7 +132,7 @@ class ProductController extends AbstractController
         $filter = $_SESSION['filter'];
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $subCat = $_GET['name_sub_category'];
-            header('Location:/product/sort?=' . $subCat);
+            header('Location: /product/sort?=' . $subCat);
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
@@ -149,7 +150,7 @@ class ProductController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'get') {
             $cat = $_GET['cat'];
             $_SESSION['filter']['name'] = $cat;
-            header('Location:/product/sortCat?cat=' . $cat);
+            header('Location: /product/sortCat?cat=' . $cat);
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter]);
     }
@@ -200,5 +201,89 @@ class ProductController extends AbstractController
             }
             header('Location:' . $_SERVER['HTTP_REFERER']);
         }
+    }
+
+    public function addProd(): ?string
+    {
+
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadDir = "../public/assets/images/";
+            $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+            $uploadFile = $uploadDir . $_FILES['image']['name'];
+            move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
+            $authorizedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+            $maxFileSize = 1000000;
+
+            if ((!in_array($extension, $authorizedExtensions))) {
+                $errors[] = 'Veuillez selectionner une image de type Jpg ou Jpeg ou PNG ou gif ou webp !';
+            }
+            if (file_exists($_FILES['image']['name']) && filesize($_FILES['image']['tmp_name']) > $maxFileSize) {
+                $errors[] = 'Voter fichier doit faire moins de 1M !';
+            }
+
+            if (isset($_POST['name_product']) && !empty($_POST['name_product'])) {
+                $_POST['name_product'] = trim($_POST['name_product']);
+                $_POST['name_product'] = htmlspecialchars($_POST['name_product']);
+            } else {
+                $errors [] = 'il manque le nom';
+            }
+            if (isset($_POST['price']) && !empty($_POST['price'])) {
+                $_POST['price'] = trim($_POST['price']);
+                $_POST['price'] = htmlspecialchars($_POST['price']);
+            } else {
+                $errors [] = 'il manque le prix';
+            }
+            if (isset($_POST['description']) && !empty($_POST['description'])) {
+                $_POST['description'] = trim($_POST['description']);
+                $_POST['description'] = htmlspecialchars($_POST['description']);
+            } else {
+                $errors [] = "il manque la description";
+            }
+            if (!empty($errors)) {
+                return $this->twig->render('product/error.html.twig', ['errors' => $errors]);
+            }
+
+
+                $productManager = new productManager();
+                $productManager->addProduct($_POST, $_FILES);
+
+                header('Location:/product');
+                return null;
+        }
+
+        return $this->twig->render('product/addProduct.html.twig');
+    }
+
+    public function showAll(): string
+    {
+        $productManager = new ProductManager();
+        $products = $productManager->selectAll();
+
+        return $this->twig->render('product/showAll.html.twig', ['products' => $products]);
+    }
+    public function delete($id)
+    {
+        $userManager = new ProductManager();
+        $userManager->delete($id);
+        header('Location: /product/showAll');
+    }
+
+    public function edit(int $id)
+    {
+        $productManager = new ProductManager();
+        $product = $productManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $product = array_map('trim', $_POST);
+
+            $productManager->editproduct($product);
+            header('location: /product/showAll');
+        }
+
+        return $this->twig->render('product/edit.html.twig', [
+            'product' => $product,
+        ]);
     }
 }

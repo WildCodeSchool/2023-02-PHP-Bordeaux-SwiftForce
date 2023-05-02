@@ -1,6 +1,6 @@
 .WS-user-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-family: var(--fontFamilyText);
 }
 table,
@@ -26,4 +26,7 @@ td {
 .WS-login-container{
     display: flex;
     justify-content: space-around;
+}
+.font{
+    font-family: var(--fontFamilyText);
 }

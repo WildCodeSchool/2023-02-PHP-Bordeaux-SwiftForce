@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <main>
+        <div class="WS-product-container">
+            <p>Nous rencontrons les problèmes suivants pour traiter votre demande : </p>
+            <ul>
+                {% for error in errors %}
+
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            <p>
+                <a href="/product/addProduct">Retour au formulaire</a>
+            </p>
+        </div>
+    </main>
+
+{% endblock %}
