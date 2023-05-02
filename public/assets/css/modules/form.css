@@ -10,9 +10,26 @@ textarea{
     font-family: var(--fontFamilyTitle);
 }
 
-.modal{
+/*////////////////////////////// css modal ////////////*/
+.WS_box {
     display: none;
-    z-index: 1;
+    padding-top: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: var(--fontFamilyTitle);
+    letter-spacing: 2px;
 }
+.WS_dialogBox {
+    margin: auto;
+    background-color: white;
+    width: 500Px;
 
+}
+.WS_dialogBox p{
+    font-family: var(--fontFamilyText);
+}
 
