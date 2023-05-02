@@ -28,7 +28,7 @@ class UserController extends AbstractController
             $userManager = new UserManager();
             $userManager->addUser($_POST);
 
-            header('Location: /');
+            header('Location: /login');
         }
         return $this->twig->render('User/add.html.twig');
     }
