@@ -2,31 +2,29 @@
 
 {% block content %}
     <div class="WS-user-container">
-<<<<<<< HEAD
-=======
 
->>>>>>> 4407afcef7d2ece2a96b31ca25eb901d69116683
         <table>
             <thead>
             <tr>
-                <th colspan="2" class="fs-1">UTILISATEURS</th>
+                <th colspan="2" class="fs-1">Produits</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>Nom</td>
-                <td>Email :</td>
-                <td>Date anniversaire</td>
+                <td>price</td>
                 <td>Supprimer</td>
-                <td>Role</td>
+                <td>Modifier le produit</td>
             </tr>
-            {% for user in users %}
+            {% for product in products %}
                 <tr>
-                    <td>{{ user.user_name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.birthday }}</td>
-                    <td><a href="users/delete?id={{ user.id }}" class="text-decoration-none text-reset">Delete</a></td>
-                    <td>{{ user.role }}</td>
+                    <td><a href="/product/show?id={{ product.id }}"
+                           class="text-decoration-none text-reset">{{ product.name_product }}</a></td>
+                    <td>{{ product.price }} €</td>
+                    <td><a href="/product/delete?id={{ product.id }}" class="text-decoration-none text-reset">Delete</a>
+                    </td>
+                    <td><a href="/product/edit?id={{ product.id }}" class="text-decoration-none text-reset">Modifier</a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
