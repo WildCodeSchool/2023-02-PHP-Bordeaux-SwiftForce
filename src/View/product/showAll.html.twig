@@ -47,13 +47,13 @@
             </div>
         </div>
     </div>
-    <div id="modal" class="modal">
-        <form class="modal-content" id="deletForm" action="/product/delete" method="POST">
-            <div class="container">
-                <h1>Suppression</h1>
-                <p>Etes vous sur de vouloir supprimer ce produit ?</p>
+    <div id="modal" class="WS_box">
+        <form class="WS_dialogBox" id="deletForm" action="/product/delete" method="POST">
+            <div>
+                <h2 class=" text-center">Suppression</h2>
+                <p class="text-center">Etes vous sur de vouloir supprimer ce produit ?</p>
                 <input type="hidden" id="productId" name="id" value="{{ product.id }}">
-                <div>
+                <div class="text-center pb-2">
                     <button type="button" class="btn btn-secondary" id="cancelBtn" title="Close Modal">Annuler</button>
                     <button type="submit" class="btn btn-primary">Supprimer</button>
                 </div>
