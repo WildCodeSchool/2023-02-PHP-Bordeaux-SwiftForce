@@ -50,13 +50,26 @@
     .test {
         height: 15vh;
         justify-content: space-between;
+        border-bottom-style: solid;
+        border-color: var(--bs-border-color-translucent);
+        border-width: var(--bs-border-width);
     }
     .WS-mini-cart{
         width: 95vw;
         margin: auto;
     }
+    .WS-cart {
+        margin: auto;
+    }
     .WS-cart h5 {
         font-size: 1rem;
     }
-
+    .miniCartImage {
+        margin: auto;
+    }
+    .montantTotalmini {
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        text-align: center;
+    }
     }
