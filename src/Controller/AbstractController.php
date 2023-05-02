@@ -6,6 +6,12 @@ use App\Model\UserManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+require 'vendor/autoload.php';
 
 /**
  * Initialized some Controller common features (Twig...)
