@@ -1,7 +1,8 @@
 .WS-product-filter {
     display: flex;
     width: 90vw;
-    margin: auto;
+    margin: 0.5rem auto auto auto;
+
 }
 
 .btn {
@@ -17,7 +18,7 @@
     display: flex;
     flex-flow: row wrap;
     /*justify-content: space-between;*/
-    margin: 1rem auto 0 auto;
+    margin: 0 auto;
 width: 90vw;
 
 }
@@ -56,6 +57,7 @@ width: 90vw;
 
     .WS-product-container {
         justify-content: center;
+        width: 100vw;
     }
 
     .WS-product-card {
@@ -68,5 +70,8 @@ width: 90vw;
 
     .WS-product-filter {
         margin: 0.5rem;
+    }
+    .card-title{
+        font-size: 12px;
     }
 }

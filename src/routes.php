@@ -34,9 +34,10 @@ return [
     'login' => ['LoginController', 'login'],
     'profile' => ['ProfileController', 'view'],
     'logout' => ['loginController', 'logout'],
+    'contact' => ['HomeController', 'contact'],
+    'contact/envoi' => ['HomeController', 'contact']
     'product/addProduct' => ['ProductController', 'addProd'],
     'product/showAll' => ['ProductController' , 'showAll'],
     'product/delete' => ['ProductController', 'delete', ['id']],
     'product/edit' => ['ProductController', 'edit', ['id']],
-
 ];

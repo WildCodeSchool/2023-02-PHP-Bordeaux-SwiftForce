@@ -9,9 +9,8 @@
 @import "modules/User-index.css";
 @import "modules/miniCart.css";
 @import "modules/additionalSales.css";
+@import "modules/contact.css";
 @import "modules/form.css";
-
-
 
 *{
     box-sizing: border-box;
