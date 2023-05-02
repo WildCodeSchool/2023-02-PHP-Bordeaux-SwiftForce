@@ -1,0 +1,44 @@
+<div class="row WS-user-container">
+    <div class="WS-user-cont font">
+        <p>Veuillez remplir le formulaire pour ajouter un produit</p>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name_product" class="form-label">Nom</label>
+                <input class="form-control" type="text" id="name_product" name="name_product">
+            </div>
+            <div class="mb-3">
+                <label for="sub_category_id_cat" class="form-label">Sous catogorie</label>
+                <select class="wform-label" name="sub_category_id_cat" id="sub_category_id_cat">
+                    <option value="">Choisir une Sous categorie</option>
+                    <option value="1">S'habiller</option>
+                    <option value="2">S'alimenter</option>
+                    <option value="3">S'abriter</option>
+                    <option value="4">Se défendre</option>
+                    <option value="5">S'orienter</option>
+                    <option value="6">Kit de survie</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Prix</label>
+                <input class="form-control" type="text" id="price" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <br>
+                <textarea id="decription" name="description"
+                          rows="5" cols="50"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">image</label>
+                <input class="form-control" type="file" id="image" name="image">
+
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">
+                    Create produit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

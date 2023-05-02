@@ -18,7 +18,7 @@ class LoginController extends AbstractController
                 $_SESSION['user_id'] = $user['id'];
                 header('Location: /');
             } else {
-                echo 'you are bab !';
+                echo 'Désolé vous n\'étes pas inscrit';
             }
         }
         return $this->twig->render('login/login.html.twig');

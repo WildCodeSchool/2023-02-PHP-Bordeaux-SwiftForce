@@ -10,7 +10,8 @@
     "minimum-stability": "stable",
     "require": {
         "twig/twig": "^3.5.1",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "phpmailer/phpmailer": "^6.8"
     },
     "require-dev": {
         "filp/whoops": "^2.15",
