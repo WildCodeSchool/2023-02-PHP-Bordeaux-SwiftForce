@@ -20,7 +20,6 @@ class UserManager extends AbstractManager
 
         $passwordHash = password_hash($user['WS_password'], algo: PASSWORD_DEFAULT);
 
-
         $statement->bindParam(':user_name', $user['user_name'], PDO::PARAM_STR);
         $statement->bindParam(':birthday', $user['birthday'], PDO::PARAM_STR);
         $statement->bindParam(':email', $user['email'], PDO::PARAM_STR);
@@ -48,7 +47,6 @@ class UserManager extends AbstractManager
         $stm->bindValue(':email', $user['email'], PDO::PARAM_STR);
         $stm->bindValue(':WS_password', $passwordHash, PDO::PARAM_STR);
         $stm->bindValue(':id', $user['id'], PDO::PARAM_INT);
-
 
         return $stm->execute();
     }
