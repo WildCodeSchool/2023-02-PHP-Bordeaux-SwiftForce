@@ -5,12 +5,13 @@
     font-family: var(--fontFamilyTitle);
     letter-spacing: 1.5px;
 }
+
 .additionSales {
     width: 80vw;
     margin: auto;
 }
-.additionSalesContent {
-    width: 62%;
+.additionSalesContentLarge {
+    width: 100%;
 }
 .WS-basket-card-box {
     display: flex;
@@ -22,11 +23,36 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 24%;
+    width: 19%;
     background-color: white;
 }
 .card-subtitle {
     margin-bottom: 1vh;
+}
+
+.additionSalesLarge {
+    width: 80vw;
+    margin: auto;
+}
+.additionSalesLarge h2 {
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+    font-family: var(--fontFamilyTitle);
+}
+.additionSalesLarge ul {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.additionSalesLarge ul li {
+    width: 19.5%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
 
 @media screen and (max-width: 480px) {

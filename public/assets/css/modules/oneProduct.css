@@ -13,10 +13,13 @@
     display : flex;
     flex-direction: row;
     padding-top: 50px;
-    margin-left: 100px;
+    width: 80vw;
+    margin: auto;
+}
+.bigTitle{
+    font-family: var(--fontFamilyTitle);
 }
 .one-product h2{
-    font-size: 50px;
     font-family: var(--fontFamilyTitle);
 }
 .one-product img{
@@ -80,8 +83,8 @@
 }
 /************* Slide comments **************/
 .customers-comments h2{
-    font-size: 50px;
-    margin-left: 80px;
+    width: 80vw;
+    margin: auto;
     font-family: var(--fontFamilyTitle);
 }
 .comments{

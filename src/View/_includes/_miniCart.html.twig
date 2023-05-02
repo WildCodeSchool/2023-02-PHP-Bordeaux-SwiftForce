@@ -7,6 +7,7 @@
         <div class="WS-cart">
             <h5 class="WS-cart-montant">{{ cart.name }}</h5>
             <h5 class="WS-cart-montant">{{ cart.price }} €</h5>
+            <h5 class="WS-cart-montant">Quantités : {{ cart.quantity }}</h5>
             <div class="WS-basket-delete-update-content">
                 <a href="/basket/delete?id={{ cart.id }}"><img src="/assets/images/trashlogo.png" alt=""></a>
                 <form action="basket/edit" method="get">
