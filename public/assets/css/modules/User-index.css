@@ -5,58 +5,68 @@
     justify-content: center;
     align-items: center;
 }
-.dashboardbanner img{
+
+.dashboardbanner img {
     width: 100%;
 }
-.dashboardbanner h1{
+
+.dashboardbanner h1 {
     font-family: var(--fontFamilyTitle);
     font-size: 5rem;
     position: absolute;
 }
-.dashboardbanner h2{
+
+.dashboardbanner h2 {
     font-family: var(--fontFamilyText);
     font-weight: bold;
     font-size: 1.5rem;
     position: absolute;
     top: 60%;
 }
-.dashboardmenu{
+
+.dashboardmenu {
     width: 100vw;
     display: flex;
     justify-content: center;
 }
-.dashboardbtn{
+
+.dashboardbtn {
     margin: 0 1vw auto 1vw;
 }
-.WS-user-container{
+
+.WS-user-container {
     display: flex;
     justify-content: space-around;
     font-family: var(--fontFamilyText);
 }
+
 table,
 td {
     border: 1px solid #333;
     text-align: left;
 }
+
 td {
-    padding: 0 1rem ;
+    padding: 0 1rem;
 }
 
-.WS-user-cont{
+.WS-user-cont {
     width: 500px;
 
 }
 
-.WS-user-flex{
+.WS-user-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: var(--fontFamilyText);
 }
-.WS-login-container{
+
+.WS-login-container {
     display: flex;
     justify-content: space-around;
 }
-.font{
+
+.font {
     font-family: var(--fontFamilyText);
 }
