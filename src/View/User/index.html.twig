@@ -1,11 +1,7 @@
-{% extends 'layout.html.twig' %}
+{% extends '/profile/view.html.twig' %}
 
-{% block content %}
+{% block dashboardcontent %}
     <div class="WS-user-container">
-<<<<<<< HEAD
-=======
-
->>>>>>> 4407afcef7d2ece2a96b31ca25eb901d69116683
         <table>
             <thead>
             <tr>
@@ -25,29 +21,37 @@
                     <td>{{ user.user_name }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.birthday }}</td>
-                    <td><a href="users/delete?id={{ user.id }}" class="text-decoration-none text-reset">Delete</a></td>
+                    <td><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset">Delete</a></td>
                     <td>{{ user.role }}</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-        <div>
-            <div class="my-3">
-                <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
-            </div>
-            <div class="my-3">
-                <a href="/users" class="btn btn-sucess text-decoration-none text-white">liste des utilisateurs</a>
-            </div>
-            <div class="my-3">
-                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">ajout d'utilisateur</a>
-            </div>
-            <div class="my-3">
-                <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">ajout produit</a>
-            </div>
-            <div class="my-3">
-                <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">liste des produits</a>
-            </div>
-        </div>
     </div>
+    <div id="modal" class="WS_box">
+        <form class="WS_dialogBox" id="deletForm" action="/users/delete" method="POST">
+            <div>
+                <h2 class=" text-center">Suppression</h2>
+                <p class="text-center">Etes vous sur de vouloir supprimer cet utilisateur?</p>
+                <input type="hidden" id="userId" name="id" value="{{ product.id }}">
+                <div class="text-center pb-2">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" title="Close Modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Supprimer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function openModal(id) {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('userId').value = id;
+
+            const cancelBtn = document.getElementById('cancelBtn');
+            cancelBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('modal').style.display = 'none';
+            });
+        }
+    </script>
 {% endblock %}
 

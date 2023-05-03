@@ -1,3 +1,33 @@
+.dashboardbanner {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboardbanner img{
+    width: 100%;
+}
+.dashboardbanner h1{
+    font-family: var(--fontFamilyTitle);
+    font-size: 5rem;
+    position: absolute;
+}
+.dashboardbanner h2{
+    font-family: var(--fontFamilyText);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60%;
+}
+.dashboardmenu{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.dashboardbtn{
+    margin: 0 1vw auto 1vw;
+}
 .WS-user-container{
     display: flex;
     justify-content: space-around;
