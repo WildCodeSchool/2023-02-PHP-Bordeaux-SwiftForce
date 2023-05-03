@@ -44,6 +44,8 @@ abstract class AbstractController
             foreach ($_SESSION['cart'] as $cart) {
                 $total += $cart['quantity'] * $cart['price'];
             }
+            $_SESSION['total'] = $total;
+
             $this->twig->addGlobal('carts', $cartInvert);
             $this->twig->addGlobal('total', $total);
         }
