@@ -30,7 +30,7 @@ CREATE TABLE WS_product
 (
     id             INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     sub_category_id INT                            NOT NULL,
-    FOREIGN KEY (sub_category_id) REFERENCES WS_sub_category (id),
+    FOREIGN KEY (sub_category_id) REFERENCES WS_sub_category (id_cat),
     name_product    VARCHAR(80)                    NOT NULL,
     price           FLOAT                          NOT NULL,
     description     TEXT                  NOT NULL,

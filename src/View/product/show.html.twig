@@ -12,6 +12,31 @@
             </section>
             <p class="product-description">{{ product.description }}</p>
             <form action="" method="get">
+<<<<<<< HEAD
+                    <a href="/product/add?id={{ product.id }}">
+                        <button type="button" class="btn btn-success" name="cart" id="btn-ajout-panier">Ajout Panier</button>
+                    </a>
+            </form>
+        </section>
+    </div>
+    <! -- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
+    <! ----  Desktop COMMENTS ---->
+<div class="customers-comments">
+    <h2>Découvrez pourquoi nos clients nous adorent </h2>
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card-wrapper container-sm d-sm-block d-md-flex  justify-content-around">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Super!</h5>
+                        <div class="star-comment">
+                        <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
+                        <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
+                        <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
+                        <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
+                        <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
+=======
                 <a href="/product/add?id={{ product.id }}">
                     <button type="button" class="btn btn-success" name="cart">Ajout Panier</button>
                 </a>
@@ -19,6 +44,7 @@
         </section>
     </div>
 
+>>>>>>> fa0a828b2cc581ba9c4756fc6a76461adead0c88
     <!-- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
     <div class="customers-comments">
         <h2>Découvrez pourquoi nos clients nous adorent </h2>
@@ -67,6 +93,12 @@
                                     <i class="fa-sharp fa-solid fa-star fa-xl"
                                        style="color: #224c40;"></i>
                                 </div>
+<<<<<<< HEAD
+                                <p class="text-customer-comments">"Je suis très satisfait de mes achats.Leur sélection
+                                    de produits est incroyablement variée et de haute qualité. De plus, leurs prix sont
+                                    très compétitifs. J'ai également apprécié leur processus de commande simple et
+                                    rapide."</p></div>
+=======
                                 <p class="text-customer-comments">"Je suis très
                                     satisfait de
                                     mes achats.Leur sélection
@@ -77,6 +109,7 @@
                                     de commande simple et
                                     rapide.""</p>
                             </div>
+>>>>>>> fa0a828b2cc581ba9c4756fc6a76461adead0c88
                         </div>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
@@ -201,10 +234,16 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+    </div>
+    </div>
+
+    <!-- -------------------------- best sellers  -------------------------- -->
+=======
 
 
     <!---------------------------- best sellers  ---------------------------->
 
+>>>>>>> fa0a828b2cc581ba9c4756fc6a76461adead0c88
     {% include "_includes/additionalSalesLarge.html.twig" %}
-
 {% endblock %}
