@@ -1,12 +1,12 @@
-.form-control{
+.form-control {
     border-radius: 0px;
 }
 
-textarea{
+textarea {
     resize: none;
 }
-.fontTitle
-{
+
+.fontTitle {
     font-family: var(--fontFamilyTitle);
 }
 
@@ -23,13 +23,59 @@ textarea{
     font-family: var(--fontFamilyTitle);
     letter-spacing: 2px;
 }
+
 .WS_dialogBox {
     margin: auto;
     background-color: white;
     width: 500Px;
 
 }
-.WS_dialogBox p{
+
+.WS_dialogBox p {
     font-family: var(--fontFamilyText);
 }
 
+td {
+    border-color: darkgray;
+    text-align: center;
+    border-right: none;
+    border-left: none;
+
+}
+
+.WS_boxtaille {
+    width: 300px;
+}
+
+.WS_td {
+    font-family: var(--fontFamilyTitle);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.WS_user_td {
+    border-color: darkgray;
+}
+
+.WS-user-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: var(--fontFamilyText);
+    width: 50%;
+    margin: auto;
+}
+
+.WS_user_td_2 {
+    font-family: var(--fontFamilyText);
+    width: 40px;
+    text-align: start;
+    border-color: darkgray;
+}
+
+.WS_user_td_3 {
+    font-family: var(--fontFamilyText);
+    width: 40px;
+    text-align: end;
+    border-color: darkgray;
+}
