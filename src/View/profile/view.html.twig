@@ -9,7 +9,7 @@
     <div class="dashboardmenu">
         <div class="my-3 dashboardbtn">
             <a href="/users/edit?id={{ user.id }}"
-               class="btn btn-sucess text-decoration-none text-white">Mon profil</a>
+               class="btn btn-sucess text-decoration-none text-white">Modifier Profil</a>
         </div>
         {% if user.role == 'admin' %}
             <div class="my-3 dashboardbtn">
@@ -17,6 +17,12 @@
             </div>
             <div class="my-3 dashboardbtn">
                 <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">Produits</a>
+            </div>
+            <div class="my-3 dashboardbtn">
+            <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">Ajout Produits</a>
+        </div>
+            <div class="my-3 dashboardbtn">
+                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">Ajout Utilisateurs</a>
             </div>
         {% endif %}
         {% if user.role == 'user' %}

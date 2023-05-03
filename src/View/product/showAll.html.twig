@@ -1,30 +1,26 @@
 {% extends '/profile/view.html.twig' %}
 
 {% block dashboardcontent %}
-    <div class="WS-user-container">
-
+    <div class="WS-user-container2">
+<h2>Produits</h2>
         <table>
-            <thead>
-            <tr>
-                <th colspan="2" class="fs-1">Produits</th>
-            </tr>
-            </thead>
+
             <tbody>
             <tr>
-                <td>Nom</td>
-                <td>price</td>
-                <td>Supprimer</td>
-                <td>Modifier le produit</td>
+                <td class="WS_td WS_boxtaille">Nom</td>
+                <td class="WS_td">price</td>
+                <td class="WS_td">Modifier</td>
+                <td class="WS_td">Supprimer</td>
             </tr>
             {% for product in products %}
                 <tr>
-                    <td><a href="/product/show?id={{ product.id }}"
+                    <td class="WS_user_td_2 "><a href="/product/show?id={{ product.id }}"
                            class="text-decoration-none text-reset">{{ product.name_product }}</a></td>
-                    <td>{{ product.price }} €</td>
-                    <td><a onclick="openModal('{{ product.id }}')" href="#" class="text-decoration-none text-reset">Delete</a>
+                    <td class="WS_user_td_2">{{ product.price }} €</td>
+
+                    <td class="WS_user_td_3" ><a href="/product/edit?id={{ product.id }}" class="text-decoration-none text-reset"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a>
                     </td>
-                    <td><a href="/product/edit?id={{ product.id }}" class="text-decoration-none text-reset">Modifier</a>
-                    </td>
+                    <td class="WS_user_td_3"><a onclick="openModal('{{ product.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a>
                 </tr>
             {% endfor %}
             </tbody>
