@@ -27,10 +27,10 @@
         {% endif %}
         {% if user.role == 'user' %}
             <div class="my-3 dashboardbtn">
-                <a href="/users" class="btn btn-sucess text-decoration-none text-white">Wishlist</a>
+                <a href="/profile/orders" class="btn btn-sucess text-decoration-none text-white">Wishlist</a>
             </div>
             <div class="my-3 dashboardbtn">
-                <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">Mes commandes</a>
+                <a href="/profile/orders" class="btn btn-sucess text-decoration-none text-white">Mes commandes</a>
             </div>
         {% endif %}
         <div class="my-3 dashboardbtn">
@@ -49,7 +49,6 @@
         </div>
     </div>
         {% endblock %}
-
 {% endblock %}
 
 

@@ -1,0 +1,22 @@
+{% extends '/profile/view.html.twig' %}
+
+{% block dashboardcontent %}
+    <p>Commande n° {{ order.0.order_id }}</p>
+    <div class="tableOrder">
+        <div class="tableHEAD">
+            <div class="contenu1">Désignation</div>
+            <div class="contenu2">Quantité</div>
+            <div class="contenu3">Prix unitaire</div>
+        </div>
+        <div class="tableContenu">
+            {% for product in order %}
+                <a href="/product/show?id={{ product.product_id }}">
+                    <div class="detailContenu">
+                        <div class="contenu1">{{ product.name_product }}</div>
+                        <div class="contenu2">{{ product.product_quantity }}</div>
+                        <div class="contenu3">{{ product.price_per }} €</div>
+                    </div></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

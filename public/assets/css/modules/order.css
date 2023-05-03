@@ -1,0 +1,28 @@
+.tableOrder{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin: auto;
+}
+.tableHEAD{
+    display: flex;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-color: var(--bs-border-color-translucent);
+    border-width: var(--bs-border-width);
+}
+.tableContenu{
+    display: flex;
+    flex-direction: column;
+}
+.tableContenu a {
+    text-decoration: none;
+}
+.detailContenu{
+    display: flex;
+    justify-content: space-between;
+}
+.contenu1, .contenu2, .contenu3{
+    width: 33%;
+    text-align: center;
+}
