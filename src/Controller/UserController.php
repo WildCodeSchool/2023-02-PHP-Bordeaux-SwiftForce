@@ -50,10 +50,13 @@ class UserController extends AbstractController
         ]);
     }
 
-    public function delete($id)
+    public function delete(): void
     {
-        $userManager = new UserManager();
-        $userManager->delete($id);
-        header('Location: /users');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $userManager = new UserManager();
+            $userManager->delete($id);
+            header('Location: /users');
+        }
     }
 }
