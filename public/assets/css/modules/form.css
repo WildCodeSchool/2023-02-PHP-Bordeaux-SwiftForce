@@ -32,4 +32,23 @@ textarea{
 .WS_dialogBox p{
     font-family: var(--fontFamilyText);
 }
-
+.WS_user_td{
+    border: none;
+}
+.WS-user-container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: var(--fontFamilyText);
+    width: 50%;
+    margin: auto;
+}
+.WS_user_td_2{
+    border: none;
+    width: 40px;
+    text-align: end;
+}
+.WS_user_td_3{
+    width: 40px;
+    text-align: end;
+}

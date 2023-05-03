@@ -1,28 +1,26 @@
 {% extends '/profile/view.html.twig' %}
 
 {% block dashboardcontent %}
-    <div class="WS-user-container">
+    <div class="WS-user-container2">
+        <h2>Utilisateur</h2>
         <table>
-            <thead>
-            <tr>
-                <th colspan="2" class="fs-1">UTILISATEURS</th>
-            </tr>
-            </thead>
             <tbody>
             <tr>
                 <td>Nom</td>
                 <td>Email :</td>
                 <td>Date anniversaire</td>
-                <td>Supprimer</td>
                 <td>Role</td>
+                <td>Modifier</td>
+                <td>Supprimer</td>
             </tr>
             {% for user in users %}
                 <tr>
-                    <td>{{ user.user_name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.birthday }}</td>
-                    <td><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset">Delete</a></td>
-                    <td>{{ user.role }}</td>
+                    <td class="WS_user_td">{{ user.user_name }}</td>
+                    <td class="WS_user_td">{{ user.email }}</td>
+                    <td class="WS_user_td">{{ user.birthday }}</td>
+                    <td class="WS_user_td">{{ user.role }}</td>
+                    <td class="WS_user_td_2"><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
+                    <td class="WS_user_td_2"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a></td>
                 </tr>
             {% endfor %}
             </tbody>
