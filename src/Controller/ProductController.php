@@ -53,7 +53,25 @@ class ProductController extends AbstractController
         $productManager = new ProductManager();
         $product = $productManager->selectOneById($id);
         $filter = $_SESSION['filter'];
-
+        switch ($product['sub_category_id_cat']) {
+            case '1':
+                $filter['name_sub_category'] = "get_dressed";
+                break;
+            case '2':
+                $filter['name_sub_category'] = "to_eat";
+                break;
+            case '3':
+                $filter['name_sub_category'] = "take_shelter";
+                break;
+            case '4':
+                $filter['name_sub_category'] = "to_defend";
+                break;
+            case '5':
+                $filter['name_sub_category'] = "orientation";
+                break;
+            case '6':
+                $filter['name_sub_category'] = "survival_kit";
+                break;}
         switch ($filter['name_sub_category']) {
             case 'get_dressed':
                 $catNameFrench = "S'habiller";
@@ -72,8 +90,7 @@ class ProductController extends AbstractController
                 break;
             case 'survival_kit':
                 $catNameFrench = "Kits de survie";
-                break;
-        }
+                break;}
         return $this->twig->render('product/show.html.twig', ['product' => $product, 'filter' => $filter, 'catNameFrench' => $catNameFrench]);
     }
 

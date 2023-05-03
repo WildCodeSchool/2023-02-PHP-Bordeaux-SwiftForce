@@ -1,34 +1,60 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    <div class="dashboardbanner">
+        <img src="/assets/images/dashboardbanner.png" alt="">
+        <h1>Bonjour {{ user.user_name }}</h1>
+        <h2>Bienvenue sur votre espace client</h2>
+    </div>
+    <div class="dashboardmenu">
+        <div class="my-3 dashboardbtn">
+            <a href="/users/edit?id={{ user.id }}"
+               class="btn btn-sucess text-decoration-none text-white">Mon profil</a>
+        </div>
+        {% if user.role == 'admin' %}
+            <div class="my-3 dashboardbtn">
+                <a href="/users" class="btn btn-sucess text-decoration-none text-white">Utilisateurs</a>
+            </div>
+            <div class="my-3 dashboardbtn">
+                <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">Produits</a>
+            </div>
+        {% endif %}
+        {% if user.role == 'user' %}
+            <div class="my-3 dashboardbtn">
+                <a href="/users" class="btn btn-sucess text-decoration-none text-white">Wishlist</a>
+            </div>
+            <div class="my-3 dashboardbtn">
+                <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">Mes commandes</a>
+            </div>
+        {% endif %}
+        <div class="my-3 dashboardbtn">
+            <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
+        </div>
+    </div>
+
+    {% block dashboardcontent %}
     <div class="WS-login-container">
         <div class="WS-user-flex">
-            <h1>Bonjour {{ user.user_name }}</h1>
             <p>votre date de naissance : {{ user.birthday }}</p>
             <p> votre E-mail : {{ user.email }}</p>
         </div>
         <div>
-            <div class="my-3">
-                <a href="/users/edit?id={{ user.id }}"
-                   class="btn btn-sucess text-decoration-none text-white">Modifier</a>
-            </div>
-            <div class="my-3">
-                <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
-            </div>
-            {% if user.role == 'admin' %}
-                <div class="my-3">
-                    <a href="/users" class="btn btn-sucess text-decoration-none text-white">liste des utilisateurs</a>
-                </div>
-                <div class="my-3">
-                    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">ajout d'utilisateur</a>
-                </div>
-                <div class="my-3">
-                    <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">ajout produit</a>
-                </div>
-                <div class="my-3">
-                    <a href="/product/showAll" class="btn btn-sucess text-decoration-none text-white">liste des produits</a>
-                </div>
-            {% endif %}
+
         </div>
     </div>
+        {% endblock %}
+
+    <!--
+
+
+<div class="my-3 dashboardbtn">
+    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">ajout d'utilisateur</a>
+</div>
+<div class="my-3 dashboardbtn">
+   <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">ajout produit</a>
+</div>
+
+-->
 {% endblock %}
+
+
