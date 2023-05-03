@@ -44,7 +44,7 @@ class HomeController extends AbstractController
             $message = checkdata($_POST['txtMsg']);
             if ($name != "" & $email != "") {
                 $mail = new sendMail();
-                $mail->sendmail($email, $name, 'contact@thewildshop.com', "Service Clients", $subject, $message . $phone);
+                $mail->sendMail($email, $name, 'contact@thewildshop.com', "Service Clients", $subject, $message . $phone);
                 return $this->twig->render('Home/contact/envoi.html.twig', ['name' => $name, 'email' => $email, 'phone' => $phone, 'subject' => $subject]);
             }
         }
