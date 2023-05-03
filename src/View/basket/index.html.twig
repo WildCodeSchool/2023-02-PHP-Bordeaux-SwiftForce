@@ -4,8 +4,7 @@
     <div class="WS-basket-container mt-5">
 
         <!-- --------------------------------- cart ---------------------------------- -->
-
-        <div class="WS-basket-card-caddie ">
+           <div class="WS-basket-card-caddie ">
             <h4 class="mb-3">Votre panier</h4>
             {% if carts %}
             {% for cart in carts %}
@@ -67,7 +66,7 @@
                     <p class="m-0 fontBold">Total</p>
                     <p class="m-0 fontBold">{{ totalLivraison }} €</p>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Valider mon panier</button>
+                <a href="/basket/validation?validation=ok" class="btn btn-primary w-100">Valider mon panier</a>
             </section>
             <section>
                 <h6 class="text-center">Modes de paiement disponibles</h6>
