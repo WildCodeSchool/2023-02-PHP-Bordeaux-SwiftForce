@@ -32,6 +32,9 @@ textarea{
 .WS_dialogBox p{
     font-family: var(--fontFamilyText);
 }
+td{
+    border-color: var(--primaryColor);
+}
 .WS_user_td{
     border: none;
 }
