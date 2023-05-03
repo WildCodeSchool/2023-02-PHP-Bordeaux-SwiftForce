@@ -15,7 +15,8 @@ class SendMail
         $mail->isSMTP();                                     //Send using SMTP
         $mail->Host = 'localhost';                     //Set the SMTP server to send through
 
-        $mail->Port = 1025;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port = 1025;
+        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom($from, $fromName);
