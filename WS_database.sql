@@ -207,3 +207,34 @@ update WS_product set  image= 'product14.png' where id =14;
 update WS_product set  image= 'product15.png' where id =15;
 update WS_product set  image= 'product16.png' where id =16;
 update WS_product set  image= 'product17.png' where id =17;
+
+
+create table wildshop.ws_order_content
+(
+    id               int auto_increment
+        primary key,
+    order_id         int          not null,
+    product_id       int          not null,
+    name_product     varchar(100) not null,
+    product_quantity int          not null,
+    price_per        float        not null,
+    constraint order_id
+        foreign key (order_id) references wildshop.ws_orders (id),
+    constraint product_id
+        foreign key (product_id) references wildshop.ws_product (id)
+);
+
+create table wildshop.ws_orders
+(
+    id         int auto_increment
+        primary key,
+    user_id    int      not null,
+    order_date datetime not null,
+    shipping   float    not null,
+    total      float    not null,
+    constraint user_id
+        foreign key (user_id) references wildshop.ws_user (id)
+);
+
+
+
