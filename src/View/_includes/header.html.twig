@@ -1,4 +1,4 @@
-<div class="bg-light">
+<div class="bg-light sticky">
     <div class="row mx-0">
 
         <!--incon and image zone-->
@@ -18,7 +18,7 @@
                         <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">  S'habiller</a></li></p>
                         <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_eat" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
                         <p><li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="/product/sortSub?subCat=take_shelter" class="text-decoration-none WS-header">  S'abriter</a></li></p>
-                        <p><li><i class="fa-solid fa-wand-sparkles fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header">  Se défendre</a></li></p>
+                        <p><li><i class="fa-solid fa-gun fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header">  Se défendre</a></li></p>
                         <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="/product/sortSub?subCat=orientation" class="text-decoration-none WS-header">  S'orienter</a></li></p>
                         <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header">  Kit de Suvie</a></li></p>
                     </ul>
@@ -81,6 +81,13 @@
                         </a>
                         <p class="text-center">{{ user.user_name }}</p>
                     </div>
+                    <div>
+                        <a href="/logout">
+                            <i class="fa-solid fa-right-from-bracket m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                               type="button"></i>
+                        </a>
+                        <p class="text-center">Log-out</p>
+                    </div>
                 {% elseif user.role == 'user' %}
                     <div>
                         <a href="/profile">
@@ -89,6 +96,13 @@
                         </a>
                         <p class="text-center">{{ user.user_name }}</p>
                     </div>
+                    <div>
+                        <a href="/logout">
+                            <i class="fa-solid fa-right-from-bracket m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                               type="button"></i>
+                        </a>
+                        <p class="text-center">Log-out</p>
+                    </div>>
                 {% else %}
                     <div>
                         <a href="/login">
