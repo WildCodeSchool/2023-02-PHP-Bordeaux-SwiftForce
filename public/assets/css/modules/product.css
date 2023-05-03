@@ -19,12 +19,14 @@
     flex-flow: row wrap;
     /*justify-content: space-between;*/
     margin: 0 auto;
-width: 90vw;
+    width: 90vw;
 
 }
-.test{
+
+.test {
     padding: 0;
 }
+
 .WS-product-card {
     display: flex;
     flex-direction: column;
@@ -33,10 +35,12 @@ width: 90vw;
     padding: 1rem;
     background-color: white;
 }
-.WS-product-card a img{
+
+.WS-product-card a img {
     width: 200px;
 }
-.WS-product-card:hover{
+
+.WS-product-card:hover {
     border-style: solid;
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
@@ -56,6 +60,7 @@ width: 90vw;
 .card-title {
     height: 50px;
 }
+
 @media screen and (max-width: 480px) {
 
     .WS-product-container {
@@ -74,7 +79,8 @@ width: 90vw;
     .WS-product-filter {
         margin: 0.5rem;
     }
-    .card-title{
+
+    .card-title {
         font-size: 12px;
     }
 }

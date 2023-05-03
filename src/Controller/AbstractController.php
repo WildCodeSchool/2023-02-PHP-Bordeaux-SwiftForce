@@ -10,15 +10,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//require 'vendor/autoload.php';
-
 /**
  * Initialized some Controller common features (Twig...)
  */
 abstract class AbstractController
 {
     protected Environment $twig;
-    protected array | false $user;
+    protected array|false $user;
 
     public function __construct()
     {

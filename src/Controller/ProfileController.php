@@ -11,4 +11,9 @@ class ProfileController extends AbstractController
         $user = $_SESSION['user'];
         return $this->twig->render('profile/view.html.twig', ['user' => $user]);
     }
+    public function orders()
+    {
+
+        return $this->twig->render('profile/order.html.twig');
+    }
 }

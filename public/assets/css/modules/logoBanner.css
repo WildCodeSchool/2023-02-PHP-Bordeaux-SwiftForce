@@ -33,6 +33,7 @@
     position: absolute;
     bottom: 50%;
 }
+
 .logoBanner h5 {
     font-family: var(--fontFamilyText);
     color: white;
@@ -52,7 +53,7 @@
 
 /*********************** media query ***********************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .logoBanner {
         height: 15vh;
     }

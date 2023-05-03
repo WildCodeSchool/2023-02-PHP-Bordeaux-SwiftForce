@@ -15,38 +15,6 @@ class ProductController extends AbstractController
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
 
-    /* fonction pour appliquer les filtres en même temps à développer
-     public function sortGlobal(string $catName, string $subCatName, string $price)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $catName = $_GET['name_category'];
-            $subCatName = $_GET['name_sub_category'];
-            $price = $_GET['price'];
-
-            if (!array_key_exists('name_sub_category', $_SESSION['filter'])) {
-                $_SESSION['filter']['name_sub_category'] = 'default';
-            }
-            if (!array_key_exists('name_category', $_SESSION['filter'])) {
-                $_SESSION['filter']['name_category'] = 'default';
-            }
-            if (!array_key_exists('price', $_SESSION['filter'])) {
-                $_SESSION['filter']['price'] = 'default';
-            }
-            if (isset($_GET['name_sub_category'])) {
-                $_SESSION['filter']['name_sub_category'] = $_GET['name_sub_category'];
-            } elseif (isset($_GET['name_category'])) {
-                $_SESSION['filter']['name_category'] = $_GET['name_category'];
-            } elseif (isset($_GET['price'])) {
-                $_SESSION['filter']['price'] = $_GET['price'];
-            }
-        }
-        $subCatName = $_SESSION['filter']['name_sub_category'];
-        $catName = $_SESSION['filter']['name_category'];
-        $price = $_SESSION['filter']['price'];
-        $productManager = new ProductManager();
-        $products = $productManager->sortGlobal($subCatName, $catName, $price);
-        return $this->twig->render('Product/index.html.twig', ['products' => $products]);
-    }*/
 
     public function show(int $id): string
     {
@@ -71,7 +39,8 @@ class ProductController extends AbstractController
                 break;
             case '6':
                 $filter['name_sub_category'] = "survival_kit";
-                break;}
+                break;
+        }
         switch ($filter['name_sub_category']) {
             case 'get_dressed':
                 $catNameFrench = "S'habiller";
@@ -90,7 +59,8 @@ class ProductController extends AbstractController
                 break;
             case 'survival_kit':
                 $catNameFrench = "Kits de survie";
-                break;}
+                break;
+        }
         return $this->twig->render('product/show.html.twig', ['product' => $product, 'filter' => $filter, 'catNameFrench' => $catNameFrench]);
     }
 
@@ -135,8 +105,6 @@ class ProductController extends AbstractController
         $productManager = new ProductManager();
         $products = $productManager->sortGlobal($subCat, $price);
 
-        //$_SESSION['filter']['name'] = $subCat;
-
 
         if (!key_exists('filter', $_SESSION)) {
             $_SESSION['filter']['name_sub_category'] = "default";
@@ -153,6 +121,7 @@ class ProductController extends AbstractController
         }
         return $this->twig->render('Product/index.html.twig', ['products' => $products, 'filter' => $filter, 'subCat' => $subCat]);
     }
+
     public function sortCategory(string $cat): string
     {
         if (strpos($_SERVER['REQUEST_URI'], 'sortCat?cat=')) {
@@ -263,11 +232,11 @@ class ProductController extends AbstractController
             }
 
 
-                $productManager = new productManager();
-                $productManager->addProduct($_POST, $_FILES);
+            $productManager = new productManager();
+            $productManager->addProduct($_POST, $_FILES);
 
-                header('Location:/product');
-                return null;
+            header('Location:/product');
+            return null;
         }
 
         return $this->twig->render('product/addProduct.html.twig');
@@ -280,6 +249,7 @@ class ProductController extends AbstractController
 
         return $this->twig->render('product/showAll.html.twig', ['products' => $products]);
     }
+
     public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

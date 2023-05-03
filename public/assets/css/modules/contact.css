@@ -1,49 +1,57 @@
-.contactContainer{
+.contactContainer {
     background-image: url("/assets/images/surviecontact.webp");
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .contactContainer p {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 2%;
     font-size: 0.9rem;
 }
-.contactError{
+
+.contactError {
     color: red;
 }
-.contact-form{
+
+.contact-form {
     background: #fff;
     margin-top: 5%;
     margin-bottom: 5%;
     width: 70%;
 }
-.form-group-contact{
+
+.form-group-contact {
     margin-bottom: 0;
     margin-top: 2vh;
 }
-.contact-form .form-control{
-    border-radius:1rem;
+
+.contact-form .form-control {
+    border-radius: 1rem;
 }
-.contact-image .contact-image-sent{
-}
+
 .contact-image-sent img {
     width: 8%;
     margin-top: -3%;
 }
-.contact-image img{
+
+.contact-image img {
     background-color: white;
     width: 8%;
     margin-top: -3%;
 }
-.contact-form form{
+
+.contact-form form {
     padding: 14%;
 }
-.contact-form form .row{
+
+.contact-form form .row {
     margin-bottom: -7%;
 }
-.contact-form h3{
+
+.contact-form h3 {
     font-size: 3rem;
     margin-bottom: 8%;
     margin-top: -10%;
@@ -51,6 +59,7 @@
     color: var(--primaryColor);
     font-family: var(--fontFamilyTitle);
 }
+
 .contact-form .btnContact {
     width: 50%;
     border: none;
@@ -61,8 +70,8 @@
     color: #fff;
     cursor: pointer;
 }
-.btnContactSubmit
-{
+
+.btnContactSubmit {
     width: 50%;
     border-radius: 1rem;
     padding: 1.5%;
@@ -71,61 +80,71 @@
     border: none;
     cursor: pointer;
 }
-.message{
+
+.message {
     resize: none;
     height: 100px;
     width: 350px;
 }
+
 .btnContact {
     width: 10%;
 }
-.rowSent{
+
+.rowSent {
     padding-bottom: 5vh;
     width: 70%;
     margin: auto;
 }
-.message-sent{
+
+.message-sent {
     text-align: center;
     margin: auto;
     padding: 2vh;
 }
-.message-sent p{
+
+.message-sent p {
     font-family: var(--fontFamilyText);
 }
-.message-sent h1{
+
+.message-sent h1 {
     font-family: var(--fontFamilyTitle);
 }
 
 @media screen and (max-width: 480px) {
-    .contact-form{
+    .contact-form {
         width: 90vw;
+        margin-top: 8%;
     }
-    .contact-form h3{
+
+    .contact-form h3 {
         font-size: 2rem;
     }
-    .btnContactSubmitCentral{
+
+    .btnContactSubmitCentral {
         margin: 2vh auto auto auto;
         display: flex;
         justify-content: center;
     }
-    .contact-form form{
+
+    .contact-form form {
         padding-right: 0;
         padding-left: 0;
     }
-    .contact-image img{
+
+    .contact-image img {
         width: 15%;
         margin-top: -10%;
     }
-    .contact-image-sent img{
+
+    .contact-image-sent img {
         width: 15%;
         margin-top: -10%;
     }
-    .contact-form{
-        margin-top: 8%;
-    }
-    .rowSent{
+
+    .rowSent {
         width: 100%;
     }
 
-    }
+}
 

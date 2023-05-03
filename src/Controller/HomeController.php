@@ -13,6 +13,7 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
+
     public function contact(): string
     {
         $name = $email = $phone = $subject = "";
@@ -24,6 +25,7 @@ class HomeController extends AbstractController
             $data = htmlentities($data);
             return $data;
         }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!isset($_POST['txtName']) | empty(trim($_POST['txtName']))) {
                 $errors['name'] = "Le nom est obligatoire";
