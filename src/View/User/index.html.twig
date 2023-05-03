@@ -15,12 +15,12 @@
             </tr>
             {% for user in users %}
                 <tr>
-                    <td class="WS_user_td">{{ user.user_name }}</td>
-                    <td class="WS_user_td">{{ user.email }}</td>
-                    <td class="WS_user_td">{{ user.birthday }}</td>
-                    <td class="WS_user_td">{{ user.role }}</td>
-                    <td class="WS_user_td_2"><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
-                    <td class="WS_user_td_2"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a></td>
+                    <td class="WS_user_td_2">{{ user.user_name }}</td>
+                    <td class="WS_user_td_2">{{ user.email }}</td>
+                    <td class="WS_user_td_2">{{ user.birthday }}</td>
+                    <td class="WS_user_td_2">{{ user.role }}</td>
+                    <td class="WS_user_td_3"><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
+                    <td class="WS_user_td_3"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a></td>
                 </tr>
             {% endfor %}
             </tbody>
