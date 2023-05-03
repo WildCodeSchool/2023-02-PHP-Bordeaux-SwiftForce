@@ -12,7 +12,7 @@ CREATE TABLE WS_user
 (
     id_user        INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     basket_id INT                            NOT NULL,
-    FOREIGN KEY (basket_id) REFERENCES WS_basket (id),
+    FOREIGN KEY (basket_id) REFERENCES ws_orders (id),
     user_name VARCHAR(80)                    NOT NULL,
     password  VARCHAR(80)                    NOT NULL,
     email     VARCHAR(80)                    NOT NULL,
