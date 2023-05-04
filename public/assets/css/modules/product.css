@@ -4,7 +4,13 @@
     margin: 0.5rem auto auto auto;
 
 }
-
+.WSflex{
+    display: flex;
+    justify-content: center;
+}
+.card-title{
+    height: 40px;
+}
 .btn {
     width: 150px;
 }
@@ -57,9 +63,6 @@
     justify-content: space-between;
 }
 
-.card-title {
-    height: 50px;
-}
 
 @media screen and (max-width: 480px) {
 
