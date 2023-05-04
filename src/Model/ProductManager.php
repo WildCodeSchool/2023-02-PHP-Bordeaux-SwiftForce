@@ -104,4 +104,13 @@ class ProductManager extends AbstractManager
 
         return $stm->execute();
     }
+
+    public function searchProduct(string $q): array
+    {
+        $sql = 'SELECT * FROM WS_product WHERE name_product LIKE "%'.$q.'%" ORDER BY id DESC';
+        $statement = $this->pdo->query($sql);
+        $result = $statement->fetchAll();
+
+        return $result;
+    }
 }
