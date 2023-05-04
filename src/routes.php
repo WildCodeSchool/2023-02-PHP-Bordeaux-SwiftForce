@@ -6,44 +6,44 @@
 //          2. method name
 //          3. (optional) array of query string keys to send as parameter to the method
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
-return [
-    '' => ['HomeController', 'index',],
-    'items' => ['ItemController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
-    'product' => ['productController', 'index'],
-    'product/show' => ['ProductController', 'show', ['id']],
-    'product/add' => ['ProductController', 'add',['id']],
-    'product/sort' => ['ProductController', 'sortPrice',['price']],
-    'product/sortSub' => ['ProductController', 'sortSubCategory',['subCat']],
-    'product/sortCat' => ['ProductController', 'sortCategory',['cat']],
+return array(
+    '' => array('HomeController', 'index',),
+    'items' => array('ItemController', 'index',),
+    'items/edit' => array('ItemController', 'edit', array('id')),
+    'items/show' => array('ItemController', 'show', array('id')),
+    'items/add' => array('ItemController', 'add',),
+    'items/delete' => array('ItemController', 'delete',),
+    'product' => array('productController', 'index'),
+    'product/show' => array('ProductController', 'show', array('id')),
+    'product/add' => array('ProductController', 'add', array('id')),
+    'product/sort' => array('ProductController', 'sortPrice', array('price')),
+    'product/sortSub' => array('ProductController', 'sortSubCategory', array('subCat')),
+    'product/sortCat' => array('ProductController', 'sortCategory', array('cat')),
 
-    'product/addProduct' => ['ProductController', 'addProd'],
-    'product/showAll' => ['ProductController' , 'showAll'],
-    'product/delete' => ['ProductController', 'delete', ['id']],
-    'product/edit' => ['ProductController', 'edit', ['id']],
+    'product/addProduct' => array('ProductController', 'addProd'),
+    'product/showAll' => array('ProductController' , 'showAll'),
+    'product/delete' => array('ProductController', 'delete', array('id')),
+    'product/edit' => array('ProductController', 'edit', array('id')),
 
-    'basket' => ['BasketController', 'index'],
-    'basket/validation' => ['BasketController', 'validation'],
-    'basket/edit' => ['BasketController', 'edit', ['id','quantity']],
-    'basket/delete' => ['BasketController', 'delete', ['id']],
-    'users' => ['UserController', 'index'],
-    'users/show' => ['UserController', 'show', ['id']],
-    'users/add' => ['UserController', 'add'],
-    'users/edit' => ['UserController', 'edit',['id']],
-    'users/delete' => ['UserController', 'delete',['id']],
-    'login' => ['LoginController', 'login'],
-    'profile' => ['ProfileController', 'view'],
-    'profile/orders' => ['ProfileController', 'orders'],
-    'logout' => ['loginController', 'logout'],
-    'contact' => ['HomeController', 'contact'],
-    'contact/envoi' => ['HomeController', 'contact'],
+    'basket' => array('BasketController', 'index'),
+    'basket/validation' => array('BasketController', 'validation'),
+    'basket/edit' => array('BasketController', 'edit', array('id','quantity')),
+    'basket/delete' => array('BasketController', 'delete', array('id')),
+    'users' => array('UserController', 'index'),
+    'users/show' => array('UserController', 'show', array('id')),
+    'users/add' => array('UserController', 'add'),
+    'users/edit' => array('UserController', 'edit', array('id')),
+    'users/delete' => array('UserController', 'delete', array('id')),
+    'login' => array('LoginController', 'login'),
+    'profile' => array('ProfileController', 'view'),
+    'profile/orders' => array('ProfileController', 'orders'),
+    'logout' => array('loginController', 'logout'),
+    'contact' => array('HomeController', 'contact'),
+    'contact/envoi' => array('HomeController', 'contact'),
 
     /*'product/product/product/show' => ['ProductController', 'show', ['id']],*/
     /*'product/product/add' => ['ProductController', 'add',['id']],*/
     /*'product/product/product/add' => ['ProductController', 'add',['id']],*/
     /*'product/product/sortCat' => ['ProductController', 'sortCategory',['cat']],*/
 
-];
+);
