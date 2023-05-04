@@ -16,27 +16,31 @@ class WishlistController extends AbstractController
         $productPrice = $product['price'];
         $productImage = $product['image'];
 
-        $userID = $_SESSION['user_id'];
-        $wishlistManager = new WishlistManager();
-        $wishlistUser = $wishlistManager->selectAllById($userID);
-        $productID = [];
-
-        foreach ($wishlistUser as $product) {
-            $productID[] = $product['product_id'];
-        }
-
-        if (empty($productID)) {
-            $wishlistManager = new WishlistManager();
-            $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);
+        if (!isset($_SESSION['user_id'])) {
+            header('Location:/login');
         } else {
-            if (in_array($id, $productID)) {
-                header('Location:/wishlist');
-            } else {
+            $userID = $_SESSION['user_id'];
+            $wishlistManager = new WishlistManager();
+            $wishlistUser = $wishlistManager->selectAllById($userID);
+            $productID = [];
+
+            foreach ($wishlistUser as $product) {
+                $productID[] = $product['product_id'];
+            }
+
+            if (empty($productID)) {
                 $wishlistManager = new WishlistManager();
                 $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);
+            } else {
+                if (in_array($id, $productID)) {
+                    header('Location:/wishlist');
+                } else {
+                    $wishlistManager = new WishlistManager();
+                    $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);
+                }
             }
+            header('Location:/wishlist');
         }
-    header('Location:/wishlist');
     }
     public function index(): string
     {

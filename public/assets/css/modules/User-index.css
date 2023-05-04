@@ -39,6 +39,9 @@
     justify-content: space-around;
     font-family: var(--fontFamilyText);
 }
+.titreProfile{
+    font-family: var(--fontFamilyTitle);
+}
 
 table,
 td {
@@ -51,7 +54,7 @@ td {
 }
 
 .WS-user-cont {
-    width: 500px;
+    width: 50%;
 
 }
 
@@ -72,4 +75,20 @@ td {
 }
 .deleteWishlist{
     height: 2.5vh;
+}
+.loginTitle{
+    font-family: var(--fontFamilyTitle);
+}
+.textDescriptionForm{
+    border : 1px solid #ced4da;
+}
+
+.loginInput{
+    width: 30vw;
+    height: 5vh;
+    text-align: center;
+    border-style: solid;
+    border-color: var(--bs-border-color-translucent);
+    border-width: var(--bs-border-width);
+    margin-bottom: 2vh;
 }

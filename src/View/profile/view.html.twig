@@ -9,7 +9,7 @@
     <div class="dashboardmenu">
         <div class="my-3 dashboardbtn">
             <a href="/users/edit?id={{ user.id }}"
-               class="btn btn-sucess text-decoration-none text-white">Modifier Profil</a>
+               class="btn btn-sucess text-decoration-none text-white">Mon profil</a>
         </div>
         {% if user.role == 'admin' %}
             <div class="my-3 dashboardbtn">
@@ -27,14 +27,14 @@
         {% endif %}
         {% if user.role == 'user' %}
             <div class="my-3 dashboardbtn">
-                <a href="/wishlist" class="btn btn-sucess text-decoration-none text-white">Wishlist</a>
+                <a href="/wishlist" class="btn btn-sucess text-decoration-none text-white">Ma liste d'envies</a>
             </div>
             <div class="my-3 dashboardbtn">
                 <a href="/profile/orders" class="btn btn-sucess text-decoration-none text-white">Mes commandes</a>
             </div>
         {% endif %}
         <div class="my-3 dashboardbtn">
-            <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Se deconnecter</a>
+            <a href="/logout" class="btn btn-sucess text-decoration-none text-white">Me déconnecter</a>
         </div>
     </div>
 

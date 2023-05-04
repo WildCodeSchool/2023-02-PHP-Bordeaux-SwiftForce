@@ -45,9 +45,20 @@
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
 }
-.contenu1, .contenu2, .contenu3{
+.contenu1, .contenu2{
     width: 33%;
+}
+.contenu3, .contenu4{
+    width: 20%;
+}
+.contenu1, .contenu2, .contenu3, .contenu4{
     text-align: center;
+}
+.eye-order{
+    visibility: hidden;
+}
+.detailContenuOrder:hover .eye-order{
+    visibility: unset;
 }
 .titleOrder{
     width: 70vw;

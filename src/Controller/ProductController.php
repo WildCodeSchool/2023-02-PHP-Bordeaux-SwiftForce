@@ -188,9 +188,17 @@ class ProductController extends AbstractController
         }
     }
 
-    public function addProd(): ?string
+    public function addProd(): string
     {
-        $errors = [];
+        $product['name'] = $product['sub_cat'] = $product['price'] = $product['description'] = $product['image'] = "";
+        $errors['name'] = $errors['sub_cat'] = $errors['price'] = $errors['description'] = $errors['image'] = "";
+        function checkdata($data)
+        {
+            $data = trim($data);
+            $data = htmlspecialchars($data);
+            $data = htmlentities($data);
+            return $data;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadDir = "../public/assets/images/";
@@ -201,46 +209,47 @@ class ProductController extends AbstractController
             $maxFileSize = 1000000;
 
             if ((!in_array($extension, $authorizedExtensions))) {
-                $errors[] = 'Veuillez selectionner une image de type Jpg ou Jpeg ou PNG ou gif ou webp !';
+                $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou PNG ou gif ou webp.';
             }
             if (file_exists($_FILES['image']['name']) && filesize($_FILES['image']['tmp_name']) > $maxFileSize) {
-                $errors[] = 'Voter fichier doit faire moins de 1M !';
+                $errors['image'] = 'Voter fichier doit faire moins de 1Mo.';
             }
-
-            if (isset($_POST['name_product']) && !empty($_POST['name_product'])) {
-                $_POST['name_product'] = trim($_POST['name_product']);
-                $_POST['name_product'] = htmlspecialchars($_POST['name_product']);
+            if ($_POST['sub_category_id_cat'] === '') {
+                $errors['sub_cat'] = 'Merci de choisir une sous-catégorie.';
             } else {
-                $errors [] = 'il manque le nom';
+                $product['sub_cat'] = checkdata($_POST['sub_category_id_cat']);
             }
-            if (isset($_POST['price']) && !empty($_POST['price'])) {
-                $_POST['price'] = trim($_POST['price']);
-                $_POST['price'] = htmlspecialchars($_POST['price']);
+            if (!isset($_POST['name_product']) | empty(trim($_POST['name_product']))) {
+                $errors['name'] = 'Ce champs est obligatoire.';
             } else {
-                $errors [] = 'il manque le prix';
+                $product['name'] = checkdata($_POST['name_product']);
             }
-            if (isset($_POST['description']) && !empty($_POST['description'])) {
-                $_POST['description'] = trim($_POST['description']);
-                $_POST['description'] = htmlspecialchars($_POST['description']);
+            if (!isset($_POST['price']) | empty(trim($_POST['price']))) {
+                $errors['price'] = 'Ce champs est obligatoire.';
             } else {
-                $errors [] = "il manque la description";
+                $product['price'] = checkdata($_POST['price']);
             }
-            if (!empty($errors)) {
-                return $this->twig->render('product/error.html.twig', ['errors' => $errors]);
+            if (!isset($_POST['description']) | empty(trim($_POST['description']))) {
+                $errors['description'] = 'Ce champs est obligatoire.';
+            } else {
+                $product['description'] = checkdata($_POST['description']);
             }
-            $productManager = new productManager();
-            $productManager->addProduct($_POST, $_FILES);
-
-            header('Location:/product');
-            return null;
+            if ($errors['name'] != "" | $errors['sub_cat'] != "" | $errors['price'] != "" | $errors['description']  != "" | $errors['image'] != "") {
+                return $this->twig->render('product/addProduct.html.twig', ['error' => $errors, 'product' => $product]);
+            } else {
+                $productManager = new productManager();
+                $productManager->addProduct($_POST, $_FILES);
+                header('Location:/product/showAll');
+            }
         }
-        return $this->twig->render('product/addProduct.html.twig');
+        return $this->twig->render('product/addProduct.html.twig', ['error' => $errors, 'product' => $product]);
     }
 
     public function showAll(): string
     {
         $productManager = new ProductManager();
         $products = $productManager->selectAll();
+        $products = array_reverse($products);
 
         return $this->twig->render('product/showAll.html.twig', ['products' => $products]);
     }

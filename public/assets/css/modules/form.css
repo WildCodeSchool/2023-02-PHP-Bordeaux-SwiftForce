@@ -63,7 +63,7 @@ td {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    font-family: var(--fontFamilyText);
+    font-family: var(--fontFamilyTitle);
     width: 50%;
     margin: auto;
 }

@@ -4,17 +4,21 @@
     <h1 class="titleOrder">Commande n° {{ order.0.order_id }}</h1>
     <div class="tableOrderUnitaire">
         <div class="tableHEAD">
+            <div class="contenu5"></div>
             <div class="contenu1">Désignation</div>
             <div class="contenu2">Quantité</div>
             <div class="contenu3">Prix unitaire</div>
+            <div class="contenu4">Total</div>
         </div>
         <div class="tableContenu">
             {% for product in order %}
                 <a href="/product/show?id={{ product.product_id }}">
                     <div class="detailContenuOrder">
+                        <div class="contenu5"><i class="fa-solid fa-eye eye-order fa-lg" style="color: #004f43;"></i></div>
                         <div class="contenu1">{{ product.name_product }}</div>
                         <div class="contenu2">{{ product.product_quantity }}</div>
                         <div class="contenu3">{{ product.price_per }} €</div>
+                        <div class="contenu4">{{ product.product_quantity * product.price_per }} €</div>
                     </div></a>
             {% endfor %}
         </div>

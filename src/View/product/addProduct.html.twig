@@ -1,6 +1,9 @@
-{% extends 'layout.html.twig' %}
+{% extends '/profile/view.html.twig' %}
 
-{% block content %}
-    <h1 class="fontTitle">Ajouter un Produit</h1>
+{% block dashboardcontent %}
+<div class="WS-user-container2">
+<h1 class="fontTitle mt-3">Ajouter un Produit</h1>
+</div>
     {% include 'product/_form.html.twig' %}
 {% endblock %}
+

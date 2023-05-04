@@ -69,14 +69,14 @@ class ProductManager extends AbstractManager
 
         return $statement->fetch();
     }
-    public function addProduct(array $product): int
+    public function addProduct(array $product, array $file): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (sub_category_id_cat, name_product, price, description, image) VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
         $statement->bindValue('sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_INT);
         $statement->bindValue('name_product', $product['name_product'], PDO::PARAM_STR);
         $statement->bindValue('price', $product['price'], PDO::PARAM_INT);
         $statement->bindValue('description', $product['description'], PDO::PARAM_STR);
-        $statement->bindValue('image', $_FILES['image']['name'], PDO::PARAM_STR);
+        $statement->bindValue('image', $file['image']['name'], PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();

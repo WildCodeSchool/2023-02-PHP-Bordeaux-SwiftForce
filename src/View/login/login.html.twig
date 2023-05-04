@@ -3,16 +3,19 @@
 {% block title %}Add - Users{% endblock %}
 {% block content %}
     <div class="col-6 text-center w-100">
-        <h1>login</h1>
+        <h1 class="loginTitle">Connexion à votre espace personnel</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="email">Email :</label><br>
-                <input type="email" name="email" id="email">
+                <label class="labelInput" for="email">Email :</label><br>
+                <input class="loginInput" type="email" name="email" id="email" value="{{ user.email }}">
+                <p class="contactError">{{ error.email }}</p>
             </div>
             <div class="mb-3">
-                <label for="WS_password">Password :</label><br>
-                <input type="password" name="WS_password" id="WS_password">
+                <label class="labelInput" for="WS_password">Mot de passe :</label><br>
+                <input class="loginInput" type="password" name="WS_password" id="WS_password" value="{{ user.password }}">
+                <p class="contactError">{{ error.password }}</p>
             </div>
+            <p class="contactError">{{ error.connexion }}</p>
             <div class="d-flex justify-content-center">
                 <div class="mb-3">
                     <button class="btn btn-sucess text-white m-3">Connexion</button>

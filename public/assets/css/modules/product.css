@@ -43,7 +43,7 @@
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
 }
-.WS-product-card:hover .fa-eye{
+.WS-product-card:hover .eye-product{
     visibility: unset;
 }
 
@@ -66,10 +66,12 @@
     width: 1.5vw;
     margin-left: 1vw;
 }
-.fa-eye{
+.eye-product{
     visibility: hidden;
 }
-
+.card-img-top:hover .eye-product{
+    visibility: unset;
+}
 .productLogo{
     display: flex;
     justify-content: space-between;

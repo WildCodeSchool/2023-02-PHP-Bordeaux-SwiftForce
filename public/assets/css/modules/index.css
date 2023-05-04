@@ -18,9 +18,13 @@
 
 /*********************** category disc ***********************/
 
-
+.disc_category h2 {
+    margin: 3vh auto auto auto;
+    width: 80vw;
+    font-family: var(--fontFamilyTitle);
+}
 .disc_category ul {
-    margin: 2vh auto 3vh auto;
+    margin: 0 auto 10vh auto;
     width: 90vw;
     height: 12vw;
     padding: 0;
@@ -294,6 +298,11 @@
 
 .card-title {
     height: 2vw;
+}
+.additionSalesTitle{
+    margin: 3vh auto 0 auto;
+    width: 80vw;
+    font-family: var(--fontFamilyTitle);
 }
 
 /*********************** best sellers - media query ***********************/
