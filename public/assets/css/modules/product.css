@@ -2,7 +2,6 @@
     display: flex;
     width: 90vw;
     margin: 0.5rem auto auto auto;
-
 }
 
 .btn {
@@ -20,7 +19,6 @@
     /*justify-content: space-between;*/
     margin: 0 auto;
     width: 90vw;
-
 }
 
 .test {
@@ -36,7 +34,7 @@
     background-color: white;
 }
 
-.WS-product-card a img {
+.productImage {
     width: 200px;
 }
 
@@ -44,6 +42,9 @@
     border-style: solid;
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
+}
+.WS-product-card:hover .fa-eye{
+    visibility: unset;
 }
 
 .card-title,
@@ -61,6 +62,18 @@
     height: 50px;
 }
 
+.lovelogo{
+    width: 1.5vw;
+    margin-left: 1vw;
+}
+.fa-eye{
+    visibility: hidden;
+}
+
+.productLogo{
+    display: flex;
+    justify-content: space-between;
+}
 @media screen and (max-width: 480px) {
 
     .WS-product-container {

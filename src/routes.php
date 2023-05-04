@@ -39,4 +39,7 @@ return [
     'logout' => ['loginController', 'logout'],
     'contact' => ['HomeController', 'contact'],
     'contact/envoi' => ['HomeController', 'contact'],
+    'wishlist' => ['WishlistController', 'index'],
+    'wishlist/add' => ['WishlistController', 'add', ['id']],
+    'wishlist/delete' => ['WishlistController', 'deleteWishlist', ['id']]
 ];
