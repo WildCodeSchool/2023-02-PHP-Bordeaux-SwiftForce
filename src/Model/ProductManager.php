@@ -53,9 +53,9 @@ class ProductManager extends AbstractManager
     public function sortBySubCategory(string $subCat): bool|array
     {
 
-        $sql = "SELECT * FROM WS_product JOIN WS_sub_category ON WS_product .sub_category_id_cat = WS_sub_category.id_cat
-
-            WHERE name_sub_category like '$subCat'";
+        $sql = "SELECT * FROM WS_product JOIN WS_sub_category 
+        ON WS_product .sub_category_id_cat = WS_sub_category.id_cat
+        WHERE name_sub_category like '$subCat'";
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +72,9 @@ class ProductManager extends AbstractManager
     }
     public function addProduct(array $product): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (sub_category_id_cat, name_product, price, description, image) VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
+        $statement = $this->pdo->prepare("
+        INSERT INTO " . self::TABLE . " (sub_category_id_cat, name_product, price, description, image) 
+        VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
         $statement->bindValue('sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_INT);
         $statement->bindValue('name_product', $product['name_product'], PDO::PARAM_STR);
         $statement->bindValue('price', $product['price'], PDO::PARAM_INT);
@@ -107,7 +109,7 @@ class ProductManager extends AbstractManager
 
     public function searchProduct(string $q): array
     {
-        $sql = 'SELECT * FROM WS_product WHERE name_product LIKE "%'.$q.'%" ORDER BY id DESC';
+        $sql = 'SELECT * FROM WS_product WHERE name_product LIKE "%' . $q . '%" ORDER BY id DESC';
         $statement = $this->pdo->query($sql);
         $result = $statement->fetchAll();
 
