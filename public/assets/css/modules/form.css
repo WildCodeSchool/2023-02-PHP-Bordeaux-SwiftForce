@@ -78,6 +78,6 @@ td {
 .WS_user_td_3 {
     font-family: var(--fontFamilyText);
     width: 40px;
-    text-align: end;
+    text-align: center;
     border-color: darkgray;
 }

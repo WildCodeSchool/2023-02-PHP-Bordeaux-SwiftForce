@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
 }
-
+.WSheight{
+    height: 38px;
+}
 .dashboardbanner img {
     width: 100%;
 }
