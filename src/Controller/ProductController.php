@@ -277,13 +277,35 @@ class ProductController extends AbstractController
             'product' => $product,
         ]);
     }
+
     public function productFixtures(): string
     {
         $productManager = new Fixtures();
         $product = $productManager->getProductFixtures(1);
 
         return $this->twig->render('product/fakerProduct.html.twig', [
-        'product' => $product,
+            'product' => $product,
         ]);
+    }
+
+    public function pagination(): string
+    {
+        if (isset($_GET['page']) && !empty($_GET['page'])) {
+            $currentPage = (int)strip_tags($_GET['page']);
+        } else {
+            $currentPage = 1;
+        }
+        $productManager = new ProductManager();
+        $nbProducts = $productManager->countProduct();
+
+        $parPage = 12;
+
+        $pages = ceil($nbProducts / $parPage);
+
+        $premier = ($currentPage * $parPage) - $parPage;
+
+        $products = $productManager->getProduct($premier, $parPage);
+
+        return $this->twig->render('product/index.html.twig',['products' => $products, 'page' => $pages]);
     }
 }
