@@ -13,6 +13,7 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
+
     public function contact(): string
     {
         $name = $email = $phone = $subject = "";
@@ -24,6 +25,7 @@ class HomeController extends AbstractController
             $data = htmlentities($data);
             return $data;
         }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!isset($_POST['txtName']) | empty(trim($_POST['txtName']))) {
                 $errors['name'] = "Le nom est obligatoire";
@@ -44,7 +46,7 @@ class HomeController extends AbstractController
             $message = checkdata($_POST['txtMsg']);
             if ($name != "" & $email != "") {
                 $mail = new sendMail();
-                $mail->sendmail($email, $name, 'contact@thewildshop.com', "Service Clients", $subject, $message . $phone);
+                $mail->sendMail($email, $name, 'contact@thewildshop.com', "Service Clients", $subject, $message . $phone);
                 return $this->twig->render('Home/contact/envoi.html.twig', ['name' => $name, 'email' => $email, 'phone' => $phone, 'subject' => $subject]);
             }
         }

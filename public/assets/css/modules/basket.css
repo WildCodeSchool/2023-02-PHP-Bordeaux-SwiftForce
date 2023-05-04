@@ -5,16 +5,19 @@
     justify-content: space-between;
     font-family: var(--fontFamilyText);
 }
-.WS-basket-container h4{
+
+.WS-basket-container h4 {
     font-family: var(--fontFamilyTitle);
     letter-spacing: 1.5px;
 }
+
 .WS-basket-card-caddie {
     background-color: white;
     display: flex;
     flex-direction: column;
     width: 60%;
 }
+
 .WS-basket-card {
     display: flex;
     justify-content: space-between;
@@ -24,20 +27,25 @@
     border-color: var(--bs-border-color-translucent);
     border-width: var(--bs-border-width);
     margin-bottom: 1vh;
+    position: relative;
 }
+
 .WS-basket-img {
     height: 20vh;
 }
+
 .fontBold {
     font-weight: bold;
 }
+
 .WS-basket-card-body {
-    width: 50%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     padding-bottom: 4vh;
+    width: 70%;
 }
+
 .WS-basket-price {
     display: flex;
     width: 25%;
@@ -46,17 +54,21 @@
     align-items: end;
     padding-right: 1vh;
 }
+
 .WS-basket-price h6 {
     font-weight: bold;
 }
+
 .quantityChangeItem {
     display: flex;
 }
+
 .quantityItem {
     width: 2vw;
     border-style: none;
     text-align: center;
 }
+
 .quantityChange {
     background-color: #224C40C5;
     border-radius: 50%;
@@ -66,62 +78,67 @@
     margin-top: 1vh;
     width: 2vw;
 }
+
 .quantityChange:hover {
     background-color: #224C40;
 }
+
 .WS-basket-card-payment {
     display: flex;
     width: 35%;
     flex-direction: column;
     justify-content: start;
 }
+
 .WS-basket-promo {
     display: flex;
     justify-content: space-between;
     width: 90%;
 }
+
 .WS-basket-box {
     display: flex;
     justify-content: space-between;
 }
+
 .WS-basket-payment {
     display: flex;
     justify-content: center;
 }
+
 .WS-basket-payment i {
     padding: 10px;
 }
+
 .underline {
     border: 1px solid #a0a0a0;
     width: 80%;
 }
+
 .WS-basket-center {
     display: flex;
     width: 25%;
     justify-content: center;
     align-items: center;
 }
+
 .WS-font-size {
     font-size: 0.9rem;
 }
+
 .deleteItem {
     position: absolute;
     top: 13%;
     right: 2%;
     height: 2vh;
 }
-.WS-basket-card-body {
-    flex-direction: row;
-    width: 70%;
-}
+
 .WS-basket-card-body-mini {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.WS-basket-card {
-    position: relative;
-}
+
 .WS-basket-card-payment h6 {
     margin-top: 5vh;
 }
@@ -131,34 +148,44 @@
         flex-direction: column;
         width: 95vw;
     }
+
     .WS-basket-card-caddie h4 {
         text-align: center;
     }
+
     .WS-basket-card-caddie {
         width: 100%;
     }
+
     .WS-basket-center {
         width: 30%;
     }
+
     .WS-basket-img {
         height: 10vh;
     }
+
     .WS-basket-card-body {
         flex-direction: column;
         width: 70%;
         padding-bottom: 1vh;
         justify-content: space-between;
     }
+
     .WS-basket-price {
         width: 100%;
         align-items: start;
+        padding-bottom: 1vh;
     }
+
     .quantityChange {
         width: 6vw;
     }
+
     .quantityItem {
         width: 6vw;
     }
+
     .WS-basket-card-payment {
         width: 95vw;
         padding-bottom: 1vh;
@@ -166,19 +193,20 @@
         border-color: var(--bs-border-color-translucent);
         border-width: var(--bs-border-width);
     }
-    .WS-basket-price {
-        padding-bottom: 1vh;
-    }
+
     .card-subtitle {
         margin-top: 0;
     }
+
     .deleteItem {
         right: 5%;
     }
+
     .WS-basket-card-payment h6 {
         margin-top: 2vh;
     }
+
     .card-title {
         font-size: 1rem;
     }
-    }
+}

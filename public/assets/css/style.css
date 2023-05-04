@@ -12,15 +12,19 @@
 @import "modules/contact.css";
 @import "modules/form.css";
 @import "modules/search.css";
+@import "modules/order.css";
 
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: #FBFBFB;
 }
-i{
+
+i {
     color: var(--primaryColor)
 }

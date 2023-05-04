@@ -52,10 +52,7 @@ class ProductManager extends AbstractManager
 
     public function sortBySubCategory(string $subCat): bool|array
     {
-
-        $sql = "SELECT * FROM WS_product JOIN WS_sub_category 
-        ON WS_product .sub_category_id_cat = WS_sub_category.id_cat
-        WHERE name_sub_category like '$subCat'";
+        $sql = "SELECT * FROM WS_product JOIN WS_sub_category ON WS_product .sub_category_id_cat = WS_sub_category.id_cat WHERE name_sub_category like '$subCat'";
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -87,7 +84,6 @@ class ProductManager extends AbstractManager
 
     public function editProduct(array $product): bool
     {
-
         $sql = "UPDATE " . self::TABLE . " SET
                    `name_product` = :name_product,
                    `price` = :price,
@@ -95,14 +91,11 @@ class ProductManager extends AbstractManager
                    `sub_category_id_cat` = :sub_category_id_cat
                    WHERE id =:id";
         $stm = $this->pdo->prepare($sql);
-
-
         $stm->bindValue(':name_product', $product['name_product'], PDO::PARAM_STR);
         $stm->bindValue(':price', $product['price'], PDO::PARAM_INT);
         $stm->bindValue(':description', $product['description'], PDO::PARAM_STR);
         $stm->bindValue(':sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_STR);
         $stm->bindValue(':id', $product['id'], PDO::PARAM_INT);
-
 
         return $stm->execute();
     }

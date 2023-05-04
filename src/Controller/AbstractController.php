@@ -10,15 +10,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//require 'vendor/autoload.php';
-
 /**
  * Initialized some Controller common features (Twig...)
  */
 abstract class AbstractController
 {
     protected Environment $twig;
-    protected array | false $user;
+    protected array|false $user;
 
     public function __construct()
     {
@@ -38,12 +36,13 @@ abstract class AbstractController
         $this->twig->addGlobal('user', $this->user);
 
         if (isset($_SESSION['cart'])) {
-
             $cartInvert = array_reverse($_SESSION['cart']);
             $total = "0";
             foreach ($_SESSION['cart'] as $cart) {
                 $total += $cart['quantity'] * $cart['price'];
             }
+            $_SESSION['total'] = $total;
+
             $this->twig->addGlobal('carts', $cartInvert);
             $this->twig->addGlobal('total', $total);
         }

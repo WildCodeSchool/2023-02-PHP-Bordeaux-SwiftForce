@@ -1,5 +1,5 @@
 
-.navbar{
+.navbar {
     background: rgb(180, 176, 176);
 }
 
@@ -15,17 +15,17 @@
     margin-bottom: 8px;
 }
 
-.btn2{
---bs-btn-bg: white;
---bs-btn-border-color: white;
---bs-btn-disabled-bg: var(--primaryColor);
---bs-btn-disabled-border-color: var(--primaryColor);
---bs-btn-border-radius: 0;
---bs-btn-font-family: var(--fontFamilyText);
-color: var(--primaryColor);
+.btn2 {
+    --bs-btn-bg: white;
+    --bs-btn-border-color: white;
+    --bs-btn-disabled-bg: var(--primaryColor);
+    --bs-btn-disabled-border-color: var(--primaryColor);
+    --bs-btn-border-radius: 0;
+    --bs-btn-font-family: var(--fontFamilyText);
+    color: var(--primaryColor);
 }
 
-li{
+li {
     list-style: none;
 }
 
@@ -34,20 +34,20 @@ li{
     --bs-link-hover-color: var(--primaryColorHover);
 }
 
-.WS-header{
-    color:var(--primaryColor);
+.WS-header {
+    color: var(--primaryColor);
     --bs-link-color: var(--primaryColor);
     --bs-link-hover-color: var(--primaryColorHover);
 }
 
-.WS-off-canvas{
+.WS-off-canvas {
     --bs-offcanvas-width: 284px;
-    --bs-link-hover-color:  var(--primaryColorHover);
+    --bs-link-hover-color: var(--primaryColorHover);
     bottom: initial;
     height: auto;
 }
 
-.sticky{
+.sticky {
     position: sticky;
     top: 0;
     z-index:4;
@@ -57,3 +57,4 @@ li{
     background-color: #11ffee00;
     border: none;
 }
+

@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\BasketManager;
+use App\Services\sendMail;
+
 class BasketController extends AbstractController
 {
     public function index(): string
@@ -39,12 +42,6 @@ class BasketController extends AbstractController
             $id = $_GET['id'];
             $quantity = $_GET['quantity'];
             $key = 'product_' . $id;
-            //Si la quantité est positive on modifie sinon on supprime l'article
-            /*if ($quantity > 0) {
-                $_SESSION['cart'][$key]['quantity'] = $quantity;
-                $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
-            } else {
-                unset($_SESSION['cart'][$key]);*/
             if (isset($_GET['quantityChange+'])) {
                 $_SESSION['cart'][$key]['quantity'] = ++$quantity;
                 $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
@@ -60,5 +57,38 @@ class BasketController extends AbstractController
             echo "Un problème est survenu veuillez contacter l'administrateur du site.";
         }
         header('Location:/basket');
+    }
+
+    //////////////// fonction de validation du panier ////////////////
+    public function validation()
+    {
+        $format = 'Y-m-d H:i:s';
+        $date = gmdate($format);
+        //$date = time();
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            if (isset($_GET['validation']) && $_GET['validation'] === 'ok') {
+                if (!empty($_SESSION['cart'])) {
+                    $basket = $_SESSION['cart'];
+                    $orderGeneral = [
+                        'userID' => $_SESSION['user_id'],
+                        'orderDate' => $date,
+                        'shipping' => 40,
+                        'total' => $_SESSION['total']
+                    ];
+                    //////////////// insertion dans la BDD de la commande globale ////////////////
+                    $orderManager = new BasketManager();
+                    $orderID = $orderManager->insertOrderGeneral($orderGeneral);
+                    //////////////// insertion dans la BDD du contenu de la commande ////////////////
+                    $orderManager = new BasketManager();
+                    $order = $orderManager->insertOrderContent($basket, $orderID);
+                    //////////////// vidage du panier virtuel ////////////////
+                    unset($_SESSION['cart']);
+                    //////////////// envoi du mail de confirmation ////////////////
+                    $mail = new sendMail();
+                    $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+                    header('Location:/profile/orders');
+                }
+            }
+        }
     }
 }

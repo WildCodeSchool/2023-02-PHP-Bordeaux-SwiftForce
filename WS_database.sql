@@ -12,7 +12,7 @@ CREATE TABLE WS_user
 (
     id_user        INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     basket_id INT                            NOT NULL,
-    FOREIGN KEY (basket_id) REFERENCES WS_basket (id),
+    FOREIGN KEY (basket_id) REFERENCES ws_orders (id),
     user_name VARCHAR(80)                    NOT NULL,
     password  VARCHAR(80)                    NOT NULL,
     email     VARCHAR(80)                    NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE WS_product
 (
     id             INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     sub_category_id INT                            NOT NULL,
-    FOREIGN KEY (sub_category_id) REFERENCES WS_sub_category (id),
+    FOREIGN KEY (sub_category_id) REFERENCES WS_sub_category (id_cat),
     name_product    VARCHAR(80)                    NOT NULL,
     price           FLOAT                          NOT NULL,
     description     TEXT                  NOT NULL,
@@ -207,3 +207,34 @@ update WS_product set  image= 'product14.png' where id =14;
 update WS_product set  image= 'product15.png' where id =15;
 update WS_product set  image= 'product16.png' where id =16;
 update WS_product set  image= 'product17.png' where id =17;
+
+
+create table wildshop.ws_order_content
+(
+    id               int auto_increment
+        primary key,
+    order_id         int          not null,
+    product_id       int          not null,
+    name_product     varchar(100) not null,
+    product_quantity int          not null,
+    price_per        float        not null,
+    constraint order_id
+        foreign key (order_id) references wildshop.ws_orders (id),
+    constraint product_id
+        foreign key (product_id) references wildshop.ws_product (id)
+);
+
+create table wildshop.ws_orders
+(
+    id         int auto_increment
+        primary key,
+    user_id    int      not null,
+    order_date datetime not null,
+    shipping   float    not null,
+    total      float    not null,
+    constraint user_id
+        foreign key (user_id) references wildshop.ws_user (id)
+);
+
+
+
