@@ -22,9 +22,7 @@ body {
 .method-paiement i{
     padding : 3px;
 }
-.WS-footer-row .logo-opquast{
-    padding-left: 5%;
-}
+
 .footer-legal {
     padding-top: 80px;
 }
@@ -39,19 +37,18 @@ body {
     height: 110px;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 50px;
 }
 .logo-cb {
     width : 100px;
     height: 30px;
     display: flex;
 }
-.method-paiement {
-    display: flex;
-    flex-direction: row;
-}
+
 .WS-footer-row h5{
     font-weight: bold;
     color : black;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -77,6 +74,14 @@ body {
     }
     .invisible{
         display: none;
+    }
+    .method-paiement {
+        margin-bottom: 10px;
+    }
+    .WS-footer-row h5{
+        font-weight: bold;
+        color : black;
+        margin-bottom: 3px;
     }
 }
 
