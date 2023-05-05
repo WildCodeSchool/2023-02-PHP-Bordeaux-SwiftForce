@@ -27,9 +27,11 @@ body {
     padding: 3px;
 }
 
+
 .WS-footer-row .logo-opquast {
     padding-left: 5%;
 }
+
 
 .footer-legal {
     padding-top: 80px;
@@ -46,6 +48,7 @@ body {
     height: 110px;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 50px;
 }
 
 .logo-cb {
@@ -54,15 +57,18 @@ body {
     display: flex;
 }
 
+
+.WS-footer-row h5{
+    font-weight: bold;
+    color : black;
+    margin-bottom: 20px;
+
 .method-paiement {
     display: flex;
     flex-direction: row;
 }
 
-.WS-footer-row h5 {
-    font-weight: bold;
-    color: black;
-}
+
 
 @media only screen and (max-width: 480px) {
     .footer-legal {
@@ -74,6 +80,7 @@ body {
     }
     .certificated{
         font-size: 13px;
+        margin-top: 10px;
     }
 
     .legal-notice {
@@ -90,6 +97,17 @@ body {
     }
 
     .invisible {
+        display: none;
+    }
+    .method-paiement {
+        margin-bottom: 10px;
+    }
+    .WS-footer-row h5{
+        font-weight: bold;
+        color : black;
+        margin-bottom: 3px;
+    }
+    .certificated a i{
         display: none;
     }
 }

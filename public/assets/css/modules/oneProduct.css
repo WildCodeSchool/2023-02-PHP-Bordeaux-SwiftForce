@@ -96,6 +96,12 @@
 
 /************* Slide comments **************/
 
+.customers-comments h2 {
+    width: 80vw;
+    margin: auto;
+    font-family: var(--fontFamilyTitle);
+}
+
 .comments {
     width: 100%;
 }
@@ -118,7 +124,16 @@
         font-size: medium;
         font-weight: bold;
     }
+    .customers-comments h2 {
+        font-size: 25px;
+        text-align: left;
+        white-space: nowrap;
+        margin-left: 20px;
+    }
 
+    .customers-comments{
+        display: none;
+    }
     .fa-sharp {
         padding: 1px;
     }
@@ -130,6 +145,16 @@
     .card {
         margin-left: 60px;
     }
+    .customers-comments-phone h2{
+        font-size: 20px;
+        font-family: var(--fontFamilyTitle);
+        margin-left: 14px;
+    }
+}
+
+/************* Slide comment phone***********/
+.customers-comments-phone{
+    display:none;
 }
 
 /************* Cards suggestions **************/
@@ -198,5 +223,12 @@
     }
     #btn-ajout-panier{
         margin-left: 4vw;
+    }
+    .customers-comments-phone{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
     }
 }
