@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ProductManager;
+use App\services\Fixtures;
 use PDO;
 use Symfony\Component\DependencyInjection\Tests\Compiler\Locator;
 
@@ -278,6 +279,15 @@ class ProductController extends AbstractController
 
         return $this->twig->render('product/edit.html.twig', [
             'product' => $product,
+        ]);
+    }
+    public function productFixtures(): string
+    {
+        $productManager = new Fixtures();
+        $product = $productManager->getProductFixtures(1);
+
+        return $this->twig->render('product/fakerProduct.html.twig', [
+        'product' => $product,
         ]);
     }
 }

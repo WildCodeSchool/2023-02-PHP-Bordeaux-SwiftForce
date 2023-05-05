@@ -29,12 +29,13 @@ CREATE TABLE WS_sub_category
 CREATE TABLE WS_product
 (
     id             INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    sub_category_id INT                            NOT NULL,
-    FOREIGN KEY (sub_category_id) REFERENCES WS_sub_category (id_cat),
+    sub_category_id_cat INT                            NOT NULL,
+    FOREIGN KEY (sub_category_id_cat) REFERENCES WS_sub_category (id_cat),
     name_product    VARCHAR(80)                    NOT NULL,
     price           FLOAT                          NOT NULL,
     description     TEXT                  NOT NULL,
-    nbr_sale INT NULL
+    nbr_sale INT NULL,
+    image VARCHAR(300) null
 
 );
 

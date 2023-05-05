@@ -42,4 +42,5 @@ return [
     'wishlist' => ['WishlistController', 'index'],
     'wishlist/add' => ['WishlistController', 'add', ['id']],
     'wishlist/delete' => ['WishlistController', 'deleteWishlist', ['id']]
+    'faker' => ['ProductController', 'productFixtures'],
 ];
