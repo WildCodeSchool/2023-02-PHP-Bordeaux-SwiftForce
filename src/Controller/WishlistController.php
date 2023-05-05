@@ -34,7 +34,7 @@ class WishlistController extends AbstractController
                 $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);
             } else {
                 if (in_array($id, $productID)) {
-                    header('Location:/wishlist');
+                    header('Location:' . $_SERVER['HTTP_REFERER']);
                 } else {
                     $wishlistManager = new WishlistManager();
                     $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);

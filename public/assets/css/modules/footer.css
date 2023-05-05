@@ -58,10 +58,11 @@ body {
 }
 
 
-.WS-footer-row h5{
+.WS-footer-row h5 {
     font-weight: bold;
-    color : black;
+    color: black;
     margin-bottom: 20px;
+}
 
 .method-paiement {
     display: flex;
@@ -110,5 +111,6 @@ body {
     .certificated a i{
         display: none;
     }
+}
 }
 

@@ -45,6 +45,10 @@
     font-family: var(--fontFamilyTitle);
 }
 
+.userTitle{
+    font-family: var(--fontFamilyTitle);
+}
+
 table,
 td {
     border: 1px solid #333;
@@ -74,9 +78,9 @@ td {
 .font {
     font-family: var(--fontFamilyText);
 }
-.deleteWishlist{
+.deleteWishlist {
     height: 2.5vh;
-
+}
 
 /*/////////////////////// showALL ////////////////////*/
 
@@ -93,11 +97,12 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-
-
 }
+
+.btnLargeResp{
+    width: 300x;
+}
+
 
 .loginTitle{
     font-family: var(--fontFamilyTitle);

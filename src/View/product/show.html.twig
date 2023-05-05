@@ -12,8 +12,7 @@
             <p class="product-description">{{ product.description }}</p>
             <form action="" method="get">
                 <a href="/product/add?id={{ product.id }}">
-                    <button type="button" class="btn btn-success" name="cart" id="btn-ajout-panier">Ajouter au panier</button>
-                </a>
+                    <button type="button" class="btn btn-success" name="cart" id="btn-ajout-panier">Ajouter au panier</button></a>
                 <a href="/wishlist/add?id={{ product.id }}"><img class="oneProductLoveLogo" src="/assets/images/lovelogo.png"  alt=""></a>
             </form>
         </section>
@@ -28,7 +27,7 @@
                     <div class="card-wrapper container-sm d-sm-block d-md-flex  justify-content-around">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Super!</h5>
+                                <h5 class="card-title-comments">Super!</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -41,7 +40,7 @@
                         </div>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">MERCI</h5>
+                                <h5 class="card-title-comments">MERCI</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -54,7 +53,7 @@
                         </div>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">LE site !!</h5>
+                                <h5 class="card-title-comments">LE site !!</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -71,7 +70,7 @@
                     <div class="card-wrapper container-sm d-sm-block d-md-flex   justify-content-around">
                         <div class="card  " style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Génial</h5>
+                                <h5 class="card-title-comments">Génial</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -84,7 +83,7 @@
                         </div>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Merci Véro</h5>
+                                <h5 class="card-title-comments">Merci Véro</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -97,7 +96,7 @@
                         </div>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Au top !</h5>
+                                <h5 class="card-title-comments">Au top !</h5>
                                 <div class="star-comment">
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
                                     <i class="fa-sharp fa-solid fa-star fa-xl" style="color: #224c40;"></i>
@@ -189,6 +188,6 @@
     </div>
 
     <!-- -------------------------- best sellers  -------------------------- -->
-    <h2 class="additionSalesTitle">Vous pourriez aussi aimer</h2>
+    <h2 class="additionSalesTitle mb-4 mt-5">Vous pourriez aussi aimer</h2>
     {% include "_includes/additionalSalesLarge.html.twig" %}
 {% endblock %}

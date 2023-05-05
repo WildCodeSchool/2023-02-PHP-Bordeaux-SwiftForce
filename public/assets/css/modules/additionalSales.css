@@ -1,7 +1,35 @@
 .additionSalesLarge {
     display: flex;
-    width: 88vw;
+    width: 80vw;
     margin: auto;
+}
+.additionSales {
+    font-family: var(--fontFamilyText);
+}
+.additionSales h4 {
+    font-family: var(--fontFamilyTitle);
+    letter-spacing: 1.5px;
+}
+.additionSales {
+    width: 80vw;
+    margin: auto;
+}
+
+.WS-basket-card-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.WS-basket-card-plus,
+.WS-basket-card-plus2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 19%;
+    background-color: white;
+}
+.card-subtitle {
+    margin-bottom: 1vh;
 }
 .additionSalesLarge ul{
     padding: 0;
@@ -19,8 +47,8 @@
 }
 .additionSalesTitle{
     font-family: var(--fontFamilyTitle);
-    width: 88vw;
-    margin: 4vh auto 0 auto;
+    width: 80vw;
+    margin: 10vh auto 0 auto;
 }
 .card-title{
     height: auto;
@@ -44,6 +72,7 @@
     }
     .cardCustom{
         padding: 0.2rem;
+        margin-bottom: 2vh;
     }
 
     .invisibleCustom{

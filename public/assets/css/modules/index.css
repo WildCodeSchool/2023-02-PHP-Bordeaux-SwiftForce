@@ -21,12 +21,12 @@
 /*********************** category disc ***********************/
 
 .disc_category h2 {
-    margin: 3vh auto auto auto;
+    margin: 10vh auto auto auto;
     width: 80vw;
     font-family: var(--fontFamilyTitle);
 }
 .disc_category ul {
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 12vh auto;
     width: 90vw;
     height: 12vw;
     padding: 0;
@@ -135,7 +135,7 @@
 }
 
 .blog h2 {
-    margin-top: 4vh;
+    margin-top: 0;
     margin-bottom: 2vh;
     font-family: var(--fontFamilyTitle);
 }
