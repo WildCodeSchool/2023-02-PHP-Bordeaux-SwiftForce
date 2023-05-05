@@ -1,22 +1,24 @@
-.additionSales {
-    font-family: var(--fontFamilyText);
-}
 .additionSales h4 {
     font-family: var(--fontFamilyTitle);
     letter-spacing: 1.5px;
 }
+
 .additionSales {
     width: 80vw;
     margin: auto;
+    font-family: var(--fontFamilyText);
 }
+
 .additionSalesContentLarge {
     width: 100%;
 }
+
 .WS-basket-card-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .WS-basket-card-plus,
 .WS-basket-card-plus2 {
     display: flex;
@@ -25,6 +27,7 @@
     width: 19%;
     background-color: white;
 }
+
 .card-subtitle {
     margin-bottom: 1vh;
 }
@@ -33,11 +36,13 @@
     width: 80vw;
     margin: auto;
 }
+
 .additionSalesLarge h2 {
     margin-top: 6vh;
     margin-bottom: 2vh;
     font-family: var(--fontFamilyTitle);
 }
+
 .additionSalesLarge ul {
     padding: 0;
     margin: auto;
@@ -47,6 +52,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .additionSalesLarge ul li {
     width: 19.5%;
     display: flex;

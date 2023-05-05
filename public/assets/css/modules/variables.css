@@ -1,15 +1,15 @@
 :root {
     --primaryColor: rgb(34, 76, 64);
-    --primaryColorHover:#2B662E ;
+    --primaryColorHover: #2B662E;
     --secondaryColor: #224C40;
     --background: white;
     --textColor: #2e2e2e;
     --fontFamilyTitle: 'Bebas Neue', cursive;
     --fontFamilyText: 'Didact Gothic', sans-serif;
-    --fontFamalyCategory : 'Oswald', sans-serif;
+    --fontFamalyCategory: 'Oswald', sans-serif;
 }
 
-.btn{
+.btn {
     --bs-btn-bg: var(--primaryColor);
     --bs-btn-border-color: var(--primaryColor);
     --bs-btn-disabled-bg: var(--primaryColor);

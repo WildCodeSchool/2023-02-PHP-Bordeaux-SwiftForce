@@ -35,6 +35,8 @@ textarea {
     font-family: var(--fontFamilyText);
 }
 
+/*///////////////////////CSS tableau//////////////////*/
+
 td {
     border-color: darkgray;
     text-align: center;

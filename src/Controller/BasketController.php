@@ -73,8 +73,8 @@ class BasketController extends AbstractController
                         'userID' => $_SESSION['user_id'],
                         'orderDate' => $date,
                         'shipping' => 40,
-                        'total' =>  $_SESSION['total']
-                        ];
+                        'total' => $_SESSION['total']
+                    ];
                     //////////////// insertion dans la BDD de la commande globale ////////////////
                     $orderManager = new BasketManager();
                     $orderID = $orderManager->insertOrderGeneral($orderGeneral);
@@ -85,7 +85,7 @@ class BasketController extends AbstractController
                     unset($_SESSION['cart']);
                     //////////////// envoi du mail de confirmation ////////////////
                     $mail = new sendMail();
-                    $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'],$_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+                    $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
                     header('Location:/profile/orders');
                 }
             }

@@ -1,18 +1,21 @@
 /*********************** carrousel ***********************/
 
-.WS-mini{
+.WS-mini {
     display: none;
 }
+
 /*********************** carrousel - media query ***********************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .WS-big {
         display: none;
     }
+
     .WS-mini {
         display: unset;
     }
 }
+
 /*********************** category disc ***********************/
 
 
@@ -37,25 +40,23 @@
     height: 15vw;
     margin: 0;
     --color: var(--primaryColor); /* the color of the border */
-    --border: 10px;   /* the thickness of the border */
-    --offset: 30px;   /* control the movement of the border */
-    --gap: 5px;       /* the gap on hover */
-
+    --border: 10px; /* the thickness of the border */
+    --offset: 30px; /* control the movement of the border */
+    --gap: 5px; /* the gap on hover */
     border-radius: 50%;
     cursor: pointer;
     padding: calc(var(--border) + var(--gap));
     border: var(--offset) solid #0000;
-    --_m: radial-gradient(50% 50%, #000 calc(100% - var(--offset)),#0000 calc(100% - var(--border)));
+    --_m: radial-gradient(50% 50%, #000 calc(100% - var(--offset)), #0000 calc(100% - var(--border)));
     -webkit-mask: var(--_m);
     mask: var(--_m);
-    --_g: #0000 calc(99% - var(--border)), var(--color) calc(100% - var(--border)) 99%,#0000;
+    --_g: #0000 calc(99% - var(--border)), var(--color) calc(100% - var(--border)) 99%, #0000;
     --_s: var(--offset);
     --_r: 100% 100% at;
-    background:
-        radial-gradient(var(--_r) 0    0   ,var(--_g)) calc(100% + var(--_s)) calc(100% + var(--_s)),
-        radial-gradient(var(--_r) 100% 0   ,var(--_g)) calc(0%   - var(--_s)) calc(100% + var(--_s)),
-        radial-gradient(var(--_r) 0    100%,var(--_g)) calc(100% + var(--_s)) calc(0%   - var(--_s)),
-        radial-gradient(var(--_r) 100% 100%,var(--_g)) calc(0%   - var(--_s)) calc(0%   - var(--_s));
+    background: radial-gradient(var(--_r) 0 0, var(--_g)) calc(100% + var(--_s)) calc(100% + var(--_s)),
+    radial-gradient(var(--_r) 100% 0, var(--_g)) calc(0% - var(--_s)) calc(100% + var(--_s)),
+    radial-gradient(var(--_r) 0 100%, var(--_g)) calc(100% + var(--_s)) calc(0% - var(--_s)),
+    radial-gradient(var(--_r) 100% 100%, var(--_g)) calc(0% - var(--_s)) calc(0% - var(--_s));
     background-size: 50% 50%;
     background-repeat: no-repeat;
     transition: .4s;
@@ -88,7 +89,7 @@
 
 /*********************** disc category - media query ***********************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .disc_category_mini {
         width: 95vw;
         margin: auto;
@@ -187,7 +188,7 @@
 
 /*********************** blog articles - media query ***********************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .blog {
         width: 95vw;
     }
@@ -223,6 +224,7 @@
     }
 
 }
+
 /*********************** best sellers ***********************/
 
 .best_sellers h2 {
@@ -235,6 +237,7 @@
     width: 90vw;
     margin: auto;
 }
+
 .best_sellers ul {
     padding: 0;
     margin: auto;
@@ -277,7 +280,7 @@
     border-width: var(--bs-border-width);
 }
 
-.card-bodyCustom h6{
+.card-bodyCustom h6 {
     font-size: 1vw;
     font-weight: bold;
     font-family: var(--fontFamilyText);
@@ -289,13 +292,11 @@
     font-family: var(--fontFamilyText);
 }
 
-.card-title {
-    height: 2vw;
-}
+
 
 /*********************** best sellers - media query ***********************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
     .best_sellers {
         width: 95vw;
     }
