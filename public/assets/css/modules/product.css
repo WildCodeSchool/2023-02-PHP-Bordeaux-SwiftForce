@@ -3,6 +3,7 @@
     width: 90vw;
     margin: 0.5rem auto auto auto;
 }
+
 .WSflex{
     display: flex;
     justify-content: center;
@@ -57,7 +58,8 @@
 
 .card-title,
 .card-subtitle {
-    color: var(--textColor)
+    color: var(--textColor);
+    text-align: center;
 }
 
 .WS-product-card-body {
@@ -65,7 +67,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
 
 .lovelogo{
     width: 1.5vw;
@@ -92,6 +93,10 @@
 
     .WS-product-card {
         width: 40vw;
+        padding: 0;
+    }
+    .productImage {
+        width: 80%;
     }
 
     .WS-product-card h5 {
@@ -103,6 +108,9 @@
     }
 
     .lovelogo{
-        width: 3vw;
+        width: 4vw;
+    }
+    .card-title{
+        font-family: var(--fontFamilyText);
     }
 }

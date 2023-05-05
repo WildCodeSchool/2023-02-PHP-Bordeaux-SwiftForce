@@ -3,21 +3,20 @@
 {% block dashboardcontent %}
     <div class="WS-user-container3">
         <div class="WS_showAll-content">
-            <h2>Utilisateur</h2>
+            <h2 class="fontTitle">Liste des utilisateurs</h2>
             <div class="my-3">
-                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">Ajout Utilisateurs</a>
+                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">Ajouter</a>
             </div>
         </div>
         <table>
             <tbody>
             <tr>
-                <td>Nom</td>
-                <td>Adresse email</td>
-                <td>Date de naissance</td>
-                <td>Rôle</td>
-                <td>Modifier</td>
-                <td>Supprimer</td>
-                <td>Modifier</td>
+                <td class="WS_td">Nom</td>
+                <td class="WS_td">Adresse email</td>
+                <td class="WS_td">Date de naissance</td>
+                <td class="WS_td">Rôle</td>
+                <td class="WS_td">Supprimer</td>
+                <td class="WS_td">Modifier</td>
             </tr>
             {% for user in users %}
                 <tr>
@@ -40,7 +39,7 @@
         <form class="WS_dialogBox" id="deletForm" action="/users/delete" method="POST">
             <div>
                 <h2 class=" text-center">Suppression</h2>
-                <p class="text-center">Etes vous sur de vouloir supprimer cet utilisateur?</p>
+                <p class="text-center">Etes vous sûr(e) de vouloir supprimer cet utilisateur?</p>
                 <input type="hidden" id="userId" name="id" value="{{ product.id }}">
                 <div class="text-center pb-2">
                     <button type="button" class="btn btn-secondary" id="cancelBtn" title="Close Modal">Annuler</button>

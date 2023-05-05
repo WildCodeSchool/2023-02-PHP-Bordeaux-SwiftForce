@@ -3,7 +3,12 @@
     flex-direction: column;
     font-family: var(--fontFamilyText);
 }
-
+.titlePanier{
+    font-size: 2rem;
+}
+.WS-box-basket{
+    height: 450px;
+}
 .WS-mini-image {
     display: flex;
     flex-direction: column;

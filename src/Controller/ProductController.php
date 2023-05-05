@@ -191,8 +191,6 @@ class ProductController extends AbstractController
 
     public function addProd(): string
     {
-
-
         $product['name'] = $product['sub_cat'] = $product['price'] = $product['description'] = $product['image'] = "";
         $errors['name'] = $errors['sub_cat'] = $errors['price'] = $errors['description'] = $errors['image'] = "";
         function checkdata($data)
@@ -202,7 +200,6 @@ class ProductController extends AbstractController
             $data = htmlentities($data);
             return $data;
         }
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadDir = "../public/assets/images/";
@@ -245,10 +242,8 @@ class ProductController extends AbstractController
                 $productManager->addProduct($_POST, $_FILES);
                 header('Location:/product/showAll');
             }
-
         }
         return $this->twig->render('product/addProduct.html.twig', ['error' => $errors, 'product' => $product]);
-
     }
 
     public function showAll(): string
