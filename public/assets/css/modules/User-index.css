@@ -75,6 +75,7 @@ td {
 .deleteWishlist{
     height: 2.5vh;
 }
+
 .loginTitle{
     font-family: var(--fontFamilyTitle);
 }
@@ -117,3 +118,4 @@ td {
         width: 88.5vw;
     }
     }
+
