@@ -62,31 +62,35 @@ class BasketController extends AbstractController
     //////////////// fonction de validation du panier ////////////////
     public function validation()
     {
-        $format = 'Y-m-d H:i:s';
-        $date = gmdate($format);
-        //$date = time();
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            if (isset($_GET['validation']) && $_GET['validation'] === 'ok') {
-                if (!empty($_SESSION['cart'])) {
-                    $basket = $_SESSION['cart'];
-                    $orderGeneral = [
-                        'userID' => $_SESSION['user_id'],
-                        'orderDate' => $date,
-                        'shipping' => 40,
-                        'total' => $_SESSION['total']
-                    ];
-                    //////////////// insertion dans la BDD de la commande globale ////////////////
-                    $orderManager = new BasketManager();
-                    $orderID = $orderManager->insertOrderGeneral($orderGeneral);
-                    //////////////// insertion dans la BDD du contenu de la commande ////////////////
-                    $orderManager = new BasketManager();
-                    $order = $orderManager->insertOrderContent($basket, $orderID);
-                    //////////////// vidage du panier virtuel ////////////////
-                    unset($_SESSION['cart']);
-                    //////////////// envoi du mail de confirmation ////////////////
-                    $mail = new sendMail();
-                    $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
-                    header('Location:/profile/orders');
+        if (!isset($_SESSION['user_id'])) {
+            header('Location:/login');
+        } else {
+            $format = 'Y-m-d H:i:s';
+            $date = gmdate($format);
+            //$date = time();
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                if (isset($_GET['validation']) && $_GET['validation'] === 'ok') {
+                    if (!empty($_SESSION['cart'])) {
+                        $basket = $_SESSION['cart'];
+                        $orderGeneral = [
+                            'userID' => $_SESSION['user_id'],
+                            'orderDate' => $date,
+                            'shipping' => 40,
+                            'total' => $_SESSION['total']
+                        ];
+                        //////////////// insertion dans la BDD de la commande globale ////////////////
+                        $orderManager = new BasketManager();
+                        $orderID = $orderManager->insertOrderGeneral($orderGeneral);
+                        //////////////// insertion dans la BDD du contenu de la commande ////////////////
+                        $orderManager = new BasketManager();
+                        $order = $orderManager->insertOrderContent($basket, $orderID);
+                        //////////////// vidage du panier virtuel ////////////////
+                        unset($_SESSION['cart']);
+                        //////////////// envoi du mail de confirmation ////////////////
+                        $mail = new sendMail();
+                        $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+                        header('Location:/profile/orders');
+                    }
                 }
             }
         }

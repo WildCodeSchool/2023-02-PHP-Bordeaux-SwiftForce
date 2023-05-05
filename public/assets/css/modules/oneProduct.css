@@ -25,7 +25,7 @@
     font-family: var(--fontFamilyTitle);
 }
 
-.one-product img {
+.oneProductImage {
     height: 400px;
     width: 400px;
 }
@@ -57,12 +57,16 @@
     flex-direction: row;
     align-items: center;
 }
+.oneProductLoveLogo{
+    height: 3vh;
+    margin-left: 1vw;
+}
 
 @media screen and (max-width: 480px) {
     .one-product {
-        margin-left: 0;
+        width: 95vw;
+        margin: auto auto 4vh auto;
         flex-direction: column;
-        padding-bottom: 60px;
         padding-top: 20px;
     }
 
@@ -70,25 +74,19 @@
         margin-left: 20px;
     }
 
-    .one-product img {
-        height: 300px;
-        width: 300px;
-        margin-left: 60px;
-        margin-bottom: 30px;
+    .oneProductImage {
+        width: 75vw;
+        height: 75vw;
+        margin: auto;
     }
 
     .product-description {
-        width: 80vw;
-        margin-left: -50px;
+        width: 88vw;
+        margin: auto auto 2vh auto;
     }
 
     .product-characteristic h2 {
         font-size: 30px;
-        margin-left: -50px;
-    }
-
-    .product-characteristic .price {
-        margin-left: -50px;
     }
 
     .added-to-cart p {
@@ -97,11 +95,6 @@
 }
 
 /************* Slide comments **************/
-.customers-comments h2 {
-    width: 80vw;
-    margin: auto;
-    font-family: var(--fontFamilyTitle);
-}
 
 .comments {
     width: 100%;
@@ -124,13 +117,6 @@
         margin-bottom: 20px;
         font-size: medium;
         font-weight: bold;
-    }
-
-    .customers-comments h2 {
-        font-size: 25px;
-        text-align: left;
-        white-space: nowrap;
-        margin-left: 20px;
     }
 
     .fa-sharp {
@@ -190,7 +176,27 @@
         width: 50%;
     }
 
-    .invisibleCustom {
-        display: none;
+    .links-product-page{
+        width: 95vw;
+        margin: auto;
+        text-align: center;
+    }
+    .bigTitle{
+        margin: auto;
+        padding-left: 4vw;
+    }
+    .product-characteristic{
+        width: 95vw;
+        margin: auto;
+    }
+    .price{
+        padding-left: 4vw;
+    }
+    .added-to-cart{
+        width: 95vw;
+        margin: auto;
+    }
+    #btn-ajout-panier{
+        margin-left: 4vw;
     }
 }

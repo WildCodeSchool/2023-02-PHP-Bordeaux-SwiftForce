@@ -1,15 +1,17 @@
 <div class="row WS-user-container">
     <div class="WS-user-cont font">
-        <p>Veuillez remplir le formulaire pour ajouter un produit</p>
+        <p>Veuillez remplir le formulaire pour ajouter un produit au catalogue.</p>
         <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="name_product" class="form-label">Nom</label>
-                <input class="form-control" type="text" id="name_product" name="name_product">
+                <label for="name_product" class="form-label">Nom*</label>
+                <input class="form-control" type="text" id="name_product" name="name_product" value="{{ product.name }}">
+                <p class="contactError">{{ error.name }}</p>
             </div>
-            <div class="mb-3">
-                <label for="sub_category_id_cat" class="form-label">Sous catogorie</label>
-                <select class="wform-label" name="sub_category_id_cat" id="sub_category_id_cat">
-                    <option value="">Choisir une Sous categorie</option>
+            <div class="mb-2">
+                <label for="sub_category_id_cat" class="form-label">Sous-catégorie*</label>
+                <br>
+                <select class="form-label textDescriptionForm" name="sub_category_id_cat" id="sub_category_id_cat">
+                    <option value="">Choisir une sous-catégorie</option>
                     <option value="1">S'habiller</option>
                     <option value="2">S'alimenter</option>
                     <option value="3">S'abriter</option>
@@ -17,28 +19,31 @@
                     <option value="5">S'orienter</option>
                     <option value="6">Kit de survie</option>
                 </select>
+                <p class="contactError">{{ error.sub_cat }}</p>
             </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Prix</label>
-                <input class="form-control" type="text" id="price" name="price">
+            <div class="mb-2">
+                <label for="price" class="form-label">Prix*</label>
+                <input class="form-control" type="text" id="price" name="price" value="{{ product.price }}">
             </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+            <p class="contactError">{{ error.price }}</p>
+            <div class="mb-2">
+                <label for="description" class="form-label">Description*</label>
                 <br>
-                <textarea id="decription" name="description"
-                          rows="5" cols="50"></textarea>
+                <textarea id="decription" name="description" class="textDescriptionForm"
+                          rows="5" cols="50">{{ product.description }}</textarea>
             </div>
-            <div class="mb-3">
-                <label for="image" class="form-label">image</label>
-                <input class="form-control" type="file" id="image" name="image">
+            <p class="contactError">{{ error.description }}</p>
+            <div class="mb-2">
+                <label for="image" class="form-label">Image*</label>
+                <input class="form-control" type="file" id="image" name="image" value="{{ product.image }}">
+            </div>
+            <p class="contactError">{{ error.image }}</p>
 
-            </div>
-            <div class="mb-3">
+            <div class="mb-2">
                 <button type="submit" class="btn btn-success">
-                    Create produit
+                    Ajouter le produit
                 </button>
             </div>
         </form>
     </div>
 </div>
-
