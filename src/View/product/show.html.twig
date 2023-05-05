@@ -3,7 +3,7 @@
     <h1 class="links-product-page"><a class="debug " href="/">Accueil</a> / <a class="debug" href="/product/sortSub?subCat={{ filter.name_sub_category }}">{{ catNameFrench }}</a>
         / <a class="debug" href="#">{{ product.name_product }}</a></h1>
     <div class="one-product">
-        <img src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
+        <img class="oneProductImage" src="/assets/images/{{ product.image }}" alt="{{ product.name_product }}">
         <section class="product-characteristic">
             <h2 class="bigTitle">{{ product.name_product }}</h2>
             <section class="added-to-cart">
@@ -12,15 +12,16 @@
             <p class="product-description">{{ product.description }}</p>
             <form action="" method="get">
                 <a href="/product/add?id={{ product.id }}">
-                    <button type="button" class="btn btn-success" name="cart" id="btn-ajout-panier">Ajout Panier</button>
+                    <button type="button" class="btn btn-success" name="cart" id="btn-ajout-panier">Ajouter au panier</button>
                 </a>
+                <a href="/wishlist/add?id={{ product.id }}"><img class="oneProductLoveLogo" src="/assets/images/lovelogo.png"  alt=""></a>
             </form>
         </section>
     </div>
     <! -- - - - - - -- - - - --  SLIDE COMMENTS -- - - - - -- - - -->
     <! ----  Desktop COMMENTS ---->
     <div class="customers-comments">
-        <h2>Découvrez pourquoi nos clients nous adorent </h2>
+        <h2 class="additionSalesTitle">Les avis de nos clients</h2>
         <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -188,5 +189,6 @@
     </div>
 
     <!-- -------------------------- best sellers  -------------------------- -->
+    <h2 class="additionSalesTitle">Vous pourriez aussi aimer</h2>
     {% include "_includes/additionalSalesLarge.html.twig" %}
 {% endblock %}

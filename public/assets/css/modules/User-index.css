@@ -41,6 +41,9 @@
     justify-content: space-around;
     font-family: var(--fontFamilyText);
 }
+.titreProfile{
+    font-family: var(--fontFamilyTitle);
+}
 
 table,
 td {
@@ -53,8 +56,7 @@ td {
 }
 
 .WS-user-cont {
-    width: 500px;
-
+    width: 50%;
 }
 
 .WS-user-flex {
@@ -96,3 +98,47 @@ table {
 
 
 }
+
+.loginTitle{
+    font-family: var(--fontFamilyTitle);
+}
+.textDescriptionForm{
+    border : 1px solid #ced4da;
+}
+
+.loginInput{
+    width: 30vw;
+    height: 5vh;
+    text-align: center;
+    border-style: solid;
+    border-color: var(--bs-border-color-translucent);
+    border-width: var(--bs-border-width);
+    margin-bottom: 2vh;
+}
+
+@media screen and (max-width: 480px) {
+    .dashboardbanner h1 {
+        font-size: 2rem;
+    }
+    .dashboardbanner h2 {
+        font-size: 1rem;
+    }
+    .btnResp{
+        width: 23vw;
+        font-size: 0.7rem;
+    }
+    .visibleResp{
+        visibility: hidden;
+    }
+    .rowResp{
+        width: 95vw;
+        margin: auto;
+    }
+    .WS-user-cont{
+        width: 95vw;
+    }
+    .btnLargeResp{
+        width: 88.5vw;
+    }
+    }
+

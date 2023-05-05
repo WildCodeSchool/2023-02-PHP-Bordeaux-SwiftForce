@@ -1,92 +1,62 @@
-.additionSales h4 {
-    font-family: var(--fontFamilyTitle);
-    letter-spacing: 1.5px;
-}
-
-.additionSales {
-    width: 80vw;
-    margin: auto;
-    font-family: var(--fontFamilyText);
-}
-
-.additionSalesContentLarge {
-    width: 100%;
-}
-
-.WS-basket-card-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.WS-basket-card-plus,
-.WS-basket-card-plus2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 19%;
-    background-color: white;
-}
-
-.card-subtitle {
-    margin-bottom: 1vh;
-}
-
 .additionSalesLarge {
-    width: 80vw;
+    display: flex;
+    width: 88vw;
     margin: auto;
 }
-
-.additionSalesLarge h2 {
-    margin-top: 6vh;
-    margin-bottom: 2vh;
-    font-family: var(--fontFamilyTitle);
-}
-
-.additionSalesLarge ul {
+.additionSalesLarge ul{
     padding: 0;
-    margin: auto;
-    list-style: none;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
-
-.additionSalesLarge ul li {
-    width: 19.5%;
-    display: flex;
-    justify-content: center;
+.additionSalesLarge ul li{
+    width: 20%;
+}
+.cardCustom{
+    padding: 0.4rem;
+}
+.productLogo{
     background-color: white;
+}
+.additionSalesTitle{
+    font-family: var(--fontFamilyTitle);
+    width: 88vw;
+    margin: 4vh auto 0 auto;
+}
+.card-title{
+    height: auto;
+    margin: 1vh auto 1vh auto;
 }
 
 @media screen and (max-width: 480px) {
-    .WS-basket-card-body h4 {
-        text-align: center;
+    .additionSalesLarge{
+        display: flex;
+        width: 95vw;
+        margin: auto;
+}
+    .additionSalesLarge ul{
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    .WS-basket-card-plus {
-        width: 48%;
+    .additionSalesLarge ul li{
+        width: 50%;
+    }
+    .cardCustom{
+        padding: 0.2rem;
     }
 
-    .WS-basket-card-plus2 {
+    .invisibleCustom{
         display: none;
     }
-
-    .additionSales {
-        width: 85vw;
+    .card-title{
+        height: auto;
+        margin: 1vh auto 1vh auto;
     }
-
-    .additionSalesContent {
-        width: 100%;
-        margin-top: 5vh;
-    }
-
-    .WS-basket-card-box h7 {
-        font-size: 0.9rem;
-    }
-
-    .WS-basket-card-box h8 {
-        font-size: 0.9rem;
+    .additionSalesTitle{
+        font-family: var(--fontFamilyTitle);
+        width: 88vw;
+        margin: 2vh auto 0 auto;
     }
 }
+
