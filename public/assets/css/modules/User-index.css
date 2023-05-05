@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
 }
-
+.WSheight{
+    height: 38px;
+}
 .dashboardbanner img {
     width: 100%;
 }
@@ -72,4 +74,25 @@ td {
 }
 .deleteWishlist{
     height: 2.5vh;
+
+
+/*/////////////////////// showALL ////////////////////*/
+
+.WS_showAll-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+}
+table {
+    width: 700px;
+}
+.WS-user-container3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+
 }

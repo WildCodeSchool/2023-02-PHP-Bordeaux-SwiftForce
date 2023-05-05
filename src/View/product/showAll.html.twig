@@ -1,10 +1,15 @@
 {% extends '/profile/view.html.twig' %}
 
 {% block dashboardcontent %}
-    <div class="WS-user-container2">
-<h2>Produits</h2>
+    <div class="WS-user-container3">
+        <div class="WS_showAll-content">
+            <h2>Produits</h2>
+            <div class="my-3">
+                <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white">Ajout un
+                    produit</a>
+            </div>
+        </div>
         <table>
-
             <tbody>
             <tr>
                 <td class="WS_td WS_boxtaille">Nom</td>
@@ -15,12 +20,17 @@
             {% for product in products %}
                 <tr>
                     <td class="WS_user_td_2 "><a href="/product/show?id={{ product.id }}"
-                           class="text-decoration-none text-reset">{{ product.name_product }}</a></td>
+                                                 class="text-decoration-none text-reset">{{ product.name_product }}</a>
+                    </td>
                     <td class="WS_user_td_2">{{ product.price }} €</td>
 
-                    <td class="WS_user_td_3" ><a href="/product/edit?id={{ product.id }}" class="text-decoration-none text-reset"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a>
+                    <td class="WS_user_td_3"><a href="/product/edit?id={{ product.id }}"
+                                                class="text-decoration-none text-reset"><i
+                                class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a>
                     </td>
-                    <td class="WS_user_td_3"><a onclick="openModal('{{ product.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a>
+                    <td class="WS_user_td_3"><a onclick="openModal('{{ product.id }}')" href="#"
+                                                class="text-decoration-none text-reset"><i
+                                class="fa-regular fa-trash-can" style="color: #224c40;"></i></a>
                 </tr>
             {% endfor %}
             </tbody>
