@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\ProductManager;
 use App\services\Fixtures;
 use PDO;
+use Symfony\Component\DependencyInjection\Tests\Compiler\Locator;
 
 class ProductController extends AbstractController
 {
@@ -15,7 +16,6 @@ class ProductController extends AbstractController
 
         return $this->twig->render('Product/index.html.twig', ['products' => $products]);
     }
-
 
     public function show(int $id): string
     {
@@ -143,7 +143,6 @@ class ProductController extends AbstractController
     }
 
     //////////////// fonction de création du panier et d'ajout ////////////////
-
     public function add($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -192,7 +191,6 @@ class ProductController extends AbstractController
 
     public function addProd(): ?string
     {
-
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -231,15 +229,12 @@ class ProductController extends AbstractController
             if (!empty($errors)) {
                 return $this->twig->render('product/error.html.twig', ['errors' => $errors]);
             }
-
-
             $productManager = new productManager();
             $productManager->addProduct($_POST, $_FILES);
 
             header('Location:/product');
             return null;
         }
-
         return $this->twig->render('product/addProduct.html.twig');
     }
 

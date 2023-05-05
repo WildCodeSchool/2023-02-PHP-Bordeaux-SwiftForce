@@ -132,6 +132,12 @@
     right: 2%;
     height: 2vh;
 }
+.cartLoveLogo{
+    position: absolute;
+    top: 13%;
+    right: 6%;
+    height: 2vh;
+}
 
 .WS-basket-card-body-mini {
     display: flex;

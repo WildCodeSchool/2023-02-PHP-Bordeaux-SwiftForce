@@ -72,6 +72,9 @@ td {
 .font {
     font-family: var(--fontFamilyText);
 }
+.deleteWishlist{
+    height: 2.5vh;
+
 
 /*/////////////////////// showALL ////////////////////*/
 
@@ -88,4 +91,8 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
+
+
 }

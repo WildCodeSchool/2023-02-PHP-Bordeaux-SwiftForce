@@ -13,7 +13,6 @@ class ProfileController extends AbstractController
     }
     public function orders()
     {
-
         return $this->twig->render('profile/order.html.twig');
     }
 }
