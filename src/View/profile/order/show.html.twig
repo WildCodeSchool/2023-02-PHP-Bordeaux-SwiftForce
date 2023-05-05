@@ -1,8 +1,8 @@
 {% extends '/profile/view.html.twig' %}
 
 {% block dashboardcontent %}
-    <p>Commande n° {{ order.0.order_id }}</p>
-    <div class="tableOrder">
+    <h1 class="titleOrder">Commande n° {{ order.0.order_id }}</h1>
+    <div class="tableOrderUnitaire">
         <div class="tableHEAD">
             <div class="contenu1">Désignation</div>
             <div class="contenu2">Quantité</div>
@@ -11,7 +11,7 @@
         <div class="tableContenu">
             {% for product in order %}
                 <a href="/product/show?id={{ product.product_id }}">
-                    <div class="detailContenu">
+                    <div class="detailContenuOrder">
                         <div class="contenu1">{{ product.name_product }}</div>
                         <div class="contenu2">{{ product.product_quantity }}</div>
                         <div class="contenu3">{{ product.price_per }} €</div>

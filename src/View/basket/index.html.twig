@@ -24,7 +24,8 @@
                     </form>
                     </div>
                 <div class="WS-basket-price">
-                    <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem" src="/assets/images/trash_logo.png" alt=""></a>
+                        <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem" src="/assets/images/trash_logo.png" alt=""></a>
+                        <a href="/wishlist/add?id={{ cart.id }}"><img class="cartLoveLogo" src="/assets/images/lovelogo.png"  alt=""></a>
                     <h6 class="card-subtitle text-muted mt-3">Total : {{ cart.total }} €</h6>
                 </div>
                 </div>

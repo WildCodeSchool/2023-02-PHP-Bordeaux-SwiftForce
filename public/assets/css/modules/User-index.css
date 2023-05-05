@@ -70,3 +70,6 @@ td {
 .font {
     font-family: var(--fontFamilyText);
 }
+.deleteWishlist{
+    height: 2.5vh;
+}
