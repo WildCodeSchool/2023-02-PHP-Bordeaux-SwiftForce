@@ -92,10 +92,10 @@
     }
 
     .WS-product-filter {
-        margin: 0.5rem;
+        margin-left: 7vw;
     }
 
-    .card-title {
-        font-size: 12px;
+    .lovelogo{
+        width: 3vw;
     }
 }

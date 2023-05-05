@@ -81,3 +81,21 @@ td {
     text-align: end;
     border-color: darkgray;
 }
+
+@media screen and (max-width: 480px) {
+    .WS-user-container2 {
+        width: 90vw;
+    }
+    .WS_td {
+        font-size: 1rem;
+    }
+    .WS_user_td_2{
+        font-size: 0.7rem;
+    }
+    .productResp{
+    }
+    .WS_user_td_3 {
+        width: 10%;
+    }
+
+    }

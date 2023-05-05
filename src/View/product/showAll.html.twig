@@ -7,13 +7,13 @@
             <tbody>
             <tr>
                 <td class="WS_td WS_boxtaille">Nom</td>
-                <td class="WS_td">price</td>
-                <td class="WS_td">Modifier</td>
-                <td class="WS_td">Supprimer</td>
+                <td class="WS_td">Prix</td>
+                <td class="WS_td visibleResp">Modifier</td>
+                <td class="WS_td visibleResp">Supprimer</td>
             </tr>
             {% for product in products %}
                 <tr>
-                    <td class="WS_user_td_2 "><a href="/product/show?id={{ product.id }}"
+                    <td class="WS_user_td_2 productResp"><a href="/product/show?id={{ product.id }}"
                            class="text-decoration-none text-reset">{{ product.name_product }}</a></td>
                     <td class="WS_user_td_2">{{ product.price }} €</td>
 

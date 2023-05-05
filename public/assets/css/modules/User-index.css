@@ -55,7 +55,6 @@ td {
 
 .WS-user-cont {
     width: 50%;
-
 }
 
 .WS-user-flex {
@@ -92,3 +91,29 @@ td {
     border-width: var(--bs-border-width);
     margin-bottom: 2vh;
 }
+
+@media screen and (max-width: 480px) {
+    .dashboardbanner h1 {
+        font-size: 2rem;
+    }
+    .dashboardbanner h2 {
+        font-size: 1rem;
+    }
+    .btnResp{
+        width: 23vw;
+        font-size: 0.7rem;
+    }
+    .visibleResp{
+        visibility: hidden;
+    }
+    .rowResp{
+        width: 95vw;
+        margin: auto;
+    }
+    .WS-user-cont{
+        width: 95vw;
+    }
+    .btnLargeResp{
+        width: 88.5vw;
+    }
+    }
