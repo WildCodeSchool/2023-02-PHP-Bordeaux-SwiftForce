@@ -7,6 +7,13 @@
     font-family: var(--fontFamilyTitle);
     color: var(--primaryColor);
 }
+.headerTitle{
+    font-family: var(--fontFamilyTitle);
+    color: var(--primaryColor);
+    text-decoration: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 .btn2 {
     --bs-btn-bg: white;
@@ -43,5 +50,11 @@ li {
 .sticky {
     position: sticky;
     top: 0;
-    z-index: 4;
+    z-index:4;
 }
+
+.WS_transparent{
+    background-color: #11ffee00;
+    border: none;
+}
+

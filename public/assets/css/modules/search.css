@@ -1,0 +1,15 @@
+.searchResult{
+    font-family: var(--fontFamilyTitle);
+    color: var(--primaryColor);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.searchResultFalse{
+    font-family: var(--fontFamilyTitle);
+    color: var(--primaryColor);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
