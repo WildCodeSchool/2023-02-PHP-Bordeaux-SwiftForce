@@ -18,12 +18,6 @@
             <div class="my-3 dashboardbtn">
                 <a href="/product/showAll" class="btn btnResp btn-sucess text-decoration-none text-white">Produits</a>
             </div>
-            <!-- <div class="my-3 dashboardbtn">
-            <a href="/product/addProduct" class="btn btnResp btn-sucess text-decoration-none text-white">Ajout Produits</a>
-        </div>
-            <div class="my-3 dashboardbtn">
-                <a href="/users/add" class="btn btn-sucess btnResp text-decoration-none text-white">Ajout Utilisateurs</a>
-            </div> -->
         {% endif %}
         {% if user.role == 'user' %}
             <div class="my-3 dashboardbtn">
@@ -34,6 +28,9 @@
             <div class="my-3 dashboardbtn">
                 <a href="/profile/orders" class="btn btn-sucess btnResp text-decoration-none text-white">Mes commandes</a>
             </div>
+            <div class="my-3 dashboardbtn">
+                <a href="/product/addProduct" class="btn btn-sucess text-decoration-none text-white ms-4">Ajout un produit</a>
+            </div>
         {% endif %}
         <div class="my-3 dashboardbtn">
             <a href="/logout" class="btn btn-sucess btnResp text-decoration-none text-white">Déconnecter</a>
@@ -41,16 +38,16 @@
     </div>
 
     {% block dashboardcontent %}
-    <div class="WS-login-container">
-        <div class="WS-user-flex">
-            <p>votre date de naissance : {{ user.birthday }}</p>
-            <p> votre E-mail : {{ user.email }}</p>
-        </div>
-        <div>
+        <div class="WS-login-container">
+            <div class="WS-user-flex">
+                <p>votre date de naissance : {{ user.birthday }}</p>
+                <p> votre E-mail : {{ user.email }}</p>
+            </div>
+            <div>
 
+            </div>
         </div>
-    </div>
-        {% endblock %}
+    {% endblock %}
 {% endblock %}
 
 

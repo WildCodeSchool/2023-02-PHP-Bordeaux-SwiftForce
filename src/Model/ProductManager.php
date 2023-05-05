@@ -112,4 +112,25 @@ class ProductManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function countProduct()
+    {
+        $sql = "SELECT COUNT(*) AS 'nb_product' FROM WS_product";
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+        $result = $stm->fetch();
+$nbProducts = $result['nb_product'];
+        return (int) $nbProducts;
+    }
+
+    public function getProduct($premier, $parPage)
+    {
+        $sql = 'SELECT * FROM WS_product ORDER BY name_product DESC LIMIT :premier, :parpage;';
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':premier', $premier, PDO::PARAM_INT);
+        $stm->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $stm->execute();
+
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

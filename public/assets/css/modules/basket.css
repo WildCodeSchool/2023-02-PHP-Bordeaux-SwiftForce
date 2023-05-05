@@ -12,10 +12,10 @@
 }
 
 .WS-basket-card-caddie {
-    background-color: white;
     display: flex;
     flex-direction: column;
     width: 60%;
+    height : 180px;
 }
 
 .WS-basket-card {
