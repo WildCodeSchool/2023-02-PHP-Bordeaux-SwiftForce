@@ -99,4 +99,17 @@ class ProductManager extends AbstractManager
 
         return $stm->execute();
     }
+    public function addProductFaker(array $product): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " ( sub_category_id_cat, name_product, price, description, image) VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
+
+        $statement->bindValue('name_product', $product['name_product'], PDO::PARAM_STR);
+        $statement->bindValue('price', $product['price'], PDO::PARAM_INT);
+        $statement->bindValue('description', $product['description'], PDO::PARAM_STR);
+        $statement->bindValue('image', $product['image'], PDO::PARAM_STR);
+        $statement->bindValue('sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }
