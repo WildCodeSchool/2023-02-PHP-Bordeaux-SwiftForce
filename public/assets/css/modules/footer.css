@@ -61,6 +61,7 @@ body {
     }
     .certificated{
         font-size: 13px;
+        margin-top: 10px;
     }
     .legal-notice {
         flex-direction: column;
@@ -82,6 +83,9 @@ body {
         font-weight: bold;
         color : black;
         margin-bottom: 3px;
+    }
+    .certificated a i{
+        display: none;
     }
 }
 
