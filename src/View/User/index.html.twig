@@ -1,8 +1,13 @@
 {% extends '/profile/view.html.twig' %}
 
 {% block dashboardcontent %}
-    <div class="WS-user-container2">
-        <h2>Utilisateur</h2>
+    <div class="WS-user-container3">
+        <div class="WS_showAll-content">
+            <h2>Utilisateur</h2>
+            <div class="my-3">
+                <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">Ajout Utilisateurs</a>
+            </div>
+        </div>
         <table>
             <tbody>
             <tr>
@@ -19,8 +24,12 @@
                     <td class="WS_user_td_2">{{ user.email }}</td>
                     <td class="WS_user_td_2">{{ user.birthday }}</td>
                     <td class="WS_user_td_2">{{ user.role }}</td>
-                    <td class="WS_user_td_3"><a onclick="openModal('{{ user.id }}')" href="#" class="text-decoration-none text-reset"><i class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
-                    <td class="WS_user_td_3"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square" style="color: #224c40;"></i> </a></td>
+                    <td class="WS_user_td_3"><a onclick="openModal('{{ user.id }}')" href="#"
+                                                class="text-decoration-none text-reset"><i
+                                class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
+                    <td class="WS_user_td_3"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square"
+                                                                                       style="color: #224c40;"></i> </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
