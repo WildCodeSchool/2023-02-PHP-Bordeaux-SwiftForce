@@ -40,4 +40,5 @@ return [
     'logout' => ['loginController', 'logout'],
     'contact' => ['HomeController', 'contact'],
     'contact/envoi' => ['HomeController', 'contact'],
+    'faker' => ['ProductController', 'productFixtures'],
 ];
