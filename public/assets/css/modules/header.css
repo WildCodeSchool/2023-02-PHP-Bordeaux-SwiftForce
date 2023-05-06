@@ -123,6 +123,7 @@ li {
     }
     .headerTitle{
         font-size: 2rem;
+        margin-left: 1rem;
     }
     .WS_img_logo{
         display: none;
