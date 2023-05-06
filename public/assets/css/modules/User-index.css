@@ -1,5 +1,5 @@
 .dashboardbanner {
-    width: 100vw;
+    /*width: 100vw;*/
     position: relative;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 .dashboardmenu {
-    width: 100vw;
+    /*width: 100vw;*/
     display: flex;
     justify-content: center;
 }
