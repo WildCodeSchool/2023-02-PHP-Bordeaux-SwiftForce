@@ -16,7 +16,6 @@ class WishlistController extends AbstractController
         $productPrice = $product['price'];
         $productImage = $product['image'];
 
-
         if (!isset($_SESSION['user_id'])) {
             header('Location:/login');
         } else {
@@ -40,7 +39,7 @@ class WishlistController extends AbstractController
                     $wishlist = $wishlistManager->wishlist($id, $productName, $productPrice, $productImage, $userID);
                 }
             }
-            header('Location:/wishlist');
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
 
     }
