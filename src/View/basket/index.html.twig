@@ -14,8 +14,8 @@
                         </div>
                         <div class="WS-basket-card-body">
                             <div class="WS-basket-card-body-mini">
-                                <h5 class="card-title mt-3">{{ cart.name }}</h5>
-                                <h6 class="card-subtitle text-muted">Prix unitaire : {{ cart.price }} €</h6>
+                                <h5 class="WS_card-title mt-3">{{ cart.name }}</h5>
+                                <h6 class="WS_card-subtitle text-muted">Prix unitaire : {{ cart.price }} €</h6>
                                 <form class="quantity" action="basket/edit" method="get">
                                     <input name="id" type="hidden" value="{{ cart.id }}">
                                     <button class="quantityChange" name="quantityChange-">-</button>

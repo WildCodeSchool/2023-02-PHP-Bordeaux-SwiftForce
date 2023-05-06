@@ -175,7 +175,7 @@
         flex-direction: column;
         width: 70%;
         padding-bottom: 1vh;
-        justify-content: space-between;
+       justify-content: end
     }
 
     .WS-basket-price {
@@ -200,7 +200,7 @@
         border-width: var(--bs-border-width);
     }
 
-    .card-subtitle {
+    .WS_card-subtitle {
         margin-top: 0;
     }
 
@@ -212,7 +212,7 @@
         margin-top: 2vh;
     }
 
-    .card-title {
+    WS_card-title{
         font-size: 0.8rem;
     }
 }
