@@ -19,7 +19,7 @@ class BasketController extends AbstractController
             $total = 0;
             $totalLivraison = $total + 40;
         }
-        return $this->twig->render('basket/index.html.twig', ['total' => $total, 'totalLivraison' => $totalLivraison]);
+        return $this->twig->render('basket/index.html.twig');
     }
 
     //////////////// fonction de suppression d'un article du panier ////////////////
@@ -92,6 +92,50 @@ class BasketController extends AbstractController
                         header('Location:/profile/orders');
                     }
                 }
+            }
+        }
+    }
+    public function promotion($codeName)
+    {
+        $promotion = "";
+        $errors['promo'] = "";
+        function checkdata($data)
+        {
+            $data = trim($data);
+            $data = htmlspecialchars($data);
+            $data = htmlentities($data);
+            return $data;
+        }
+
+        if (!isset($_SESSION['user_id'])) {
+            header('Location:/login');
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                if (isset($_GET['promo'])) {
+                    if (empty(trim($_GET['codeName']))) {
+                        $errors['promo'] = "Merci de saisir un code.";
+                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotion'] = "";
+                    } else {
+                        $codeName = checkdata($_GET['codeName']);
+                        $codeName = strtoupper($codeName);
+                        $basketManager = new BasketManager();
+                        $promotion = $basketManager->promotion($codeName);
+                        if ($promotion != false) {
+                            $promo = $promotion['reduction'];
+                            $_SESSION['promotion'] = $promo;
+                            $errors['promo'] = "";
+                            $_SESSION['promotionError'] = $errors['promo'];
+                        } else {
+                            $errors['promo'] = "Ce code n'est pas valide.";
+                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotion'] = "";
+                        }
+                    }
+                }
+                header('Location:/basket');
+            } else {
+                header('Location:' . $_SERVER['HTTP_REFERER']);
             }
         }
     }

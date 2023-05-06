@@ -31,15 +31,20 @@
             <a href="/logout" class="btn btn-sucess btnResp text-decoration-none text-white">Déconnecter</a>
         </div>
     </div>
-
     {% block dashboardcontent %}
-        <div class="WS-login-container">
-            <div class="WS-user-flex">
-                <p>votre date de naissance : {{ user.birthday }}</p>
-                <p> votre E-mail : {{ user.email }}</p>
-            </div>
-            <div>
-
+        <div class="dashboardbackground">
+            <img class="dashboardimage" src="/assets/images/dashboardbackground.png">
+            <div class="WS-login-container">
+                <div class="WS-user-profile">
+                    <h2 class="fontTitle compteTitle">Mon compte client</h2>
+                    <p class="WS-user-content top-3">Retrouvez ici toutes les informations concernant votre compte.</p>
+                    <p class="WS-user-content">Une question ?</p>
+                    <p class="WS-user-content-bis">Contactez notre service clients.</p>
+                    <a class="btn btn-primary text-decoration-none text-white question" href="/contact">
+                        <img class="questionImage" src="/assets/images/question.png"  alt="">
+                        <p class="">Contact</p>
+                    </a>
+                </div>
             </div>
         </div>
     {% endblock %}
