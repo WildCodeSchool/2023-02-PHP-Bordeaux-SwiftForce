@@ -21,7 +21,11 @@ class ProductController extends AbstractController
     {
         $productManager = new ProductManager();
         $product = $productManager->selectOneById($id);
-        $filter = $_SESSION['filter'];
+        if (isset($_SESSION['filter'])){
+            $filter = $_SESSION['filter'];
+        } else {
+            $filter = [];
+        }
         switch ($product['sub_category_id_cat']) {
             case '1':
                 $filter['name_sub_category'] = "get_dressed";

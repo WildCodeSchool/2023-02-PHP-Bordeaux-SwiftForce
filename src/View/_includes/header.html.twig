@@ -100,6 +100,7 @@
 
 
 
+
     </div>
     <!-- menu déroulant gauche -->
     <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1"
@@ -178,6 +179,20 @@
                         Météorite</a></li>
                 </p>
             </ul>
+=======
+                <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
+                <div class="offcanvas offcanvas-end WS-off-canvas2" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title titlePanier" id="offcanvasRightLabel">Votre Panier</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+            <!--include twig-->
+                    <div class="offcanvas-body WS-mini-cart">
+                        {% include "_includes/_miniCart.html.twig" %}
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- menu déroulant droite -->

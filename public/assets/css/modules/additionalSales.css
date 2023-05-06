@@ -54,6 +54,12 @@
     height: auto;
     margin: 1vh auto 1vh auto;
 }
+.cardCustom:hover .eye-product, .WS-basket-card-plus2:hover .eye-product, .WS-basket-card-plus:hover .eye-product{
+    visibility: unset;
+}
+.eye-product{
+    padding-left: 1vw;
+}
 
 @media screen and (max-width: 480px) {
     .additionSalesLarge{
