@@ -6,7 +6,7 @@
         <h1 class="loginTitle">Connexion à votre espace personnel</h1>
         <form method="post">
             <div class="mb-3">
-                <label class="labelInput" for="email">Email :</label><br>
+                <label class="labelInput" for="email">Adresse email :</label><br>
                 <input class="loginInput" type="email" name="email" id="email" value="{{ user.email }}">
                 <p class="contactError">{{ error.email }}</p>
             </div>
@@ -18,10 +18,10 @@
             <p class="contactError">{{ error.connexion }}</p>
             <div class="d-flex justify-content-center">
                 <div class="mb-3">
-                    <button class="btn btn-sucess text-white m-3">Connexion</button>
+                    <button class="btn btn-sucess text-white m-2">Connexion</button>
                 </div>
-                <div class="my-3">
-                    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">S'inscrire</a>
+                <div class="mb-3">
+                    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white m-2">S'inscrire</a>
                 </div>
             </div>
         </form>

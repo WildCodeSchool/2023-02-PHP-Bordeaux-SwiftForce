@@ -83,5 +83,34 @@
     .cartLoveLogo{
         right: 10%;
     }
+    .tableOrder, .tableOrderUnitaire{
+        width: 94vw;
+        margin-top: 1vh;
+    }
+    .contenu1, .contenu2, .contenu3, .contenu4{
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tableHEAD{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .tableHEAD .contenu1, .tableHEAD .contenu2, .tableHEAD .contenu3, .tableHEAD .contenu4 {
+        font-size: 1.2rem;
+    }
+    .detailContenu, .detailContenuOrder {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .contenu5{
+        display: none;
+    }
+    .titleOrder{
+        width: 94vw;
+        margin-top: 1vh;
+        font-size: 1.2rem;
+    }
 }
 

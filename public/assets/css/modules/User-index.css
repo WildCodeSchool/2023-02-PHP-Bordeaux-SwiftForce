@@ -33,7 +33,7 @@
 }
 
 .dashboardbtn {
-    margin: 0 1vw auto 1vw;
+    margin: 3vh 1vw 3vh 1vw;
 }
 
 .WS-user-container {
@@ -100,9 +100,8 @@ table {
 }
 
 .btnLargeResp{
-    width: 300x;
+    width: 300px;
 }
-
 
 .loginTitle{
     font-family: var(--fontFamilyTitle);
@@ -122,6 +121,10 @@ table {
 }
 
 @media screen and (max-width: 480px) {
+    .dashboardmenu{
+        flex-wrap: wrap;
+        margin-top: 1vh;
+    }
     .dashboardbanner h1 {
         font-size: 2rem;
     }
@@ -129,8 +132,9 @@ table {
         font-size: 1rem;
     }
     .btnResp{
-        width: 23vw;
-        font-size: 0.7rem;
+        width: 45vw;
+        font-size: 1.2rem;
+        font-family: var(--fontFamilyTitle);
     }
     .visibleResp{
         visibility: hidden;
@@ -145,5 +149,20 @@ table {
     .btnLargeResp{
         width: 88.5vw;
     }
+    .loginInput{
+        width: 90vw;
+        margin-top: 1vh;
+    }
+    .dashboardbtn{
+        margin : 1vh
+    }
+
+
+
+
+
+
+
+
     }
 
