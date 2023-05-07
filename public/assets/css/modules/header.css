@@ -1,8 +1,4 @@
 
-.navbar {
-    background: rgb(180, 176, 176);
-}
-
 .offcanvas-title {
     font-family: var(--fontFamilyTitle);
     color: var(--primaryColor);
@@ -11,8 +7,9 @@
     font-family: var(--fontFamilyTitle);
     color: var(--primaryColor);
     text-decoration: none;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    font-size: 3rem;
+    padding: 0;
+    margin:0;
 }
 
 .btn2 {
@@ -56,5 +53,93 @@ li {
 .WS_transparent{
     background-color: #11ffee00;
     border: none;
+}
+.WS_contener_header{
+    display: grid;
+    grid:
+    " . . . . . . . . . ." 10px
+    ". burger logo title search . ninja logout basket ." 40px
+    ". . . . . . text1 text2 text3 ." 30px
+    / 20px 30px 70px 400px 1fr 60px 80px 80px 80px 20px;
+  gap : 10px;
+}
+.WS_btn_burger{
+    grid-area: burger;
+    display: flex;
+   align-items: center;
+    margin-top: 20px;
+}
+.WS_img_logo{
+    grid-area: logo;
+}
+.WS_titleName{
+    grid-area: title;
+    display: flex;
+    margin-top: 4px;
+}
+.WS_searchbar{
+    grid-area: search;
+    margin-top: 10px;
+}
+.WS_ninja{
+    grid-area: ninja;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.WS_header_text1{
+    grid-area: text1;
+    margin-top: -15px;
+}
+.WS_header_text2{
+    grid-area: text2;
+    margin-top: -16px;
+}
+.WS_header_text3{
+    grid-area: text3;
+}
+.WS_log_out{
+    grid-area: logout;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.WS_header_basket{
+    grid-area: basket;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+@media screen and (max-width: 480px) {
+
+    .WS_contener_header{
+        grid:
+        "burger title ninja logout basket"40px
+        " . . text1 text1 text1" 10px
+        "search search search search search"30px
+        / 30px  1fr 30px 30px 30px;
+        gap:10px;
+    }
+    .headerTitle{
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    .WS_img_logo{
+        display: none;
+    }
+
+    .WS_header_text2{
+        display: none;
+    }
+    .WS_btn_burger{
+      margin: 0;
+        margin-left: 8px;
+    }
+    .WS_searchbar{
+        margin-top: 0;
+        margin-left: 26px;
+        margin-right: 10px;
+    }
 }
 
