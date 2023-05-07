@@ -65,9 +65,9 @@
 @media screen and (max-width: 480px) {
     .one-product {
         width: 95vw;
-        margin: auto auto 4vh auto;
+        margin: 0 auto 4vh auto;
         flex-direction: column;
-        padding-top: 20px;
+        padding-top: 0;
     }
 
     .one-product button {
@@ -128,7 +128,15 @@
     .customers-comments {
         display: none;
     }
-}
+    .card-title-phone{
+        font-family: var(--fontFamilyTitle);
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .text-customer-comments{
+        width: 100%;
+    }
+    }
 
 
 /************* Slide comment phone ***********/
@@ -151,10 +159,7 @@
 #carouselExampleControls{
     margin-top: 3vw;
 }
-.card-body .text-customer-comments-phone {
-    text-align: justify;
-    margin-left: 40px;
-}
+
 .card-title-comments{
     text-align: center;
     font-family: var(--fontFamilyTitle);
@@ -206,8 +211,8 @@
     }
 
     .links-product-page{
-        width: 95vw;
-        margin: auto;
+        width: 88vw;
+        margin: unset;
         text-align: center;
     }
     .bigTitle{
@@ -234,5 +239,8 @@
         align-items: center;
         justify-content: center;
         width: 100vw;
+    }
+    .customers-comments-phone h2{
+        width: 88vw;
     }
 }

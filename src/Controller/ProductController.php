@@ -129,8 +129,8 @@ class ProductController extends AbstractController
 
     public function sortCategory(string $cat): string
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'sortCat?cat=')) {
-            $name = explode("=", $_SERVER['REQUEST_URI']);
+        if (strpos($_SERVER['REQUEST_URI'], 'sortCat?')) {
+            $name = explode("cat=", $_SERVER['REQUEST_URI']);
             $name = $name[1];
             $_SESSION['filter']['name'] = $name;
         }

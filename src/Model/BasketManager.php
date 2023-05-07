@@ -28,4 +28,11 @@ class BasketManager extends AbstractManager
             $statement->execute();
         }
     }
+    public function promotion(string $codeName): array | bool
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM ws_promotions WHERE name=:name");
+        $statement->bindValue('name', $codeName, \PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetch();
+    }
 }

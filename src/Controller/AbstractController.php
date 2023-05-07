@@ -37,14 +37,47 @@ abstract class AbstractController
 
         if (isset($_SESSION['cart'])) {
             $cartInvert = array_reverse($_SESSION['cart']);
-            $total = "0";
+            $totalAvantRemise = 0;
             foreach ($_SESSION['cart'] as $cart) {
-                $total += $cart['quantity'] * $cart['price'];
+                $totalAvantRemise += $cart['quantity'] * $cart['price'];
             }
-            $_SESSION['total'] = $total;
+            $_SESSION['total'] = $totalAvantRemise;
+
+            $totalApresRemise = 0;
+            $promo = 0;
+            $promotion = "";
+            $remise = "";
+            if ($_SESSION['promotion'] != ''){
+                $promo = $_SESSION['promotion'];
+                $promotion = $promo . '%';
+                $remise = 'Remise';
+            }
+            if ($promo = 0){
+                $totalApresRemise = $totalAvantRemise;
+            } else {
+                $totalApresRemise = $totalAvantRemise * (1 - ($promo / 100));
+            }
+
+            $ports = 4.99;
+            /*if (isset($_SESSION['promo'])){
+                $ports = $_SESSION['promo'];
+            }*/
+            $totalApresRemise = $totalApresRemise + $ports;
+            $totalApresRemise = round($totalApresRemise, 2);
+
+            $errorPromotion = "";
+            if (isset($_SESSION['promotionError'])){
+                $errorPromotion = $_SESSION['promotionError'];
+            }
 
             $this->twig->addGlobal('carts', $cartInvert);
-            $this->twig->addGlobal('total', $total);
+            $this->twig->addGlobal('ports', $ports);
+            $this->twig->addGlobal('promotion', $promotion);
+            $this->twig->addGlobal('remise', $remise);
+            $this->twig->addGlobal('total', $totalAvantRemise);
+            $this->twig->addGlobal('totalTTC', $totalApresRemise);
+            $this->twig->addGlobal('errorPromotion', $errorPromotion);
+
         }
     }
 }

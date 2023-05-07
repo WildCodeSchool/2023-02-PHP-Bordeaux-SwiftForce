@@ -71,14 +71,11 @@ class UserController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
-
             $userManager->editUser($user);
             header('location: /users/show?id=' . $id);
         }
 
-        return $this->twig->render('User/edit.html.twig', [
-            'user' => $user,
-        ]);
+        return $this->twig->render('User/edit.html.twig', ['userChange' => $user,]);
     }
 
     public function delete(): void

@@ -62,19 +62,26 @@ td {
 .WS-user-cont {
     width: 50%;
 }
-
+.WS-user-profile{
+    padding-top: 10vh;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: var(--fontFamilyText);
+}
 .WS-user-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: var(--fontFamilyText);
 }
-
-.WS-login-container {
-    display: flex;
-    justify-content: space-around;
+.WS-user-content{
+    width: 90%;
+    margin-top: 3vh;
+    margin-bottom: 0;
 }
-
 .font {
     font-family: var(--fontFamilyText);
 }
@@ -119,6 +126,35 @@ table {
     border-width: var(--bs-border-width);
     margin-bottom: 2vh;
 }
+.dashboardbackground{
+    width: 50vw;
+    margin: auto auto 3vh auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.question{
+    background-color: var(--primaryColor);
+    width: 10vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+}
+.questionImage{
+    height: 3vh;
+    margin-right: 1vw;
+}
+.dashboardimage{
+    width: 100%;
+}
+.WS-login-container{
+    position: absolute;
+    left: 5%;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+}
 
 @media screen and (max-width: 480px) {
     .dashboardmenu{
@@ -132,8 +168,8 @@ table {
         font-size: 1rem;
     }
     .btnResp{
-        width: 45vw;
-        font-size: 1.2rem;
+        width: 95vw;
+        font-size: 1.5rem;
         font-family: var(--fontFamilyTitle);
     }
     .visibleResp{
@@ -156,8 +192,38 @@ table {
     .dashboardbtn{
         margin : 1vh
     }
-
-
+    .dashboardbackground{
+        width: 95vw;
+        margin-top: 1vh;
+    }
+    .WS-user-profile{
+        padding-top: 3vh;
+    }
+    .WS-user-content, .WS-user-content-bis{
+        margin: 0;
+        font-size: 0.8rem;
+    }
+    .top-3{
+        margin-top: 0;
+    }
+    .question{
+        width: 20vw;
+        font-size: 0.8rem;
+    }
+    .questionImage{
+        height: 2vh;
+        margin-right: 1vw;
+    }
+    .WS-user-profile a{
+        height: 4vh;
+        margin-top: 1vh;
+    }
+    .WS-login-container{
+        padding-top: 0;
+    }
+    .compteTitle{
+        font-size: 1.2rem;
+    }
 
 
 

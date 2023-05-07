@@ -45,5 +45,7 @@ return [
     'wishlist/add' => ['WishlistController', 'add', ['id']],
     'wishlist/delete' => ['WishlistController', 'deleteWishlist', ['id']],
     'faker' => ['ProductController', 'productFixtures'],
+    'promotion' => ['BasketController', 'promotion', ['codeName']],
+    'contactPromo' => ['ProfileController', 'contactPromo'],
 ];
 
