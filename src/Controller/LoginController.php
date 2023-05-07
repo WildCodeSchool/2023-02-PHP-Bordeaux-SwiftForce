@@ -49,6 +49,12 @@ class LoginController extends AbstractController
     public function logout(): void
     {
         unset($_SESSION['user_id']);
+        if (isset($_SESSION['promotion'])){
+            $_SESSION['promotion'] = "";
+        }
+        if (isset($_SESSION['promotionError'])){
+            $_SESSION['promotionError'] = "";
+        }
         header('location: /');
     }
 }
