@@ -1,116 +1,185 @@
-<div class="bg-light sticky">
-    <div class="row mx-0">
+<div class="bg-light sticky WS_contener_header">
 
-        <!--incon and image zone-->
-        <div class="col-4 col-md-4 py-2 position-relative d-flex align-items-center">
+
+        <!--incon and image zone titre-->
+
+        <div class="WS_btn_burger">
             <i class="fa-solid fa-bars fa-lg fa-2xl" class="btn btn-primary btn2" type="button"
                data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
                aria-controls="offcanvasWithBothOptions"></i>
-
-            <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1"
-                 id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png" height='60' px>  The Wild Shop</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body WS-off-canvas">
-                    <ul>
-                        <p><li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed" class="text-decoration-none WS-header">  S'habiller</a></li></p>
-                        <p><li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_eat" class="text-decoration-none WS-header">  S'alimenter</a></li></p>
-                        <p><li><i class="fa-solid fa-campground fa-lg WS-header "></i><a href="/product/sortSub?subCat=take_shelter" class="text-decoration-none WS-header">  S'abriter</a></li></p>
-                        <p><li><i class="fa-solid fa-gun fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend" class="text-decoration-none WS-header">  Se défendre</a></li></p>
-                        <p><li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="/product/sortSub?subCat=orientation" class="text-decoration-none WS-header">  S'orienter</a></li></p>
-                        <p><li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header">  Kit de Survie</a></li></p>
-                    </ul>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" data-bs-offset="150,">
-                        Catastrophes
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>
-                        <li><i class="fa-solid fa-water px-2"></i><a href="/product/sortCat?cat=water" class="text-decoration-none WS-header">
-                                Eau</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-wind px-2"></i><a href="/product/sortCat?cat=wind" class="text-decoration-none WS-header">
-                                Air</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-fire px-2"></i></i><a href="/product/sortCat?cat=fire" class="text-decoration-none WS-header">
-                                Feu</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-earth-americas px-2"></i><a href="/product/sortCat?cat=earth"
-                                                                              class="text-decoration-none WS-header">
-                                Terre</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-flask-vial px-2"></i><a href="/product/sortCat?cat=chemical"
-                                                                          class="text-decoration-none WS-header">
-                                Chimique</a></li>
-                        </p>
-                        <p>
-                        <li><i class="fa-solid fa-meteor px-2"></i><a href="/product/sortCat?cat=exterior" class="text-decoration-none WS-header">
-                                Météorite</a></li>
-                        </p>
-                    </ul>
-                </div>
-            </div>
-            <a href="/" class="ms-2"><img src="/assets/images/test2.png" height='60' px></a><h4 class="headerTitle">  The Wild Shop</h4>
         </div>
-
+        <div class="WS_img_logo">
+            <a href="/" ><img src="/assets/images/test2.png" height="70"></a>
+        </div>
+        <div class="WS_titleName">
+            <a href="/" class="text-decoration-none"><h4 class="headerTitle"> The Wild Shop</h4></a>
+        </div>
         <!--Form zone-->
-        <div class="col-4 col-md-6 py-3 h-100 my-auto">
+        <div class="WS_searchbar">
             <form method="GET" class="d-flex" role="search" action="/search">
-                <input class="form-control me-2 rounded-0" type="search" name="q" placeholder="recherche..." aria-label="Search">
-                <input class="btn btn-outline-success d-none d-sm-block text-white" type="submit" value="valider"></input>
+                <input class="form-control rounded-0" type="search" name="q" placeholder="recherche..."
+                       aria-label="Search">
             </form>
         </div>
-
         <!--icons zone-->
-        <div class="col-4 col-md-2 py-3">
-            <div class="d-flex justify-content-end d-flex align-items-cente">
                 {% if user.role == 'admin' %}
-                    <div>
+                    <div class="WS_ninja">
                         <a href="/profile">
-                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                            <i class="fa-solid fa-user-ninja fa-2xl WS-header" class="btn btn-primary btn2"
                                type="button">
                             </i>
                         </a>
+                    </div>
+                    <div class="WS_header_text1" >
                         <p class="text-center">{{ user.user_name }}</p>
                     </div>
-                    <div>
+                    <div class="WS_log_out">
                         <a href="/logout">
-                            <i class="fa-solid fa-right-from-bracket m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                            <i class="fa-solid fa-right-from-bracket fa-2xl WS-header" class="btn btn-primary btn2"
                                type="button"></i>
                         </a>
+                    </div>
+                    <div class="WS_header_text2">
                         <p class="text-center">Log-out</p>
+                    </div>
+                    <div class="WS_header_basket">
+                        <i class="fa-solid fa-basket-shopping fa-2xl WS-header" class="btn btn-primary btn2"
+                           type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
+                           aria-controls="offcanvasRight-user"></i>
+                    </div>
+                    <div class="WS_header_text3">
+                        <p></p>
                     </div>
                 {% elseif user.role == 'user' %}
-                    <div>
+                    <div class="WS_ninja">
                         <a href="/profile">
-                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2">
+                            <i class="fa-solid fa-user-ninja fa-2xl WS-header" class="btn btn-primary btn2">
                             </i>
                         </a>
+                    </div>
+                    <div class="WS_header_text1">
                         <p class="text-center">{{ user.user_name }}</p>
                     </div>
-                    <div>
+                    <div class="WS_log_out">
                         <a href="/logout">
-                            <i class="fa-solid fa-right-from-bracket m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                            <i class="fa-solid fa-right-from-bracket fa-2xl WS-header" class="btn btn-primary btn2"
                                type="button"></i>
                         </a>
+                    </div>
+                    <div class="WS_header_text2">
                         <p class="text-center">Log-out</p>
                     </div>
+                    <div class="WS_header_basket">
+                        <i class="fa-solid fa-basket-shopping fa-2xl WS-header" class="btn btn-primary btn2"
+                           type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
+                           aria-controls="offcanvasRight-user"></i>
+                    </div>
+                    <div class="WS_header_text3">
+                        <p></p>
+                    </div>
                 {% else %}
-                    <div>
+                    <div class="WS_ninja">
                         <a href="/login">
-                            <i class="fa-solid fa-user-ninja m-3 fa-2xl WS-header" class="btn btn-primary btn2"
+                            <i class="fa-solid fa-user-ninja fa-2xl WS-header" class="btn btn-primary btn2"
                                type="button">
                             </i>
                         </a>
-                        <p class="text-center"></p>
+                    </div>
+                    <div class="WS_header_text1">
+                        <p></p>
+                    </div>
+                    <div class="WS_header_basket">
+                        <i class="fa-solid fa-basket-shopping fa-2xl WS-header" class="btn btn-primary btn2"
+                           type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
+                           aria-controls="offcanvasRight-user"></i>
+                    </div>
+                    <div class="WS_header_text3">
+                        <p></p>
                     </div>
                 {% endif %}
+
+
+
+
+    </div>
+    <!-- menu déroulant gauche -->
+    <div class="offcanvas offcanvas-start WS-off-canvas" data-bs-scroll="true" tabindex="-1"
+         id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="/assets/images/test2.png"
+                                                                                height='60' px> The Wild Shop</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body WS-off-canvas">
+            <ul>
+                <p>
+                <li><i class="fa-solid fa-user-astronaut WS-header "></i><a href="/product/sortSub?subCat=get_dressed"
+                                                                            class="text-decoration-none WS-header">
+                        S'habiller</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-utensils fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_eat"
+                                                                            class="text-decoration-none WS-header">
+                        S'alimenter</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-campground fa-lg WS-header "></i><a
+                        href="/product/sortSub?subCat=take_shelter" class="text-decoration-none WS-header">
+                        S'abriter</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-gun fa-lg WS-header "></i><a href="/product/sortSub?subCat=to_defend"
+                                                                       class="text-decoration-none WS-header"> Se
+                        défendre</a></li>
+                </p>
+                <p>
+                <li><i class="fa-regular fa-compass fa-lg WS-header "></i><a href="/product/sortSub?subCat=orientation"
+                                                                             class="text-decoration-none WS-header">
+                        S'orienter</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-kit-medical fa-lg WS-header "></i><a
+                        href="/product/sortSub?subCat=survival_kit" class="text-decoration-none WS-header"> Kit de
+                        Survie</a></li>
+                </p>
+            </ul>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" data-bs-offset="150,">
+                Catastrophes
+            </button>
+            <ul class="dropdown-menu">
+                <p>
+                <li><i class="fa-solid fa-water px-2"></i><a href="/product/sortCat?cat=water"
+                                                             class="text-decoration-none WS-header">
+                        Eau</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-wind px-2"></i><a href="/product/sortCat?cat=wind"
+                                                            class="text-decoration-none WS-header">
+                        Air</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-fire px-2"></i></i><a href="/product/sortCat?cat=fire"
+                                                                class="text-decoration-none WS-header">
+                        Feu</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-earth-americas px-2"></i><a href="/product/sortCat?cat=earth"
+                                                                      class="text-decoration-none WS-header">
+                        Terre</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-flask-vial px-2"></i><a href="/product/sortCat?cat=chemical"
+                                                                  class="text-decoration-none WS-header">
+                        Chimique</a></li>
+                </p>
+                <p>
+                <li><i class="fa-solid fa-meteor px-2"></i><a href="/product/sortCat?cat=exterior"
+                                                              class="text-decoration-none WS-header">
+                        Météorite</a></li>
+                </p>
+            </ul>
+=======
                 <i class="fa-solid fa-basket-shopping m-3 fa-2xl WS-header" class="btn btn-primary btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user" aria-controls="offcanvasRight-user"></i>
                 <div class="offcanvas offcanvas-end WS-off-canvas2" tabindex="-1" id="offcanvasRight-user" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
@@ -126,4 +195,20 @@
             </div>
         </div>
     </div>
+    <!-- menu déroulant droite -->
+    <div class="offcanvas offcanvas-end WS-off-canvas2" tabindex="-1" id="offcanvasRight-user"
+         aria-labelledby="offcanvasRightLabel">
+
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title titlePanier" id="offcanvasRightLabel">Votre Panier</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!--include twig-->
+        <div class="offcanvas-body WS-mini-cart">
+            {% include "_includes/_miniCart.html.twig" %}
+
+        </div>
+
+
 </div>
