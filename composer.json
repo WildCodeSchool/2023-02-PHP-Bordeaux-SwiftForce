@@ -12,7 +12,8 @@
         "twig/twig": "^3.5.1",
         "ext-pdo": "*",
         "phpmailer/phpmailer": "^6.8",
-        "fakerphp/faker": "^1.21"
+        "fakerphp/faker": "^1.21",
+        "stripe/stripe-php": "^10.12"
     },
     "require-dev": {
         "filp/whoops": "^2.15",
