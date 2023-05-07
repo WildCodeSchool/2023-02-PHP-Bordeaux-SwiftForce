@@ -45,7 +45,7 @@ class BasketController extends AbstractController
                     }
                 } else {
                     $_SESSION['promotion'] = [];
-                    $_SESSION['promotionError'] = [];
+                    $_SESSION['promotionError'] = "";
                 }
             }
         }
@@ -87,8 +87,7 @@ class BasketController extends AbstractController
                             $_SESSION['seuilOK'] = false;
                         } else {
                             $_SESSION['reduction'] = $_SESSION['promotion']['reduction'];
-                            $errors['promo'] = "";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotionError'] = "";
                             $_SESSION['seuilOK'] = true;
                         }
                     } else {
@@ -159,12 +158,10 @@ class BasketController extends AbstractController
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 if (isset($_GET['promo'])) {
                     if (empty(trim($_GET['codeName']))) {
-                        $errors['promo'] = "Merci de saisir un code.";
-                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotionError'] = "Merci de saisir un code.";
                         $_SESSION['promotion'] = [];
                     } elseif (!isset($_SESSION['cart'])) {
-                        $errors['promo'] = "Votre panier est vide.";
-                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotionError'] = "Votre panier est vide.";
                         $_SESSION['promotion'] = [];
                     } else {
                         $codeName = checkdata($_GET['codeName']);
@@ -176,17 +173,14 @@ class BasketController extends AbstractController
                                 $manque = $promotion['seuil'] - $_SESSION['total'];
                                 $_SESSION['promotion'] = $promotion;
                                 $_SESSION['seuilOK'] = false;
-                                $errors['promo'] = "Plus que ". $manque . "€ pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
-                                $_SESSION['promotionError'] = $errors['promo'];
+                                $_SESSION['promotionError'] = "Plus que ". $manque . "€ pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
                             } else {
                                 $_SESSION['promotion'] = $promotion;
-                                $errors['promo'] = "";
-                                $_SESSION['promotionError'] = $errors['promo'];
+                                $_SESSION['promotionError'] = "";
                                 $_SESSION['seuilOK'] = true;
                             }
                         } else {
-                            $errors['promo'] = "Ce code n'est pas valide.";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotionError'] = "Ce code n'est pas valide.";
                             $_SESSION['promotion'] = [];
                         }
                     }
