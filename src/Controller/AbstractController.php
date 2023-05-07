@@ -44,24 +44,35 @@ abstract class AbstractController
             $_SESSION['total'] = $totalAvantRemise;
 
             $totalApresRemise = 0;
-            $promo = 0;
+            $reduction = 0;
             $promotion = "";
             $remise = "";
-            if ($_SESSION['promotion'] != ''){
-                $promo = $_SESSION['promotion'];
-                $promotion = $promo . '%';
-                $remise = 'Remise';
-            }
-            if ($promo = 0){
-                $totalApresRemise = $totalAvantRemise;
-            } else {
-                $totalApresRemise = $totalAvantRemise * (1 - ($promo / 100));
+            if (isset($_SESSION['promotion'])) {
+                if ($_SESSION['promotion'] != '') {
+                }
+                if (isset($_SESSION['promotion']['reduction'])) {
+                    if (isset($_SESSION['seuilOK'])) {
+                        if ($_SESSION['seuilOK']) {
+                            $reduction = $_SESSION['promotion']['reduction'];
+                            $promotion = $reduction . '%';
+                            $remise = 'Remise';
+                            $totalApresRemise = $totalAvantRemise * (1 - ($reduction / 100));
+                        } else {
+                            $reduction = "";
+                            $promotion = "";
+                            $remise = "";
+                            $totalApresRemise = $totalAvantRemise;
+                        }
+                    }
+                } else {
+                    $totalApresRemise = $totalAvantRemise;
+                    $promotion = "";
+                    $remise = "";
+                }
             }
 
             $ports = 4.99;
-            /*if (isset($_SESSION['promo'])){
-                $ports = $_SESSION['promo'];
-            }*/
+
             $totalApresRemise = $totalApresRemise + $ports;
             $totalApresRemise = round($totalApresRemise, 2);
 
@@ -70,6 +81,11 @@ abstract class AbstractController
                 $errorPromotion = $_SESSION['promotionError'];
             }
 
+            if (empty($_SESSION['cart'])) {
+                $errorPromotion = "";
+                $promotion = "";
+                $remise = "";
+            }
             $this->twig->addGlobal('carts', $cartInvert);
             $this->twig->addGlobal('ports', $ports);
             $this->twig->addGlobal('promotion', $promotion);
@@ -77,7 +93,6 @@ abstract class AbstractController
             $this->twig->addGlobal('total', $totalAvantRemise);
             $this->twig->addGlobal('totalTTC', $totalApresRemise);
             $this->twig->addGlobal('errorPromotion', $errorPromotion);
-
         }
     }
 }

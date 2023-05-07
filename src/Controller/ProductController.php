@@ -189,6 +189,27 @@ class ProductController extends AbstractController
                     'total' => $productQuantity * $productPrice
                 ];
             }
+            if (isset($_SESSION['promotion'])) {
+                $total = 0;
+                foreach ($_SESSION['cart'] as $cart) {
+                    $total += $cart['quantity'] * $cart['price'];
+                    if (isset($_SESSION['promotion']['seuil'])){
+                        if ($_SESSION['promotion']['seuil'] > $total) {
+                            $manque = $_SESSION['promotion']['seuil'] - $total;
+                            $_SESSION['promotionError'] = "Plus que " . $manque . " € pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
+                            $_SESSION['seuilOK'] = false;
+                        } else {
+                            $_SESSION['reduction'] = $_SESSION['promotion']['reduction'];
+                            $errors['promo'] = "";
+                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['seuilOK'] = true;
+                        }
+                    }
+                    if (str_contains($_SERVER['HTTP_REFERER'], 'basket')) {
+                        header('Location:/basket');
+                    }
+                }
+            }
             header('Location:' . $_SERVER['HTTP_REFERER']);
         }
     }

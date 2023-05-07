@@ -14,10 +14,8 @@ class BasketController extends AbstractController
             foreach ($_SESSION['cart'] as $cart) {
                 $total += $cart['quantity'] * $cart['price'];
             }
-            $totalLivraison = $total + 40;
         } else {
             $total = 0;
-            $totalLivraison = $total + 40;
         }
         return $this->twig->render('basket/index.html.twig');
     }
@@ -32,6 +30,25 @@ class BasketController extends AbstractController
         }
         $key = 'product_' . $id;
         unset($_SESSION['cart'][$key]);
+        if (isset($_SESSION['promotion'])) {
+            $total = 0;
+            foreach ($_SESSION['cart'] as $cart) {
+                $total += $cart['quantity'] * $cart['price'];
+                if (isset($_SESSION['promotion']['seuil'])) {
+                    if ($_SESSION['promotion']['seuil'] > $total) {
+                        $manque = $_SESSION['promotion']['seuil'] - $total;
+                        $_SESSION['promotionError'] = "Plus que " . $manque . " € pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
+                        $_SESSION['seuilOK'] = false;
+                    }
+                    if (str_contains($_SERVER['HTTP_REFERER'], 'basket')) {
+                        header('Location:/basket');
+                    }
+                } else {
+                    $_SESSION['promotion'] = [];
+                    $_SESSION['promotionError'] = [];
+                }
+            }
+        }
         header('Location:' . $_SERVER['HTTP_REFERER']);
     }
 
@@ -51,6 +68,36 @@ class BasketController extends AbstractController
                     $_SESSION['cart'][$key]['total'] = $quantity * $_SESSION['cart'][$key]['price'];
                 } else {
                     unset($_SESSION['cart'][$key]);
+                    if ($_SESSION['cart'] == []) {
+                        if (isset($_SESSION['promotionError'])) {
+                            $_SESSION['promotionError'] = "";
+                            $_SESSION['promotion'] = [];
+                        }
+                    }
+                }
+            }
+            if (isset($_SESSION['promotion'])) {
+                $total = 0;
+                foreach ($_SESSION['cart'] as $cart) {
+                    $total += $cart['quantity'] * $cart['price'];
+                    if (isset($_SESSION['promotion']['seuil'])) {
+                        if ($_SESSION['promotion']['seuil'] > $total) {
+                            $manque = $_SESSION['promotion']['seuil'] - $total;
+                            $_SESSION['promotionError'] = "Plus que " . $manque . " € pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
+                            $_SESSION['seuilOK'] = false;
+                        } else {
+                            $_SESSION['reduction'] = $_SESSION['promotion']['reduction'];
+                            $errors['promo'] = "";
+                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['seuilOK'] = true;
+                        }
+                    } else {
+                        $_SESSION['promotionError'] = "";
+                        $_SESSION['promotion'] = [];
+                    }
+                    if (str_contains($_SERVER['HTTP_REFERER'], 'basket')) {
+                        header('Location:/basket');
+                    }
                 }
             }
         } else {
@@ -97,8 +144,7 @@ class BasketController extends AbstractController
     }
     public function promotion($codeName)
     {
-        $promotion = "";
-        $errors['promo'] = "";
+        $errors['promo'] = $_SESSION['reduction'] = "";
         function checkdata($data)
         {
             $data = trim($data);
@@ -115,21 +161,33 @@ class BasketController extends AbstractController
                     if (empty(trim($_GET['codeName']))) {
                         $errors['promo'] = "Merci de saisir un code.";
                         $_SESSION['promotionError'] = $errors['promo'];
-                        $_SESSION['promotion'] = "";
+                        $_SESSION['promotion'] = [];
+                    } elseif (!isset($_SESSION['cart'])) {
+                        $errors['promo'] = "Votre panier est vide.";
+                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotion'] = [];
                     } else {
                         $codeName = checkdata($_GET['codeName']);
                         $codeName = strtoupper($codeName);
                         $basketManager = new BasketManager();
                         $promotion = $basketManager->promotion($codeName);
                         if ($promotion != false) {
-                            $promo = $promotion['reduction'];
-                            $_SESSION['promotion'] = $promo;
-                            $errors['promo'] = "";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            if ($promotion['seuil'] > $_SESSION['total']){
+                                $manque = $promotion['seuil'] - $_SESSION['total'];
+                                $_SESSION['promotion'] = $promotion;
+                                $_SESSION['seuilOK'] = false;
+                                $errors['promo'] = "Plus que ". $manque . "€ pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
+                                $_SESSION['promotionError'] = $errors['promo'];
+                            } else {
+                                $_SESSION['promotion'] = $promotion;
+                                $errors['promo'] = "";
+                                $_SESSION['promotionError'] = $errors['promo'];
+                                $_SESSION['seuilOK'] = true;
+                            }
                         } else {
                             $errors['promo'] = "Ce code n'est pas valide.";
                             $_SESSION['promotionError'] = $errors['promo'];
-                            $_SESSION['promotion'] = "";
+                            $_SESSION['promotion'] = [];
                         }
                     }
                 }
