@@ -4,34 +4,37 @@
     <div class="WS-basket-container mt-5">
 
         <!-- --------------------------------- cart ---------------------------------- -->
-           <div class="WS-basket-card-caddie ">
+        <div class="WS-basket-card-caddie ">
             <h4 class="mb-3">Votre panier</h4>
             {% if carts %}
-            {% for cart in carts %}
-                <div class="WS-basket-card bg-white ms-md-3">
-                <div class="WS-basket-center">
-                    <img class="WS-basket-img"src="/assets/images/{{ cart.image }}" alt="">
-                </div>
-                <div class="WS-basket-card-body">
-                    <div class="WS-basket-card-body-mini">
-                    <h5 class="card-title mt-3">{{ cart.name }}</h5>
-                    <h6 class="card-subtitle text-muted">Prix unitaire : {{ cart.price }} €</h6>
-                    <form class="quantity" action="basket/edit" method="get">
-                        <input name="id" type="hidden" value="{{ cart.id }}">
-                        <button class="quantityChange" name="quantityChange-">-</button>
-                        <input class="quantityItem" type="text" name="quantity" value="{{ cart.quantity }}">
-                        <button class="quantityChange" name="quantityChange+">+</button>
-                    </form>
+                {% for cart in carts %}
+                    <div class="WS-basket-card bg-white ms-md-3">
+                        <div class="WS-basket-center">
+                            <img class="WS-basket-img" src="/assets/images/{{ cart.image }}" alt="">
+                        </div>
+                        <div class="WS-basket-card-body">
+                            <div class="WS-basket-card-body-mini">
+                                <h5 class="WS_card-title mt-3">{{ cart.name }}</h5>
+                                <h6 class="WS_card-subtitle text-muted">Prix unitaire : {{ cart.price }} €</h6>
+                                <form class="quantity" action="basket/edit" method="get">
+                                    <input name="id" type="hidden" value="{{ cart.id }}">
+                                    <button class="quantityChange" name="quantityChange-">-</button>
+                                    <input class="quantityItem" type="text" name="quantity" value="{{ cart.quantity }}">
+                                    <button class="quantityChange" name="quantityChange+">+</button>
+                                </form>
+                            </div>
+                            <div class="WS-basket-price">
+                                <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem"
+                                                                               src="/assets/images/trash_logo.png"
+                                                                               alt=""></a>
+                                <a href="/wishlist/add?id={{ cart.id }}"><img class="cartLoveLogo"
+                                                                              src="/assets/images/lovelogo.png" alt=""></a>
+                                <h6 class="card-subtitle text-muted mt-3">Total : {{ cart.total }} €</h6>
+                            </div>
+                        </div>
                     </div>
-                <div class="WS-basket-price">
-                        <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem" src="/assets/images/trash_logo.png" alt=""></a>
-                        <a href="/wishlist/add?id={{ cart.id }}"><img class="cartLoveLogo" src="/assets/images/lovelogo.png"  alt=""></a>
-                    <h6 class="card-subtitle text-muted mt-3">Total : {{ cart.total }} €</h6>
-                </div>
-                </div>
-            </div>
-            {% endfor %}
-                {% else %}
+                {% endfor %}
+            {% else %}
                 <p>Votre panier est vide !</p>
             {% endif %}
         </div>
@@ -67,7 +70,8 @@
                     <p class="m-0 fontBold">Total</p>
                     <p class="m-0 fontBold">{{ totalLivraison }} €</p>
                 </div>
-                <a href="/basket/validation?validation=ok" class="btn btn-primary  text-decoration-none text-white w-100">Valider mon panier</a>
+                <a href="/basket/validation?validation=ok"
+                   class="btn btn-primary  text-decoration-none text-white w-100">Valider mon panier</a>
             </section>
             <section>
                 <h6 class="text-center">Modes de paiement disponibles</h6>
