@@ -53,12 +53,26 @@ class UserController extends AbstractController
                 $errors['birthday'] = "La date de naissance est obligatoire";
             } else {
                 $user['birthday'] = checkdata($_POST['birthday']);
-            }
 
-            if(empty($errors['user_name']) && empty($errors['email']) && empty($errors['password']) && empty($errors['birthday'])) {
-                $userManager = new UserManager();
-                $userManager->addUser($_POST);
-                header('Location: /login');
+                $birthday = checkdata($_POST['birthday']);
+                $timestamp = strtotime($birthday);
+                if (!$timestamp) {
+                    $errors['birthday'] = "La date de naissance fournie est invalide";
+                } else {
+                    // Calculer l'âge de l'utilisateur
+                    $age = (date('Y') - date('Y', $timestamp));
+                    if ($age < 18) {
+                        $errors['birthday'] = "Vous devez avoir au moins 18 ans pour accéder à ce contenu";
+                    } else {
+                        $user['birthday'] = $birthday;
+                    }
+                }
+
+                if (empty($errors['user_name']) && empty($errors['email']) && empty($errors['password']) && empty($errors['birthday'])) {
+                    $userManager = new UserManager();
+                    $userManager->addUser($_POST);
+                    header('Location: /login');
+                }
             }
         }
         return $this->twig->render('User/add.html.twig', ['errors' => $errors, 'user' => $user]);
