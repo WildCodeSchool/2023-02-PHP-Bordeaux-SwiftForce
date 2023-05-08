@@ -12,7 +12,7 @@ class LoginController extends AbstractController
         $errors['email'] = $errors['password'] = "";
         $user['email'] = [];
         $user['WS_password'] = [];
-        function checkdata($data)
+        function checkdata($data): string
         {
             $data = trim($data);
             $data = htmlspecialchars($data);
