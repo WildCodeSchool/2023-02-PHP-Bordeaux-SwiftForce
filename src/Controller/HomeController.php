@@ -59,8 +59,6 @@ class HomeController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
 
-            return $this->twig->render('Home/blog1.html.twig', ['id' => $id]);
-
             /*switch ('id') {
                 case 1:
                     return $this->twig->render('Home/blog1.html.twig');
@@ -76,5 +74,6 @@ class HomeController extends AbstractController
                     break;
             }*/
         }
+        return $this->twig->render('Home/blog1.html.twig', ['id' => $id]);
     }
 }
