@@ -10,7 +10,9 @@ class LoginController extends AbstractController
     {
         $userTab['email'] = $userTab['password'] = "";
         $errors['email'] = $errors['password'] = "";
-        function checkdata($data)
+        $user['email'] = [];
+        $user['WS_password'] = [];
+        function checkdata($data): string
         {
             $data = trim($data);
             $data = htmlspecialchars($data);
@@ -35,11 +37,16 @@ class LoginController extends AbstractController
                 $user = $userManager->getUserByEmail($email);
                 $_SESSION['user'] = $user;
 
-                if ($_POST['email'] === $user['email'] && password_verify($_POST['WS_password'], $user['WS_password'])) {
-                    $_SESSION['user_id'] = $user['id'];
-                    header('Location: /profile');
-                } else {
+                if($user === false) {
                     $errors['connexion'] = "Votre email ou votre mot de passe n'est pas valide.";
+                } else {
+
+                    if ($_POST['email'] === $user['email'] && password_verify($_POST['WS_password'], $user['WS_password'])) {
+                        $_SESSION['user_id'] = $user['id'];
+                        header('Location: /profile');
+                    } else {
+                        $errors['connexion'] = "Votre email ou votre mot de passe n'est pas valide.";
+                    }
                 }
             }
         }
