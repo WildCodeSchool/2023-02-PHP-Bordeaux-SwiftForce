@@ -54,4 +54,27 @@ class HomeController extends AbstractController
         }
         return $this->twig->render('Home/contact.html.twig', ['errorName' => $errors['name'], 'errorEmail' => $errors['email'], 'name' => $name, 'email' => $email, 'phone' => $phone, 'subject' => $subject, 'message' => $message]);
     }
+    public function blog($id): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = $_GET['id'];
+
+            return $this->twig->render('Home/blog1.html.twig', ['id' => $id]);
+
+            /*switch ('id') {
+                case 1:
+                    return $this->twig->render('Home/blog1.html.twig');
+                    break;
+                case 2:
+                    return $this->twig->render('Home/blog2.html.twig');
+                    break;
+                case 3:
+                    return $this->twig->render('Home/blog3.html.twig');
+                    break;
+                case 4:
+                    return $this->twig->render('Home/blog4.html.twig');
+                    break;
+            }*/
+        }
+    }
 }
