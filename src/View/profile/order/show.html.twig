@@ -14,11 +14,11 @@
             {% for product in order %}
                 <a href="/product/show?id={{ product.product_id }}">
                     <div class="detailContenuOrder">
-                        <div class="contenu5"><i class="fa-solid fa-eye eye-order fa-lg" style="color: #004f43;"></i></div>
-                        <div class="contenu1">{{ product.name_product }}</div>
-                        <div class="contenu2">{{ product.product_quantity }}</div>
-                        <div class="contenu3">{{ product.price_per }} €</div>
-                        <div class="contenu4">{{ product.product_quantity * product.price_per }} €</div>
+                        <div class="contenu5 WS-survol"><i class="fa-solid fa-eye eye-order fa-lg" style="color: #004f43;"></i></div>
+                        <div class="contenu1 WS-survol">{{ product.name_product }}</div>
+                        <div class="contenu2 WS-survol">{{ product.product_quantity }}</div>
+                        <div class="contenu3 WS-survol">{{ product.price_per }} €</div>
+                        <div class="contenu4 WS-survol">{{ product.product_quantity * product.price_per }} €</div>
                     </div></a>
             {% endfor %}
         </div>
