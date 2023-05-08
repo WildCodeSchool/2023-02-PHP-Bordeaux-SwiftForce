@@ -72,6 +72,12 @@ body {
     color: rgba(var(--bs-dark-rgb),var(--bs-text-opacity));
 }
 
+.WS-survol{
+    color: var(--primaryColor)
+}
+.WS-footer-survol:hover{
+    color: var(--primaryColor);
+}
 
 @media only screen and (max-width: 480px) {
     .footer-legal {
