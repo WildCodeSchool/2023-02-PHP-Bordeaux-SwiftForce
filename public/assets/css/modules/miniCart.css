@@ -63,11 +63,12 @@
     }
 
     .test {
-        height: 15vh;
+        height:150px;
         justify-content: space-between;
         border-bottom-style: solid;
         border-color: var(--bs-border-color-translucent);
         border-width: var(--bs-border-width);
+
     }
 
     .WS-mini-cart {
@@ -77,6 +78,7 @@
 
     .WS-cart {
         margin: auto;
+
     }
 
     .WS-cart h5 {
