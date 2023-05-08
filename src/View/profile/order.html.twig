@@ -3,17 +3,17 @@
 {% block dashboardcontent %}
     <div class="tableOrder">
         <div class="tableHEAD">
-            <div class="contenu1">Date</div>
-            <div class="contenu2">N° de commande</div>
-            <div class="contenu3">Total</div>
+            <div class="contenu1 pe-none">Date</div>
+            <div class="contenu2 pe-none">N° de commande</div>
+            <div class="contenu3 pe-none">Total</div>
         </div>
         <div class="tableContenu">
         {% for order in orders %}
             <a href="/profile/orders/show?id={{ order.id }}">
                 <div class="detailContenu">
-                    <div class="contenu1">{{ order.order_date }}</div>
-                    <div class="contenu2">{{ order.id }}</div>
-                    <div class="contenu3">{{ order.total }} €</div>
+                    <div class="contenu1 WS-survol">{{ order.order_date }}</div>
+                    <div class="contenu2 WS-survol">{{ order.id }}</div>
+                    <div class="contenu3 WS-survol">{{ order.total }} €</div>
                 </div></a>
         {% endfor %}
         </div>
