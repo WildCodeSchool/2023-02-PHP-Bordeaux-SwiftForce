@@ -57,6 +57,9 @@ td {
     border: 1px solid #333;
     text-align: left;
 }
+.WS_td{
+    text-align: left;
+}
 
 td {
     padding: 0 1rem;
