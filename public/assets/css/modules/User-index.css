@@ -95,10 +95,10 @@ td {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 700px;
+    width: 60%;
 }
 table {
-    width: 700px;
+    width: 60%;
 }
 .WS-user-container3{
     display: flex;
