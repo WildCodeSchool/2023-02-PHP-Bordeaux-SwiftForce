@@ -214,6 +214,7 @@
         width: 88vw;
         margin: unset;
         text-align: center;
+        font-size: 1rem;
     }
     .bigTitle{
         margin: auto;
@@ -242,5 +243,10 @@
     }
     .customers-comments-phone h2{
         width: 88vw;
+    }
+    .footer-botom{
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
     }
 }

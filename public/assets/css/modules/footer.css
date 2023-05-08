@@ -13,6 +13,10 @@ body {
     opacity: 80%;
 }
 
+.WS-footer-row-legal{
+    display: flex;
+}
+
 .WS-footer-row a {
     text-decoration: none;
 }
@@ -21,16 +25,18 @@ body {
     justify-content: flex-end;
     padding-right: 10%;
 }
-
+.footer-botom{
+    display: flex;
+    justify-content: space-between;
+}
 .method-paiement i {
    padding: 3px;
+    line-height: unset;
 }
-
 
 .WS-footer-row .logo-opquast {
     padding-left: 5%;
 }
-
 
 .footer-legal {
     padding-top: 80px;
@@ -41,22 +47,21 @@ body {
     color: black;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 2vh;
 }
-
 .logo-opquast {
-    width: 110px;
-    height: 110px;
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 50px;
+    align-items: end;
 }
-
+.opquast-logo{
+    height: 6vh;
+}
 .logo-cb {
     width: 100px;
     height: 30px;
     display: flex;
 }
-
 
 .WS-footer-row h5 {
     font-weight: bold;
@@ -71,30 +76,49 @@ body {
 .WS-footer-color{
     color: rgba(var(--bs-dark-rgb),var(--bs-text-opacity));
 }
+.nav-item{
+    margin-bottom: 3vh;
+}
 
 
 @media only screen and (max-width: 480px) {
+    .WS-footer-row{
+        width: 100vw;
+        padding: 2vw;
+    }
     .footer-legal {
+        width: 90vw;
+        margin: auto;
         padding-top: 10%;
         font-size: 10px;
     }
     .footer-legal h5{
-        font-size: 16px;
+        font-size: 1.5rem;
+        margin-bottom: 2vh;
     }
     .certificated{
-        font-size: 13px;
-        margin-top: 10px;
+        font-size: 1.5rem;
+        margin-top: 5vh;
+        margin-bottom: 0;
+        padding-bottom: 2vh;
     }
 
     .legal-notice {
         flex-direction: column;
     }
+    .method-paiement{
+        padding-right: 0;
+    }
 
     .method-paiement i {
         padding: 1px;
+        line-height: 0.8em;
     }
 
     .logo-opquast {
+        display: flex;
+        align-items: end;
+        margin: 0;
         width: 80px;
         height: 80px;
     }
@@ -102,17 +126,22 @@ body {
     .invisible {
         display: none;
     }
-    .method-paiement {
-        margin-bottom: 10px;
-    }
+
     .WS-footer-row h5{
         font-weight: bold;
         color : black;
-        margin-bottom: 3px;
     }
     .certificated a i{
         display: none;
     }
-}
+    .nav-item{
+        margin-bottom: 1vh;
+        font-size: 0.8rem;
+    }
+    .WS-footer-row-legal{
+        flex-direction: column;
+    }
+
+    }
 
 

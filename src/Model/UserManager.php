@@ -26,6 +26,8 @@ class UserManager extends AbstractManager
         $statement->bindParam(':password', $passwordHash, PDO::PARAM_STR);
         $statement->bindParam(':role', $user['role'], PDO::PARAM_STR);
         $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+
     }
 
     public function editUser(array $user): bool
