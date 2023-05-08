@@ -3,27 +3,33 @@
 {% block content %}
     <div class="row WS-user-container">
         <div class="WS-user-cont">
+            {% if user.role == 'admin' %}
+            <h1 class="fontTitle">Nouvel utilisateur</h1>
+                <p>Veuillez remplir le formulaire pour ajouter un utilisateur.</p>
+            {% endif %}
+            {% if user.role != 'admin' %}
             <h1 class="fontTitle">Nouveau client</h1>
-            <p>Veuillez remplir le formulaire pour vous inscrire.</p>
+                <p>Veuillez remplir le formulaire pour vous inscrire.</p>
+            {% endif %}
             <form method="post">
                 <div class="mb-3">
                     <label for="user_name" class="form-label">Nom</label>
-                    <input class="form-control" type="text" id="user_name" name="user_name" value="{{ user.name }}">
+                    <input class="form-control" type="text" id="user_name" name="user_name" value="{{ userAdd.name }}">
                     <p class="contactError">{{ errors.user_name }}</p>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Adresse email</label>
-                    <input class="form-control" type="email" id="email" name="email" value="{{ user.email }}">
+                    <input class="form-control" type="email" id="email" name="email" value="{{ userAdd.email }}">
                     <p class="contactError">{{ errors.email }}</p>
                 </div>
                 <div class="mb-3">
                     <label for="WS_password" class="form-label">Mot de passe</label>
-                    <input class="form-control" type="password" id="WS_password" name="WS_password" value="{{ user.password }}">
+                    <input class="form-control" type="password" id="WS_password" name="WS_password" value="{{ userAdd.password }}">
                     <p class="contactError">{{ errors.password }}</p>
                 </div>
                 <div class="mb-3">
                     <label for="birthday" class="form-label">Date de naissance</label>
-                    <input class="form-control" type="date" id="birthday" name="birthday" value="{{ user.birthday }}">
+                    <input class="form-control" type="date" id="birthday" name="birthday" value="{{ userAdd.birthday }}">
                     <p class="contactError">{{ errors.birthday }}</p>
                 </div>
 
@@ -37,11 +43,20 @@
                         </select>
                     </div>
                 {% endif %}
+                {% if user.role == 'admin' %}
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">
+                        Créer le compte
+                    </button>
+                </div>
+                {% endif %}
+                {% if user.role != 'admin' %}
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success">
                         Créer mon compte
                     </button>
                 </div>
+                {% endif %}
             </form>
         </div>
     </div>

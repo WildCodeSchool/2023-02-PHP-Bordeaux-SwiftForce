@@ -24,7 +24,7 @@ class UserController extends AbstractController
 
     public function add()
     {
-        $user['name'] = $user['mail'] = $user['password']  = $user['birthday'] = "";
+        $userAdd['name'] = $userAdd['mail'] = $userAdd['password']  = $userAdd['birthday'] = "";
         $errors['user_name'] = $errors['email'] = $errors['password'] = $errors['birthday'] = "";
         function checkdata($data)
         {
@@ -37,22 +37,22 @@ class UserController extends AbstractController
             if (!isset($_POST['user_name']) | empty(trim($_POST['user_name']))) {
                 $errors['user_name'] = "Le nom est obligatoire";
             } else {
-                $user['name'] = checkdata($_POST['user_name']);
+                $userAdd['name'] = checkdata($_POST['user_name']);
             }
             if (!isset($_POST['email']) | empty(trim($_POST['email']))) {
                 $errors['email'] = "L'email est obligatoire";
             } else {
-                $user['mail'] = checkdata($_POST['email']);
+                $userAdd['mail'] = checkdata($_POST['email']);
             }
             if (!isset($_POST['WS_password']) | empty(trim($_POST['WS_password']))) {
                 $errors['password'] = "Le mot de passe est obligatoire";
             } else {
-                $user['password'] = checkdata($_POST['WS_password']);
+                $userAdd['password'] = checkdata($_POST['WS_password']);
             }
             if (!isset($_POST['birthday']) | empty(trim($_POST['birthday']))) {
                 $errors['birthday'] = "La date de naissance est obligatoire";
             } else {
-                $user['birthday'] = checkdata($_POST['birthday']);
+                $userAdd['birthday'] = checkdata($_POST['birthday']);
 
                 $birthday = checkdata($_POST['birthday']);
                 $timestamp = strtotime($birthday);
@@ -64,18 +64,27 @@ class UserController extends AbstractController
                     if ($age < 18) {
                         $errors['birthday'] = "Vous devez avoir au moins 18 ans pour accéder à ce contenu";
                     } else {
-                        $user['birthday'] = $birthday;
+                        $userAdd['birthday'] = $birthday;
                     }
                 }
-
                 if (empty($errors['user_name']) && empty($errors['email']) && empty($errors['password']) && empty($errors['birthday'])) {
                     $userManager = new UserManager();
-                    $userManager->addUser($_POST);
-                    header('Location: /login');
+                    $lastUser = $userManager->addUser($_POST);
+                    if (isset($_SESSION['user_id']) && $_SESSION['user_id'] != "") {
+                        header('Location:/users');
+                    }
+                    else {
+                        $userManager = new UserManager();
+                        $lastUser = $userManager->selectOneById($lastUser);
+
+                        $user = $userManager->getUserByEmail($lastUser['email']);
+                        $_SESSION['user'] = $user;
+                        header('Location:/profile');
+                    }
                 }
             }
         }
-        return $this->twig->render('User/add.html.twig', ['errors' => $errors, 'user' => $user]);
+        return $this->twig->render('User/add.html.twig', ['errors' => $errors, 'userAdd' => $userAdd]);
     }
 
     public function edit(int $id)

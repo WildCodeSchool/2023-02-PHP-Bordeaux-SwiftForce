@@ -96,7 +96,8 @@
         padding: 0;
     }
     .productImage {
-        width: 80%;
+        width: 100%;
+        margin: auto;
     }
 
     .WS-product-card h5 {
