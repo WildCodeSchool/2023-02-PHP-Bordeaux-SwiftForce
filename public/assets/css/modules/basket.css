@@ -67,6 +67,7 @@
     width: 2vw;
     border-style: none;
     text-align: center;
+    cursor: default;
 }
 
 .quantityChange {
