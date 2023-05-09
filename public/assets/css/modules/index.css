@@ -159,6 +159,7 @@
 
 .blog_articles_pc div h3 {
     font-size: 1.5vw;
+    cursor: pointer;
 }
 
 .width24{
@@ -170,6 +171,7 @@
     font-size: 1vw;
     margin-top: 2%;
     text-align: center;
+    cursor: pointer;
 }
 
 .article1 {
