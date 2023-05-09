@@ -73,6 +73,6 @@ class HomeController extends AbstractController
                     break;
             }*/
         }
-        return $this->twig->render('Home/blog1.html.twig', ['id' => $id]);
+        return $this->twig->render('Home/blog.html.twig', ['id' => $id]);
     }
 }
