@@ -94,7 +94,9 @@
                         <i class="fa-solid fa-basket-shopping fa-2xl WS-header" class="btn btn-primary btn2"
                            type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-user"
                            aria-controls="offcanvasRight-user"></i>
-                           <span class="compteur-panier text-center">{{ totalQuantity }}</span>
+                        {% if totalQuantity != 0 %}
+                            <span class="compteur-panier text-center">{{ totalQuantity }} </span>
+                        {% endif %}
                     </div>
                     <div class="WS_header_text3">
                         <p></p>
