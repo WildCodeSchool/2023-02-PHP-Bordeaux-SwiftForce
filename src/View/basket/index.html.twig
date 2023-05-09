@@ -20,14 +20,15 @@
                                     <button class="quantityChange" name="quantityChange-">-</button>
                                     <input class="quantityItem" type="text" name="quantity" value="{{ cart.quantity }}">
                                     <button class="quantityChange" name="quantityChange+">+</button>
+                                    <a href="/wishlist/add?id={{ cart.id }}"><img class="cartLoveLogo"
+                                                                                  src="/assets/images/lovelogo.png" alt=""></a>
                                 </form>
                             </div>
                             <div class="WS-basket-price">
                                 <a href="/basket/delete?id={{ cart.id }}"><img class="deleteItem"
                                                                                src="/assets/images/trash_logo.png"
                                                                                alt=""></a>
-                                <a href="/wishlist/add?id={{ cart.id }}"><img class="cartLoveLogo"
-                                                                              src="/assets/images/lovelogo.png" alt=""></a>
+
                                 <h6 class="card-subtitle text-muted mt-3">Total : {{ cart.total }} €</h6>
                             </div>
                         </div>
