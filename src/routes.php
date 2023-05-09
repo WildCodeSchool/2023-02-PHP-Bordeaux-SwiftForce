@@ -49,4 +49,3 @@ return [
     'contactPromo' => ['ProfileController', 'contactPromo'],
     'blog' => ['HomeController', 'blog', ['id']],
 ];
-

@@ -13,7 +13,6 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
-
     public function contact(): string
     {
         $name = $email = $phone = $subject = $message = "";
@@ -74,6 +73,6 @@ class HomeController extends AbstractController
                     break;
             }*/
         }
-        return $this->twig->render('Home/blog1.html.twig', ['id' => $id]);
+        return $this->twig->render('Home/blog.html.twig', ['id' => $id]);
     }
 }
