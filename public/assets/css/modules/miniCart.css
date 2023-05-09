@@ -7,7 +7,7 @@
     font-size: 2rem;
 }
 .WS-box-basket{
-    height: 450px;
+    height: 20vh;
 }
 .WS-mini-image {
     display: flex;
@@ -59,7 +59,7 @@
 
 @media screen and (max-width: 480px) {
     .test2 {
-        width: 20vw;
+        width: 25vw;
     }
 
     .test {

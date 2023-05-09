@@ -29,11 +29,12 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
-
         $userManager = new UserManager();
         $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
 
         $this->twig->addGlobal('user', $this->user);
+
+
         $totalQuantity = 0;
         if (isset($_SESSION['cart'])) {
             $cartInvert = array_reverse($_SESSION['cart']);
@@ -83,7 +84,6 @@ abstract class AbstractController
             $_SESSION['totalStripe'] = $totalApresRemise;
 
             $errorPromotion = "";
-
 
             if (!empty($_SESSION['promotionError'])) {
                 $errorPromotion = $_SESSION['promotionError'];

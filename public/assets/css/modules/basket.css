@@ -134,10 +134,8 @@
     height: 2vh;
 }
 .cartLoveLogo{
-    position: absolute;
-    top: 13%;
-    right: 6%;
-    height: 2vh;
+    height: 3vh;
+    padding-left: 2vw;
 }
 
 .WS-basket-card-body-mini {
