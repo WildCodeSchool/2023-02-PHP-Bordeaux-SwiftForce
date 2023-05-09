@@ -27,7 +27,7 @@ create table WS_product
     nbr_sale            int          null,
     image               varchar(300) null,
     constraint ws_product_ibfk_1
-        foreign key (sub_category_id_cat) references WS_sub_category (id_cat)
+        foreign key (sub_category_id_cat) references WS_sub_category (id_cat) on delete cascade
 );
 
 create table item
@@ -61,11 +61,11 @@ create table ws_user
 );
 ALTER TABLE ws_user
     ADD constraint ws_user_ibfk_1
-        foreign key (basket_id) references `ws_orders` (id);
+        foreign key (basket_id) references `ws_orders` (id) on delete cascade ;
 
 ALTER TABLE ws_orders
     ADD constraint user_id
-        foreign key (user_id) references ws_user (id);
+        foreign key (user_id) references ws_user (id) on delete cascade;
 
 create table ws_order_content
 (
@@ -77,9 +77,9 @@ create table ws_order_content
     product_quantity int          not null,
     price_per        float        not null,
     constraint order_id
-        foreign key (order_id) references ws_orders (id),
+        foreign key (order_id) references ws_orders (id) on delete cascade ,
     constraint product_id
-        foreign key (product_id) references WS_product (id)
+        foreign key (product_id) references WS_product (id) on delete cascade
 );
 
 create table ws_wishlist
