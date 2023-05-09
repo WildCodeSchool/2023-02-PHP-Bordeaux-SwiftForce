@@ -6,6 +6,9 @@
 .WScolor{
     color: var(--primaryColor);
 }
+.WS_cursor{
+    cursor: pointer;
+}
 /*********************** carrousel - media query ***********************/
 
 @media screen and (max-width: 480px) {
