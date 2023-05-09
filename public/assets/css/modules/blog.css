@@ -2,6 +2,7 @@
     text-align: center;
     font-family: var(--fontFamilyTitle);
     margin-top: 5%;
+    color : var(--primaryColor);
 }
 
 .survival-article p{
@@ -36,6 +37,47 @@
 .para1 .para2{
     width:80px;
 }
+
+.link-article-suggest{
+    text-decoration: none;
+    justify-content: space-between;
+    height: auto;
+}
+.article11 {
+    background-image: url("/assets/images/article-op-codryceps.jpeg");
+}
+
+.article22 {
+    background-image: url("/assets/images/article-op-asteroide.jpeg");
+}
+
+.article33 {
+    background-image: url("/assets/images/article-op-fear-camp.jpeg");
+}
+
+.article44 {
+    background-image: url("/assets/images/article-op-hache.jpeg");
+}
+
+.article11, .article22, .article33, .article44 {
+    background-size: cover;
+}
+.blog-suggest {
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.blog-suggest h2 {
+    margin-top: 0;
+    margin-bottom: 2vh;
+    font-family: var(--fontFamilyTitle);
+}
+.width30{
+    width: 30%;
+}
+
+
 @media screen and (max-width: 480px) {
 
     #third-picture-article{
