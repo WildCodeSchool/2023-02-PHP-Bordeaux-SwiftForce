@@ -29,7 +29,7 @@
 }
 
 .contact-form .form-control {
-    border-radius: 1rem;
+  /*  border-radius: 1rem;*/
 }
 
 .contact-image-sent img {
@@ -61,9 +61,8 @@
 }
 
 .contact-form .btnContact {
-    width: 50%;
+    width: 48.5%;
     border: none;
-    border-radius: 1rem;
     padding: 1.5%;
     background: var(--primaryColor);
     font-weight: 600;
@@ -88,7 +87,9 @@
 }
 
 .btnContact {
-    width: 10%;
+    /*width: 10%;*/
+    padding-left: -12px;
+    padding-right: 0;
 }
 
 .rowSent {
@@ -125,6 +126,7 @@
         margin: 2vh auto auto auto;
         display: flex;
         justify-content: center;
+
     }
 
     .contact-form form {
