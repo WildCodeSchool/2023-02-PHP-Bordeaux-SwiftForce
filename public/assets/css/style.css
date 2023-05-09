@@ -13,7 +13,11 @@
 @import "modules/form.css";
 @import "modules/search.css";
 @import "modules/order.css";
+
 @import "modules/blog.css";
+
+@import "modules/promo.css";
+
 
 * {
     box-sizing: border-box;
