@@ -31,10 +31,14 @@
                     <input class="form-control" type="date" id="birthday" name="birthday" value="{{ userChange.birthday }}">
                 </div>
                     {% if user.role == 'admin' %}
-                <div class="mb-3">
-                    <label for="role" class="form-label">Rôle</label>
-                    <input class="form-control" type="text" id="role" name="role" value="{{ userChange.role }}">
-                </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="wform-label" name="role" id="role">
+                                <option value="">Choisir une option</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
                 {% endif %}
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success btnLargeResp">
