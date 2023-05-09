@@ -1,0 +1,48 @@
+.title-article{
+    text-align: center;
+    font-family: var(--fontFamilyTitle);
+}
+
+.survival-article p{
+    text-align: justify;
+    font-family: var(--fontFamilyText);
+}
+
+.first-picture-article{
+    width:80%;
+    height:450px;
+    margin-left: 10%;
+}
+#third-picture-article{
+    width:650px;
+    height:460px;
+    margin:5px 10px 10px 0;
+}
+.survival-article{
+    width: 80%;
+    margin-left: 10%;
+}
+.twice-part-article {
+    display: flex;
+}
+.twice-part-article .para2{
+    display: flex;
+    flex-direction: column;
+}
+.para1 .para2{
+    width:80px;
+}
+@media screen and (max-width: 480px) {
+
+    #third-picture-article{
+        width:100%;
+        height:50%;
+    }
+    .twice-part-article{
+        display: flex;
+        flex-direction: column;
+    }
+    .first-picture-article{
+        height:200Px;
+    }
+}
