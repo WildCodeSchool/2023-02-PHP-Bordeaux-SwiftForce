@@ -16,16 +16,22 @@ class StripePayment
     public function startPayment($total)
     {
         $session = Session::create([
-            'success_url' => 'http://localhost:8000/profile/orders',
-            'line_items' => [
-                    'quantity' => 1,
-                    'price' => $total
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'eur',
+                    'unit_amount' => $total*100,
+                    'product_data' => [
+                        'name' => 'Total',
+                    ],
                 ],
-            'mode' => 'payment'
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            'success_url' => 'http://localhost:8000/profile/orders',
+            'cancel_url' => 'http://localhost:8000/',
         ]);
         header('Location:' . $session->url);
     }
-
 
     /*
      *  $session = Session::create([
