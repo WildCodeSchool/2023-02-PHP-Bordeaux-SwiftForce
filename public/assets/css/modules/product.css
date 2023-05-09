@@ -43,6 +43,7 @@
 
 .productImage {
     width: 200px;
+    margin: auto;
 }
 
 .WS-product-card:hover {
