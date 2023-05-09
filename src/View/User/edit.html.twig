@@ -3,7 +3,12 @@
 {% block dashboardcontent %}
     <div class="row rowResp">
         <div class="col-md-6 offset-md-3">
-            <h1 class="fontTitle mt-3">Modifier un compte</h1>
+            {% if user.role != 'admin' %}
+            <h1 class="fontTitle mt-3">Mon profil</h1>
+            {% endif %}
+            {% if user.role == 'admin' %}
+            <h1 class="fontTitle mt-3">Profil utilisateur</h1>
+            {% endif %}
             <p>Veuillez remplir le formulaire pour le modifier.</p>
             <form method="post">
                 <div>
