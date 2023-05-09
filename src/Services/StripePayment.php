@@ -28,7 +28,7 @@ class StripePayment
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => 'http://localhost:8000/profile/orders',
+            'success_url' => 'http://localhost:8000/paymentSuccess',
             'cancel_url' => 'http://localhost:8000/',
         ]);
         header('Location:' . $session->url);
