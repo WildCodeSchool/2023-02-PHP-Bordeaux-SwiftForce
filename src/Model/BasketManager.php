@@ -11,8 +11,8 @@ class BasketManager extends AbstractManager
         $statement = $this->pdo->prepare("INSERT INTO ws_orders (user_ID, order_date, shipping, total) VALUES (:userID, :orderDate, :shipping, :total)");
         $statement->bindValue('userID', $orderGeneral['userID'], PDO::PARAM_INT);
         $statement->bindValue('orderDate', $orderGeneral['orderDate'], PDO::PARAM_STR);
-        $statement->bindValue('shipping', $orderGeneral['shipping'], PDO::PARAM_INT);
-        $statement->bindValue('total', $orderGeneral['total'], PDO::PARAM_INT);
+        $statement->bindValue('shipping', $orderGeneral['shipping'], PDO::PARAM_STR);
+        $statement->bindValue('total', $orderGeneral['total'], PDO::PARAM_STR);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
@@ -24,7 +24,7 @@ class BasketManager extends AbstractManager
             $statement->bindValue('product_id', $product['id'], PDO::PARAM_INT);
             $statement->bindValue('name_product', $product['name'], PDO::PARAM_STR);
             $statement->bindValue('product_quantity', $product['quantity'], PDO::PARAM_INT);
-            $statement->bindValue('price_per', $product['price'], PDO::PARAM_INT);
+            $statement->bindValue('price_per', $product['price'], PDO::PARAM_STR);
             $statement->execute();
         }
     }

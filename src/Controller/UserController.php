@@ -79,7 +79,7 @@ class UserController extends AbstractController
 
                         $user = $userManager->getUserByEmail($lastUser['email']);
                         $_SESSION['user'] = $user;
-                        header('Location:/profile');
+                        header('Location:/contactPromo');
                     }
                 }
             }
