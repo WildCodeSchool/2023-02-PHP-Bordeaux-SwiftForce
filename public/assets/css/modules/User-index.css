@@ -91,17 +91,25 @@ td {
 .deleteWishlist {
     height: 2.5vh;
 }
-
+.WS_td_width{
+    width: 5%;
+}
+.WS_td_width2{
+    width: 20%;
+}
+.WS_td_width3{
+    width: 20%;
+}
 /*/////////////////////// showALL ////////////////////*/
 
 .WS_showAll-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
+    width: 80%;
 }
 table {
-    width: 60%;
+    width: 80%;
 }
 .WS-user-container3{
     display: flex;
