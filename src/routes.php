@@ -47,5 +47,6 @@ return [
     'faker' => ['ProductController', 'productFixtures'],
     'promotion' => ['BasketController', 'promotion', ['codeName']],
     'contactPromo' => ['ProfileController', 'contactPromo'],
+    'blog' => ['HomeController', 'blog', ['id']],
+    'paymentSuccess' => ['BasketController', 'success'],
 ];
-

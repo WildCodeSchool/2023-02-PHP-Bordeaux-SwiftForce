@@ -11,3 +11,7 @@ define('APP_VIEW_PATH', __DIR__ . '/../src/View/');
 
 // database dump file path for automatic import
 define('DB_DUMP_PATH', __DIR__ . '/../database.sql');
+
+
+// clé secrète API stripe
+$clientSecret = 'sk_test_51IcYHgFO2dD49mLEk6Hev967fXvMhUYuckmY8ZYZ6E934g8rNZLkPzzXOhAQ1uNcjbTI90EL4VJa8N6101Aykgn500Hs0cOXEm';

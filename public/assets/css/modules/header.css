@@ -10,6 +10,7 @@
     font-size: 3rem;
     padding: 0;
     margin:0;
+    cursor: pointer;
 }
 
 .compteur-panier{
@@ -72,8 +73,8 @@ li {
     display: grid;
     grid:
     " . . . . . . . . . ." 10px
-    ". burger logo title search . ninja logout basket ." 40px
-    ". . . . . . text1 text2 text3 ." 30px
+    ". burger logo title search . logout ninja basket ." 40px
+    ". . . . . . text2 text1 text3 ." 30px
     / 20px 30px 70px 400px 1fr 60px 80px 80px 80px 20px;
   gap : 10px;
 }
@@ -129,8 +130,8 @@ li {
 
     .WS_contener_header{
         grid:
-        "burger title ninja logout basket"40px
-        " . . text1 text1 text1" 10px
+        "burger title logout ninja basket"40px
+        " . test1 text1 text1 text1" 15px
         "search search search search search"30px
         / 30px  1fr 30px 30px 30px;
         gap:10px;
@@ -155,11 +156,25 @@ li {
         margin-left: 26px;
         margin-right: 10px;
     }
+
     .compteur-panier{
     
       top: 25px;
       right: 12px;
-    
+    }
+    .WS_header_basket{
+        margin: 0 26px;
+        padding-top: 4px;
+    }
+    .WS_log_out{
+        padding-right: 16px;
+    }
+    .WS-header {
+        font-size: 1.5rem;
+    }
+    .WS_header_text1{
+        font-size: 12px;
+
     }
 }
 

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\BasketManager;
 use App\Services\sendMail;
+use App\Services\StripePayment;
 
 class BasketController extends AbstractController
 {
@@ -45,7 +46,7 @@ class BasketController extends AbstractController
                     }
                 } else {
                     $_SESSION['promotion'] = [];
-                    $_SESSION['promotionError'] = [];
+                    $_SESSION['promotionError'] = "";
                 }
             }
         }
@@ -87,8 +88,7 @@ class BasketController extends AbstractController
                             $_SESSION['seuilOK'] = false;
                         } else {
                             $_SESSION['reduction'] = $_SESSION['promotion']['reduction'];
-                            $errors['promo'] = "";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotionError'] = "";
                             $_SESSION['seuilOK'] = true;
                         }
                     } else {
@@ -132,11 +132,9 @@ class BasketController extends AbstractController
                         $orderManager = new BasketManager();
                         $order = $orderManager->insertOrderContent($basket, $orderID);
                         //////////////// vidage du panier virtuel ////////////////
-                        unset($_SESSION['cart']);
-                        //////////////// envoi du mail de confirmation ////////////////
-                        $mail = new sendMail();
-                        $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
-                        header('Location:/profile/orders');
+                        $panierStripe = $_SESSION['totalStripe'];
+                        $payment = new StripePayment('sk_test_51IcYHgFO2dD49mLEk6Hev967fXvMhUYuckmY8ZYZ6E934g8rNZLkPzzXOhAQ1uNcjbTI90EL4VJa8N6101Aykgn500Hs0cOXEm');
+                        $payment->startPayment($panierStripe, $_SESSION['user']['email']);
                     }
                 }
             }
@@ -159,12 +157,10 @@ class BasketController extends AbstractController
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 if (isset($_GET['promo'])) {
                     if (empty(trim($_GET['codeName']))) {
-                        $errors['promo'] = "Merci de saisir un code.";
-                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotionError'] = "Merci de saisir un code.";
                         $_SESSION['promotion'] = [];
                     } elseif (!isset($_SESSION['cart'])) {
-                        $errors['promo'] = "Votre panier est vide.";
-                        $_SESSION['promotionError'] = $errors['promo'];
+                        $_SESSION['promotionError'] = "Votre panier est vide.";
                         $_SESSION['promotion'] = [];
                     } else {
                         $codeName = checkdata($_GET['codeName']);
@@ -176,17 +172,14 @@ class BasketController extends AbstractController
                                 $manque = $promotion['seuil'] - $_SESSION['total'];
                                 $_SESSION['promotion'] = $promotion;
                                 $_SESSION['seuilOK'] = false;
-                                $errors['promo'] = "Plus que ". $manque . "€ pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
-                                $_SESSION['promotionError'] = $errors['promo'];
+                                $_SESSION['promotionError'] = "Plus que ". $manque . "€ pour utiliser le code " . $_SESSION['promotion']['name'] . ".";
                             } else {
                                 $_SESSION['promotion'] = $promotion;
-                                $errors['promo'] = "";
-                                $_SESSION['promotionError'] = $errors['promo'];
+                                $_SESSION['promotionError'] = "";
                                 $_SESSION['seuilOK'] = true;
                             }
                         } else {
-                            $errors['promo'] = "Ce code n'est pas valide.";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotionError'] = "Ce code n'est pas valide.";
                             $_SESSION['promotion'] = [];
                         }
                     }
@@ -196,5 +189,20 @@ class BasketController extends AbstractController
                 header('Location:' . $_SERVER['HTTP_REFERER']);
             }
         }
+    }
+    public function success(): void
+    {
+        unset($_SESSION['cart']);
+        if (isset($_SESSION['promotion'])) {
+            $_SESSION['promotion'] = [];
+        }
+        if (isset($_SESSION['promotionError'])) {
+            $_SESSION['promotionError'] = '';
+        }
+        //////////////// envoi du mail de confirmation avant car uniquement test ok ////////////////
+        $mail = new sendMail();
+        $mail->sendmail('contact@thewildshop.com', '--- The Wild Shop ---', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+        //////////////// paiement avec stripe ////////////
+        header('Location: /profile/orders');
     }
 }

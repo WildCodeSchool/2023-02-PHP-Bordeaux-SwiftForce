@@ -152,13 +152,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 24.5%;
+    width: 100%;
     height: 30vw;
     color: white;
 }
 
 .blog_articles_pc div h3 {
     font-size: 1.5vw;
+}
+
+.width24{
+    width: 24.5%;
 }
 
 .blog_articles_pc div p {

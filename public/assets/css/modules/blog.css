@@ -1,0 +1,94 @@
+.title-article{
+    text-align: center;
+    font-family: var(--fontFamilyTitle);
+    margin-top: 5%;
+    color : var(--primaryColor);
+}
+
+.survival-article p{
+    text-align: justify;
+    font-family: var(--fontFamilyText);
+}
+
+.first-picture-article{
+    width:80%;
+    height:450px;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#third-picture-article{
+    width:650px;
+    height:460px;
+    margin:5px 30px 10px 0;
+}
+.survival-article{
+    width: 80%;
+    margin-left: 10%;
+}
+.twice-part-article {
+    display: flex;
+}
+.twice-part-article .para2{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+.para1 .para2{
+    width:80px;
+}
+
+.link-article-suggest{
+    text-decoration: none;
+    justify-content: space-between;
+    height: auto;
+}
+.article11 {
+    background-image: url("/assets/images/article-op-codryceps.jpeg");
+}
+
+.article22 {
+    background-image: url("/assets/images/article-op-asteroide.jpeg");
+}
+
+.article33 {
+    background-image: url("/assets/images/article-op-fear-camp.jpeg");
+}
+
+.article44 {
+    background-image: url("/assets/images/article-op-hache.jpeg");
+}
+
+.article11, .article22, .article33, .article44 {
+    background-size: cover;
+}
+.blog-suggest {
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.blog-suggest h2 {
+    margin-top: 0;
+    margin-bottom: 2vh;
+    font-family: var(--fontFamilyTitle);
+}
+.width30{
+    width: 30%;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    #third-picture-article{
+        width:100%;
+        height:50%;
+    }
+    .twice-part-article{
+        display: flex;
+        flex-direction: column;
+    }
+    .first-picture-article{
+        height:200Px;
+    }
+}

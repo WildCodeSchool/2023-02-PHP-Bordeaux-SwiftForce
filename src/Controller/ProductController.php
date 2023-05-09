@@ -200,8 +200,7 @@ class ProductController extends AbstractController
                             $_SESSION['seuilOK'] = false;
                         } else {
                             $_SESSION['reduction'] = $_SESSION['promotion']['reduction'];
-                            $errors['promo'] = "";
-                            $_SESSION['promotionError'] = $errors['promo'];
+                            $_SESSION['promotionError'] = "";
                             $_SESSION['seuilOK'] = true;
                         }
                     }

@@ -80,9 +80,12 @@ abstract class AbstractController
 
             $totalApresRemise = $totalApresRemise + $ports;
             $totalApresRemise = round($totalApresRemise, 2);
+            $_SESSION['totalStripe'] = $totalApresRemise;
 
             $errorPromotion = "";
-            if (isset($_SESSION['promotionError'])) {
+
+
+            if (!empty($_SESSION['promotionError'])) {
                 $errorPromotion = $_SESSION['promotionError'];
             }
 

@@ -8,27 +8,29 @@
                 <a href="/users/add" class="btn btn-sucess text-decoration-none text-white">Ajouter</a>
             </div>
         </div>
-        <table>
+        <table class="tableUser">
             <tbody>
             <tr>
-                <td class="WS_td">Nom</td>
+
+                <td class="WS_td WS_td_width2">Nom</td>
+
                 <td class="WS_td">Adresse email</td>
-                <td class="WS_td">Date de naissance</td>
+                <td class="WS_td text-center WS_td_width3">Date de naissance</td>
                 <td class="WS_td">Rôle</td>
-                <td class="WS_td">Supprimer</td>
-                <td class="WS_td">Modifier</td>
+                <td class="WS_td text-center WS_td_width">Modifier</td>
+                <td class="WS_td text-center WS_td_width">Supprimer</td>
             </tr>
             {% for user in users %}
                 <tr>
                     <td class="WS_user_td_2">{{ user.user_name }}</td>
                     <td class="WS_user_td_2">{{ user.email }}</td>
-                    <td class="WS_user_td_2">{{ user.birthday }}</td>
+                    <td class="WS_user_td_2 text-center">{{ user.birthday }}</td>
                     <td class="WS_user_td_2">{{ user.role }}</td>
+                    <td class="WS_user_td_3"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square"
+                                                                                       style="color: #224c40;"></i> </a>
                     <td class="WS_user_td_3"><a onclick="openModal('{{ user.id }}')" href="#"
                                                 class="text-decoration-none text-reset"><i
                                 class="fa-regular fa-trash-can" style="color: #224c40;"></i></a></td>
-                    <td class="WS_user_td_3"><a href="/users/edit?id={{ user.id }}"><i class="fa-solid fa-pen-to-square"
-                                                                                       style="color: #224c40;"></i> </a>
                     </td>
                 </tr>
             {% endfor %}

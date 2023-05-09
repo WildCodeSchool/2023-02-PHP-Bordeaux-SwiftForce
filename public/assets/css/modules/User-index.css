@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+.tableUser{
+    width: 80vw;
+}
 .WSheight{
     height: 38px;
 }
@@ -54,6 +57,9 @@ td {
     border: 1px solid #333;
     text-align: left;
 }
+.WS_td{
+    text-align: left;
+}
 
 td {
     padding: 0 1rem;
@@ -88,17 +94,25 @@ td {
 .deleteWishlist {
     height: 2.5vh;
 }
-
+.WS_td_width{
+    width: 5%;
+}
+.WS_td_width2{
+    width: 20%;
+}
+.WS_td_width3{
+    width: 20%;
+}
 /*/////////////////////// showALL ////////////////////*/
 
 .WS_showAll-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 700px;
+    width: 80%;
 }
 table {
-    width: 700px;
+    width: 80%;
 }
 .WS-user-container3{
     display: flex;

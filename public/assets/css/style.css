@@ -14,6 +14,10 @@
 @import "modules/search.css";
 @import "modules/order.css";
 
+@import "modules/blog.css";
+
+@import "modules/promo.css";
+
 
 * {
     box-sizing: border-box;
@@ -28,3 +32,8 @@ body {
 i {
     color: var(--primaryColor)
 }
+
+h1, h2, h3, h4, h5, h6,h7,p {
+    cursor: default;
+}
+
