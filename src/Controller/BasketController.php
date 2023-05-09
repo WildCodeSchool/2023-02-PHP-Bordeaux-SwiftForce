@@ -145,7 +145,7 @@ class BasketController extends AbstractController
                         $mail->sendmail('contact@thewildshop.com', '--- The Wild Shop ---', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
                         //////////////// paiement avec stripe ////////////
                         $payment = new StripePayment('sk_test_51IcYHgFO2dD49mLEk6Hev967fXvMhUYuckmY8ZYZ6E934g8rNZLkPzzXOhAQ1uNcjbTI90EL4VJa8N6101Aykgn500Hs0cOXEm');
-                        $payment->startPayment($panierStripe);
+                        $payment->startPayment($panierStripe, $_SESSION['user']['email']);
                     }
                 }
             }

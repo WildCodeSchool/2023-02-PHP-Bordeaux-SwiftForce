@@ -13,9 +13,10 @@ class StripePayment
         Stripe::setApiKey($this->clientSecret);
         Stripe::setApiVersion('2022-11-15');
     }
-    public function startPayment($total)
+    public function startPayment($total, $email)
     {
         $session = Session::create([
+            'customer_email' => $email,
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'eur',
