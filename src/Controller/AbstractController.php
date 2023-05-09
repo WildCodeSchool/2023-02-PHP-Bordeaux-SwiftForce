@@ -36,6 +36,8 @@ abstract class AbstractController
 
 
         $totalQuantity = 0;
+        $ports = 4.99;
+
         if (isset($_SESSION['cart'])) {
             $cartInvert = array_reverse($_SESSION['cart']);
             $totalAvantRemise = 0;
@@ -63,25 +65,27 @@ abstract class AbstractController
                             $promotion = $reduction . '%';
                             $remise = 'Remise';
                             $totalApresRemise = $totalAvantRemise * (1 - ($reduction / 100));
+                            $totalTTC = $totalApresRemise + $ports;
                         } else {
                             $reduction = "";
                             $promotion = "";
                             $remise = "";
                             $totalApresRemise = $totalAvantRemise;
+                            $totalTTC = $totalApresRemise + $ports;
                         }
                     }
                 } else {
                     $totalApresRemise = $totalAvantRemise;
+                    $totalTTC = $totalAvantRemise + $ports;
                     $promotion = "";
                     $remise = "";
                 }
+            } else {
+                $totalTTC = $totalAvantRemise + $ports;
             }
 
-            $ports = 4.99;
-
-            $totalApresRemise = $totalApresRemise + $ports;
-            $totalApresRemise = round($totalApresRemise, 2);
-            $_SESSION['totalStripe'] = $totalApresRemise;
+            $totalTTC = round($totalTTC, 2);
+            $_SESSION['totalStripe'] = $totalTTC;
 
             $errorPromotion = "";
 
@@ -94,12 +98,13 @@ abstract class AbstractController
                 $promotion = "";
                 $remise = "";
             }
+
             $this->twig->addGlobal('carts', $cartInvert);
             $this->twig->addGlobal('ports', $ports);
             $this->twig->addGlobal('promotion', $promotion);
             $this->twig->addGlobal('remise', $remise);
             $this->twig->addGlobal('total', $totalAvantRemise);
-            $this->twig->addGlobal('totalTTC', $totalApresRemise);
+            $this->twig->addGlobal('totalTTC', $totalTTC);
             $this->twig->addGlobal('errorPromotion', $errorPromotion);
             $this->twig->addGlobal('totalQuantity', $totalQuantity);
         }

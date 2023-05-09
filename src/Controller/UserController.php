@@ -10,7 +10,10 @@ class UserController extends AbstractController
     {
         $userManager = new UserManager();
         $users = $userManager->selectAll();
-        return $this->twig->render('user/index.html.twig', ['users' => $users]);
+        $profilePerso = $usersCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $usersCatalog = "using";
+
+        return $this->twig->render('user/index.html.twig', ['users' => $users, 'profilePerso' => $profilePerso, 'usersCatalog' => $usersCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
 
     public function show($id)
@@ -98,8 +101,10 @@ class UserController extends AbstractController
             $userManager->editUser($user);
             header('location: /profile');
         }
+        $profilePerso = $userCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $profilePerso = "using";
 
-        return $this->twig->render('User/edit.html.twig', ['userChange' => $user,]);
+        return $this->twig->render('User/edit.html.twig', ['userChange' => $user, 'profilePerso' => $profilePerso, 'usersCatalog' => $userCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
 
     public function delete(): void
