@@ -100,6 +100,7 @@
     width: 80vw;
     margin: auto;
     font-family: var(--fontFamilyTitle);
+    color : var(--primaryColor);
 }
 .comments{
     width:100%;
@@ -152,6 +153,7 @@
     font-family: var(--fontFamilyTitle);
     margin-bottom: 20px;
     font-size: calc(1.325rem + .9vw);
+    color : var(--primaryColor);
 }
 .customers-comments{
     margin-top: 3vw;
@@ -249,4 +251,8 @@
         align-items: end;
         justify-content: space-between;
     }
+}
+
+.additionSalesTitle{
+    color : var(--primaryColor);
 }
