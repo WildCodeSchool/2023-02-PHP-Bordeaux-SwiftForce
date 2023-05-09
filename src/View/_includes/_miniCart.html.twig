@@ -9,7 +9,7 @@
             <h5 class="WS-cart-montant pe-none">{{ cart.price }} €</h5>
             <h5 class="WS-cart-montant pe-none">Quantités : {{ cart.quantity }}</h5>
             <div class="WS-basket-delete-update-content">
-                <a href="/basket/delete?id={{ cart.id }}"><img src="/assets/images/trashlogo.png" alt=""></a>
+                <a href="/basket/delete?id={{ cart.id }}" class="suppression-panier" data-id="{{ cart.id }}"><img src="/assets/images/trashlogo.png" id="suppression-panier" alt=""></a>
                 <form action="basket/edit" method="get">
                     <input name="id" type="hidden" value="{{ cart.id }}">
                 </form>
@@ -17,7 +17,10 @@
         </div>
     </div>
     </div>
+
+
 {% endfor %}
+
 <h5 class="WS-cart-montant-fx-4 montantTotalmini pe-none"> Montant total {{ total }} €</h5>
 <div class="bakayaro">
     <a href="/basket" class="btn btn-sucess text-white text-decoration-none w-100 ">Voir mon panier</a>
