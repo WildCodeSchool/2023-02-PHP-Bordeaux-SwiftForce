@@ -10,7 +10,10 @@ class UserController extends AbstractController
     {
         $userManager = new UserManager();
         $users = $userManager->selectAll();
-        return $this->twig->render('user/index.html.twig', ['users' => $users]);
+        $profilePerso = $usersCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $usersCatalog = "using";
+
+        return $this->twig->render('user/index.html.twig', ['users' => $users, 'profilePerso' => $profilePerso, 'usersCatalog' => $usersCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
 
     public function show($id)
@@ -42,7 +45,15 @@ class UserController extends AbstractController
             if (!isset($_POST['email']) | empty(trim($_POST['email']))) {
                 $errors['email'] = "L'email est obligatoire";
             } else {
-                $userAdd['mail'] = checkdata($_POST['email']);
+                $userEmailCheck = checkdata($_POST['email']);
+                $userManager = new UserManager();
+                $userToCheck = $userManager->getUserByEmail($userEmailCheck);
+                if (empty($userToCheck)){
+                    $userAdd['mail'] = checkdata($_POST['email']);
+                } else {
+                    $errors['email'] = "Cet email est déjà utilisé";
+                    $userAdd['mail'] = checkdata($_POST['email']);
+                }
             }
             if (!isset($_POST['WS_password']) | empty(trim($_POST['WS_password']))) {
                 $errors['password'] = "Le mot de passe est obligatoire";
@@ -98,8 +109,10 @@ class UserController extends AbstractController
             $userManager->editUser($user);
             header('location: /profile');
         }
+        $profilePerso = $userCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $profilePerso = "using";
 
-        return $this->twig->render('User/edit.html.twig', ['userChange' => $user,]);
+        return $this->twig->render('User/edit.html.twig', ['userChange' => $user, 'profilePerso' => $profilePerso, 'usersCatalog' => $userCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
 
     public function delete(): void

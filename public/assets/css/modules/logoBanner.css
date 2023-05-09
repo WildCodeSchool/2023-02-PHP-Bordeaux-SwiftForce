@@ -43,6 +43,10 @@
     bottom: 20%;
 }
 
+.logoBanner a {
+    margin: auto;
+}
+
 .logoBanner p {
     font-family: var(--fontFamilyText);
     color: white;

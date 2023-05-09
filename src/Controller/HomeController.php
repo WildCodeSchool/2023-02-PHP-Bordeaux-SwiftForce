@@ -41,6 +41,7 @@ class HomeController extends AbstractController
             }
             if (isset($_POST['txtSubject'])) {
                 $subject = checkdata($_POST['txtSubject']);
+                $subject = 'Message du site internet : ' . $subject;
             }
             if (isset($_POST['txtMsg'])) {
                 $message = checkdata($_POST['txtMsg']);

@@ -201,7 +201,7 @@ class BasketController extends AbstractController
         }
         //////////////// envoi du mail de confirmation avant car uniquement test ok ////////////////
         $mail = new sendMail();
-        $mail->sendmail('contact@thewildshop.com', '--- The Wild Shop ---', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+        $mail->sendmail('contact@thewildshop.com', '--- The Wild Shop ---', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande chez The Wild Shop', "Merci " . $_SESSION['user']['user_name'] . " d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
         //////////////// paiement avec stripe ////////////
         header('Location: /profile/orders');
     }

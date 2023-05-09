@@ -267,7 +267,10 @@ class ProductController extends AbstractController
                 header('Location:/product/showAll');
             }
         }
-        return $this->twig->render('product/addProduct.html.twig', ['error' => $errors, 'product' => $product]);
+        $profilePerso = $usersCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $productCatalog = "using";
+
+        return $this->twig->render('product/addProduct.html.twig', ['error' => $errors, 'product' => $product, 'profilePerso' => $profilePerso, 'usersCatalog' => $usersCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
 
     public function showAll(): string
@@ -276,7 +279,11 @@ class ProductController extends AbstractController
         $products = $productManager->selectAll();
         $products = array_reverse($products);
 
-        return $this->twig->render('product/showAll.html.twig', ['products' => $products]);
+        $profilePerso = $usersCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
+        $productCatalog = "using";
+
+        return $this->twig->render('product/showAll.html.twig', ['products' => $products, 'profilePerso' => $profilePerso, 'usersCatalog' => $usersCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
+
     }
 
     public function delete(): void

@@ -15,7 +15,6 @@ class UserManager extends AbstractManager
                 VALUES (:user_name, :password, :email,
                 CASE WHEN :role IS NULL THEN 'user' ELSE :role END, :birthday)";
 
-
         $statement = $this->pdo->prepare($sql);
 
         $passwordHash = password_hash($user['WS_password'], algo: PASSWORD_DEFAULT);
@@ -32,7 +31,6 @@ class UserManager extends AbstractManager
 
     public function editUser(array $user): bool
     {
-
         $sql = "UPDATE " . self::TABLE . " SET
                    `user_name` = :user_name,
                    `birthday` = :birthday,
@@ -42,7 +40,6 @@ class UserManager extends AbstractManager
         $stm = $this->pdo->prepare($sql);
 
         $passwordHash = password_hash($user['WS_password'], algo: PASSWORD_DEFAULT);
-
 
         $stm->bindValue(':user_name', $user['user_name'], PDO::PARAM_STR);
         $stm->bindValue(':birthday', $user['birthday'], PDO::PARAM_STR);

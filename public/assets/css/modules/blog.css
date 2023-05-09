@@ -4,7 +4,6 @@
     margin-top: 5%;
     color : var(--primaryColor);
 }
-
 .survival-article p{
     text-align: justify;
     font-family: var(--fontFamilyText);

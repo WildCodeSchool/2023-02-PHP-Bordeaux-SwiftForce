@@ -9,26 +9,26 @@
     <div class="dashboardmenu">
         <div class="dashboardbtn">
             <a href="/users/edit?id={{ user.id }}"
-               class="btn btn-sucess btnResp text-decoration-none text-white">Mon profil</a>
+               class="btn btn-sucess btnResp text-decoration-none text-white {{ profilePerso }}">Mon profil</a>
         </div>
         {% if user.role == 'admin' %}
             <div class="dashboardbtn">
-                <a href="/users" class="btn btnResp btn-sucess text-decoration-none text-white">Utilisateurs</a>
+                <a href="/users" class="btn btnResp btn-sucess text-decoration-none text-white {{ usersCatalog }}">Utilisateurs</a>
             </div>
             <div class="dashboardbtn">
-                <a href="/product/showAll" class="btn btnResp btn-sucess text-decoration-none text-white">Produits</a>
+                <a href="/product/showAll" class="btn btnResp btn-sucess text-decoration-none text-white {{ productsCatalog }}">Produits</a>
             </div>
         {% endif %}
         {% if user.role == 'user' %}
             <div class="dashboardbtn">
-                <a href="/wishlist" class="btn btn-sucess btnResp text-decoration-none text-white">Ma liste d'envies</a>
+                <a href="/wishlist" class="btn btn-sucess btnResp text-decoration-none text-white {{ wishlistCatalog }}">Ma liste d'envies</a>
             </div>
             <div class="dashboardbtn">
-                <a href="/profile/orders" class="btn btn-sucess btnResp text-decoration-none text-white">Mes commandes</a>
+                <a href="/profile/orders" class="btn btn-sucess btnResp text-decoration-none text-white {{ ordersCatalog }}">Mes commandes</a>
             </div>
         {% endif %}
         <div class="dashboardbtn">
-            <a href="/logout" class="btn btn-sucess btnResp text-decoration-none text-white">Déconnecter</a>
+            <a href="/logout" class="btn btn-sucess btnResp text-decoration-none text-white{{ logout }}">Déconnecter</a>
         </div>
     </div>
     {% block dashboardcontent %}
