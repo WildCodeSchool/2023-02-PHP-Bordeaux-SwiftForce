@@ -34,7 +34,7 @@ abstract class AbstractController
         $this->user = isset($_SESSION['user_id']) ? $userManager->selectOneById($_SESSION['user_id']) : false;
 
         $this->twig->addGlobal('user', $this->user);
-
+        $totalQuantity = 0;
         if (isset($_SESSION['cart'])) {
             $cartInvert = array_reverse($_SESSION['cart']);
             $totalAvantRemise = 0;
@@ -42,6 +42,11 @@ abstract class AbstractController
                 $totalAvantRemise += $cart['quantity'] * $cart['price'];
             }
             $_SESSION['total'] = $totalAvantRemise;
+
+            foreach ($_SESSION['cart'] as $cart) {
+                $totalQuantity += $cart['quantity'];
+            }
+            $_SESSION['totalQuantity'] = $totalQuantity;
 
             $totalApresRemise = 0;
             $reduction = 0;
@@ -77,7 +82,7 @@ abstract class AbstractController
             $totalApresRemise = round($totalApresRemise, 2);
 
             $errorPromotion = "";
-            if (isset($_SESSION['promotionError'])){
+            if (isset($_SESSION['promotionError'])) {
                 $errorPromotion = $_SESSION['promotionError'];
             }
 
@@ -93,6 +98,7 @@ abstract class AbstractController
             $this->twig->addGlobal('total', $totalAvantRemise);
             $this->twig->addGlobal('totalTTC', $totalApresRemise);
             $this->twig->addGlobal('errorPromotion', $errorPromotion);
+            $this->twig->addGlobal('totalQuantity', $totalQuantity);
         }
     }
 }
