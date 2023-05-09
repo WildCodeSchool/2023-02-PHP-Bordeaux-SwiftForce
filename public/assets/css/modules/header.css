@@ -112,6 +112,10 @@ li {
     align-items: center;
 
 }
+.WS-line{
+    line-height: 15px;
+    padding-top: 3px;
+}
 @media screen and (max-width: 480px) {
 
     .WS_contener_header{
