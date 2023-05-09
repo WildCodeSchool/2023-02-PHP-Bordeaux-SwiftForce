@@ -12,7 +12,8 @@
             </div>
             <div class="mb-3">
                 <label class="labelInput" for="WS_password">Mot de passe :</label><br>
-                <input class="loginInput" type="password" name="WS_password" id="WS_password" value="{{ user.password }}">
+                <input class="loginInput" type="password" name="WS_password" id="WS_password"
+                       value="{{ user.password }}">
                 <p class="contactError">{{ error.password }}</p>
             </div>
             <p class="contactError">{{ error.connexion }}</p>
@@ -21,9 +22,27 @@
                     <button class="btn btn-sucess text-white m-2">Connexion</button>
                 </div>
                 <div class="mb-3">
-                    <a href="/users/add" class="btn btn-sucess text-decoration-none text-white m-2">S'inscrire</a>
+                    <a onclick="openModal()" href="#" class="btn btn-sucess text-decoration-none text-white m-2">S'inscrire</a>
                 </div>
             </div>
         </form>
     </div>
+    <div id="modal" class="WS_box_Promo">
+        <div class="WS_img_promo">
+            <a href="/users/add" type="submit" id="cancelBtn" title="Inscription" class="WS_border"><img
+                    class="WS_img_promo" src="/assets/images/img.png" alt=""></a>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        document.getElementById('cancelBtn').addEventListener('click', closeModal);
+
+    </script>
 {% endblock %}
