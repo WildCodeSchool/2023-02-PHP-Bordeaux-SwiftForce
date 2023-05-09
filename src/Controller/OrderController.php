@@ -10,6 +10,7 @@ class OrderController extends AbstractController
     {
         $orderManager = new OrderManager();
         $orders = $orderManager->selectAllById($_SESSION['user_id']);
+        $orders = array_reverse($orders);
         return $this->twig->render('profile/order.html.twig', ['orders' => $orders]);
     }
     public function show(int $id): string

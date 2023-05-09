@@ -70,11 +70,11 @@ class ProductManager extends AbstractManager
     public function addProduct(array $product, array $file): int
     {
         $statement = $this->pdo->prepare("
-        INSERT INTO " . self::TABLE . " (sub_category_id_cat, name_product, price, description, image) 
+        INSERT INTO " . self::TABLE . " (sub_category_id_cat, name_product, price, description, image)
         VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
         $statement->bindValue('sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_INT);
         $statement->bindValue('name_product', $product['name_product'], PDO::PARAM_STR);
-        $statement->bindValue('price', $product['price'], PDO::PARAM_INT);
+        $statement->bindValue('price', $product['price'], PDO::PARAM_STR);
         $statement->bindValue('description', $product['description'], PDO::PARAM_STR);
         $statement->bindValue('image', $file['image']['name'], PDO::PARAM_STR);
 
@@ -92,7 +92,7 @@ class ProductManager extends AbstractManager
                    WHERE id =:id";
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':name_product', $product['name_product'], PDO::PARAM_STR);
-        $stm->bindValue(':price', $product['price'], PDO::PARAM_INT);
+        $stm->bindValue(':price', $product['price'], PDO::PARAM_STR);
         $stm->bindValue(':description', $product['description'], PDO::PARAM_STR);
         $stm->bindValue(':sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_STR);
         $stm->bindValue(':id', $product['id'], PDO::PARAM_INT);
@@ -114,7 +114,7 @@ class ProductManager extends AbstractManager
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " ( sub_category_id_cat, name_product, price, description, image) VALUES (:sub_category_id_cat, :name_product, :price, :description, :image)");
 
         $statement->bindValue('name_product', $product['name_product'], PDO::PARAM_STR);
-        $statement->bindValue('price', $product['price'], PDO::PARAM_INT);
+        $statement->bindValue('price', $product['price'], PDO::PARAM_STR);
         $statement->bindValue('description', $product['description'], PDO::PARAM_STR);
         $statement->bindValue('image', $product['image'], PDO::PARAM_STR);
         $statement->bindValue('sub_category_id_cat', $product['sub_category_id_cat'], PDO::PARAM_STR);
