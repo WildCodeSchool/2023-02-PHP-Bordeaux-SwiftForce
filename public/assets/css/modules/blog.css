@@ -1,6 +1,7 @@
 .title-article{
     text-align: center;
     font-family: var(--fontFamilyTitle);
+    margin-top: 5%;
 }
 
 .survival-article p{
@@ -12,11 +13,13 @@
     width:80%;
     height:450px;
     margin-left: 10%;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 #third-picture-article{
     width:650px;
     height:460px;
-    margin:5px 10px 10px 0;
+    margin:5px 30px 10px 0;
 }
 .survival-article{
     width: 80%;
@@ -28,6 +31,7 @@
 .twice-part-article .para2{
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%;
 }
 .para1 .para2{
     width:80px;
