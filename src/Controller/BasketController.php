@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\BasketManager;
 use App\Services\sendMail;
+use App\Services\StripePayment;
 
 class BasketController extends AbstractController
 {
@@ -131,11 +132,20 @@ class BasketController extends AbstractController
                         $orderManager = new BasketManager();
                         $order = $orderManager->insertOrderContent($basket, $orderID);
                         //////////////// vidage du panier virtuel ////////////////
+                        $panierStripe = $_SESSION['total'];
                         unset($_SESSION['cart']);
-                        //////////////// envoi du mail de confirmation ////////////////
+                        if (isset($_SESSION['promotion'])) {
+                            $_SESSION['promotion'] = [];
+                        }
+                        if (isset($_SESSION['promotionError'])) {
+                            $_SESSION['promotionError'] = '';
+                        }
+                        //////////////// envoi du mail de confirmation avant car uniquement test ok ////////////////
                         $mail = new sendMail();
-                        $mail->sendmail('contact@thewildshop.com', 'The Wild Shop', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
-                        header('Location:/profile/orders');
+                        $mail->sendmail('contact@thewildshop.com', '--- The Wild Shop ---', $_SESSION['user']['email'], $_SESSION['user']['user_name'], 'Votre commande', "Merci d'avoir choisi The Wild Shop. Nous vous informerons de l'expédition de votre commande.");
+                        //////////////// paiement avec stripe ////////////
+                        $payment = new StripePayment('sk_test_51IcYHgFO2dD49mLEk6Hev967fXvMhUYuckmY8ZYZ6E934g8rNZLkPzzXOhAQ1uNcjbTI90EL4VJa8N6101Aykgn500Hs0cOXEm');
+                        $payment->startPayment($panierStripe, $_SESSION['user']['email']);
                     }
                 }
             }

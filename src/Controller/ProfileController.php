@@ -23,7 +23,7 @@ class ProfileController extends AbstractController
         $customerName = $customer['user_name'];
         $customerEmail = $customer['email'];
         $mail = new sendMail();
-        $mail->sendMail('contact@thewildshop.com', 'The Wild Shop', $customerEmail, $customerName, 'Offre de bienvenue', 'Profitez de 15% de remise sur votre 1ère commande avec le code : BIENVENUE. Voir conditions sur le site.');
+        $mail->sendMail('contact@thewildshop.com', '--- The Wild Shop ---', $customerEmail, $customerName, 'Offre de bienvenue', 'Profitez de 15% de remise sur votre 1ère commande avec le code : BIENVENUE. Voir conditions sur le site.');
         header('Location:/profile');
     }
 }

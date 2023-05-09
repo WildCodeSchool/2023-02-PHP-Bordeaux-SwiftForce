@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+.tableUser{
+    width: 80vw;
+}
 .WSheight{
     height: 38px;
 }
