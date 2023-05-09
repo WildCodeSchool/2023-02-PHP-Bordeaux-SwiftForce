@@ -45,7 +45,15 @@ class UserController extends AbstractController
             if (!isset($_POST['email']) | empty(trim($_POST['email']))) {
                 $errors['email'] = "L'email est obligatoire";
             } else {
-                $userAdd['mail'] = checkdata($_POST['email']);
+                $userEmailCheck = checkdata($_POST['email']);
+                $userManager = new UserManager();
+                $userToCheck = $userManager->getUserByEmail($userEmailCheck);
+                if (empty($userToCheck)){
+                    $userAdd['mail'] = checkdata($_POST['email']);
+                } else {
+                    $errors['email'] = "Cet email est déjà utilisé";
+                    $userAdd['mail'] = checkdata($_POST['email']);
+                }
             }
             if (!isset($_POST['WS_password']) | empty(trim($_POST['WS_password']))) {
                 $errors['password'] = "Le mot de passe est obligatoire";
