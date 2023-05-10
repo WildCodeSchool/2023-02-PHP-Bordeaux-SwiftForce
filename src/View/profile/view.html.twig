@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    {{ dump(wishlist) }}
    <div class="dashboardbanner">
        <a href="/profile" class="w-100"><img src="/assets/images/dashboardbanner.png" alt=""></a>
         <h1>Bonjour {{ user.user_name }}</h1>

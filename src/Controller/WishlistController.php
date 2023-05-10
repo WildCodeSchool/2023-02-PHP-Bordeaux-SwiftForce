@@ -53,7 +53,7 @@ class WishlistController extends AbstractController
         $profilePerso = $userCatalog = $productCatalog = $wishlistCatalog = $ordersCatalog = $logout = "";
         $wishlistCatalog = "using";
 
-        return $this->twig->render('profile/wishlist.html.twig', ['wishlist' => $wishlist, 'profilePerso' => $profilePerso, 'usersCatalog' => $userCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
+        return $this->twig->render('profile/wishlist.html.twig', ['wishlists' => $wishlist, 'profilePerso' => $profilePerso, 'usersCatalog' => $userCatalog, 'productsCatalog' => $productCatalog, 'wishlistCatalog' => $wishlistCatalog, 'ordersCatalog' => $ordersCatalog, 'logout' => $logout]);
     }
     public function deleteWishlist(int $id): void
     {
