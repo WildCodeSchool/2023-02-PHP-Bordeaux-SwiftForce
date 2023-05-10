@@ -30,7 +30,8 @@
                     <label for="birthday" class="form-label">Date de naissance</label>
                     <input class="form-control" type="date" id="birthday" name="birthday" value="{{ userChange.birthday }}">
                 </div>
-                    {% if user.role == 'admin' %}
+                <input type="hidden" name="role" value="{{ userChange.role }}">
+                {% if user.role == 'admin' %}
                         <div class="mb-3">
                             <label for="role" class="form-label">Role</label>
                             <select class="wform-label" name="role" id="role">
@@ -40,6 +41,7 @@
                             </select>
                         </div>
                 {% endif %}
+
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success btnLargeResp">
                         Mettre à jour les informations

@@ -35,7 +35,8 @@ class UserManager extends AbstractManager
                    `user_name` = :user_name,
                    `birthday` = :birthday,
                    `email` = :email,
-                   `WS_password` = :WS_password
+                   `WS_password` = :WS_password,
+                   `role` = :role
                    WHERE id =:id";
         $stm = $this->pdo->prepare($sql);
 
@@ -46,6 +47,7 @@ class UserManager extends AbstractManager
         $stm->bindValue(':email', $user['email'], PDO::PARAM_STR);
         $stm->bindValue(':WS_password', $passwordHash, PDO::PARAM_STR);
         $stm->bindValue(':id', $user['id'], PDO::PARAM_INT);
+        $stm->bindValue(':role', $user['role'], PDO::PARAM_STR);
 
         return $stm->execute();
     }

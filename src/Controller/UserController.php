@@ -102,6 +102,7 @@ class UserController extends AbstractController
     public function edit(int $id)
     {
         $userManager = new UserManager();
+        $user['role'] = '';
         $user = $userManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
