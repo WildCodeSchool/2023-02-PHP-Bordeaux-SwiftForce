@@ -215,3 +215,17 @@ create table ws_promotions
 );
 
 INSERT INTO wildshop.ws_promotions (id, name, reduction, seuil) VALUES (1, 'BIENVENUE', 15, 150);
+
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (1, 'water');
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (2, 'earth');
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (3, 'fire');
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (4, 'wind');
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (5, 'chemical');
+INSERT INTO wildshop.WS_category (id, name_category) VALUES (6, 'exterior');
+
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (1, 'get_dressed');
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (2, 'to_eat');
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (3, 'take_shelter');
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (4, 'to defend');
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (5, 'orientation');
+INSERT INTO wildshop.WS_sub_category (id_cat, name_sub_category) VALUES (6, 'survival_kit');
