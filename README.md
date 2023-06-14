@@ -15,7 +15,7 @@ For this one, just a simple example where users can choose one of their database
 
 ```php
 define('APP_DB_HOST', 'your_db_host');
-define('APP_DB_NAME', 'your_db_name');
+define('APP_DB_NAME', 'wildshop');
 define('APP_DB_USER', 'your_db_user_wich_is_not_root');
 define('APP_DB_PASSWORD', 'your_db_password');
 ```
